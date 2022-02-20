@@ -1,0 +1,426 @@
+{
+  "offlineData": {
+    "skullTotemPoints": {
+      "acquired": 0,
+      "spent": 0
+    },
+    "stats": {
+      "ammoDropped": {
+        "base": 1467406,
+        "keys": {}
+      },
+      "bespoke_Unsecured": {
+        "base": 0,
+        "keys": {
+          "AchievementCompleted_Achievement_Enemy_001": 1644103405,
+          "AchievementCompleted_Achievement_Enemy_016": 1641922424,
+          "AchievementCompleted_Achievement_GrabBag_006": 1641922646,
+          "AchievementCompleted_Achievement_GrabBag_012": 1641601664,
+          "AchievementCompleted_Achievement_GrabBag_016": 1633621473,
+          "AchievementCompleted_Achievement_NonPlatform_008": 1640026835,
+          "AchievementCompleted_Achievement_NonPlatform_012": 1639690527,
+          "AchievementCompleted_Achievement_NonPlatform_014": 1642895893,
+          "AchievementCompleted_Achievement_NonPlatform_018": 1642017282,
+          "AchievementCompleted_Achievement_NonPlatform_021": 1643134975,
+          "AchievementCompleted_Achievement_NonPlatform_041": 1643733468,
+          "AchievementCompleted_Achievement_NonPlatform_042": 1643795461,
+          "AchievementCompleted_Achievement_NonPlatform_043": 1644032314,
+          "AchievementCompleted_Achievement_NonPlatform_053": 1642404201,
+          "AchievementCompleted_Achievement_NonPlatform_054": 1642527450,
+          "AchievementCompleted_Achievement_NonPlatform_055": 1643050272,
+          "AchievementCompleted_Achievement_NonPlatform_056": 1643653931,
+          "AchievementCompleted_Achievement_NonPlatform_057": 1639777439,
+          "AchievementCompleted_Achievement_NonPlatform_058": 1640030073,
+          "AchievementCompleted_Achievement_NonPlatform_059": 1641811932,
+          "AchievementCompleted_Achievement_NonPlatform_060": 1642334457,
+          "AchievementCompleted_Achievement_NonPlatform_064": 1639684232,
+          "AchievementCompleted_Achievement_NonPlatform_074": 1641847966,
+          "AchievementCompleted_Achievement_NonPlatform_081": 1641834156,
+          "AchievementCompleted_Achievement_NonPlatform_085": 1641833007,
+          "AchievementCompleted_Achievement_NonPlatform_086": 1643630988,
+          "AchievementCompleted_Achievement_Weapon_011": 1643993327
+        }
+      },
+      "caravanItemsPurchased": {
+        "base": 466,
+        "keys": {}
+      },
+      "cardsPlayed": {
+        "base": 17090,
+        "keys": {}
+      },
+      "cleanersRescued": {
+        "base": 2,
+        "keys": {}
+      },
+      "cleanersRevived": {
+        "base": 1565,
+        "keys": {}
+      },
+      "commonRiddenDamageInflicted": {
+        "base": 33206108,
+        "keys": {}
+      },
+      "enemyCleanerDamageInflicted": {
+        "base": 522440,
+        "keys": {}
+      },
+      "enemyDamageInflicted": {
+        "base": 40141614,
+        "keys": {}
+      },
+      "healingApplied": {
+        "base": 0,
+        "keys": {
+          "Other": 112985,
+          "Self": 248609
+        }
+      },
+      "hordesTriggered": {
+        "base": 604,
+        "keys": {}
+      },
+      "otherDamageInflicted": {
+        "base": 215707,
+        "keys": {}
+      },
+      "pVPGamesPlayed": {
+        "base": 1193,
+        "keys": {}
+      },
+      "pVPGamesWon": {
+        "base": 1024,
+        "keys": {}
+      },
+      "pVPIncapsAsRidden": {
+        "base": 1607,
+        "keys": {}
+      },
+      "pVPKillsAsCleaners": {
+        "base": 12797,
+        "keys": {}
+      },
+      "pVPKillsAsRidden": {
+        "base": 2671,
+        "keys": {}
+      },
+      "riddenBossesKilled": {
+        "base": 1,
+        "keys": {}
+      },
+      "riddenKilled": {
+        "base": 56799,
+        "keys": {}
+      },
+      "riddenKilledByType": {
+        "base": 0,
+        "keys": {
+          "Bloater": 851,
+          "Breaker": 1,
+          "BunnyKick": 1024,
+          "Chaser": 705,
+          "Chucker": 956,
+          "Common": 43958,
+          "Exploder": 369,
+          "Smasher": 1445,
+          "Squeezer": 1387,
+          "Tallboy": 4226,
+          "Vomiter": 1877
+        }
+      },
+      "riddenKilledByWeapon": {
+        "base": 0,
+        "keys": {
+          "AR01": 1665,
+          "AR02": 2814,
+          "AR03": 3088,
+          "AR04": 912,
+          "AR05": 1527,
+          "AR06": 3274,
+          "Axe": 158,
+          "Bat": 137,
+          "Fist": 208,
+          "Hatchet": 56,
+          "HG01": 185,
+          "HG02": 433,
+          "hg02b": 209,
+          "HG03": 214,
+          "HG04": 290,
+          "hg04b": 221,
+          "HG05": 275,
+          "Knife": 74,
+          "LMG01": 4696,
+          "LMG02": 3624,
+          "Machete": 105,
+          "None": 23,
+          "SG01": 890,
+          "SG02": 4956,
+          "SG03": 652,
+          "SG04": 1734,
+          "SG05": 3323,
+          "SMG01": 2299,
+          "SMG02": 1581,
+          "SMG03": 442,
+          "SMG04": 2004,
+          "SMG05": 2749,
+          "Sni01": 808,
+          "Sni02": 698,
+          "Unarmed": 10475
+        }
+      },
+      "riddenKilledWhileIncapped": {
+        "base": 5798,
+        "keys": {}
+      },
+      "riddenMutationsKilled": {
+        "base": 12840,
+        "keys": {}
+      },
+      "specialRiddenDamageInflicted": {
+        "base": 6197359,
+        "keys": {}
+      },
+      "timesDiedAsCleaner": {
+        "base": 2040,
+        "keys": {}
+      },
+      "timesIncappedAsCleaner": {
+        "base": 7549,
+        "keys": {}
+      },
+      "weakSpotDamageInflicted": {
+        "base": 437627,
+        "keys": {}
+      },
+      "bespoke_Secured": {
+        "base": 0,
+        "keys": {
+          "AchievementCompleted_Achievement_Campaign_001": 1633629009,
+          "AchievementCompleted_Achievement_GrabBag_001": 1633624290,
+          "AchievementCompleted_Achievement_GrabBag_003": 1633630650,
+          "AchievementCompleted_Achievement_GrabBag_004": 1633626201,
+          "AchievementCompleted_Achievement_GrabBag_005": 1633716888,
+          "AchievementCompleted_Achievement_GrabBag_010": 1633627818,
+          "AchievementCompleted_Achievement_GrabBag_013": 1636836677,
+          "AchievementCompleted_Achievement_GrabBag_018": 1633627135,
+          "AchievementCompleted_Achievement_NonPlatform_001": 1634395063,
+          "AchievementCompleted_Achievement_NonPlatform_002": 1639329744,
+          "AchievementCompleted_Achievement_NonPlatform_004": 1637173837,
+          "AchievementCompleted_Achievement_NonPlatform_007": 1638955605,
+          "AchievementCompleted_Achievement_NonPlatform_009": 1639078589,
+          "AchievementCompleted_Achievement_NonPlatform_011": 1634075736,
+          "AchievementCompleted_Achievement_NonPlatform_016": 1634221836,
+          "AchievementCompleted_Achievement_NonPlatform_017": 1637608757,
+          "AchievementCompleted_Achievement_NonPlatform_019": 1637354175,
+          "AchievementCompleted_Achievement_NonPlatform_020": 1639553643,
+          "AchievementCompleted_Achievement_NonPlatform_022": 1634051935,
+          "AchievementCompleted_Achievement_NonPlatform_023": 1637085697,
+          "AchievementCompleted_Achievement_NonPlatform_024": 1638951555,
+          "AchievementCompleted_Achievement_NonPlatform_025": 1634143075,
+          "AchievementCompleted_Achievement_NonPlatform_026": 1634400631,
+          "AchievementCompleted_Achievement_NonPlatform_027": 1637010956,
+          "AchievementCompleted_Achievement_NonPlatform_028": 1633881377,
+          "AchievementCompleted_Achievement_NonPlatform_029": 1636652649,
+          "AchievementCompleted_Achievement_NonPlatform_030": 1637652859,
+          "AchievementCompleted_Achievement_NonPlatform_031": 1634400578,
+          "AchievementCompleted_Achievement_NonPlatform_061": 1637613123,
+          "AchievementCompleted_Achievement_NonPlatform_062": 1637733121,
+          "AchievementCompleted_Achievement_NonPlatform_063": 1638957850,
+          "AchievementCompleted_Achievement_NonPlatform_069": 1634059003,
+          "AchievementCompleted_Achievement_NonPlatform_070": 1634222098,
+          "achievementcompleted_achievement_nonplatform_071": 1636578857,
+          "AchievementCompleted_Achievement_NonPlatform_072": 1637511144,
+          "AchievementCompleted_Achievement_NonPlatform_073": 1636837886,
+          "AchievementCompleted_Achievement_NonPlatform_075": 1633789148,
+          "achievementcompleted_achievement_nonplatform_076": 1636578704,
+          "AchievementCompleted_Achievement_NonPlatform_077": 1636569262,
+          "AchievementCompleted_Achievement_NonPlatform_078": 1637731698,
+          "AchievementCompleted_Achievement_NonPlatform_079": 1634047129,
+          "AchievementCompleted_Achievement_NonPlatform_080": 1637094838,
+          "AchievementCompleted_Achievement_NonPlatform_083": 1634404247,
+          "AchievementCompleted_Achievement_NonPlatform_084": 1637705902,
+          "AchievementCompleted_Achievement_NonPlatform_089": 1633720200,
+          "AchievementCompleted_Achievement_PvP_004": 1633625116,
+          "AchievementCompleted_Achievement_Weapon_009": 1633632687,
+          "AchievementCompleted_Achievement_Weapon_012": 1633639769
+        }
+      },
+      "missionsCompleted_Secured": {
+        "base": 1371,
+        "keys": {
+          "bluedog_a::pvp": 87,
+          "bluedog_a::pvp::hero_1": 10,
+          "bluedog_a::pvp::hero_3": 2,
+          "bluedog_a::pvp::hero_4": 19,
+          "bluedog_a::pvp::hero_5": 18,
+          "bluedog_a::pvp::hero_7": 19,
+          "bluedog_a::pvp::hero_8": 13,
+          "bluedog_b::pvp": 79,
+          "bluedog_b::pvp::hero_1": 4,
+          "bluedog_b::pvp::hero_2": 1,
+          "bluedog_b::pvp::hero_3": 3,
+          "bluedog_b::pvp::hero_4": 17,
+          "bluedog_b::pvp::hero_5": 24,
+          "bluedog_b::pvp::hero_7": 15,
+          "bluedog_b::pvp::hero_8": 14,
+          "bluedog_c::pvp": 66,
+          "bluedog_c::pvp::hero_1": 7,
+          "bluedog_c::pvp::hero_2": 1,
+          "bluedog_c::pvp::hero_4": 12,
+          "bluedog_c::pvp::hero_5": 20,
+          "bluedog_c::pvp::hero_7": 12,
+          "bluedog_c::pvp::hero_8": 9,
+          "cdc_a::pvp": 68,
+          "cdc_a::pvp::hero_1": 10,
+          "cdc_a::pvp::hero_4": 11,
+          "cdc_a::pvp::hero_5": 10,
+          "cdc_a::pvp::hero_7": 12,
+          "cdc_a::pvp::hero_8": 18,
+          "cdc_b::pvp": 77,
+          "cdc_b::pvp::hero_1": 10,
+          "cdc_b::pvp::hero_2": 1,
+          "cdc_b::pvp::hero_3": 1,
+          "cdc_b::pvp::hero_4": 18,
+          "cdc_b::pvp::hero_5": 12,
+          "cdc_b::pvp::hero_7": 21,
+          "cdc_b::pvp::hero_8": 13,
+          "cdc_c::pvp": 60,
+          "cdc_c::pvp::hero_1": 13,
+          "cdc_c::pvp::hero_4": 8,
+          "cdc_c::pvp::hero_5": 14,
+          "cdc_c::pvp::hero_7": 14,
+          "cdc_c::pvp::hero_8": 9,
+          "clog_a::pvp": 91,
+          "clog_a::pvp::hero_1": 10,
+          "clog_a::pvp::hero_2": 1,
+          "clog_a::pvp::hero_4": 18,
+          "clog_a::pvp::hero_5": 26,
+          "clog_a::pvp::hero_7": 12,
+          "clog_a::pvp::hero_8": 18,
+          "clog_b::pvp": 77,
+          "clog_b::pvp::hero_1": 5,
+          "clog_b::pvp::hero_3": 1,
+          "clog_b::pvp::hero_4": 13,
+          "clog_b::pvp::hero_5": 17,
+          "clog_b::pvp::hero_7": 13,
+          "clog_b::pvp::hero_8": 20,
+          "clog_c::pvp": 77,
+          "clog_c::pvp::hero_1": 11,
+          "clog_c::pvp::hero_3": 1,
+          "clog_c::pvp::hero_4": 11,
+          "clog_c::pvp::hero_5": 25,
+          "clog_c::pvp::hero_7": 13,
+          "clog_c::pvp::hero_8": 11,
+          "evans_a::easy": 3,
+          "evans_a::easy::hero_1": 1,
+          "evans_a::easy::hero_3": 1,
+          "evans_a::easy::hero_5": 1,
+          "evans_a::pvp": 61,
+          "evans_a::pvp::hero_1": 5,
+          "evans_a::pvp::hero_2": 1,
+          "evans_a::pvp::hero_4": 16,
+          "evans_a::pvp::hero_5": 19,
+          "evans_a::pvp::hero_7": 7,
+          "evans_a::pvp::hero_8": 11,
+          "evans_b::easy": 2,
+          "evans_b::easy::hero_1": 1,
+          "evans_b::easy::hero_5": 1,
+          "evans_b::pvp": 71,
+          "evans_b::pvp::hero_1": 11,
+          "evans_b::pvp::hero_4": 18,
+          "evans_b::pvp::hero_5": 18,
+          "evans_b::pvp::hero_7": 11,
+          "evans_b::pvp::hero_8": 12,
+          "evans_c::easy": 1,
+          "evans_c::easy::hero_1": 1,
+          "evans_c::pvp": 68,
+          "evans_c::pvp::hero_1": 7,
+          "evans_c::pvp::hero_4": 8,
+          "evans_c::pvp::hero_5": 21,
+          "evans_c::pvp::hero_7": 13,
+          "evans_c::pvp::hero_8": 16,
+          "evans_d::easy": 1,
+          "evans_d::easy::hero_1": 1,
+          "finley_church_a::pvp": 86,
+          "finley_church_a::pvp::hero_1": 9,
+          "finley_church_a::pvp::hero_4": 13,
+          "finley_church_a::pvp::hero_5": 22,
+          "finley_church_a::pvp::hero_7": 21,
+          "finley_church_a::pvp::hero_8": 17,
+          "finley_church_b::pvp": 95,
+          "finley_church_b::pvp::hero_1": 5,
+          "finley_church_b::pvp::hero_4": 14,
+          "finley_church_b::pvp::hero_5": 22,
+          "finley_church_b::pvp::hero_6": 1,
+          "finley_church_b::pvp::hero_7": 21,
+          "finley_church_b::pvp::hero_8": 20,
+          "finley_church_c::pvp": 78,
+          "finley_church_c::pvp::hero_1": 6,
+          "finley_church_c::pvp::hero_4": 14,
+          "finley_church_c::pvp::hero_5": 21,
+          "finley_church_c::pvp::hero_6": 1,
+          "finley_church_c::pvp::hero_7": 18,
+          "finley_church_c::pvp::hero_8": 16,
+          "finley_rescue_a::easy": 1,
+          "finley_rescue_a::easy::hero_5": 1,
+          "Hero_1": 159,
+          "Hero_2": 5,
+          "Hero_3": 10,
+          "Hero_4": 253,
+          "Hero_5": 346,
+          "Hero_6": 2,
+          "Hero_7": 265,
+          "Hero_8": 250,
+          "manor_a::pvp": 75,
+          "manor_a::pvp::hero_1": 8,
+          "manor_a::pvp::hero_4": 14,
+          "manor_a::pvp::hero_5": 18,
+          "manor_a::pvp::hero_7": 17,
+          "manor_a::pvp::hero_8": 11,
+          "manor_b::pvp": 78,
+          "manor_b::pvp::hero_1": 11,
+          "manor_b::pvp::hero_4": 17,
+          "manor_b::pvp::hero_5": 18,
+          "manor_b::pvp::hero_7": 13,
+          "manor_b::pvp::hero_8": 14,
+          "manor_c::pvp": 69,
+          "manor_c::pvp::hero_1": 13,
+          "manor_c::pvp::hero_3": 1,
+          "manor_c::pvp::hero_4": 12,
+          "manor_c::pvp::hero_5": 18,
+          "manor_c::pvp::hero_7": 13,
+          "manor_c::pvp::hero_8": 8
+        }
+      }
+    },
+    "startingLocations": {
+      "evans_a": 1,
+      "evans_b": 1,
+      "evans_c": 3,
+      "evans_d": 1,
+      "finley_rescue_a": 1,
+      "finley_rescue_b": 1
+    },
+    "badgeData": {
+      "emblem": 41,
+      "title": 45,
+      "banner": 20
+    }
+  },
+  "onlineDataCache": {
+    "supplyPoints": 0,
+    "decks": [],
+    "recentCharacters": [],
+    "ownables": [],
+    "stats": {},
+    "startingLocations": {},
+    "campaignRuns": {},
+    "caravans": [],
+    "badgeData": {
+      "emblem": 0,
+      "title": 0,
+      "banner": 0
+    }
+  },
+  "version": 1
+}
