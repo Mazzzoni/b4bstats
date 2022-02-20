@@ -2,118 +2,124 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: #d41002;
-  --primary-color-sligthly-transparent: rgba(212, 16, 2, 0.6);
-  --success-color: #008000;
-  --primary-bg-color: #272822;
-  --secondary-bg-color: #1A1B1E;
+@layer base {
+  :root {
+    --primary-color: #d41002;
+    --primary-color-sligthly-transparent: rgba(212, 16, 2, 0.6);
+    --success-color: #008000;
+    --primary-bg-color: #272822;
+    --secondary-bg-color: #1A1B1E;
 
-  --toastify-color-dark: var(--secondary-bg-color);
+    --toastify-color-dark: var(--secondary-bg-color);
 
-  --toastify-color-progress-error: var(--primary-color);
-  --toastify-icon-color-error: var(--primary-color);
+    --toastify-color-progress-error: var(--primary-color);
+    --toastify-icon-color-error: var(--primary-color);
 
-  --toastify-color-progress-success: var(--success-color);
-  --toastify-icon-color-success: var(--success-color);
-}
-
-::selection {
-  background-color: var(--primary-color);
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--secondary-bg-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-.Toastify__toast {
-  border-radius: 0;
-}
-
-.mantine-Table-root {
-  th {
-    border-bottom-width: 2px!important;
+    --toastify-color-progress-success: var(--success-color);
+    --toastify-icon-color-success: var(--success-color);
   }
 
-  th, td {
-    border-bottom-style: dashed!important;
+  ::selection {
+    background-color: var(--primary-color);
   }
 
-  tbody tr:last-of-type td {
-    border-bottom: none!important;
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--secondary-bg-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
 }
 
-.mantine-RadioGroup-root {
-  .mantine-RadioGroup-radioWrapper {
-    @apply hover:bg-white/10 w-full grow;
+@layer components {
+  .Toastify__toast {
+    border-radius: 0;
   }
 
-  label {
-    font-size: 14px;
-    @apply flex w-full cursor-pointer;
-
-    input {
-      width: 24px;
+  .mantine-Table-root {
+    th {
+      border-bottom-width: 2px !important;
     }
 
-    span {
-      @apply w-full;
+    th, td {
+      border-bottom-style: dashed !important;
+    }
 
-      div {
+    tbody tr:last-of-type td {
+      border-bottom: none !important;
+    }
+  }
+
+  .mantine-RadioGroup-root {
+    .mantine-RadioGroup-radioWrapper {
+      @apply hover:bg-white/10 w-full grow;
+    }
+
+    label {
+      font-size: 14px;
+      @apply flex w-full cursor-pointer;
+
+      input {
+        width: 24px;
+      }
+
+      span {
         @apply w-full;
+
+        div {
+          @apply w-full;
+        }
       }
     }
   }
-}
 
-.mantine-Checkbox-root {
-  label {
-    @apply inline-block w-full cursor-pointer;
+  .mantine-Checkbox-root {
+    label {
+      @apply inline-block w-full cursor-pointer;
+    }
   }
 }
 
-.color-primary {
-  color: var(--primary-color);
-}
+@layer utilities {
+  .color-primary {
+    color: var(--primary-color);
+  }
 
-.color-success {
-  color: var(--success-color);
-}
+  .color-success {
+    color: var(--success-color);
+  }
 
-.border-primary-bottom {
-  border-bottom: 1px dashed var(--primary-color);
-}
+  .border-primary-bottom {
+    border-bottom: 1px dashed var(--primary-color);
+  }
 
-.border-subtle {
-  border: 1px solid #2C2E33;
-}
+  .border-subtle {
+    border: 1px solid #2C2E33;
+  }
 
-.border-top-subtle {
-  border-top: 1px solid #2C2E33;
-}
+  .border-top-subtle {
+    border-top: 1px solid #2C2E33;
+  }
 
-.border-bottom-subtle {
-  border-bottom: 1px solid #2C2E33;
-}
+  .border-bottom-subtle {
+    border-bottom: 1px solid #2C2E33;
+  }
 
-.border-left-subtle {
-  border-left: 1px solid #2C2E33;
-}
+  .border-left-subtle {
+    border-left: 1px solid #2C2E33;
+  }
 
-.border-hover-white {
-  @apply border border-transparent hover:border-white;
+  .border-hover-white {
+    @apply border border-transparent hover:border-white;
+  }
 }
