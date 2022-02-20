@@ -99,12 +99,6 @@ export default function Introduction() {
       <div className="mt-5 text-center">
         <span className="color-primary cursor-pointer" onClick={compare}>{'>> '}Compare{' <<'}</span>
       </div>
-
-      <style jsx>{`
-        input {
-          border-radius: 0;
-        }
-      `}</style>
     </div>
   );
 }
