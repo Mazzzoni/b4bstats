@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 import { useRecoilValue } from 'recoil';
-import { formatWithSpaces, getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
+import { localeFormat, getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
 import StatisticsState from '@components/self/StatisticsState';
@@ -48,7 +48,7 @@ export default function SwarmKills() {
         <Badge mt={3}>
           <Trans
             i18nKey="graphs.labels.total_kills"
-            values={{count: formatWithSpaces(statistics.pvpStatistics.killsAsCleaner + statistics.pvpStatistics.killsAsRidden)}}
+            values={{count: localeFormat(statistics.pvpStatistics.killsAsCleaner + statistics.pvpStatistics.killsAsRidden)}}
             components={{b: <b/>}}
           />
         </Badge>

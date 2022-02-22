@@ -1,4 +1,4 @@
-import { formatWithSpaces } from '@utils/generic';
+import { localeFormat } from '@utils/generic';
 import React from 'react';
 import { CheckSquare } from 'react-feather';
 
@@ -27,9 +27,9 @@ export default function ProgressMilestones({title, maxValue, currentValue, miles
         <div className="absolute top-0 left-0 right-0 bottom-0 h-5 z-[5] max-w-full" style={{backgroundColor: 'var(--primary-color)', width: `${overallPercent}%`}}/>
 
         <div className="absolute top-[1-px] left-0 z-10 text-sm px-2 flex justify-between w-full">
-          <span>{formatWithSpaces(currentValue)} / {formatWithSpaces(maxValue)}</span>
+          <span>{localeFormat(currentValue)} / {localeFormat(maxValue)}</span>
 
-          <span>({formatWithSpaces(overallPercent)}%)</span>
+          <span>({localeFormat(overallPercent)}%)</span>
         </div>
 
         {milestones.map((milestone) => (

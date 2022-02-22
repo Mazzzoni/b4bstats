@@ -4,7 +4,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { useRecoilValue } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
 import {
-  formatWithSpaces,
+  localeFormat,
   getSuggestedMaxFromArrayOfIntegers,
   getSumFromArrayOfIntegers,
   nFormatter
@@ -57,7 +57,7 @@ export default function RiddenKilled() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.commons_killed"
-            values={{count: formatWithSpaces(statistics.riddenKilled.riddenCommonKilled)}}
+            values={{count: localeFormat(statistics.riddenKilled.riddenCommonKilled)}}
             components={{b: <b/>}}
           /> (APM: {statistics.getAverageValuePerMissionCompleted(statistics.riddenKilled.riddenCommonKilled)})
         </Badge>
@@ -65,7 +65,7 @@ export default function RiddenKilled() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.mutations_killed"
-            values={{count: formatWithSpaces(statistics.riddenKilled.riddenMutationsKilled)}}
+            values={{count: localeFormat(statistics.riddenKilled.riddenMutationsKilled)}}
             components={{b: <b/>}}
           /> (APM: {statistics.getAverageValuePerMissionCompleted(statistics.riddenKilled.riddenMutationsKilled)})
         </Badge>
@@ -73,7 +73,7 @@ export default function RiddenKilled() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.sleepers_killed"
-            values={{count: formatWithSpaces(statistics.riddenKilled.riddenSleeperKilled)}}
+            values={{count: localeFormat(statistics.riddenKilled.riddenSleeperKilled)}}
             components={{b: <b/>}}
           /> (APM: {statistics.getAverageValuePerMissionCompleted(statistics.riddenKilled.riddenSleeperKilled)})
         </Badge>
@@ -81,7 +81,7 @@ export default function RiddenKilled() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_ridden_killed"
-            values={{count: formatWithSpaces(statistics.riddenKilled.riddenKilledTotal)}}
+            values={{count: localeFormat(statistics.riddenKilled.riddenKilledTotal)}}
             components={{b: <b/>}}
           /> (APM: {statistics.getAverageValuePerMissionCompleted(statistics.riddenKilled.riddenKilledTotal)})
         </Badge>

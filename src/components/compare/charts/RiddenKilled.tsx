@@ -4,7 +4,7 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { useRecoilValue } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
 import {
-  formatWithSpaces,
+  localeFormat,
   getSumFromArrayOfIntegers,
   nFormatter
 } from '@utils/generic';
@@ -72,22 +72,22 @@ export default function RiddenKilled() {
       <p className="mt-3 text-sm">
         <Trans
           i18nKey="graphs.labels.commons_killed"
-          values={{count: formatWithSpaces(overallCommonsKilled)}}
+          values={{count: localeFormat(overallCommonsKilled)}}
           components={{b: <b/>}}
         /> |&nbsp;
         <Trans
           i18nKey="graphs.labels.mutations_killed"
-          values={{count: formatWithSpaces(overallMutationsKilled)}}
+          values={{count: localeFormat(overallMutationsKilled)}}
           components={{b: <b/>}}
         /> |&nbsp;
         <Trans
           i18nKey="graphs.labels.sleepers_killed"
-          values={{count: formatWithSpaces(overallSleepersKilled)}}
+          values={{count: localeFormat(overallSleepersKilled)}}
           components={{b: <b/>}}
         /> |&nbsp;
         <Trans
           i18nKey="graphs.labels.total_ridden_killed"
-          values={{count: formatWithSpaces(overallRiddenKilled)}}
+          values={{count: localeFormat(overallRiddenKilled)}}
           components={{b: <b/>}}
         />
       </p>

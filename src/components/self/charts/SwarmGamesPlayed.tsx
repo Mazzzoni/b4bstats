@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 import { useRecoilValue } from 'recoil';
-import { formatWithSpaces, getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
+import { localeFormat, getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
 import StatisticsState from '@components/self/StatisticsState';
@@ -48,7 +48,7 @@ export default function SwarmGamesPlayed() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_games_played"
-            values={{count: formatWithSpaces(statistics.pvpStatistics.gamesPlayed)}}
+            values={{count: localeFormat(statistics.pvpStatistics.gamesPlayed)}}
             components={{b: <b/>}}
           />
         </Badge>

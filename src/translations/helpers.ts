@@ -1,10 +1,10 @@
-import { formatWithSpaces } from '@utils/generic';
+import { localeFormat } from '@utils/generic';
 import { Weapons, WeaponTypes } from '@components/statistics/types';
 
 export function translateKillsTooltip(t: Function, count: number, percent: number)
 {
   return t('graphs.labels.x_kills', {
-    count: formatWithSpaces(count),
+    count: localeFormat(count),
     percent: percent,
   });
 }
@@ -12,7 +12,7 @@ export function translateKillsTooltip(t: Function, count: number, percent: numbe
 export function translateMissionsTooltip(t: Function, count: number, percent: number)
 {
   return t('graphs.labels.x_missions', {
-    count: formatWithSpaces(count),
+    count: localeFormat(count),
     percent: percent,
   });
 }
