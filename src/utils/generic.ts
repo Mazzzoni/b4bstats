@@ -1,3 +1,4 @@
+import i18n from '@translations/i18n';
 import { Cleaners } from '@components/statistics/types';
 
 export function getCleanerNameById(cleanerId: string)
@@ -7,9 +8,9 @@ export function getCleanerNameById(cleanerId: string)
   return Object.keys(Cleaners)[index];
 }
 
-export function formatWithSpaces(x: number)
+export function localeFormat(x: number)
 {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return x.toLocaleString(i18n.language)
 }
 
 export function nFormatter(num: number, digits: number = 0)

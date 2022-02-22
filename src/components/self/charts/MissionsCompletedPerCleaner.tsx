@@ -3,7 +3,7 @@ import { Chart } from 'react-chartjs-2';
 import { useRecoilValue } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
-import { formatWithSpaces, nFormatter } from '@utils/generic';
+import { localeFormat, nFormatter } from '@utils/generic';
 import StatisticsState from '@components/self/StatisticsState';
 import { DifficultyColors } from '@utils/colors';
 import { Cleaners, Difficulties } from '@components/statistics/types';
@@ -125,7 +125,7 @@ export default function MissionsCompletedPerCleaner() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_missions_completed"
-            values={{count: formatWithSpaces(statistics.missionsStatistics.missionsCompleted)}}
+            values={{count: localeFormat(statistics.missionsStatistics.missionsCompleted)}}
             components={{b: <b/>}}
           />
         </Badge>
