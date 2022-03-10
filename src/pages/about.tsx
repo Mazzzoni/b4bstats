@@ -113,9 +113,9 @@ const Page: NextPage = () => {
             <p>
               <b>Xbox Game Pass</b> stores your files differently than <b>Steam</b> or <b>Epic Games Store</b>, please go to the mentioned folder:
               <br/>
-              <Kbd className="color-primary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
+              <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
               <br/>
-              You&apos;ll see a first sub folder with a special name (something like <Kbd className="color-primary"><b>00901F5LDP...</b></Kbd>), open it.
+              You&apos;ll see a first sub folder with a special name (something like <Kbd className="color-primary color-bg-secondary"><b>00901F5LDP...</b></Kbd>), open it.
               <br/>
               Then you&apos;ll find more subfolders with special names, each contain 2 files, try the file with the special name (not the <code><b>container</b></code> one)
               <br/>

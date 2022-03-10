@@ -20,7 +20,7 @@ export default function Introduction() {
 
         {t('introduction.steam_instructions')}
         <br/>
-        <Kbd className="color-primary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Back4Blood\\Steam\\Saved\\SaveGames\\PlayerProfileSettings.json'}</b></Kbd>
+        <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Back4Blood\\Steam\\Saved\\SaveGames\\PlayerProfileSettings.json'}</b></Kbd>
       </div>
 
       <Divider variant="dashed"/>
@@ -36,7 +36,7 @@ export default function Introduction() {
           components={{b: <b className="text-decoration-underline"/>}}
         />
         <br/>
-        <Kbd className="color-primary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
+        <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
         <br/>
         <Trans
           i18nKey="introduction.xbox_game_pass_instructions_2"
@@ -54,7 +54,7 @@ export default function Introduction() {
 
         {t('introduction.epic_games_store_instructions')}
         <br/>
-        <Kbd className="color-primary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Back4Blood\\Epic\\Saved\\SaveGames\\PlayerProfileSettings.json'}</b></Kbd>
+        <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Back4Blood\\Epic\\Saved\\SaveGames\\PlayerProfileSettings.json'}</b></Kbd>
       </div>
 
       <Divider variant="dashed"/>
