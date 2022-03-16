@@ -145,7 +145,7 @@ const Page: NextPage = () => {
               <br/>
               Your statistics file is being parsed then all data remain temporarily in your browser to be displayed, that&apos;s why you need to drag and drop file every time you refresh page.
               <br/>
-              Application source code is available on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">Github</a> under <strong>MIT License</strong>. You&apos;re welcome to contribute to it or use it as you wish !
+              Application source code is available on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">GitHub</a> under <strong>MIT License</strong>. You&apos;re welcome to contribute to it or use it as you wish !
             </p>
           </div>
         </div>

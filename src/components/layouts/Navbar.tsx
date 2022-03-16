@@ -26,7 +26,7 @@ const menu = [
 ];
 
 const footerMainMenu = [
-  {label: 'Github', href: 'https://github.com/Mazzzoni/b4bstats'},
+  {label: 'GitHub', href: 'https://github.com/Mazzzoni/b4bstats'},
   {label: 'Report bug', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
   {label: 'Request feature', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
 ];
