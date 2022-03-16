@@ -54,7 +54,7 @@ const Page: NextPage = () => {
             <p>
               Feedback or issue ?
               <br/>
-              You can open issue or request feature on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">Github</a> or you can contact me at <a href="mailto:hello@mazz.lol" className="color-primary" rel="noreferrer" target="_blank">hello@mazz.lol</a> or ping me on
+              You can open issue or request feature on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">GitHub</a> or you can contact me at <a href="mailto:hello@mazz.lol" className="color-primary" rel="noreferrer" target="_blank">hello@mazz.lol</a> or ping me on
               <br/>
               <img src="/images/discord.svg" alt="discord" className="w-4 relative top-[-2px] inline"/> <b style={{color: '#7289DA'}}>Discord</b> <a href="https://discordapp.com/users/370123066594033668" className="color-primary" rel="noreferrer" target="_blank">@mazz#0385</a>.
             </p>
