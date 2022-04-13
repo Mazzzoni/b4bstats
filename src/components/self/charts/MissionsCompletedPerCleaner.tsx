@@ -17,6 +17,7 @@ export default function MissionsCompletedPerCleaner() {
   const missionsEasyCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.easy);
   const missionsNormalCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.normal);
   const missionsHardCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.hard);
+  const missionsVeryHardCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.veryhard);
   const missionsPvpCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.pvp);
   const missionsTotalCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.total);
 
@@ -35,6 +36,11 @@ export default function MissionsCompletedPerCleaner() {
       label: t(`difficulties.hard`),
       data: missionsHardCompleted,
       backgroundColor: DifficultyColors[Difficulties.Hard],
+    },
+    {
+      label: t(`difficulties.veryhard`),
+      data: missionsVeryHardCompleted,
+      backgroundColor: DifficultyColors[Difficulties.NoHope],
     },
     {
       label: t(`difficulties.pvp`),

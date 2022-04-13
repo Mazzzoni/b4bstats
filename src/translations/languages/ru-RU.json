@@ -35,12 +35,15 @@
     "hero_5": "Док",
     "hero_6": "Джим",
     "hero_7": "Карли",
-    "hero_8": "Мать"
+    "hero_8": "Мать",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "Рекрут",
     "normal": "Ветеран",
     "hard": "Кошмар",
+    "veryhard": "No Hope",
     "pvp": "Рой"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "Плевунья",
     "stalker": "Охотница",
     "hocker": "Захватчица",
+    "urchin": "Urchin",
     "reeker": "Вонючка",
     "retch": "Изрыгатель",
     "exploder": "Взрывник",
+    "shredder": "Shredder",
     "bruiser": "Вышибала",
     "crusher": "Громила",
-    "tallboy": "Верзила"
+    "tallboy": "Верзила",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "Ближний бой",

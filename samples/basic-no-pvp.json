@@ -109,7 +109,10 @@
           "Snitcher": 49,
           "Squeezer": 163,
           "Tallboy": 220,
-          "Vomiter": 144
+          "Vomiter": 144,
+          "Burner": 3,
+          "Imploder": 2,
+          "Heckboy": 2
         }
       },
       "riddenKilledByWeapon": {
@@ -502,6 +505,12 @@
           "Hero_6": 55,
           "Hero_7": 21,
           "Hero_8": 11,
+          "Hero_9": 3,
+          "manor_d::easy::hero_9": 1,
+          "dungeon_chasm::easy": 1,
+          "dungeon_chasm::easy::hero_9": 1,
+          "Hero_10": 1,
+          "finley_diner_b::easy::hero_10": 1,
           "manor_a::easy": 1,
           "manor_a::easy::hero_3": 1,
           "manor_a::normal": 2,

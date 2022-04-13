@@ -2,7 +2,10 @@ import _ from 'lodash';
 import {
   Cleaners,
   Difficulties,
-  MiscellaneousStatistics, Missions, MissionsCompletedPerCleaner, MissionsCompletedPerDifficulty,
+  MiscellaneousStatistics,
+  Missions,
+  MissionsCompletedPerCleaner,
+  MissionsCompletedPerDifficulty,
   MissionsStatistics,
   Progressions,
   PvpStatistics,
@@ -48,6 +51,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Walker]: {
@@ -55,6 +59,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Holly]: {
@@ -62,6 +67,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Hoffman]: {
@@ -69,6 +75,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Doc]: {
@@ -76,6 +83,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Jim]: {
@@ -83,6 +91,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Karlee]: {
@@ -90,6 +99,7 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
       [Cleaners.Mom]: {
@@ -97,6 +107,23 @@ export default class Statistics
         [Difficulties.Easy]: 0,
         [Difficulties.Normal]: 0,
         [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
+        [Difficulties.Pvp]: 0,
+      },
+      [Cleaners.Heng]: {
+        total: 0,
+        [Difficulties.Easy]: 0,
+        [Difficulties.Normal]: 0,
+        [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
+        [Difficulties.Pvp]: 0,
+      },
+      [Cleaners.Sharice]: {
+        total: 0,
+        [Difficulties.Easy]: 0,
+        [Difficulties.Normal]: 0,
+        [Difficulties.Hard]: 0,
+        [Difficulties.NoHope]: 0,
         [Difficulties.Pvp]: 0,
       },
     },
@@ -104,6 +131,7 @@ export default class Statistics
       [Difficulties.Easy]: 0,
       [Difficulties.Normal]: 0,
       [Difficulties.Hard]: 0,
+      [Difficulties.NoHope]: 0,
       [Difficulties.Pvp]: 0,
     },
     missionsCompletedRaw: {},
@@ -133,14 +161,17 @@ export default class Statistics
       [Riddens.Stinger]: 0,
       [Riddens.Stalker]: 0,
       [Riddens.Hocker]: 0,
+      [Riddens.Urchin]: 0,
 
       [Riddens.Reeker]: 0,
       [Riddens.Retch]: 0,
       [Riddens.Exploder]: 0,
+      [Riddens.Shredder]: 0,
 
       [Riddens.Bruiser]: 0,
       [Riddens.Crusher]: 0,
       [Riddens.Tallboy]: 0,
+      [Riddens.Ripper]: 0,
     },
   };
 
@@ -234,6 +265,8 @@ export default class Statistics
         [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_6'),
         [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_7'),
         [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_8'),
+        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_9'),
+        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_10'),
       },
       missionsCompletedRaw: _.get(rawMissions, 'keys', {}),
     };
@@ -252,14 +285,17 @@ export default class Statistics
         [Riddens.Stinger]: _.get(rawRiddenKilled, 'BunnyKick', 0),
         [Riddens.Stalker]: _.get(rawRiddenKilled, 'Chaser', 0),
         [Riddens.Hocker]: _.get(rawRiddenKilled, 'Chucker', 0),
+        [Riddens.Urchin]: _.get(rawRiddenKilled, 'Burner', 0),
 
         [Riddens.Reeker]: _.get(rawRiddenKilled, 'Bloater', 0),
         [Riddens.Retch]: _.get(rawRiddenKilled, 'Vomiter', 0),
         [Riddens.Exploder]: _.get(rawRiddenKilled, 'Exploder', 0),
+        [Riddens.Shredder]: _.get(rawRiddenKilled, 'Imploder', 0),
 
         [Riddens.Bruiser]: _.get(rawRiddenKilled, 'Smasher', 0),
         [Riddens.Crusher]: _.get(rawRiddenKilled, 'Squeezer', 0),
         [Riddens.Tallboy]: _.get(rawRiddenKilled, 'Tallboy', 0),
+        [Riddens.Ripper]: _.get(rawRiddenKilled, 'Heckboy', 0),
       },
       riddenCommonKilled: _.get(data, 'riddenKilledByType.keys.Common', 0),
       riddenSleeperKilled: _.get(data, 'riddenKilledByType.keys.Sleeper', 0),
@@ -388,6 +424,7 @@ export default class Statistics
       [Difficulties.Easy]: 0,
       [Difficulties.Normal]: 0,
       [Difficulties.Hard]: 0,
+      [Difficulties.NoHope]: 0,
       [Difficulties.Pvp]: 0,
     };
 
@@ -403,6 +440,8 @@ export default class Statistics
         missionsCompleteByDifficulties[Difficulties.Easy] += value;
       } else if (mission.includes('normal')) {
         missionsCompleteByDifficulties[Difficulties.Normal] += value;
+      } else if (mission.includes('veryhard')) {
+        missionsCompleteByDifficulties[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
         missionsCompleteByDifficulties[Difficulties.Hard] += value;
       } else if (mission.includes('pvp')) {
@@ -420,6 +459,7 @@ export default class Statistics
       [Difficulties.Easy]: 0,
       [Difficulties.Normal]: 0,
       [Difficulties.Hard]: 0,
+      [Difficulties.NoHope]: 0,
       [Difficulties.Pvp]: 0,
     };
 
@@ -435,6 +475,8 @@ export default class Statistics
         missionsCompleteByCleaner[Difficulties.Easy] += value;
       } else if (mission.includes('normal')) {
         missionsCompleteByCleaner[Difficulties.Normal] += value;
+      } else if (mission.includes('veryhard')) {
+        missionsCompleteByCleaner[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
         missionsCompleteByCleaner[Difficulties.Hard] += value;
       } else if (mission.includes('pvp')) {

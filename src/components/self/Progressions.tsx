@@ -64,6 +64,10 @@ function DifficultySection(progressions: StatisticsProgressions, cleaner: Cleane
     return null;
   }
 
+  if (!filters.showVeryHard && difficulty === Difficulties.NoHope) {
+    return null;
+  }
+
   if (!filters.showPvp && difficulty === Difficulties.Pvp) {
     return null;
   }
@@ -186,7 +190,7 @@ export default function Progressions() {
   const theme = useMantineTheme();
   const {t} = useTranslation();
 
-  if (!filters.showEasy && !filters.showNormal && !filters.showHard && !filters.showPvp) {
+  if (!filters.showEasy && !filters.showNormal && !filters.showHard && !filters.showVeryHard && !filters.showPvp) {
     return null;
   }
 

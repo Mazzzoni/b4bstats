@@ -35,12 +35,15 @@
     "hero_5": "醫生",
     "hero_6": "吉姆",
     "hero_7": "卡麗",
-    "hero_8": "老媽"
+    "hero_8": "老媽",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "新兵",
     "normal": "老兵",
     "hard": "惡夢",
+    "veryhard": "No Hope",
     "pvp": "蟲群"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "釘刺者",
     "stalker": "追逐者",
     "hocker": "投擲者",
+    "urchin": "Urchin",
     "reeker": "臭氣者",
     "retch": "嘔吐者",
     "exploder": "爆炸者",
+    "shredder": "Shredder",
     "bruiser": "粉碎者",
     "crusher": "壓榨者",
-    "tallboy": "高個頭"
+    "tallboy": "高個頭",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "近戰",

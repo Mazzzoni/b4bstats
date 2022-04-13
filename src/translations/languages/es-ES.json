@@ -35,12 +35,15 @@
     "hero_5": "Doc",
     "hero_6": "Jim",
     "hero_7": "Karlee",
-    "hero_8": "Mom"
+    "hero_8": "Mom",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "Recluta",
     "normal": "Veterano",
     "hard": "Pesadilla",
+    "veryhard": "No Hope",
     "pvp": "Enjambre"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "Punzadora",
     "stalker": "Acechadora",
     "hocker": "Escupidora",
+    "urchin": "Urchin",
     "reeker": "Apestoso",
     "retch": "Vomitador",
     "exploder": "Explosivo",
+    "shredder": "Shredder",
     "bruiser": "Matón",
     "crusher": "Machacador",
-    "tallboy": "Grandulón"
+    "tallboy": "Grandulón",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "Cuerpo a Cuerpo",

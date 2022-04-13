@@ -106,6 +106,8 @@ export enum Cleaners
   Jim = 'hero_6',
   Karlee = 'hero_7',
   Mom = 'hero_8',
+  Heng = 'hero_9',
+  Sharice = 'hero_10',
 }
 
 export enum Difficulties
@@ -113,6 +115,7 @@ export enum Difficulties
   Easy = 'easy',
   Normal = 'normal',
   Hard = 'hard',
+  NoHope = 'veryhard',
   Pvp = 'pvp',
 }
 
@@ -126,14 +129,17 @@ export enum Riddens
   Stinger,
   Stalker,
   Hocker,
+  Urchin,
 
   Reeker,
   Retch,
   Exploder,
+  Shredder,
 
   Bruiser,
   Crusher,
   Tallboy,
+  Ripper,
 }
 
 export enum WeaponTypes
@@ -265,6 +271,7 @@ export type MissionsCompletedPerCleaner = {
   [Difficulties.Easy]: number
   [Difficulties.Normal]: number
   [Difficulties.Hard]: number
+  [Difficulties.NoHope]: number
   [Difficulties.Pvp]: number
 }
 
@@ -272,6 +279,7 @@ export type MissionsCompletedPerDifficulty = {
   [Difficulties.Easy]: number
   [Difficulties.Normal]: number
   [Difficulties.Hard]: number
+  [Difficulties.NoHope]: number
   [Difficulties.Pvp]: number
 }
 

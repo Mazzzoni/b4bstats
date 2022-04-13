@@ -19,20 +19,24 @@ export const RiddenColors: Record<Riddens, string> = {
   [Riddens.Stinger]: '#97ff93',
   [Riddens.Stalker]: '#97ff93',
   [Riddens.Hocker]: '#97ff93',
+  [Riddens.Urchin]: '#97ff93',
 
   [Riddens.Reeker]: '#eea713',
   [Riddens.Retch]: '#eea713',
   [Riddens.Exploder]: '#eea713',
+  [Riddens.Shredder]: '#eea713',
 
   [Riddens.Bruiser]: '#bb0000',
   [Riddens.Crusher]: '#bb0000',
   [Riddens.Tallboy]: '#bb0000',
+  [Riddens.Ripper]: '#bb0000',
 };
 
 export const DifficultyColors: Record<Difficulties, string> = {
   [Difficulties.Easy]: '#165b00',
   [Difficulties.Normal]: '#b47c00',
   [Difficulties.Hard]: '#bb0000',
+  [Difficulties.NoHope]: '#8000b5',
   [Difficulties.Pvp]: '#102d7a',
 };
 

@@ -35,12 +35,15 @@
     "hero_5": "Doc",
     "hero_6": "Jim",
     "hero_7": "Karlee",
-    "hero_8": "Mom"
+    "hero_8": "Mom",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "Recruit",
     "normal": "Veteran",
     "hard": "Nightmare",
+    "veryhard": "No Hope",
     "pvp": "Swarm"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "Stinger",
     "stalker": "Stalker",
     "hocker": "Hocker",
+    "urchin": "Urchin",
     "reeker": "Reeker",
     "retch": "Retch",
     "exploder": "Exploder",
+    "shredder": "Shredder",
     "bruiser": "Bruiser",
     "crusher": "Crusher",
-    "tallboy": "Tallboy"
+    "tallboy": "Tallboy",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "Melee",
