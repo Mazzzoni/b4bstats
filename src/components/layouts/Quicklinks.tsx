@@ -77,6 +77,15 @@ export default function Quicklinks() {
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
+          label={t('difficulties.veryhard')}
+          defaultChecked={difficultyFilters.showVeryHard}
+          onChange={(e) => {
+            setDifficultyFilters({...difficultyFilters, ...{showVeryHard: e.target.checked}});
+          }}
+        />
+
+        <Checkbox
+          className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.pvp')}
           defaultChecked={difficultyFilters.showPvp}
           onChange={(e) => {

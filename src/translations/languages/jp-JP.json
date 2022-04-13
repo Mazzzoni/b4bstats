@@ -35,12 +35,15 @@
     "hero_5": "ドク",
     "hero_6": "ジム",
     "hero_7": "カーリー",
-    "hero_8": "マム"
+    "hero_8": "マム",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "ベギナー",
     "normal": "ベテラン",
     "hard": "ナイトメア",
+    "veryhard": "No Hope",
     "pvp": "スワーム"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "スティンガー",
     "stalker": "ストーク",
     "hocker": "ホッカー",
+    "urchin": "Urchin",
     "reeker": "リーカー",
     "retch": "レッチ",
     "exploder": "エクスプローダー",
+    "shredder": "Shredder",
     "bruiser": "ブルーザー",
     "crusher": "クラッシャー",
-    "tallboy": "トールボーイ"
+    "tallboy": "トールボーイ",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "近接武器",

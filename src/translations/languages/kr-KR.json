@@ -35,12 +35,15 @@
     "hero_5": "도크",
     "hero_6": "짐",
     "hero_7": "칼리",
-    "hero_8": "맘"
+    "hero_8": "맘",
+    "hero_9": "Heng",
+    "hero_10": "Sharice"
   },
   "difficulties": {
     "easy": "신병",
     "normal": "베테랑",
     "hard": "나이트메어",
+    "veryhard": "No Hope",
     "pvp": "스웜"
   },
   "acts": {
@@ -131,12 +134,15 @@
     "stinger": "스팅어",
     "stalker": "스토커",
     "hocker": "호커",
+    "urchin": "Urchin",
     "reeker": "리커",
     "retch": "렛치",
     "exploder": "익스플로더",
+    "shredder": "Shredder",
     "bruiser": "브루저",
     "crusher": "크러셔",
-    "tallboy": "톨보이"
+    "tallboy": "톨보이",
+    "ripper": "Ripper"
   },
   "weapons_types": {
     "MELEE": "근접무기(Melee)",

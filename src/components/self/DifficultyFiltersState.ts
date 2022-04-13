@@ -7,6 +7,7 @@ export type DifficultyFilters = {
   showEasy: boolean,
   showNormal: boolean,
   showHard: boolean,
+  showVeryHard: boolean,
   showPvp: boolean
 }
 
@@ -16,6 +17,7 @@ const state = atom<DifficultyFilters>({
     showEasy: false,
     showNormal: false,
     showHard: true,
+    showVeryHard: true,
     showPvp: false,
   },
   effects_UNSTABLE: [persistAtom],
