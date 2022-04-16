@@ -17,8 +17,8 @@ export default function MainLayout({children, title}: Props) {
       navbar={<Navbar
         padding="xs"
         height="100vh"
-        className="pt-[79px]"
-        width={{base: 220}}
+        className="pt-[79px] overflow-y-auto"
+        width={{base: 225}}
       />}
       header={<Header
         height="auto"
