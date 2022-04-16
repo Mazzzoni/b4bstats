@@ -206,6 +206,7 @@
       "mutations_killed": "特別感染者を倒した数: <b>{{count}}</b>",
       "sleepers_killed": "スリーパーを倒した数: <b>{{count}}</b>",
       "total_ridden_killed": "倒されたリドゥンの合計数: <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Ridden killed with Skull Totem: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "ボブの腕でリドゥンを倒した数: <b>{{count}}</b>",
       "ridden_killed_fist": "拳でリドゥンを倒した数: <b>{{count}}</b>",
       "most_used_weapon_type": "最も使用された武器の種類: <b>{{type}}</b>",

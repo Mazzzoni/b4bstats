@@ -159,15 +159,18 @@ export enum Weapons
   Bat,
   BobArm,
   Fist,
+  SkullTotem,
   Hatchet,
   Machete,
   Knife,
+  Tenderizer,
 
   M4Carbine,
   AK47,
   M16,
   Scar,
   RanchRifle,
+  Pestilence,
 
   M1911,
   BerettaM9,
@@ -176,25 +179,30 @@ export enum Weapons
   Glock23,
   Glock23Burst,
   DesertEagle,
+  Embezzler,
 
   Express870,
   AA12,
   TheBelgian,
   TAC14,
   Super90,
+  Damnation,
 
   MP5,
   UZI,
   TEC9,
   UMP45,
   Vector,
+  Prototype378,
 
   M249,
   RPK,
+  Nemesis,
 
   M1A,
   Phoenix350L,
   BarrettM95,
+  Witness,
 
   // I don't know what these correspond to (explosions ?)
   None,
@@ -206,9 +214,11 @@ export const WeaponsMelee: Weapons[] = [
   Weapons.Bat,
   Weapons.BobArm,
   Weapons.Fist,
+  Weapons.SkullTotem,
   Weapons.Hatchet,
   Weapons.Machete,
   Weapons.Knife,
+  Weapons.Tenderizer,
 ];
 
 export const WeaponsAssaultRifle: Weapons[] = [
@@ -217,6 +227,7 @@ export const WeaponsAssaultRifle: Weapons[] = [
   Weapons.M16,
   Weapons.Scar,
   Weapons.RanchRifle,
+  Weapons.Pestilence,
 ];
 
 export const WeaponsHandgun: Weapons[] = [
@@ -227,6 +238,7 @@ export const WeaponsHandgun: Weapons[] = [
   Weapons.Glock23,
   Weapons.Glock23Burst,
   Weapons.DesertEagle,
+  Weapons.Embezzler,
 ];
 
 export const WeaponsShotgun: Weapons[] = [
@@ -235,6 +247,7 @@ export const WeaponsShotgun: Weapons[] = [
   Weapons.TheBelgian,
   Weapons.TAC14,
   Weapons.Super90,
+  Weapons.Damnation,
 ];
 
 export const WeaponsSMG: Weapons[] = [
@@ -243,17 +256,20 @@ export const WeaponsSMG: Weapons[] = [
   Weapons.TEC9,
   Weapons.UMP45,
   Weapons.Vector,
+  Weapons.Prototype378,
 ];
 
 export const WeaponsLMG: Weapons[] = [
   Weapons.M249,
   Weapons.RPK,
+  Weapons.Nemesis,
 ];
 
 export const WeaponsSniper: Weapons[] = [
   Weapons.M1A,
   Weapons.Phoenix350L,
   Weapons.BarrettM95,
+  Weapons.Witness,
 ];
 
 export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {

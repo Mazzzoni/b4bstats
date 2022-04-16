@@ -50,12 +50,16 @@ export function weaponToString(weapon: Weapons): string
       return 'bobarm';
     case Weapons.Fist:
       return 'Fist';
+    case Weapons.SkullTotem:
+      return 'SkullTotem';
     case Weapons.Hatchet:
       return 'Hatchet';
     case Weapons.Machete:
       return 'Machete';
     case Weapons.Knife:
       return 'Knife';
+    case Weapons.Tenderizer:
+      return 'FireAxeCorrupted';
 
     case Weapons.M4Carbine:
       return 'AR01';
@@ -67,6 +71,8 @@ export function weaponToString(weapon: Weapons): string
       return 'AR05';
     case Weapons.RanchRifle:
       return 'AR06';
+    case Weapons.Pestilence:
+      return 'AR03Corrupted';
 
     case Weapons.M1911:
       return 'HG01';
@@ -82,6 +88,8 @@ export function weaponToString(weapon: Weapons): string
       return 'hg04b';
     case Weapons.DesertEagle:
       return 'HG05';
+    case Weapons.Embezzler:
+      return 'HG05Corrupted';
 
     case Weapons.Express870:
       return 'SG01';
@@ -93,6 +101,8 @@ export function weaponToString(weapon: Weapons): string
       return 'SG04';
     case Weapons.Super90:
       return 'SG05';
+    case Weapons.Damnation:
+      return 'SG02Corrupted';
 
     case Weapons.MP5:
       return 'SMG01';
@@ -104,11 +114,15 @@ export function weaponToString(weapon: Weapons): string
       return 'SMG04';
     case Weapons.Vector:
       return 'SMG05';
+    case Weapons.Prototype378:
+      return 'SMG04Corrupted';
 
     case Weapons.M249:
       return 'LMG01';
     case Weapons.RPK:
       return 'LMG02';
+    case Weapons.Nemesis:
+      return 'LMG02Corrupted';
 
     case Weapons.M1A:
       return 'AR03';
@@ -116,6 +130,8 @@ export function weaponToString(weapon: Weapons): string
       return 'Sni01';
     case Weapons.BarrettM95:
       return 'Sni02';
+    case Weapons.Witness:
+      return 'Sni02Corrupted';
   }
 
   return 'unknown';

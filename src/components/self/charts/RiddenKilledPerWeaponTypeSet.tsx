@@ -71,6 +71,7 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
   if (type === WeaponTypes.Melee) {
     total += statistics.weaponsKills[Weapons.Fist];
     total += statistics.weaponsKills[Weapons.BobArm];
+    total += statistics.weaponsKills[Weapons.SkullTotem];
   }
 
   return (
@@ -94,6 +95,16 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
             <Trans
               i18nKey="graphs.labels.ridden_killed_bob_arm"
               values={{count: localeFormat(statistics.weaponsKills[Weapons.BobArm])}}
+              components={{b: <b/>}}
+            />
+          </Badge>
+
+          <br/>
+
+          <Badge>
+            <Trans
+              i18nKey="graphs.labels.ridden_killed_skull_totem"
+              values={{count: localeFormat(statistics.weaponsKills[Weapons.SkullTotem])}}
               components={{b: <b/>}}
             />
           </Badge>

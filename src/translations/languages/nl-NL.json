@@ -206,6 +206,7 @@
       "mutations_killed": "Mutations gedood: <b>{{count}}</b>",
       "sleepers_killed": "Sleepers gedood: <b>{{count}}</b>",
       "total_ridden_killed": "Totaal aantal Ridden gedood: <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Ridden killed with Skull Totem: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "Ridden gedood met Bob's arm: <b>{{count}}</b>",
       "ridden_killed_fist": "Ridden gedood met de vuist: <b>{{count}}</b>",
       "most_used_weapon_type": "Meest gebruikte wapen type: <b>{{type}}</b>",
