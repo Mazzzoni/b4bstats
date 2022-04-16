@@ -206,6 +206,7 @@
       "mutations_killed": "Mutations tuées: <b>{{count}}</b>",
       "sleepers_killed": "Dormeurs tués: <b>{{count}}</b>",
       "total_ridden_killed": "Total zombies tués: <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Zombies tuées avec le Totem d'os: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "Zombies tués avec le bras de Bob: <b>{{count}}</b>",
       "ridden_killed_fist": "Zombies tués à coups de poing: <b>{{count}}</b>",
       "most_used_weapon_type": "Type d'arme le plus utilisé: <b>{{type}}</b>",

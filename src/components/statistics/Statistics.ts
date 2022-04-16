@@ -10,10 +10,10 @@ import {
   Progressions,
   PvpStatistics,
   RiddenKilled,
-  Riddens,
-  Weapons,
   WeaponsKills,
   WeaponsSorted,
+  Riddens,
+  Weapons,
   WeaponTypes,
 } from '@components/statistics/types';
 import { isSkippableWeaponInOverall } from '@utils/charts';
@@ -180,15 +180,18 @@ export default class Statistics
     [Weapons.Bat]: 0,
     [Weapons.BobArm]: 0,
     [Weapons.Fist]: 0,
+    [Weapons.SkullTotem]: 0,
     [Weapons.Hatchet]: 0,
     [Weapons.Machete]: 0,
     [Weapons.Knife]: 0,
+    [Weapons.Tenderizer]: 0,
 
     [Weapons.M4Carbine]: 0,
     [Weapons.AK47]: 0,
     [Weapons.M16]: 0,
     [Weapons.Scar]: 0,
     [Weapons.RanchRifle]: 0,
+    [Weapons.Pestilence]: 0,
 
     [Weapons.M1911]: 0,
     [Weapons.BerettaM9]: 0,
@@ -197,25 +200,30 @@ export default class Statistics
     [Weapons.Glock23]: 0,
     [Weapons.Glock23Burst]: 0,
     [Weapons.DesertEagle]: 0,
+    [Weapons.Embezzler]: 0,
 
     [Weapons.Express870]: 0,
     [Weapons.AA12]: 0,
     [Weapons.TheBelgian]: 0,
     [Weapons.TAC14]: 0,
     [Weapons.Super90]: 0,
+    [Weapons.Damnation]: 0,
 
     [Weapons.MP5]: 0,
     [Weapons.UZI]: 0,
     [Weapons.TEC9]: 0,
     [Weapons.UMP45]: 0,
     [Weapons.Vector]: 0,
+    [Weapons.Prototype378]: 0,
 
     [Weapons.M249]: 0,
     [Weapons.RPK]: 0,
+    [Weapons.Nemesis]: 0,
 
     [Weapons.M1A]: 0,
     [Weapons.Phoenix350L]: 0,
     [Weapons.BarrettM95]: 0,
+    [Weapons.Witness]: 0,
 
     [Weapons.None]: 0,
     [Weapons.Unarmed]: 0,
@@ -311,15 +319,18 @@ export default class Statistics
       [Weapons.Bat]: _.get(rawWeaponsKills, 'Bat', 0),
       [Weapons.BobArm]: _.get(rawWeaponsKills, 'bobarm', 0),
       [Weapons.Fist]: _.get(rawWeaponsKills, 'Fist', 0),
+      [Weapons.SkullTotem]: _.get(rawWeaponsKills, 'SkullTotem1', 0) + _.get(rawWeaponsKills, 'SkullTotem2', 0) + _.get(rawWeaponsKills, 'SkullTotem3', 0),
       [Weapons.Hatchet]: _.get(rawWeaponsKills, 'Hatchet', 0),
       [Weapons.Machete]: _.get(rawWeaponsKills, 'Machete', 0),
       [Weapons.Knife]: _.get(rawWeaponsKills, 'Knife', 0),
+      [Weapons.Tenderizer]: _.get(rawWeaponsKills, 'FireAxeCorrupted', 0),
 
       [Weapons.M4Carbine]: _.get(rawWeaponsKills, 'AR01', 0),
       [Weapons.AK47]: _.get(rawWeaponsKills, 'AR02', 0),
       [Weapons.M16]: _.get(rawWeaponsKills, 'AR04', 0),
       [Weapons.Scar]: _.get(rawWeaponsKills, 'AR05', 0),
       [Weapons.RanchRifle]: _.get(rawWeaponsKills, 'AR06', 0),
+      [Weapons.Pestilence]: _.get(rawWeaponsKills, 'AR03Corrupted', 0),
 
       [Weapons.M1911]: _.get(rawWeaponsKills, 'HG01', 0),
       [Weapons.BerettaM9]: _.get(rawWeaponsKills, 'HG02', 0),
@@ -328,25 +339,30 @@ export default class Statistics
       [Weapons.Glock23]: _.get(rawWeaponsKills, 'HG04', 0),
       [Weapons.Glock23Burst]: _.get(rawWeaponsKills, 'hg04b', 0),
       [Weapons.DesertEagle]: _.get(rawWeaponsKills, 'HG05', 0),
+      [Weapons.Embezzler]: _.get(rawWeaponsKills, 'HG05Corrupted', 0),
 
       [Weapons.Express870]: _.get(rawWeaponsKills, 'SG01', 0),
       [Weapons.AA12]: _.get(rawWeaponsKills, 'SG02', 0),
       [Weapons.TheBelgian]: _.get(rawWeaponsKills, 'SG03', 0),
       [Weapons.TAC14]: _.get(rawWeaponsKills, 'SG04', 0),
       [Weapons.Super90]: _.get(rawWeaponsKills, 'SG05', 0),
+      [Weapons.Damnation]: _.get(rawWeaponsKills, 'SG02Corrupted', 0),
 
       [Weapons.MP5]: _.get(rawWeaponsKills, 'SMG01', 0),
       [Weapons.UZI]: _.get(rawWeaponsKills, 'SMG02', 0),
       [Weapons.TEC9]: _.get(rawWeaponsKills, 'SMG03', 0),
       [Weapons.UMP45]: _.get(rawWeaponsKills, 'SMG04', 0),
       [Weapons.Vector]: _.get(rawWeaponsKills, 'SMG05', 0),
+      [Weapons.Prototype378]: _.get(rawWeaponsKills, 'SMG04Corrupted', 0),
 
       [Weapons.M249]: _.get(rawWeaponsKills, 'LMG01', 0),
       [Weapons.RPK]: _.get(rawWeaponsKills, 'LMG02', 0),
+      [Weapons.Nemesis]: _.get(rawWeaponsKills, 'LMG02Corrupted', 0),
 
       [Weapons.M1A]: _.get(rawWeaponsKills, 'AR03', 0),
       [Weapons.Phoenix350L]: _.get(rawWeaponsKills, 'Sni01', 0),
       [Weapons.BarrettM95]: _.get(rawWeaponsKills, 'Sni02', 0),
+      [Weapons.Witness]: _.get(rawWeaponsKills, 'Sni02Corrupted', 0),
 
       [Weapons.None]: _.get(rawWeaponsKills, 'None', 0),
       [Weapons.Unarmed]: _.get(rawWeaponsKills, 'Unarmed', 0),
@@ -378,7 +394,8 @@ export default class Statistics
     return WeaponsSorted[type as WeaponTypes];
   }
 
-  public static getKillCountByWeaponType(stats: Statistics, type: WeaponTypes): number {
+  public static getKillCountByWeaponType(stats: Statistics, type: WeaponTypes): number
+  {
     const weapons = Statistics.getWeaponsFromWeaponType(type);
     let total = 0;
 

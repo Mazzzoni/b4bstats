@@ -206,6 +206,7 @@
       "mutations_killed": "Mutaciones asesinadas: <b>{{count}}</b>",
       "sleepers_killed": "Dormilones asesinados: <b>{{count}}</b>",
       "total_ridden_killed": "Total de Infectados asesinados: <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Ridden killed with Skull Totem: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "Infectados asesinados con el Brazo de Bob: <b>{{count}}</b>",
       "ridden_killed_fist": "Infectados asesinados a Puño: <b>{{count}}</b>",
       "most_used_weapon_type": "Tipo de Arma más Usada: <b>{{type}}</b>",

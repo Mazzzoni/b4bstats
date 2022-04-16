@@ -206,6 +206,7 @@
       "mutations_killed": "突變者擊殺數： <b>{{count}}</b>",
       "sleepers_killed": "沉睡者擊殺數： <b>{{count}}</b>",
       "total_ridden_killed": "感染者擊殺總數： <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Ridden killed with Skull Totem: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "鮑勃的手臂擊殺數： <b>{{count}}</b>",
       "ridden_killed_fist": "拳頭擊殺數： <b>{{count}}</b>",
       "most_used_weapon_type": "最常使用武器種類： <b>{{type}}</b>",

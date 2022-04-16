@@ -206,6 +206,7 @@
       "mutations_killed": "돌연변이를 처치한 수: <b>{{count}}</b>",
       "sleepers_killed": "슬리퍼를 처치한 수: <b>{{count}}</b>",
       "total_ridden_killed": "모든 리든을 처치한 수: <b>{{count}}</b>",
+      "ridden_killed_skull_totem": "Ridden killed with Skull Totem: <b>{{count}}</b>",
       "ridden_killed_bob_arm": "밥의 팔로 처치한 리든 수: <b>{{count}}</b>",
       "ridden_killed_fist": "주먹으로 처치한 리든 수: <b>{{count}}</b>",
       "most_used_weapon_type": "가장 많이 사용한 무기 종류: <b>{{type}}</b>",

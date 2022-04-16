@@ -25,5 +25,7 @@ export function tooltipCallbackLabelMissions(context: TooltipItem<ChartType>, ov
 }
 
 export function isSkippableWeaponInOverall(weapon: Weapons): boolean {
-  return weapon === Weapons.Fist || weapon === Weapons.BobArm;
+  return weapon === Weapons.Fist
+    || weapon === Weapons.BobArm
+    || weapon === Weapons.SkullTotem;
 }
