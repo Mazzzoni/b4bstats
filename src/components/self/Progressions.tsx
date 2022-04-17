@@ -219,7 +219,7 @@ export default function Progressions() {
               <div className="sticky top-[80px] flex flex-col items-center">
                 <img
                   className="w-48 inline"
-                  src={`/images/${getCleanerNameById(cleanerId).toLowerCase()}.webp`}
+                  src={`/images/cleaners/${getCleanerNameById(cleanerId).toLowerCase()}.webp`}
                   alt={getCleanerNameById(cleanerId)}
                 />
 

@@ -104,7 +104,7 @@ export default function SelfQuicklinks() {
           >
             <img
               className="w-11 inline"
-              src={`/images/${getCleanerNameById(cleanerId).toLowerCase()}.webp`}
+              src={`/images/cleaners/${getCleanerNameById(cleanerId).toLowerCase()}.webp`}
               alt={getCleanerNameById(cleanerId).toLowerCase()}
             />
 
