@@ -7,7 +7,7 @@ import { Cleaners, Difficulties, Missions, Progressions as StatisticsProgression
 import Statistics from '@components/statistics/Statistics';
 import { CheckSquare, XSquare } from 'react-feather';
 import { Divider, useMantineTheme } from '@mantine/core';
-import ScrollSpy from "react-ui-scrollspy";
+import ScrollSpy from 'react-ui-scrollspy';
 import { createRef } from 'react';
 import ScreenshotTaker from '@components/common/ScreenshotTaker';
 
@@ -172,6 +172,17 @@ function DifficultySection(progressions: StatisticsProgressions, cleaner: Cleane
             <div className="mt-3">
               <strong>{t('segments.4')}</strong>
               {DisplayMission(progressions, cleaner, difficulty, Missions.TheAbomination, t, statistics)}
+            </div>
+
+            <div className="mt-3">
+              <strong>{t('segments.hives')}</strong>
+              {DisplayMission(progressions, cleaner, difficulty, Missions.TheCut, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.BloodStream, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.CausticCesspool, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.SunkenPassage, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.BroodLair, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.Below300, t, statistics)}
+              {DisplayMission(progressions, cleaner, difficulty, Missions.TheNursery, t, statistics)}
             </div>
           </div>
         )}

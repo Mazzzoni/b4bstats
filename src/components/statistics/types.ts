@@ -46,6 +46,15 @@ export enum Missions
 
   // Act 4
   TheAbomination = 'titan_a',
+
+  // Hives
+  CausticCesspool = 'dungeon_trench',
+  BloodStream = 'dungeon_river',
+  TheCut = 'dungeon_chasm',
+  SunkenPassage = 'dungeon_chamber',
+  TheNursery = 'dungeon_arena',
+  BroodLair = 'dungeon_infestation',
+  Below300 = 'dungeon_mines',
 }
 
 export const SwarmMissions: Missions[] = [
