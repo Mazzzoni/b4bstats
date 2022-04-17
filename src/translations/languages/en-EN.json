@@ -170,7 +170,7 @@
     "Machete": "Machete",
     "AR01": "M4 Carbine",
     "AR02": "AK47",
-    "AR03Corrupted": "Pestilence",
+    "AR01Corrupted": "Pestilence",
     "AR04": "M16",
     "AR05": "Scar",
     "AR06": "Ranch Rifle",
@@ -200,7 +200,7 @@
     "AR03": "M1A",
     "Sni01": "Phoenix 350L",
     "Sni02": "Barrett M95",
-    "Sni02Corrupted": "Witness"
+    "AR03Corrupted": "Witness"
   },
   "graphs": {
     "title": "Graphs",

@@ -330,7 +330,7 @@ export default class Statistics
       [Weapons.M16]: _.get(rawWeaponsKills, 'AR04', 0),
       [Weapons.Scar]: _.get(rawWeaponsKills, 'AR05', 0),
       [Weapons.RanchRifle]: _.get(rawWeaponsKills, 'AR06', 0),
-      [Weapons.Pestilence]: _.get(rawWeaponsKills, 'AR03Corrupted', 0),
+      [Weapons.Pestilence]: _.get(rawWeaponsKills, 'AR01Corrupted', 0),
 
       [Weapons.M1911]: _.get(rawWeaponsKills, 'HG01', 0),
       [Weapons.BerettaM9]: _.get(rawWeaponsKills, 'HG02', 0),
@@ -362,7 +362,7 @@ export default class Statistics
       [Weapons.M1A]: _.get(rawWeaponsKills, 'AR03', 0),
       [Weapons.Phoenix350L]: _.get(rawWeaponsKills, 'Sni01', 0),
       [Weapons.BarrettM95]: _.get(rawWeaponsKills, 'Sni02', 0),
-      [Weapons.Witness]: _.get(rawWeaponsKills, 'Sni02Corrupted', 0),
+      [Weapons.Witness]: _.get(rawWeaponsKills, 'AR03Corrupted', 0),
 
       [Weapons.None]: _.get(rawWeaponsKills, 'None', 0),
       [Weapons.Unarmed]: _.get(rawWeaponsKills, 'Unarmed', 0),

@@ -72,7 +72,7 @@ export function weaponToString(weapon: Weapons): string
     case Weapons.RanchRifle:
       return 'AR06';
     case Weapons.Pestilence:
-      return 'AR03Corrupted';
+      return 'AR01Corrupted';
 
     case Weapons.M1911:
       return 'HG01';
@@ -131,7 +131,7 @@ export function weaponToString(weapon: Weapons): string
     case Weapons.BarrettM95:
       return 'Sni02';
     case Weapons.Witness:
-      return 'Sni02Corrupted';
+      return 'AR03Corrupted';
   }
 
   return 'unknown';
