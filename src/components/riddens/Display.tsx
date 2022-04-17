@@ -1,0 +1,55 @@
+import { useRecoilValue } from 'recoil';
+import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';
+import { useTranslation } from 'react-i18next';
+import ReactMarkdown from 'react-markdown';
+import { RiddenProps, RiddenDefinition } from '@components/riddens/RiddenProps';
+import RiddensCategory from '@components/riddens/RiddensCategory';
+import { Chart } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+
+type Props = RiddenProps
+
+export default function Display(props: Props) {
+  const selectedDifficulty = useRecoilValue(SelectedDifficultyState);
+  const {t} = useTranslation();
+
+  // Configure defaults options of charts
+  Chart.defaults.color = '#fff';
+  Chart.defaults.plugins.legend.display = false;
+  Chart.defaults.plugins.tooltip.displayColors = false;
+
+  // Register plugins globally
+  Chart.register(ChartDataLabels);
+
+  const sortedRiddens: Record<RiddenDefinition['category'], RiddenDefinition[]> = {
+    Common: [],
+    Stinger: [],
+    Reeker: [],
+    Tallboy: [],
+    Special: [],
+    Boss: [],
+  };
+
+  // Order each ridden in their own category
+  for (const ridden of props.riddens[selectedDifficulty]) {
+    sortedRiddens[ridden.category].push(ridden);
+  }
+
+  return (
+    <div>
+      <h2 className="text-3xl font-bold">{t(`difficulties.${selectedDifficulty}`)}</h2>
+
+      <div className="mt-3 riddens-note">
+        <ReactMarkdown>{props.notes[selectedDifficulty]}</ReactMarkdown>
+      </div>
+
+      <div className="mt-5">
+        {Object.keys(sortedRiddens).map((category) => (
+          <div key={category}>
+            <RiddensCategory categoryName={category} riddens={sortedRiddens[category as RiddenDefinition['category']]}/>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
