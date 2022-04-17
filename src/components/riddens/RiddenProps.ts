@@ -6,7 +6,7 @@ type WeakspotZone = {
 
 export type RiddenDefinition = {
   name: string
-  category: 'Common' | 'Stinger' | 'Reeker' | 'Tallboy' | 'Special' | 'Boss'
+  category: 'Commons' | 'Stingers' | 'Reekers' | 'Tallboys' | 'Specials' | 'Bosses'
   image: string
   health: number | { [key: string]: number }
   weakspot_multiplier?: number

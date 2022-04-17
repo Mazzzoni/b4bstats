@@ -22,12 +22,12 @@ export default function Display(props: Props) {
   Chart.register(ChartDataLabels);
 
   const sortedRiddens: Record<RiddenDefinition['category'], RiddenDefinition[]> = {
-    Common: [],
-    Stinger: [],
-    Reeker: [],
-    Tallboy: [],
-    Special: [],
-    Boss: [],
+    Commons: [],
+    Stingers: [],
+    Reekers: [],
+    Tallboys: [],
+    Specials: [],
+    Bosses: [],
   };
 
   // Order each ridden in their own category
@@ -43,7 +43,7 @@ export default function Display(props: Props) {
         <ReactMarkdown>{props.notes[selectedDifficulty]}</ReactMarkdown>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 riddens">
         {Object.keys(sortedRiddens).map((category) => (
           <div key={category}>
             <RiddensCategory categoryName={category} riddens={sortedRiddens[category as RiddenDefinition['category']]}/>

@@ -10,7 +10,6 @@ const Page: NextPage<RiddenProps> = (props) => {
   return (
     <MainLayout title="Riddens">
       <Head>
-        <title>Riddens</title>
         <meta name="description" content="Riddens statistics and information"/>
       </Head>
 

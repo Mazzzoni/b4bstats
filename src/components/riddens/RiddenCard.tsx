@@ -1,5 +1,5 @@
 import { RiddenDefinition } from '@components/riddens/RiddenProps';
-import { Table } from '@mantine/core';
+import { Badge, Table } from '@mantine/core';
 import RiddenHealth from '@components/riddens/charts/RiddenHealth';
 
 type Props = {
@@ -8,9 +8,15 @@ type Props = {
 
 export default function RiddenCard({ridden}: Props) {
   return (
-    <div className="grid grid-cols-12 gap-0 mb-10">
+    <div className="grid grid-cols-12 gap-5 mb-10">
       <div className="col-span-2">
-        <img src={`/images/riddens/${ridden.image}`} alt={ridden.name} className="h-64 w-48 object-cover sticky top-[80px]"/>
+        <div className="sticky top-[80px]">
+          <div
+            className="h-72 w-100 bg-center bg-cover bg-no-repeat"
+            style={{backgroundImage: `url(/images/riddens/${ridden.image})`}}
+          />
+          <Badge size="lg" fullWidth={true}>{ridden.name}</Badge>
+        </div>
       </div>
 
       <div className="col-span-10">
@@ -21,25 +27,20 @@ export default function RiddenCard({ridden}: Props) {
         >
           <tbody>
           <tr>
-            <td style={{width: 150}} className="color-bg-secondary">Name</td>
-            <td className="font-bold">{ridden.name}</td>
-          </tr>
-
-          <tr>
-            <td className="color-bg-secondary">Health</td>
+            <td style={{width: 140}} className="color-bg-secondary font-bold">Health</td>
             <td><RiddenHealth health={ridden.health}/></td>
           </tr>
 
           {ridden.weakspot_multiplier && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Multiplier</td>
-              <td>{ridden.weakspot_multiplier}</td>
+              <td className="color-bg-secondary font-bold">Weakspot Multiplier</td>
+              <td>x{ridden.weakspot_multiplier}</td>
             </tr>
           )}
 
           {ridden.stumble && (
             <tr>
-              <td className="color-bg-secondary">Stumble</td>
+              <td className="color-bg-secondary font-bold">Stumble</td>
               <td>
                 <div>Health: {ridden.stumble.health}</div>
 
@@ -67,7 +68,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.weakspot_back && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Back</td>
+              <td className="color-bg-secondary font-bold">Weakspot Back</td>
               <td>
                 <div>Health: {ridden.weakspot_back.health}</div>
                 <div>Weakspot Multiplier: {ridden.weakspot_back.weakspot_multiplier}</div>
@@ -78,7 +79,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.weakspot_chest && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Chest</td>
+              <td className="color-bg-secondary font-bold">Weakspot Chest</td>
               <td>
                 <div>Health: {ridden.weakspot_chest.health}</div>
                 <div>Weakspot Multiplier: {ridden.weakspot_chest.weakspot_multiplier}</div>
@@ -89,7 +90,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.weakspot_legs && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Legs</td>
+              <td className="color-bg-secondary font-bold">Weakspot Legs</td>
               <td>
                 <div>Health: {ridden.weakspot_legs.health}</div>
                 <div>Weakspot Multiplier: {ridden.weakspot_legs.weakspot_multiplier}</div>
@@ -100,7 +101,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.weakspot_head && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Head</td>
+              <td className="color-bg-secondary font-bold">Weakspot Head</td>
               <td>
                 <div>Health: {ridden.weakspot_head.health}</div>
                 <div>Weakspot Multiplier: {ridden.weakspot_head.weakspot_multiplier}</div>
@@ -111,7 +112,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.weakspot_body && (
             <tr>
-              <td className="color-bg-secondary">Weakspot Body</td>
+              <td className="color-bg-secondary font-bold">Weakspot Body</td>
               <td>
                 <div>Health: {ridden.weakspot_body.health}</div>
                 <div>Weakspot Multiplier: {ridden.weakspot_body.weakspot_multiplier}</div>
@@ -122,7 +123,7 @@ export default function RiddenCard({ridden}: Props) {
 
           {ridden.note && (
             <tr>
-              <td className="color-bg-secondary">Note</td>
+              <td className="color-bg-secondary font-bold">Note</td>
               <td>{ridden.note}</td>
             </tr>
           )}

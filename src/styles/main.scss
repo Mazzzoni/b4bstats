@@ -136,3 +136,14 @@
     @apply mt-3
   }
 }
+
+.riddens {
+  .mantine-Badge-root {
+    height: auto;
+
+    span {
+      white-space: initial;
+      text-align: center;
+    }
+  }
+}

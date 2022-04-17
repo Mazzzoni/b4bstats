@@ -1,7 +1,7 @@
 [
   {
     "name": "Common",
-    "category": "Common",
+    "category": "Commons",
     "image": "common.webp",
     "health": {
       "Standard": 16.7,
@@ -17,7 +17,7 @@
   },
   {
     "name": "Armored Common",
-    "category": "Common",
+    "category": "Commons",
     "image": "armored_common.webp",
     "health": {
       "Standard": 250,
@@ -33,7 +33,7 @@
   },
   {
     "name": "Stinger",
-    "category": "Stinger",
+    "category": "Stingers",
     "image": "stinger.webp",
     "health": {
       "Standard": 125,
@@ -49,7 +49,7 @@
   },
   {
     "name": "Hocker",
-    "category": "Stinger",
+    "category": "Stingers",
     "image": "hocker.webp",
     "health": {
       "Standard": 125,
@@ -65,7 +65,7 @@
   },
   {
     "name": "Stalker",
-    "category": "Stinger",
+    "category": "Stingers",
     "image": "stalker.webp",
     "health": {
       "Standard": 187.5,
@@ -81,7 +81,7 @@
   },
   {
     "name": "Exploder",
-    "category": "Reeker",
+    "category": "Reekers",
     "image": "exploder.webp",
     "health": {
       "Standard": 291.7,
@@ -97,7 +97,7 @@
   },
   {
     "name": "Retch",
-    "category": "Reeker",
+    "category": "Reekers",
     "image": "retch.webp",
     "health": {
       "Standard": 291.7,
@@ -113,7 +113,7 @@
   },
   {
     "name": "Reeker",
-    "category": "Reeker",
+    "category": "Reekers",
     "image": "reeker.webp",
     "health": {
       "Standard": 416.7,
@@ -127,7 +127,7 @@
   },
   {
     "name": "Tallboy",
-    "category": "Tallboy",
+    "category": "Tallboys",
     "image": "tallboy.webp",
     "health": {
       "Standard": 562.5,
@@ -143,7 +143,7 @@
   },
   {
     "name": "Bruiser",
-    "category": "Tallboy",
+    "category": "Tallboys",
     "image": "bruiser.webp",
     "health": {
       "Standard": 791.7,
@@ -159,7 +159,7 @@
   },
   {
     "name": "Crusher",
-    "category": "Tallboy",
+    "category": "Tallboys",
     "image": "crusher.webp",
     "health": {
       "Standard": 625,
@@ -175,13 +175,13 @@
   },
   {
     "name": "Sleeper",
-    "category": "Special",
+    "category": "Specials",
     "image": "sleeper.webp",
     "health": 0.9
   },
   {
     "name": "Snitcher",
-    "category": "Special",
+    "category": "Specials",
     "image": "snitcher.webp",
     "health": 500,
     "weakspot_multiplier": 2,
@@ -193,7 +193,7 @@
   },
   {
     "name": "Hag",
-    "category": "Special",
+    "category": "Specials",
     "image": "hag.webp",
     "health": {
       "Standard": 6250,
@@ -209,7 +209,7 @@
   },
   {
     "name": "Breaker",
-    "category": "Boss",
+    "category": "Bosses",
     "image": "breaker.webp",
     "health": {
       "Standard": 13333.4,
@@ -239,7 +239,7 @@
   },
   {
     "name": "Ogre",
-    "category": "Boss",
+    "category": "Bosses",
     "image": "ogre.webp",
     "health": {
       "Standard": 14166.7,
@@ -267,14 +267,14 @@
   },
   {
     "name": "Abomination - Tentacle",
-    "category": "Boss",
+    "category": "Bosses",
     "image": "abomination.webp",
     "health": 1666.7,
     "weakspot_multiplier": 1
   },
   {
     "name": "Abomination - Head",
-    "category": "Boss",
+    "category": "Bosses",
     "image": "abomination.webp",
     "health": 5416.7,
     "weakspot_head": {
@@ -285,7 +285,7 @@
   },
   {
     "name": "Abomination - Body",
-    "category": "Boss",
+    "category": "Bosses",
     "image": "abomination.webp",
     "health": 8333.4,
     "weakspot_body": {

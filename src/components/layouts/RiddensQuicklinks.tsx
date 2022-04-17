@@ -29,12 +29,12 @@ export default function RiddensQuicklinks() {
       <div className="space-y-2 border-bottom-subtle pt-2 pb-3">
         <strong>Types</strong>
 
-        <a href="#Common" className="hover:bg-white/10 block">Commons</a>
-        <a href="#Stinger" className="hover:bg-white/10 block">Stingers</a>
-        <a href="#Reeker" className="hover:bg-white/10 block">Reekers</a>
-        <a href="#Tallboy" className="hover:bg-white/10 block">Tallboys</a>
-        <a href="#Special" className="hover:bg-white/10 block">Specials</a>
-        <a href="#Boss" className="hover:bg-white/10 block">Bosses</a>
+        <a href="#Commons" className="hover:bg-white/10 block">Commons</a>
+        <a href="#Stingers" className="hover:bg-white/10 block">Stingers</a>
+        <a href="#Reekers" className="hover:bg-white/10 block">Reekers</a>
+        <a href="#Tallboys" className="hover:bg-white/10 block">Tallboys</a>
+        <a href="#Specials" className="hover:bg-white/10 block">Specials</a>
+        <a href="#Bosses" className="hover:bg-white/10 block">Bosses</a>
       </div>
     </div>
   );
