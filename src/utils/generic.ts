@@ -1,19 +1,19 @@
 import i18n from '@translations/i18n';
 import { Cleaners } from '@components/statistics/types';
 
-export function getCleanerNameById(cleanerId: string)
+export function getCleanerNameById(cleanerId: string): string
 {
   const index = Object.values(Cleaners).indexOf(cleanerId as Cleaners);
 
   return Object.keys(Cleaners)[index];
 }
 
-export function localeFormat(x: number)
+export function localeFormat(x: number): string
 {
-  return x.toLocaleString(i18n.language)
+  return x.toLocaleString(i18n.language);
 }
 
-export function nFormatter(num: number, digits: number = 0)
+export function nFormatter(num: number, digits: number = 0): string
 {
   const lookup = [
     {value: 1, symbol: ''},

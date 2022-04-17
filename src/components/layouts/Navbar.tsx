@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import { useRecoilValue } from 'recoil';
 import StatisticsState from '@components/self/StatisticsState';
 import { Fragment } from 'react';
-import Quicklinks from '@components/layouts/Quicklinks';
+import SelfQuicklinks from '@components/layouts/SelfQuicklinks';
+import RiddensQuicklinks from '@components/layouts/RiddensQuicklinks';
 
 const menu = [
   {
@@ -18,6 +19,10 @@ const menu = [
   {
     label: 'Compare',
     href: '/compare',
+  },
+  {
+    label: 'Riddens',
+    href: '/riddens',
   },
   {
     label: 'About',
@@ -51,7 +56,8 @@ export default function Navbar(props: Omit<NavbarProps, 'children'>) {
                 >{item.label}</Button>
               </Link>
 
-              {statistics.hydrated && item.label === 'Self' && router.pathname === '/self' && <Quicklinks/>}
+              {statistics.hydrated && item.label === 'Self' && router.pathname === '/self' && <SelfQuicklinks/>}
+              {item.label === 'Riddens' && router.pathname === '/riddens' && <RiddensQuicklinks/>}
             </Fragment>
           ))}
         </Group>
