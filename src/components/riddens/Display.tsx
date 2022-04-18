@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
-import { RiddenProps, RiddenDefinition } from '@components/riddens/RiddenProps';
+import { RiddenProps, RiddenDefinition, RiddenCategories } from '@components/riddens/RiddenProps';
 import RiddensCategory from '@components/riddens/RiddensCategory';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
@@ -22,12 +22,12 @@ export default function Display(props: Props) {
   Chart.register(ChartDataLabels);
 
   const sortedRiddens: Record<RiddenDefinition['category'], RiddenDefinition[]> = {
-    Commons: [],
-    Stingers: [],
-    Reekers: [],
-    Tallboys: [],
-    Specials: [],
-    Bosses: [],
+    [RiddenCategories.Commons]: [],
+    [RiddenCategories.Stingers]: [],
+    [RiddenCategories.Reekers]: [],
+    [RiddenCategories.Tallboys]: [],
+    [RiddenCategories.Specials]: [],
+    [RiddenCategories.Bosses]: [],
   };
 
   // Order each ridden in their own category

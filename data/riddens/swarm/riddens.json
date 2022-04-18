@@ -1,7 +1,7 @@
 [
   {
     "name": "Common",
-    "category": "Commons",
+    "category": "commons",
     "image": "common.webp",
     "health": {
       "Standard": 20,
@@ -17,7 +17,7 @@
   },
   {
     "name": "Armored Common",
-    "category": "Commons",
+    "category": "commons",
     "image": "armored_common.webp",
     "health": {
       "Standard": 300,
@@ -33,7 +33,7 @@
   },
   {
     "name": "Stinger",
-    "category": "Stingers",
+    "category": "stingers",
     "image": "stinger.webp",
     "health": {
       "Standard": 90,
@@ -43,7 +43,7 @@
   },
   {
     "name": "Hocker",
-    "category": "Stingers",
+    "category": "stingers",
     "image": "hocker.webp",
     "health": {
       "Standard": 80,
@@ -53,7 +53,7 @@
   },
   {
     "name": "Stalker",
-    "category": "Stingers",
+    "category": "stingers",
     "image": "stalker.webp",
     "health": {
       "Standard": 120,
@@ -63,27 +63,27 @@
   },
   {
     "name": "Exploder",
-    "category": "Reekers",
+    "category": "reekers",
     "image": "exploder.webp",
     "health": 200,
     "weakspot_multiplier": 1.5
   },
   {
     "name": "Retch",
-    "category": "Reekers",
+    "category": "reekers",
     "image": "retch.webp",
     "health": 250,
     "weakspot_multiplier": 1.5
   },
   {
     "name": "Reeker",
-    "category": "Reekers",
+    "category": "reekers",
     "image": "reeker.webp",
     "health": 450
   },
   {
     "name": "Tallboy",
-    "category": "Tallboys",
+    "category": "tallboys",
     "image": "tallboy.webp",
     "health": {
       "Standard": 600,
@@ -94,7 +94,7 @@
   },
   {
     "name": "Bruiser",
-    "category": "Tallboys",
+    "category": "tallboys",
     "image": "bruiser.webp",
     "health": {
       "Standard": 800,
@@ -105,7 +105,7 @@
   },
   {
     "name": "Crusher",
-    "category": "Tallboys",
+    "category": "tallboys",
     "image": "crusher.webp",
     "health": {
       "Standard": 700,

@@ -51,45 +51,45 @@ export default function SelfQuicklinks() {
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.easy')}
-          defaultChecked={difficultyFilters.showEasy}
+          defaultChecked={difficultyFilters.showRecruit}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showEasy: e.target.checked}});
+            setDifficultyFilters({...difficultyFilters, ...{showRecruit: e.target.checked}});
           }}
         />
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.normal')}
-          defaultChecked={difficultyFilters.showNormal}
+          defaultChecked={difficultyFilters.showVeteran}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showNormal: e.target.checked}});
+            setDifficultyFilters({...difficultyFilters, ...{showVeteran: e.target.checked}});
           }}
         />
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.hard')}
-          defaultChecked={difficultyFilters.showHard}
+          defaultChecked={difficultyFilters.showNightmare}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showHard: e.target.checked}});
+            setDifficultyFilters({...difficultyFilters, ...{showNightmare: e.target.checked}});
           }}
         />
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.veryhard')}
-          defaultChecked={difficultyFilters.showVeryHard}
+          defaultChecked={difficultyFilters.showNoHope}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showVeryHard: e.target.checked}});
+            setDifficultyFilters({...difficultyFilters, ...{showNoHope: e.target.checked}});
           }}
         />
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.pvp')}
-          defaultChecked={difficultyFilters.showPvp}
+          defaultChecked={difficultyFilters.showSwarm}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showPvp: e.target.checked}});
+            setDifficultyFilters({...difficultyFilters, ...{showSwarm: e.target.checked}});
           }}
         />
       </div>

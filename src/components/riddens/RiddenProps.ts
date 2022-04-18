@@ -1,12 +1,24 @@
+import { Difficulties } from '@components/statistics/types';
+
 type WeakspotZone = {
   health: number
   weakspot_multiplier: number
   body_damage: number
 }
 
+export enum RiddenCategories
+{
+  Commons = 'commons',
+  Stingers = 'stingers',
+  Reekers = 'reekers',
+  Tallboys = 'tallboys',
+  Specials = 'specials',
+  Bosses = 'bosses',
+}
+
 export type RiddenDefinition = {
   name: string
-  category: 'Commons' | 'Stingers' | 'Reekers' | 'Tallboys' | 'Specials' | 'Bosses'
+  category: RiddenCategories
   image: string
   health: number | { [key: string]: number }
   weakspot_multiplier?: number
@@ -29,18 +41,18 @@ export type RiddenDefinition = {
 export type RiddenProps = {
   // Contain specific difficulty notes (as markdown)
   notes: {
-    easy: string,
-    normal: string,
-    hard: string,
-    veryhard: string,
-    pvp: string,
+    [Difficulties.Recruit]: string,
+    [Difficulties.Veteran]: string,
+    [Difficulties.Nightmare]: string,
+    [Difficulties.NoHope]: string,
+    [Difficulties.Swarm]: string,
   },
   // Contains every ridden definition for each difficulty
   riddens: {
-    easy: RiddenDefinition[],
-    normal: RiddenDefinition[],
-    hard: RiddenDefinition[],
-    veryhard: RiddenDefinition[],
-    pvp: RiddenDefinition[],
+    [Difficulties.Recruit]: RiddenDefinition[],
+    [Difficulties.Veteran]: RiddenDefinition[],
+    [Difficulties.Nightmare]: RiddenDefinition[],
+    [Difficulties.NoHope]: RiddenDefinition[],
+    [Difficulties.Swarm]: RiddenDefinition[],
   }
 }

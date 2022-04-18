@@ -52,23 +52,23 @@ function DifficultySection(progressions: StatisticsProgressions, cleaner: Cleane
 
   const isPvpDifficulty = difficulty === Difficulties.Swarm;
 
-  if (!filters.showEasy && difficulty === Difficulties.Recruit) {
+  if (!filters.showRecruit && difficulty === Difficulties.Recruit) {
     return null;
   }
 
-  if (!filters.showNormal && difficulty === Difficulties.Veteran) {
+  if (!filters.showVeteran && difficulty === Difficulties.Veteran) {
     return null;
   }
 
-  if (!filters.showHard && difficulty === Difficulties.Nightmare) {
+  if (!filters.showNightmare && difficulty === Difficulties.Nightmare) {
     return null;
   }
 
-  if (!filters.showVeryHard && difficulty === Difficulties.NoHope) {
+  if (!filters.showNoHope && difficulty === Difficulties.NoHope) {
     return null;
   }
 
-  if (!filters.showPvp && difficulty === Difficulties.Swarm) {
+  if (!filters.showSwarm && difficulty === Difficulties.Swarm) {
     return null;
   }
 
@@ -201,7 +201,7 @@ export default function Progressions() {
   const theme = useMantineTheme();
   const {t} = useTranslation();
 
-  if (!filters.showEasy && !filters.showNormal && !filters.showHard && !filters.showVeryHard && !filters.showPvp) {
+  if (!filters.showRecruit && !filters.showVeteran && !filters.showNightmare && !filters.showNoHope && !filters.showSwarm) {
     return null;
   }
 

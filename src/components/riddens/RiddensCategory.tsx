@@ -13,7 +13,7 @@ export default function RiddensCategory({categoryName, riddens}: Props) {
 
   return (
     <div id={categoryName} className="mb-12">
-      <h2 className="text-2xl font-bold mb-3">{categoryName}</h2>
+      <h2 className="text-2xl font-bold mb-3 capitalize">{categoryName}</h2>
 
       {riddens.map((ridden) => (
         <RiddenCard key={ridden.name} ridden={ridden}/>

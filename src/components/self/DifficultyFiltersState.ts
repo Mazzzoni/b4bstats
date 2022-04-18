@@ -4,21 +4,21 @@ import { recoilPersist } from 'recoil-persist';
 const {persistAtom} = recoilPersist();
 
 export type DifficultyFilters = {
-  showEasy: boolean,
-  showNormal: boolean,
-  showHard: boolean,
-  showVeryHard: boolean,
-  showPvp: boolean
+  showRecruit: boolean,
+  showVeteran: boolean,
+  showNightmare: boolean,
+  showNoHope: boolean,
+  showSwarm: boolean
 }
 
 const state = atom<DifficultyFilters>({
   key: 'DifficultyFilters',
   default: {
-    showEasy: false,
-    showNormal: false,
-    showHard: true,
-    showVeryHard: true,
-    showPvp: false,
+    showRecruit: false,
+    showVeteran: false,
+    showNightmare: true,
+    showNoHope: true,
+    showSwarm: false,
   },
   effects_UNSTABLE: [persistAtom],
 });
