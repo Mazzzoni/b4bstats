@@ -22,20 +22,20 @@ const Page: NextPage<RiddenProps> = (props) => {
 
 export const getStaticProps: GetStaticProps<RiddenProps> = async (context) => {
   const notes = {
-    [Difficulties.Easy]: getDataFileSync('riddens/easy/note.md'),
-    [Difficulties.Normal]: getDataFileSync('riddens/normal/note.md'),
-    [Difficulties.Hard]: getDataFileSync('riddens/hard/note.md'),
+    [Difficulties.Recruit]: getDataFileSync('riddens/recruit/note.md'),
+    [Difficulties.Veteran]: getDataFileSync('riddens/veteran/note.md'),
+    [Difficulties.Nightmare]: getDataFileSync('riddens/nightmare/note.md'),
     [Difficulties.NoHope]: getDataFileSync('riddens/nohope/note.md'),
-    [Difficulties.Pvp]: getDataFileSync('riddens/pvp/note.md'),
+    [Difficulties.Swarm]: getDataFileSync('riddens/swarm/note.md'),
   };
 
   const riddens = {
-    [Difficulties.Easy]: JSON.parse(getDataFileSync('riddens/easy/riddens.json')),
-    [Difficulties.Normal]: JSON.parse(getDataFileSync('riddens/normal/riddens.json')),
-    [Difficulties.Hard]: JSON.parse(getDataFileSync('riddens/hard/riddens.json')),
+    [Difficulties.Recruit]: JSON.parse(getDataFileSync('riddens/recruit/riddens.json')),
+    [Difficulties.Veteran]: JSON.parse(getDataFileSync('riddens/veteran/riddens.json')),
+    [Difficulties.Nightmare]: JSON.parse(getDataFileSync('riddens/nightmare/riddens.json')),
     [Difficulties.NoHope]: JSON.parse(getDataFileSync('riddens/nohope/riddens.json')),
-    [Difficulties.Pvp]: JSON.parse(getDataFileSync('riddens/pvp/riddens.json')),
-  }
+    [Difficulties.Swarm]: JSON.parse(getDataFileSync('riddens/swarm/riddens.json')),
+  };
 
   return {
     props: {

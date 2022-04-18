@@ -25,17 +25,17 @@ export default function MissionsCompletedPerCleaner() {
     {
       label: t(`difficulties.easy`),
       data: missionsEasyCompleted,
-      backgroundColor: DifficultyColors[Difficulties.Easy],
+      backgroundColor: DifficultyColors[Difficulties.Recruit],
     },
     {
       label: t(`difficulties.normal`),
       data: missionsNormalCompleted,
-      backgroundColor: DifficultyColors[Difficulties.Normal],
+      backgroundColor: DifficultyColors[Difficulties.Veteran],
     },
     {
       label: t(`difficulties.hard`),
       data: missionsHardCompleted,
-      backgroundColor: DifficultyColors[Difficulties.Hard],
+      backgroundColor: DifficultyColors[Difficulties.Nightmare],
     },
     {
       label: t(`difficulties.veryhard`),
@@ -45,7 +45,7 @@ export default function MissionsCompletedPerCleaner() {
     {
       label: t(`difficulties.pvp`),
       data: missionsPvpCompleted,
-      backgroundColor: DifficultyColors[Difficulties.Pvp],
+      backgroundColor: DifficultyColors[Difficulties.Swarm],
     },
   ];
 

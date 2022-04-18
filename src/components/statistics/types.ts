@@ -121,11 +121,11 @@ export enum Cleaners
 
 export enum Difficulties
 {
-  Easy = 'easy',
-  Normal = 'normal',
-  Hard = 'hard',
+  Recruit = 'easy',
+  Veteran = 'normal',
+  Nightmare = 'hard',
   NoHope = 'veryhard',
-  Pvp = 'pvp',
+  Swarm = 'pvp',
 }
 
 export enum Riddens
@@ -293,19 +293,19 @@ export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
 
 export type MissionsCompletedPerCleaner = {
   total: number
-  [Difficulties.Easy]: number
-  [Difficulties.Normal]: number
-  [Difficulties.Hard]: number
+  [Difficulties.Recruit]: number
+  [Difficulties.Veteran]: number
+  [Difficulties.Nightmare]: number
   [Difficulties.NoHope]: number
-  [Difficulties.Pvp]: number
+  [Difficulties.Swarm]: number
 }
 
 export type MissionsCompletedPerDifficulty = {
-  [Difficulties.Easy]: number
-  [Difficulties.Normal]: number
-  [Difficulties.Hard]: number
+  [Difficulties.Recruit]: number
+  [Difficulties.Veteran]: number
+  [Difficulties.Nightmare]: number
   [Difficulties.NoHope]: number
-  [Difficulties.Pvp]: number
+  [Difficulties.Swarm]: number
 }
 
 export type MissionsStatistics = {

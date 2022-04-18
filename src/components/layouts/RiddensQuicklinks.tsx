@@ -18,11 +18,11 @@ export default function RiddensQuicklinks() {
           className="select-none"
           onChange={(e) => setSelectedDifficulty(e as Difficulties)}
         >
-          <Radio value={Difficulties.Easy}>Recruit</Radio>
-          <Radio value={Difficulties.Normal}>Veteran</Radio>
-          <Radio value={Difficulties.Hard}>Nightmare</Radio>
+          <Radio value={Difficulties.Recruit}>Recruit</Radio>
+          <Radio value={Difficulties.Veteran}>Veteran</Radio>
+          <Radio value={Difficulties.Nightmare}>Nightmare</Radio>
           <Radio value={Difficulties.NoHope}>No Hope</Radio>
-          <Radio value={Difficulties.Pvp}>Swarm</Radio>
+          <Radio value={Difficulties.Swarm}>Swarm</Radio>
         </RadioGroup>
       </div>
       

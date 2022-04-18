@@ -33,11 +33,11 @@ export const RiddenColors: Record<Riddens, string> = {
 };
 
 export const DifficultyColors: Record<Difficulties, string> = {
-  [Difficulties.Easy]: '#165b00',
-  [Difficulties.Normal]: '#b47c00',
-  [Difficulties.Hard]: '#bb0000',
+  [Difficulties.Recruit]: '#165b00',
+  [Difficulties.Veteran]: '#b47c00',
+  [Difficulties.Nightmare]: '#bb0000',
   [Difficulties.NoHope]: '#8000b5',
-  [Difficulties.Pvp]: '#102d7a',
+  [Difficulties.Swarm]: '#102d7a',
 };
 
 export const PlayerColors: string[] = [

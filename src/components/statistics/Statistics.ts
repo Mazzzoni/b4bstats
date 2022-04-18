@@ -48,91 +48,91 @@ export default class Statistics
     missionsCompletedPerCleaner: {
       [Cleaners.Evangelo]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Walker]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Holly]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Hoffman]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Doc]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Jim]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Karlee]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Mom]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Heng]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
       [Cleaners.Sharice]: {
         total: 0,
-        [Difficulties.Easy]: 0,
-        [Difficulties.Normal]: 0,
-        [Difficulties.Hard]: 0,
+        [Difficulties.Recruit]: 0,
+        [Difficulties.Veteran]: 0,
+        [Difficulties.Nightmare]: 0,
         [Difficulties.NoHope]: 0,
-        [Difficulties.Pvp]: 0,
+        [Difficulties.Swarm]: 0,
       },
     },
     missionsCompletedPerDifficulty: {
-      [Difficulties.Easy]: 0,
-      [Difficulties.Normal]: 0,
-      [Difficulties.Hard]: 0,
+      [Difficulties.Recruit]: 0,
+      [Difficulties.Veteran]: 0,
+      [Difficulties.Nightmare]: 0,
       [Difficulties.NoHope]: 0,
-      [Difficulties.Pvp]: 0,
+      [Difficulties.Swarm]: 0,
     },
     missionsCompletedRaw: {},
   };
@@ -438,11 +438,11 @@ export default class Statistics
   private static getMissionsCompletedPerDifficulty(rawMissions: { [index: string]: number }): MissionsCompletedPerDifficulty
   {
     let missionsCompleteByDifficulties: MissionsCompletedPerDifficulty = {
-      [Difficulties.Easy]: 0,
-      [Difficulties.Normal]: 0,
-      [Difficulties.Hard]: 0,
+      [Difficulties.Recruit]: 0,
+      [Difficulties.Veteran]: 0,
+      [Difficulties.Nightmare]: 0,
       [Difficulties.NoHope]: 0,
-      [Difficulties.Pvp]: 0,
+      [Difficulties.Swarm]: 0,
     };
 
     Object.keys(rawMissions).forEach((mission: string) => {
@@ -454,15 +454,15 @@ export default class Statistics
       }
 
       if (mission.includes('easy')) {
-        missionsCompleteByDifficulties[Difficulties.Easy] += value;
+        missionsCompleteByDifficulties[Difficulties.Recruit] += value;
       } else if (mission.includes('normal')) {
-        missionsCompleteByDifficulties[Difficulties.Normal] += value;
+        missionsCompleteByDifficulties[Difficulties.Veteran] += value;
       } else if (mission.includes('veryhard')) {
         missionsCompleteByDifficulties[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
-        missionsCompleteByDifficulties[Difficulties.Hard] += value;
+        missionsCompleteByDifficulties[Difficulties.Nightmare] += value;
       } else if (mission.includes('pvp')) {
-        missionsCompleteByDifficulties[Difficulties.Pvp] += value;
+        missionsCompleteByDifficulties[Difficulties.Swarm] += value;
       }
     });
 
@@ -473,11 +473,11 @@ export default class Statistics
   {
     let missionsCompleteByCleaner: MissionsCompletedPerCleaner = {
       total: _.get(rawMissions, cleaner, 0),
-      [Difficulties.Easy]: 0,
-      [Difficulties.Normal]: 0,
-      [Difficulties.Hard]: 0,
+      [Difficulties.Recruit]: 0,
+      [Difficulties.Veteran]: 0,
+      [Difficulties.Nightmare]: 0,
       [Difficulties.NoHope]: 0,
-      [Difficulties.Pvp]: 0,
+      [Difficulties.Swarm]: 0,
     };
 
     Object.keys(rawMissions).forEach((mission: string) => {
@@ -489,15 +489,15 @@ export default class Statistics
       }
 
       if (mission.includes('easy')) {
-        missionsCompleteByCleaner[Difficulties.Easy] += value;
+        missionsCompleteByCleaner[Difficulties.Recruit] += value;
       } else if (mission.includes('normal')) {
-        missionsCompleteByCleaner[Difficulties.Normal] += value;
+        missionsCompleteByCleaner[Difficulties.Veteran] += value;
       } else if (mission.includes('veryhard')) {
         missionsCompleteByCleaner[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
-        missionsCompleteByCleaner[Difficulties.Hard] += value;
+        missionsCompleteByCleaner[Difficulties.Nightmare] += value;
       } else if (mission.includes('pvp')) {
-        missionsCompleteByCleaner[Difficulties.Pvp] += value;
+        missionsCompleteByCleaner[Difficulties.Swarm] += value;
       }
     });
 

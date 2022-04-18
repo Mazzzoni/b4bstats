@@ -8,7 +8,7 @@ export type SelectedDifficulty = Difficulties
 
 const state = atom<SelectedDifficulty>({
   key: 'SelectedDifficulty',
-  default: Difficulties.Easy,
+  default: Difficulties.Recruit,
   effects_UNSTABLE: [persistAtom],
 });
 

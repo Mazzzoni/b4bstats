@@ -17,7 +17,7 @@ import ScreenshotTaker from '@components/common/ScreenshotTaker';
 function DisplayMission(progressions: StatisticsProgressions, cleaner: Cleaners, difficulty: Difficulties, mission: Missions, t: Function, stats: Statistics)
 {
   // If we are rendering pvp missions, make sure to show only the ones that are available in that mode
-  if (difficulty === Difficulties.Pvp && !SwarmMissions.includes(mission)) {
+  if (difficulty === Difficulties.Swarm && !SwarmMissions.includes(mission)) {
     return null;
   }
 
@@ -44,23 +44,23 @@ function DisplayMission(progressions: StatisticsProgressions, cleaner: Cleaners,
  */
 function DifficultySection(progressions: StatisticsProgressions, cleaner: Cleaners, difficulty: Difficulties, filters: DifficultyFilters, t: Function, statistics: Statistics)
 {
-  const maxMissionsCompletedCount = difficulty === Difficulties.Pvp ? 18 : 33;
+  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? 18 : 33;
   let missionsCompletedCount = 0;
 
   // Increment missions completed based on cleaner progression
   Object.values(progressions[cleaner][difficulty]).forEach((value: boolean) => value ? missionsCompletedCount++ : null);
 
-  const isPvpDifficulty = difficulty === Difficulties.Pvp;
+  const isPvpDifficulty = difficulty === Difficulties.Swarm;
 
-  if (!filters.showEasy && difficulty === Difficulties.Easy) {
+  if (!filters.showEasy && difficulty === Difficulties.Recruit) {
     return null;
   }
 
-  if (!filters.showNormal && difficulty === Difficulties.Normal) {
+  if (!filters.showNormal && difficulty === Difficulties.Veteran) {
     return null;
   }
 
-  if (!filters.showHard && difficulty === Difficulties.Hard) {
+  if (!filters.showHard && difficulty === Difficulties.Nightmare) {
     return null;
   }
 
@@ -68,7 +68,7 @@ function DifficultySection(progressions: StatisticsProgressions, cleaner: Cleane
     return null;
   }
 
-  if (!filters.showPvp && difficulty === Difficulties.Pvp) {
+  if (!filters.showPvp && difficulty === Difficulties.Swarm) {
     return null;
   }
 
