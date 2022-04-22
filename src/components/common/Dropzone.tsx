@@ -8,7 +8,7 @@ import { Dropzone as DropzoneMT } from '@mantine/dropzone';
 import { AllStatistics } from '@components/statistics/types';
 
 type Props = {
-  setAllStatistics: SetterOrUpdater<AllStatistics>,
+  setAllStatistics?: SetterOrUpdater<AllStatistics>,
   setStatistics: SetterOrUpdater<Statistics>
 }
 
@@ -28,7 +28,9 @@ export default function Dropzone({setStatistics, setAllStatistics}: Props) {
         try {
           rawStats = JSON.parse(data);
           const stats = Statistics.build(rawStats);
-          setAllStatistics(stats);
+          if (typeof setAllStatistics !== 'undefined') {
+            setAllStatistics(stats);
+          }
           setStatistics(stats.mergedStatistics)
         } catch (error) {
           toast.error(t('errors.cannot_parse_file'));
