@@ -1,4 +1,4 @@
-import { RiddenDefinition } from '@components/riddens/RiddenProps';
+import { RiddenDefinition } from '@components/riddens/types';
 import RiddenCard from '@components/riddens/RiddenCard';
 
 type Props = {

@@ -2,12 +2,12 @@ import { useRecoilValue } from 'recoil';
 import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';
 import { useTranslation } from 'react-i18next';
 import ReactMarkdown from 'react-markdown';
-import { RiddenProps, RiddenDefinition, RiddenCategories } from '@components/riddens/RiddenProps';
+import { RiddensProps, RiddenDefinition, RiddenCategories } from '@components/riddens/types';
 import RiddensCategory from '@components/riddens/RiddensCategory';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-type Props = RiddenProps
+type Props = RiddensProps
 
 export default function Display(props: Props) {
   const selectedDifficulty = useRecoilValue(SelectedDifficultyState);

@@ -1,4 +1,4 @@
-import { RiddenDefinition } from '@components/riddens/RiddenProps';
+import { RiddenDefinition } from '@components/riddens/types';
 import { Badge, Table } from '@mantine/core';
 import RiddenHealth from '@components/riddens/charts/RiddenHealth';
 
@@ -15,7 +15,7 @@ export default function RiddenCard({ridden}: Props) {
             className="h-72 w-100 bg-center bg-cover bg-no-repeat"
             style={{backgroundImage: `url(/images/riddens/${ridden.image})`}}
           />
-          <Badge size="lg" fullWidth={true}>{ridden.name}</Badge>
+          <Badge fullWidth size="lg">{ridden.name}</Badge>
         </div>
       </div>
 

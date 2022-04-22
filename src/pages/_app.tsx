@@ -1,11 +1,11 @@
 import { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 import { MantineProvider } from '@mantine/core';
 import { ToastContainer } from 'react-toastify';
 
 import 'flag-icon-css/css/flag-icons.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import '@styles/main.scss';
-import { RecoilRoot } from 'recoil';
 
 export default function App(props: AppProps) {
   const {Component, pageProps} = props;
@@ -21,7 +21,7 @@ export default function App(props: AppProps) {
           radius: {xs: 0, sm: 0, md: 0, lg: 0, xl: 0},
         }}
       >
-        <Component {...pageProps} />
+        <Component {...pageProps}/>
 
         <ToastContainer
           position="bottom-right"

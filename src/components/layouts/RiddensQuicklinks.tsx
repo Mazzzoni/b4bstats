@@ -2,7 +2,7 @@ import { Radio, RadioGroup } from '@mantine/core';
 import { Difficulties } from '@components/statistics/types';
 import { useRecoilState } from 'recoil';
 import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';
-import { RiddenCategories } from '@components/riddens/RiddenProps';
+import { RiddenCategories } from '@components/riddens/types';
 import { useTranslation } from 'react-i18next';
 
 export default function RiddensQuicklinks() {

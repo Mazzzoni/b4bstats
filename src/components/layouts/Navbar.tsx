@@ -6,6 +6,7 @@ import StatisticsState from '@components/self/StatisticsState';
 import { Fragment } from 'react';
 import SelfQuicklinks from '@components/layouts/SelfQuicklinks';
 import RiddensQuicklinks from '@components/layouts/RiddensQuicklinks';
+import WeaponsQuicklinks from '@components/layouts/WeaponsQuicklinks';
 
 const menu = [
   {
@@ -19,6 +20,10 @@ const menu = [
   {
     label: 'Compare',
     href: '/compare',
+  },
+  {
+    label: 'Weapons',
+    href: '/weapons',
   },
   {
     label: 'Riddens',
@@ -58,6 +63,7 @@ export default function Navbar(props: Omit<NavbarProps, 'children'>) {
 
               {statistics.hydrated && item.label === 'Self' && router.pathname === '/self' && <SelfQuicklinks/>}
               {item.label === 'Riddens' && router.pathname === '/riddens' && <RiddensQuicklinks/>}
+              {item.label === 'Weapons' && router.pathname === '/weapons' && <WeaponsQuicklinks/>}
             </Fragment>
           ))}
         </Group>

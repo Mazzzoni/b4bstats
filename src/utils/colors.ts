@@ -1,4 +1,5 @@
 import { Difficulties, Riddens, WeaponTypes } from '@components/statistics/types';
+import { WeaponRarities } from '@components/weapons/types';
 
 export const WeaponColors: Record<WeaponTypes, string> = {
   [WeaponTypes.Melee]: '#b4b4b4',
@@ -38,6 +39,14 @@ export const DifficultyColors: Record<Difficulties, string> = {
   [Difficulties.Nightmare]: '#bb0000',
   [Difficulties.NoHope]: '#8000b5',
   [Difficulties.Swarm]: '#102d7a',
+};
+
+export const WeaponRarityColors: Record<WeaponRarities, string> = {
+  [WeaponRarities.Common]: '#c1c1c1',
+  [WeaponRarities.Uncommon]: '#0d6e06',
+  [WeaponRarities.Rare]: '#000fb6',
+  [WeaponRarities.Epic]: '#8000b5',
+  [WeaponRarities.Legendary]: '#d68b00',
 };
 
 export const PlayerColors: string[] = [
