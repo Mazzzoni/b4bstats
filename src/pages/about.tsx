@@ -96,18 +96,6 @@ const Page: NextPage = () => {
           <Divider variant="dashed" my={20}/>
 
           <div>
-            <strong className="text-xl">Why there is no offline progression ?</strong>
-
-            <p>
-              Currently, the statistics file do not expose offline progression, that&apos;s why it&apos;s not possible to display it at the moment.
-              <br/>
-              We can expect it to be available in the future.
-            </p>
-          </div>
-
-          <Divider variant="dashed" my={20}/>
-
-          <div>
             <strong className="text-xl">I can not find statistics file with Xbox Game Pass, help !</strong>
 
             <p>

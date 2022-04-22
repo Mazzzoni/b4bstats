@@ -259,27 +259,31 @@ export default class Statistics
       [MiscellaneousStatistics.SnitchersSilenced]: _.get(data, 'snitchersSilenced.base', 0),
     };
 
-    const rawMissions = _.get(data, 'missionsCompleted_Secured', {});
+    const onlineMissions = _.get(data, 'missionsCompleted_Secured', {});
+    const offlineMissions = _.get(data, "missionsCompleted_Unsecured", {})
+
+    const mergedMissions = Statistics.mergeMissionData(onlineMissions, offlineMissions);
 
     const missionsStatistics: MissionsStatistics = {
-      missionsCompleted: _.get(rawMissions, 'base', 0),
-      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(rawMissions, 'keys', {})),
+      missionsCompleted: _.get(mergedMissions, 'base', 0),
+
+      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(mergedMissions, 'keys', {})),
       missionsCompletedPerCleaner: {
-        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_1'),
-        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_2'),
-        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_3'),
-        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_4'),
-        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_5'),
-        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_6'),
-        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_7'),
-        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_8'),
-        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_9'),
-        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(rawMissions.keys, 'Hero_10'),
+        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_1'),
+        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_2'),
+        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_3'),
+        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_4'),
+        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_5'),
+        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_6'),
+        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_7'),
+        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_8'),
+        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_9'),
+        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_10'),
       },
-      missionsCompletedRaw: _.get(rawMissions, 'keys', {}),
+      missionsCompletedRaw: _.get(mergedMissions, 'keys', {}),
     };
 
-    const progressions: Progressions = Statistics.getProgressionsByCleaners(_.get(data, 'missionsCompleted_Secured.keys', {}));
+    const progressions: Progressions = Statistics.getProgressionsByCleaners(_.get(mergedMissions, 'keys', {}));
 
     const rawRiddenKilled = _.get(data, 'riddenKilledByType.keys', {});
 
@@ -430,6 +434,24 @@ export default class Statistics
     }
 
     return Math.round(average);
+  }
+
+  /**
+   * Merge online and offline mission data
+   */
+  private static mergeMissionData(onlineMissions: any, offlineMissions: any) {
+    const mergedMissions = {
+      'base': 0,
+      'keys': {}
+    };
+
+    function customizer(obj: number, src: number) {
+      return _.defaultTo(obj, 0) + _.defaultTo(src, 0);
+    }
+
+    mergedMissions['base'] = _.get(onlineMissions, 'base', 0) + _.get(offlineMissions, 'base', 0);
+    mergedMissions['keys'] = _.mergeWith({}, _.get(onlineMissions, 'keys', {}), _.get(offlineMissions, 'keys', {}), customizer);
+    return mergedMissions;
   }
 
   /**

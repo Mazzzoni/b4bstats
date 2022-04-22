@@ -12,39 +12,6 @@ export default function SelfQuicklinks() {
 
   return (
     <div className="border-left-subtle pl-3">
-      <div className="border-bottom-subtle pb-3">
-        <strong>Progressions</strong>
-
-        <RadioGroup
-          variant="vertical"
-          defaultValue="online"
-          defaultChecked={true}
-          className="select-none"
-        >
-          <Radio value="online">Online</Radio>
-
-          <Radio value="offline" disabled={true}>
-            <Tooltip
-              withArrow
-              position="right"
-              label={<span>Only <strong className="underline">online</strong> progression is available from statistics file at the moment.<br/>We can expect offline tracking in future updates.</span>}
-            >
-              Offline
-            </Tooltip>
-          </Radio>
-
-          <Radio value="both" disabled={true}>
-            <Tooltip
-              withArrow
-              position="right"
-              label={<span>Only <strong className="underline">online</strong> progression is available from statistics file at the moment.<br/>We can expect offline tracking in future updates.</span>}
-            >
-              Both
-            </Tooltip>
-          </Radio>
-        </RadioGroup>
-      </div>
-
       <div className="space-y-2 border-bottom-subtle pt-2 pb-3 difficulty-filters">
         <strong>Difficulties</strong>
 
