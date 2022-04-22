@@ -1,3 +1,5 @@
+import Statistics from "./Statistics";
+
 export enum Missions
 {
   // Act 1
@@ -340,4 +342,16 @@ export type PvpStatistics = {
   gamesLost: number
   killsAsCleaner: number
   killsAsRidden: number
+}
+
+export type AllStatistics = {
+  onlineStatistics: Statistics
+  offlineStatistics: Statistics
+  mergedStatistics: Statistics
+}
+
+export enum OnlineStatus {
+  Online,
+  Offline,
+  Merged
 }

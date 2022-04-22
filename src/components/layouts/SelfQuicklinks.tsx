@@ -1,7 +1,8 @@
-import { Checkbox, Radio, RadioGroup, Tooltip } from '@mantine/core';
+import { Checkbox, Radio, RadioGroup } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import { useRecoilState } from 'recoil';
+import StatisticsState, { AllStatisticsState } from '@components/self/StatisticsState';
+import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { Cleaners } from '@components/statistics/types';
 import { getCleanerNameById } from '@utils/generic';
 import { Award, List, PieChart } from 'react-feather';
@@ -9,9 +10,32 @@ import { Award, List, PieChart } from 'react-feather';
 export default function SelfQuicklinks() {
   const {t} = useTranslation();
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
+  const setStatistics = useSetRecoilState(StatisticsState)
+  const allStatistics = useRecoilValue(AllStatisticsState)
 
   return (
     <div className="border-left-subtle pl-3">
+      <div className="border-bottom-subtle pb-3">
+        <strong>Progressions</strong>
+
+        <RadioGroup
+          variant="vertical"
+          defaultValue="both"
+          defaultChecked={true}
+          className="select-none"
+          onChange={(e) => {
+            switch(e) {
+              case("both"): setStatistics(allStatistics.mergedStatistics); break;
+              case("online"): setStatistics(allStatistics.onlineStatistics); break;
+              case("offline"): setStatistics(allStatistics.offlineStatistics); break;
+            }
+          }}>
+          <Radio value="both">Both</Radio>
+          <Radio value="online">Online</Radio>
+          <Radio value="offline">Offline</Radio>
+        </RadioGroup>
+      </div>
+
       <div className="space-y-2 border-bottom-subtle pt-2 pb-3 difficulty-filters">
         <strong>Difficulties</strong>
 

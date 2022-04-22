@@ -15,6 +15,8 @@ import {
   Riddens,
   Weapons,
   WeaponTypes,
+  OnlineStatus,
+  AllStatistics,
 } from '@components/statistics/types';
 import { isSkippableWeaponInOverall } from '@utils/charts';
 
@@ -229,11 +231,19 @@ export default class Statistics
     [Weapons.Unarmed]: 0,
   };
 
+  public static build(rawStats: { [key: string]: any; }): AllStatistics {
+    return {
+      onlineStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Online),
+      offlineStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Offline),
+      mergedStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Merged)
+    }
+  }
+
   /**
    * @param rawStats
    * @throws Throws error if the object format isn't expected
    */
-  public static build(rawStats: { [key: string]: any; }): Statistics
+  private static buildInternal(rawStats: { [key: string]: any; }, onlineStatus: OnlineStatus): Statistics
   {
     // Access main data, if it fails it'll throw error
     const data = rawStats.offlineData.stats;
@@ -261,29 +271,36 @@ export default class Statistics
 
     const onlineMissions = _.get(data, 'missionsCompleted_Secured', {});
     const offlineMissions = _.get(data, "missionsCompleted_Unsecured", {})
-
     const mergedMissions = Statistics.mergeMissionData(onlineMissions, offlineMissions);
 
-    const missionsStatistics: MissionsStatistics = {
-      missionsCompleted: _.get(mergedMissions, 'base', 0),
+    const missions = (() => {
+      switch (onlineStatus) {
+        case OnlineStatus.Online: return onlineMissions;
+        case OnlineStatus.Offline: return offlineMissions;
+        case OnlineStatus.Merged: return mergedMissions;
+      }
+    })()
 
-      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(mergedMissions, 'keys', {})),
+    const missionsStatistics: MissionsStatistics = {
+      missionsCompleted: _.get(missions, 'base', 0),
+
+      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(missions, 'keys', {})),
       missionsCompletedPerCleaner: {
-        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_1'),
-        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_2'),
-        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_3'),
-        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_4'),
-        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_5'),
-        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_6'),
-        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_7'),
-        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_8'),
-        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_9'),
-        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(mergedMissions.keys, 'Hero_10'),
+        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_1'),
+        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_2'),
+        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_3'),
+        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_4'),
+        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_5'),
+        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_6'),
+        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_7'),
+        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_8'),
+        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
+        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
       },
-      missionsCompletedRaw: _.get(mergedMissions, 'keys', {}),
+      missionsCompletedRaw: _.get(missions, 'keys', {}),
     };
 
-    const progressions: Progressions = Statistics.getProgressionsByCleaners(_.get(mergedMissions, 'keys', {}));
+    const progressions: Progressions = Statistics.getProgressionsByCleaners(_.get(missions, 'keys', {}));
 
     const rawRiddenKilled = _.get(data, 'riddenKilledByType.keys', {});
 

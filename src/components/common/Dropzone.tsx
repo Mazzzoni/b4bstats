@@ -5,12 +5,14 @@ import { toast } from 'react-toastify';
 import Statistics from '@components/statistics/Statistics';
 import { Group, Text } from '@mantine/core';
 import { Dropzone as DropzoneMT } from '@mantine/dropzone';
+import { AllStatistics } from '@components/statistics/types';
 
 type Props = {
+  setAllStatistics: SetterOrUpdater<AllStatistics>,
   setStatistics: SetterOrUpdater<Statistics>
 }
 
-export default function Dropzone({setStatistics}: Props) {
+export default function Dropzone({setStatistics, setAllStatistics}: Props) {
   const {t} = useTranslation();
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -26,7 +28,8 @@ export default function Dropzone({setStatistics}: Props) {
         try {
           rawStats = JSON.parse(data);
           const stats = Statistics.build(rawStats);
-          setStatistics(stats);
+          setAllStatistics(stats);
+          setStatistics(stats.mergedStatistics)
         } catch (error) {
           toast.error(t('errors.cannot_parse_file'));
         }
