@@ -459,6 +459,11 @@ export default class Statistics
       [Difficulties.Swarm]: 0,
     };
 
+    // In case the player didn't play offline / online at all, we abort to prevent conversion error
+    if (!rawMissions) {
+      return missionsCompleteByCleaner;
+    }
+
     Object.keys(rawMissions).forEach((mission: string) => {
       const value: number = rawMissions[mission];
 
