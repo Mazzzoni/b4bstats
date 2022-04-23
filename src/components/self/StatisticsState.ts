@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 import Statistics from '@components/statistics/Statistics';
 
-const state = atom<Statistics>({
+export const state = atom<Statistics>({
   key: 'Statistics',
   default: new Statistics(),
 });

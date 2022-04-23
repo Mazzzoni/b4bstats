@@ -9,58 +9,69 @@ import { DifficultyColors } from '@utils/colors';
 import { Cleaners, Difficulties } from '@components/statistics/types';
 import { tooltipCallbackLabelMissions } from '@utils/charts';
 import { Badge } from '@mantine/core';
+import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function MissionsCompletedPerCleaner() {
   const statistics = useRecoilValue(StatisticsState);
+  const progressionType = useRecoilValue(SelectedProgressionTypeState);
   const {t} = useTranslation();
 
-  const missionsEasyCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.easy);
-  const missionsNormalCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.normal);
-  const missionsHardCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.hard);
-  const missionsVeryHardCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.veryhard);
-  const missionsPvpCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.pvp);
-  const missionsTotalCompleted = Object.values(statistics.missionsStatistics.missionsCompletedPerCleaner).map(cleaner => cleaner.total);
+  let missionsRecruitCompleted: number[] = [];
+  let missionsVeteranCompleted: number[] = [];
+  let missionsNightmareCompleted: number[] = [];
+  let missionsNoHopeCompleted: number[] = [];
+  let missionsSwarmCompleted: number[] = [];
+  let missionsTotalCompleted: number[] = [];
+
+  Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner).map((cleaner) => {
+    missionsRecruitCompleted.push(cleaner.easy);
+    missionsVeteranCompleted.push(cleaner.normal);
+    missionsNightmareCompleted.push(cleaner.hard);
+    missionsNoHopeCompleted.push(cleaner.veryhard);
+    missionsSwarmCompleted.push(cleaner.pvp);
+    missionsTotalCompleted.push(cleaner.total);
+  });
 
   const datasets = [
     {
       label: t(`difficulties.easy`),
-      data: missionsEasyCompleted,
+      data: missionsRecruitCompleted,
       backgroundColor: DifficultyColors[Difficulties.Recruit],
     },
     {
       label: t(`difficulties.normal`),
-      data: missionsNormalCompleted,
+      data: missionsVeteranCompleted,
       backgroundColor: DifficultyColors[Difficulties.Veteran],
     },
     {
       label: t(`difficulties.hard`),
-      data: missionsHardCompleted,
+      data: missionsNightmareCompleted,
       backgroundColor: DifficultyColors[Difficulties.Nightmare],
     },
     {
       label: t(`difficulties.veryhard`),
-      data: missionsVeryHardCompleted,
+      data: missionsNoHopeCompleted,
       backgroundColor: DifficultyColors[Difficulties.NoHope],
     },
     {
       label: t(`difficulties.pvp`),
-      data: missionsPvpCompleted,
+      data: missionsSwarmCompleted,
       backgroundColor: DifficultyColors[Difficulties.Swarm],
     },
   ];
 
-  const data: ChartData<'bar'> = {
+  const data: ChartData = {
     labels: Object.values(Cleaners).map(cleaner => t(`cleaners.${cleaner}`)),
     datasets: datasets,
   };
 
-  const options: ChartOptions<'bar'> = {
+  const options: ChartOptions = {
     scales: {
       x: {
         stacked: true,
         ticks: {
           font: {
-            weight: '700'
+            weight: '700',
           },
           callback: function (value, index, values) {
             const cleanerId = Object.values(Cleaners)[index];
@@ -68,7 +79,7 @@ export default function MissionsCompletedPerCleaner() {
 
             return `${t(`cleaners.${cleanerId}`)} - ${missionsCompletedByCleaner}`;
           },
-        }
+        },
       },
       y: {
         stacked: true,
@@ -81,23 +92,26 @@ export default function MissionsCompletedPerCleaner() {
       datalabels: {
         // To determine if we display or not, we recompute on how many total missions completed are being displayed (based on filters hidden / show)
         display: (context) => {
-          let overallMissionsCompleted = statistics.missionsStatistics.missionsCompleted;
+          let overallMissionsCompleted = statistics.missionsStatistics[progressionType].missionsCompleted;
 
           // @ts-ignore We know this key exists, ignore the error
           for (const legendItem of context.chart.legend.legendItems) {
             if (legendItem.hidden) {
               switch (legendItem.datasetIndex) {
                 case 0: // easy
-                  overallMissionsCompleted -= statistics.missionsStatistics.missionsCompletedPerDifficulty.easy;
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.easy;
                   break;
                 case 1: // normal
-                  overallMissionsCompleted -= statistics.missionsStatistics.missionsCompletedPerDifficulty.normal;
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.normal;
                   break;
                 case 2: // hard
-                  overallMissionsCompleted -= statistics.missionsStatistics.missionsCompletedPerDifficulty.hard;
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.hard;
                   break;
-                case 3: // pvp
-                  overallMissionsCompleted -= statistics.missionsStatistics.missionsCompletedPerDifficulty.pvp;
+                case 3: // veryhard
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.veryhard;
+                  break;
+                case 4: // pvp
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.pvp;
                   break;
               }
             }
@@ -112,13 +126,13 @@ export default function MissionsCompletedPerCleaner() {
       },
       tooltip: {
         callbacks: {
-          title(tooltipItems): string {
+          title: (tooltipItems) => {
             const tooltip = tooltipItems[0];
 
             return `${tooltip.label} - ${tooltip.dataset.label}`;
           },
-          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics.missionsCompleted, t)
-        }
+          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics[progressionType].missionsCompleted, t),
+        },
       },
     },
   };
@@ -131,7 +145,7 @@ export default function MissionsCompletedPerCleaner() {
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_missions_completed"
-            values={{count: localeFormat(statistics.missionsStatistics.missionsCompleted)}}
+            values={{count: localeFormat(statistics.missionsStatistics[progressionType].missionsCompleted)}}
             components={{b: <b/>}}
           />
         </Badge>

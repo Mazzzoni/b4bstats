@@ -8,15 +8,17 @@ import { Context } from 'chartjs-plugin-datalabels';
 import StatisticsState from '@components/self/StatisticsState';
 import { tooltipCallbackLabelMissions } from '@utils/charts';
 import { DifficultyColors } from '@utils/colors';
+import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function MissionsCompletedPerDifficulty() {
   const statistics = useRecoilValue(StatisticsState);
+  const progressionType = useRecoilValue(SelectedProgressionTypeState);
   const {t} = useTranslation();
 
   const data: ChartData = {
-    labels: Object.keys(statistics.missionsStatistics.missionsCompletedPerDifficulty).map((difficulty) => t(`difficulties.${difficulty}`)),
+    labels: Object.keys(statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty).map((difficulty) => t(`difficulties.${difficulty}`)),
     datasets: [{
-      data: Object.values(statistics.missionsStatistics.missionsCompletedPerDifficulty),
+      data: Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty),
       backgroundColor: Object.values(DifficultyColors),
     }],
   };
@@ -26,7 +28,7 @@ export default function MissionsCompletedPerDifficulty() {
       datalabels: {
         anchor: 'center',
         align: 'center',
-        display: (context: Context) => context.dataset.data[context.dataIndex]! > (statistics.missionsStatistics.missionsCompleted * 0.05),
+        display: (context: Context) => context.dataset.data[context.dataIndex]! > (statistics.missionsStatistics[progressionType].missionsCompleted * 0.05),
         formatter: (value: number) => nFormatter(value, 1),
       },
       legend: {
@@ -39,7 +41,7 @@ export default function MissionsCompletedPerDifficulty() {
       tooltip: {
         callbacks: {
           title: (context: TooltipItem<ChartType>[]) => context[0].label,
-          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics.missionsCompleted, t)
+          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics[progressionType].missionsCompleted, t)
         }
       },
     },

@@ -1,14 +1,16 @@
-import { Checkbox, Radio, RadioGroup, Tooltip } from '@mantine/core';
+import { Checkbox, Radio, RadioGroup } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
 import { useRecoilState } from 'recoil';
-import { Cleaners } from '@components/statistics/types';
+import { Cleaners, ProgressionTypes } from '@components/statistics/types';
 import { getCleanerNameById } from '@utils/generic';
 import { Award, List, PieChart } from 'react-feather';
+import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function SelfQuicklinks() {
   const {t} = useTranslation();
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
+  const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
 
   return (
     <div className="border-left-subtle pl-3">
@@ -17,31 +19,13 @@ export default function SelfQuicklinks() {
 
         <RadioGroup
           variant="vertical"
-          defaultValue="online"
+          defaultValue={selectedProgressionType}
           defaultChecked={true}
           className="select-none"
-        >
-          <Radio value="online">Online</Radio>
-
-          <Radio value="offline" disabled={true}>
-            <Tooltip
-              withArrow
-              position="right"
-              label={<span>Only <strong className="underline">online</strong> progression is available from statistics file at the moment.<br/>We can expect offline tracking in future updates.</span>}
-            >
-              Offline
-            </Tooltip>
-          </Radio>
-
-          <Radio value="both" disabled={true}>
-            <Tooltip
-              withArrow
-              position="right"
-              label={<span>Only <strong className="underline">online</strong> progression is available from statistics file at the moment.<br/>We can expect offline tracking in future updates.</span>}
-            >
-              Both
-            </Tooltip>
-          </Radio>
+          onChange={(e) => setSelectedProgressionType(e as ProgressionTypes)}>
+          <Radio value={ProgressionTypes.Merged}>Both</Radio>
+          <Radio value={ProgressionTypes.Online}>Online</Radio>
+          <Radio value={ProgressionTypes.Offline}>Offline</Radio>
         </RadioGroup>
       </div>
 
