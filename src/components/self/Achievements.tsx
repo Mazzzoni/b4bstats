@@ -277,6 +277,32 @@ export default function Achievements() {
 
         <div className="col-span-4">
           <ProgressMilestones
+            title="250 Missions completed as Heng"
+            maxValue={250}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_9.total}
+            milestones={[
+              {step: 25},
+              {step: 50},
+              {step: 100},
+            ]}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <ProgressMilestones
+            title="250 Missions completed as Sharice"
+            maxValue={250}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_10.total}
+            milestones={[
+              {step: 25},
+              {step: 50},
+              {step: 100},
+            ]}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <ProgressMilestones
             title="5 000 Sniper Rifle kills"
             maxValue={5000}
             currentValue={Statistics.getKillCountByWeaponType(statistics, WeaponTypes.Sniper)}
