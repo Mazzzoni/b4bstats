@@ -1,17 +1,16 @@
 import { Checkbox, Radio, RadioGroup } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import StatisticsState, { AllStatisticsState } from '@components/self/StatisticsState';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { Cleaners } from '@components/statistics/types';
+import { useRecoilState } from 'recoil';
+import { Cleaners, ProgressionTypes } from '@components/statistics/types';
 import { getCleanerNameById } from '@utils/generic';
 import { Award, List, PieChart } from 'react-feather';
+import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function SelfQuicklinks() {
   const {t} = useTranslation();
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
-  const setStatistics = useSetRecoilState(StatisticsState);
-  const allStatistics = useRecoilValue(AllStatisticsState);
+  const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
 
   return (
     <div className="border-left-subtle pl-3">
@@ -20,25 +19,13 @@ export default function SelfQuicklinks() {
 
         <RadioGroup
           variant="vertical"
-          defaultValue="both"
+          defaultValue={selectedProgressionType}
           defaultChecked={true}
           className="select-none"
-          onChange={(e) => {
-            switch (e) {
-              case 'both':
-                setStatistics(allStatistics.mergedStatistics);
-                break;
-              case 'online':
-                setStatistics(allStatistics.onlineStatistics);
-                break;
-              case 'offline':
-                setStatistics(allStatistics.offlineStatistics);
-                break;
-            }
-          }}>
-          <Radio value="both">Both</Radio>
-          <Radio value="online">Online</Radio>
-          <Radio value="offline">Offline</Radio>
+          onChange={(e) => setSelectedProgressionType(e as ProgressionTypes)}>
+          <Radio value={ProgressionTypes.Merged}>Both</Radio>
+          <Radio value={ProgressionTypes.Online}>Online</Radio>
+          <Radio value={ProgressionTypes.Offline}>Offline</Radio>
         </RadioGroup>
       </div>
 

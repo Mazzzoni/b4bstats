@@ -1,5 +1,3 @@
-import Statistics from "./Statistics";
-
 export enum Missions
 {
   // Act 1
@@ -344,14 +342,9 @@ export type PvpStatistics = {
   killsAsRidden: number
 }
 
-export type AllStatistics = {
-  onlineStatistics: Statistics
-  offlineStatistics: Statistics
-  mergedStatistics: Statistics
-}
-
-export enum OnlineStatus {
-  Online,
-  Offline,
-  Merged
+export enum ProgressionTypes
+{
+  Online = 'online',
+  Offline = 'offline',
+  Merged = 'merged',
 }

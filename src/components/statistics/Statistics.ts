@@ -4,6 +4,10 @@ import {
   Difficulties,
   MiscellaneousStatistics,
   Missions,
+  ProgressionTypes,
+  Riddens,
+  Weapons,
+  WeaponTypes,
   MissionsCompletedPerCleaner,
   MissionsCompletedPerDifficulty,
   MissionsStatistics,
@@ -12,13 +16,10 @@ import {
   RiddenKilled,
   WeaponsKills,
   WeaponsSorted,
-  Riddens,
-  Weapons,
-  WeaponTypes,
-  OnlineStatus,
-  AllStatistics,
 } from '@components/statistics/types';
 import { isSkippableWeaponInOverall } from '@utils/charts';
+
+type RawData = { [key: string]: any; }
 
 export default class Statistics
 {
@@ -45,101 +46,17 @@ export default class Statistics
     [MiscellaneousStatistics.SnitchersSilenced]: 0,
   };
 
-  public missionsStatistics: MissionsStatistics = {
-    missionsCompleted: 0,
-    missionsCompletedPerCleaner: {
-      [Cleaners.Evangelo]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Walker]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Holly]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Hoffman]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Doc]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Jim]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Karlee]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Mom]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Heng]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-      [Cleaners.Sharice]: {
-        total: 0,
-        [Difficulties.Recruit]: 0,
-        [Difficulties.Veteran]: 0,
-        [Difficulties.Nightmare]: 0,
-        [Difficulties.NoHope]: 0,
-        [Difficulties.Swarm]: 0,
-      },
-    },
-    missionsCompletedPerDifficulty: {
-      [Difficulties.Recruit]: 0,
-      [Difficulties.Veteran]: 0,
-      [Difficulties.Nightmare]: 0,
-      [Difficulties.NoHope]: 0,
-      [Difficulties.Swarm]: 0,
-    },
-    missionsCompletedRaw: {},
+  public missionsStatistics: Record<ProgressionTypes, MissionsStatistics> = {
+    [ProgressionTypes.Merged]: {} as MissionsStatistics,
+    [ProgressionTypes.Online]: {} as MissionsStatistics,
+    [ProgressionTypes.Offline]: {} as MissionsStatistics,
   };
 
-  public progressions: Progressions = {};
+  public progressions: Record<ProgressionTypes, Progressions> = {
+    [ProgressionTypes.Merged]: {},
+    [ProgressionTypes.Online]: {},
+    [ProgressionTypes.Offline]: {},
+  };
 
   public pvpStatistics: PvpStatistics = {
     gamesLost: 0,
@@ -231,22 +148,14 @@ export default class Statistics
     [Weapons.Unarmed]: 0,
   };
 
-  public static build(rawStats: { [key: string]: any; }): AllStatistics {
-    return {
-      onlineStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Online),
-      offlineStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Offline),
-      mergedStatistics: Statistics.buildInternal(rawStats, OnlineStatus.Merged)
-    }
-  }
-
   /**
-   * @param rawStats
+   * @param rawStatistics
    * @throws Throws error if the object format isn't expected
    */
-  private static buildInternal(rawStats: { [key: string]: any; }, onlineStatus: OnlineStatus): Statistics
+  public static build(rawStatistics: RawData): Statistics
   {
     // Access main data, if it fails it'll throw error
-    const data = rawStats.offlineData.stats;
+    const data = rawStatistics.offlineData.stats;
 
     const miscellaneousStatistics: Record<MiscellaneousStatistics, number> = {
       [MiscellaneousStatistics.AmmoDropped]: _.get(data, 'ammoDropped.base', 0),
@@ -269,38 +178,17 @@ export default class Statistics
       [MiscellaneousStatistics.SnitchersSilenced]: _.get(data, 'snitchersSilenced.base', 0),
     };
 
-    const onlineMissions = _.get(data, 'missionsCompleted_Secured', {});
-    const offlineMissions = _.get(data, "missionsCompleted_Unsecured", {})
-    const mergedMissions = Statistics.mergeMissionData(onlineMissions, offlineMissions);
-
-    const missions = (() => {
-      switch (onlineStatus) {
-        case OnlineStatus.Online: return onlineMissions;
-        case OnlineStatus.Offline: return offlineMissions;
-        case OnlineStatus.Merged: return mergedMissions;
-      }
-    })()
-
-    const missionsStatistics: MissionsStatistics = {
-      missionsCompleted: _.get(missions, 'base', 0),
-
-      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(missions, 'keys', {})),
-      missionsCompletedPerCleaner: {
-        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_1'),
-        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_2'),
-        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_3'),
-        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_4'),
-        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_5'),
-        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_6'),
-        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_7'),
-        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_8'),
-        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
-        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
-      },
-      missionsCompletedRaw: _.get(missions, 'keys', {}),
+    const missionsStatistics = {
+      [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Merged),
+      [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Online),
+      [ProgressionTypes.Offline]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Offline),
     };
 
-    const progressions: Progressions = Statistics.getProgressionsByCleaners(_.get(missions, 'keys', {}));
+    const progressions = {
+      [ProgressionTypes.Merged]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Merged),
+      [ProgressionTypes.Online]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Online),
+      [ProgressionTypes.Offline]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Offline),
+    };
 
     const rawRiddenKilled = _.get(data, 'riddenKilledByType.keys', {});
 
@@ -433,7 +321,8 @@ export default class Statistics
 
   public getAverageValuePerMissionCompleted(value: number, fixed: boolean = true, fixedDecimal: number = 2): string | number
   {
-    const average = value / this.missionsStatistics.missionsCompleted;
+    // We'll set the average for the overall missions done
+    const average = value / this.missionsStatistics[ProgressionTypes.Merged].missionsCompleted;
 
     if (fixed) {
       return average.toFixed(fixedDecimal);
@@ -453,21 +342,72 @@ export default class Statistics
     return Math.round(average);
   }
 
+  private static getMissionsPerProgressionType(data: RawData, progressionType: ProgressionTypes): RawData
+  {
+    const onlineMissions = _.get(data, 'missionsCompleted_Secured', {});
+    const offlineMissions = _.get(data, 'missionsCompleted_Unsecured', {});
+    const mergedMissions = Statistics.mergeMissionData(onlineMissions, offlineMissions);
+
+    switch (progressionType) {
+      case ProgressionTypes.Online:
+        return onlineMissions;
+      case ProgressionTypes.Offline:
+        return offlineMissions;
+      case ProgressionTypes.Merged:
+        return mergedMissions;
+    }
+  }
+
+  private static getMissionsStatisticsPerProgressionType(data: RawData, progressionType: ProgressionTypes): MissionsStatistics
+  {
+    const missions = Statistics.getMissionsPerProgressionType(data, progressionType);
+
+    return {
+      missionsCompleted: _.get(missions, 'base', 0),
+      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(missions, 'keys', {})),
+      missionsCompletedPerCleaner: {
+        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_1'),
+        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_2'),
+        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_3'),
+        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_4'),
+        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_5'),
+        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_6'),
+        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_7'),
+        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_8'),
+        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
+        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
+      },
+      missionsCompletedRaw: _.get(missions, 'keys', {}),
+    };
+  }
+
+  private static getOverallProgressionPerType(data: RawData, progressionType: ProgressionTypes): Progressions
+  {
+    const missions = Statistics.getMissionsPerProgressionType(data, progressionType);
+
+    return Statistics.getProgressionsByCleaners(_.get(missions, 'keys', {}));
+  }
+
   /**
    * Merge online and offline mission data
    */
-  private static mergeMissionData(onlineMissions: any, offlineMissions: any) {
+  private static mergeMissionData(onlineMissions: any, offlineMissions: any): RawData
+  {
     const mergedMissions = {
       'base': 0,
-      'keys': {}
+      'keys': {},
     };
 
-    function customizer(obj: number, src: number) {
-      return _.defaultTo(obj, 0) + _.defaultTo(src, 0);
-    }
-
     mergedMissions['base'] = _.get(onlineMissions, 'base', 0) + _.get(offlineMissions, 'base', 0);
-    mergedMissions['keys'] = _.mergeWith({}, _.get(onlineMissions, 'keys', {}), _.get(offlineMissions, 'keys', {}), customizer);
+    mergedMissions['keys'] = _.mergeWith(
+      {},
+      _.get(onlineMissions, 'keys', {}),
+      _.get(offlineMissions, 'keys', {}),
+      (obj: number, src: number): number => {
+        return _.defaultTo(obj, 0) + _.defaultTo(src, 0);
+      },
+    );
+
     return mergedMissions;
   }
 
@@ -508,7 +448,7 @@ export default class Statistics
     return missionsCompleteByDifficulties;
   }
 
-  private static getMissionsCompletedPerCleaner(rawMissions: { [index: string]: number }, cleaner: string): MissionsCompletedPerCleaner
+  private static getMissionsCompletedPerCleaner(rawMissions: RawData, cleaner: string): MissionsCompletedPerCleaner
   {
     let missionsCompleteByCleaner: MissionsCompletedPerCleaner = {
       total: _.get(rawMissions, cleaner, 0),
@@ -523,6 +463,12 @@ export default class Statistics
       const value: number = rawMissions[mission];
 
       // We skip values that don't concern cleaner passed
+
+      // Handle special case for Evangelo (Hero_1) and Sharice (Hero_10) overlapping includes condition
+      if (cleaner === 'Hero_1' && mission.includes('hero_10')) {
+        return;
+      }
+
       if (!mission.includes(cleaner.toLowerCase())) {
         return;
       }

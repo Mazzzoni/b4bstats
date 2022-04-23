@@ -1,12 +1,11 @@
 import { useSetRecoilState } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
-import StatisticsState, { AllStatisticsState } from '@components/self/StatisticsState';
+import StatisticsState from '@components/self/StatisticsState';
 import { Divider, Kbd } from '@mantine/core';
 import Dropzone from '@components/common/Dropzone';
 
 export default function Introduction() {
   const setStatistics = useSetRecoilState(StatisticsState);
-  const setAllStatistics = useSetRecoilState(AllStatisticsState)
   const {t} = useTranslation();
 
   return (
@@ -69,7 +68,7 @@ export default function Introduction() {
         </p>
       </div>
 
-      <Dropzone setStatistics={setStatistics} setAllStatistics={setAllStatistics}/>
+      <Dropzone setStatistics={setStatistics}/>
     </div>
   );
 }
