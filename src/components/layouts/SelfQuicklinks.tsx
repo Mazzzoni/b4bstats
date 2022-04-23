@@ -10,8 +10,8 @@ import { Award, List, PieChart } from 'react-feather';
 export default function SelfQuicklinks() {
   const {t} = useTranslation();
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
-  const setStatistics = useSetRecoilState(StatisticsState)
-  const allStatistics = useRecoilValue(AllStatisticsState)
+  const setStatistics = useSetRecoilState(StatisticsState);
+  const allStatistics = useRecoilValue(AllStatisticsState);
 
   return (
     <div className="border-left-subtle pl-3">
@@ -24,10 +24,16 @@ export default function SelfQuicklinks() {
           defaultChecked={true}
           className="select-none"
           onChange={(e) => {
-            switch(e) {
-              case("both"): setStatistics(allStatistics.mergedStatistics); break;
-              case("online"): setStatistics(allStatistics.onlineStatistics); break;
-              case("offline"): setStatistics(allStatistics.offlineStatistics); break;
+            switch (e) {
+              case 'both':
+                setStatistics(allStatistics.mergedStatistics);
+                break;
+              case 'online':
+                setStatistics(allStatistics.onlineStatistics);
+                break;
+              case 'offline':
+                setStatistics(allStatistics.offlineStatistics);
+                break;
             }
           }}>
           <Radio value="both">Both</Radio>
