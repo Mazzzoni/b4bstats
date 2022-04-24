@@ -75,6 +75,7 @@ const Page: NextPage = () => {
               <Contributor name="Hermano Juroso" discord={true} contribution="Dutch translations."/>
               <Contributor name="디시인사이드 백4블러드 갤러리" contribution="Korean translations."/>
               <Contributor name="domme_xo" discord={true} contribution="German translations."/>
+              <Contributor name="Hezu" discord={true} contribution="riddens illustrations."/>
               <Contributor name="Keithustus" reddit={true} contribution="feedback and contributions."/>
               <Contributor name="B4B Discord" discord={true} contribution="feedback and contributions."/>
               <Contributor name="B4B Reddit" reddit={true} contribution="feedback and contributions."/>
@@ -89,7 +90,7 @@ const Page: NextPage = () => {
             <strong className="text-xl">How do I unlock ZWAT skin ?</strong>
 
             <p>
-              To unlock ZWAT skin for a cleaner, you need to complete every mission of every act in <b>nightmare difficulty</b> with that cleaner.
+              To unlock ZWAT skin for a cleaner, you need to complete every mission of every act in <b>Nightmare difficulty</b> or <b>No Hope difficulty</b> with that cleaner.
             </p>
           </div>
 
