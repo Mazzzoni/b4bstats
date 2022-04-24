@@ -1,5 +1,6 @@
-import { RiddenDefinition } from '@components/riddens/RiddenProps';
 import { Badge, Table } from '@mantine/core';
+import { GlassMagnifier } from 'react-image-magnifiers';
+import { RiddenDefinition } from '@components/riddens/RiddenProps';
 import RiddenHealth from '@components/riddens/charts/RiddenHealth';
 
 type Props = {
@@ -9,17 +10,24 @@ type Props = {
 export default function RiddenCard({ridden}: Props) {
   return (
     <div className="grid grid-cols-12 gap-5 mb-10">
-      <div className="col-span-2">
+      <div className="col-span-3">
         <div className="sticky top-[80px]">
-          <div
-            className="h-72 w-100 bg-center bg-cover bg-no-repeat"
-            style={{backgroundImage: `url(/images/riddens/${ridden.image})`}}
+          <Badge fullWidth size="lg">{ridden.name}</Badge>
+
+          <GlassMagnifier
+            square
+            allowOverflow
+            className="magnifier"
+            imageSrc={`/images/riddens/${ridden.image}`}
+            largeImageSrc={`/images/riddens/${ridden.image}`}
+            magnifierSize={'125%'}
+            magnifierBorderSize={1}
+            magnifierBorderColor={'rgb(255, 255, 255)'}
           />
-          <Badge size="lg" fullWidth={true}>{ridden.name}</Badge>
         </div>
       </div>
 
-      <div className="col-span-10">
+      <div className="col-span-9">
         <Table
           highlightOnHover
           verticalSpacing="sm"

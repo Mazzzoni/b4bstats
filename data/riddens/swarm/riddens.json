@@ -34,7 +34,7 @@
   {
     "name": "Stinger",
     "category": "stingers",
-    "image": "stinger.webp",
+    "image": "stinger.png",
     "health": {
       "Standard": 90,
       "HP Talent 1": 150
@@ -44,7 +44,7 @@
   {
     "name": "Hocker",
     "category": "stingers",
-    "image": "hocker.webp",
+    "image": "hocker.png",
     "health": {
       "Standard": 80,
       "HP Talent 1": 120
@@ -54,7 +54,7 @@
   {
     "name": "Stalker",
     "category": "stingers",
-    "image": "stalker.webp",
+    "image": "stalker.png",
     "health": {
       "Standard": 120,
       "HP Talent 1": 180
@@ -84,7 +84,7 @@
   {
     "name": "Tallboy",
     "category": "tallboys",
-    "image": "tallboy.webp",
+    "image": "tallboy.png",
     "health": {
       "Standard": 600,
       "HP Talent 1": 690,
@@ -95,7 +95,7 @@
   {
     "name": "Bruiser",
     "category": "tallboys",
-    "image": "bruiser.webp",
+    "image": "bruiser.png",
     "health": {
       "Standard": 800,
       "HP Talent 1": 920,
@@ -106,7 +106,7 @@
   {
     "name": "Crusher",
     "category": "tallboys",
-    "image": "crusher.webp",
+    "image": "crusher.png",
     "health": {
       "Standard": 700,
       "HP Talent 1": 805,

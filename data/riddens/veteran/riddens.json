@@ -34,7 +34,7 @@
   {
     "name": "Stinger",
     "category": "stingers",
-    "image": "stinger.webp",
+    "image": "stinger.png",
     "health": {
       "Standard": 125,
       "Ferocious": 156.3,
@@ -50,7 +50,7 @@
   {
     "name": "Hocker",
     "category": "stingers",
-    "image": "hocker.webp",
+    "image": "hocker.png",
     "health": {
       "Standard": 125,
       "Ferocious": 156.3,
@@ -66,13 +66,29 @@
   {
     "name": "Stalker",
     "category": "stingers",
-    "image": "stalker.webp",
+    "image": "stalker.png",
     "health": {
       "Standard": 187.5,
       "Ferocious": 234.4,
       "Monstrous": 281.3
     },
     "weakspot_multiplier": 2.25,
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    }
+  },
+  {
+    "name": "Urchin",
+    "category": "stingers",
+    "image": "urchin.png",
+    "health": {
+      "Standard": 179.1,
+      "Ferocious": 223.9,
+      "Monstrous": 268.7
+    },
+    "weakspot_multiplier": 2,
     "stumble": {
       "health": 30,
       "recovery": 15,
@@ -126,9 +142,25 @@
     }
   },
   {
+    "name": "Shredder",
+    "category": "reekers",
+    "image": "shredder.webp",
+    "health": {
+      "Standard": 403.1,
+      "Ferocious": 503.9,
+      "Monstrous": 604.6
+    },
+    "weakspot_multiplier": 1.5,
+    "stumble": {
+      "health": 200,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
+    }
+  },
+  {
     "name": "Tallboy",
     "category": "tallboys",
-    "image": "tallboy.webp",
+    "image": "tallboy.png",
     "health": {
       "Standard": 562.5,
       "Ferocious": 703.2,
@@ -144,7 +176,7 @@
   {
     "name": "Bruiser",
     "category": "tallboys",
-    "image": "bruiser.webp",
+    "image": "bruiser.png",
     "health": {
       "Standard": 791.7,
       "Ferocious": 989.6,
@@ -160,7 +192,7 @@
   {
     "name": "Crusher",
     "category": "tallboys",
-    "image": "crusher.webp",
+    "image": "crusher.png",
     "health": {
       "Standard": 625,
       "Ferocious": 781.3,
@@ -171,6 +203,22 @@
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 2.5
+    }
+  },
+  {
+    "name": "Ripper",
+    "category": "tallboys",
+    "image": "ripper.png",
+    "health": {
+      "Standard": 716.6,
+      "Ferocious": 895.8,
+      "Monstrous": 1075
+    },
+    "weakspot_multiplier": 1.5,
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 2
     }
   },
   {
