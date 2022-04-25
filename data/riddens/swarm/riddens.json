@@ -64,21 +64,21 @@
   {
     "name": "Exploder",
     "category": "reekers",
-    "image": "exploder.webp",
+    "image": "exploder.png",
     "health": 200,
     "weakspot_multiplier": 1.5
   },
   {
     "name": "Retch",
     "category": "reekers",
-    "image": "retch.webp",
+    "image": "retch.png",
     "health": 250,
     "weakspot_multiplier": 1.5
   },
   {
     "name": "Reeker",
     "category": "reekers",
-    "image": "reeker.webp",
+    "image": "reeker.png",
     "health": 450
   },
   {

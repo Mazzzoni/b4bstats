@@ -84,9 +84,9 @@
     "category": "stingers",
     "image": "urchin.png",
     "health": {
-      "Standard": 143.3,
-      "Ferocious": 179.1,
-      "Monstrous": 215
+      "Standard": 133.3,
+      "Ferocious": 166.6,
+      "Monstrous": 200
     },
     "weakspot_multiplier": 2,
     "stumble": {
@@ -98,7 +98,7 @@
   {
     "name": "Exploder",
     "category": "reekers",
-    "image": "exploder.webp",
+    "image": "exploder.png",
     "health": {
       "Standard": 233.4,
       "Ferocious": 291.7,
@@ -114,7 +114,7 @@
   {
     "name": "Retch",
     "category": "reekers",
-    "image": "retch.webp",
+    "image": "retch.png",
     "health": {
       "Standard": 233.4,
       "Ferocious": 291.7,
@@ -130,7 +130,7 @@
   {
     "name": "Reeker",
     "category": "reekers",
-    "image": "reeker.webp",
+    "image": "reeker.png",
     "health": {
       "Standard": 333.4,
       "Ferocious": 416.7,
@@ -144,11 +144,11 @@
   {
     "name": "Shredder",
     "category": "reekers",
-    "image": "shredder.webp",
+    "image": "shredder.png",
     "health": {
-      "Standard": 322.5,
-      "Ferocious": 403.1,
-      "Monstrous": 483.7
+      "Standard": 300,
+      "Ferocious": 375,
+      "Monstrous": 450
     },
     "weakspot_multiplier": 1.5,
     "stumble": {
@@ -210,9 +210,9 @@
     "category": "tallboys",
     "image": "ripper.png",
     "health": {
-      "Standard": 573.3,
-      "Ferocious": 716.6,
-      "Monstrous": 860
+      "Standard": 533.3,
+      "Ferocious": 666.6,
+      "Monstrous": 800
     },
     "weakspot_multiplier": 1.5,
     "stumble": {

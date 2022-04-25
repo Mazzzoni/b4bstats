@@ -98,7 +98,7 @@
   {
     "name": "Exploder",
     "category": "reekers",
-    "image": "exploder.webp",
+    "image": "exploder.png",
     "health": {
       "Standard": 376.3,
       "Ferocious": 470.4,
@@ -114,7 +114,7 @@
   {
     "name": "Retch",
     "category": "reekers",
-    "image": "retch.webp",
+    "image": "retch.png",
     "health": {
       "Standard": 376.3,
       "Ferocious": 470.4,
@@ -130,11 +130,11 @@
   {
     "name": "Reeker",
     "category": "reekers",
-    "image": "reeker.webp",
+    "image": "reeker.png",
     "health": {
       "Standard": 537.5,
-      "Ferocious": 671.9,
-      "Monstrous": 806.3
+      "Ferocious": 671.8,
+      "Monstrous": 806.2
     },
     "stumble": {
       "health": 100,
@@ -144,7 +144,7 @@
   {
     "name": "Shredder",
     "category": "reekers",
-    "image": "shredder.webp",
+    "image": "shredder.png",
     "health": {
       "Standard": 483.7,
       "Ferocious": 604.6,
