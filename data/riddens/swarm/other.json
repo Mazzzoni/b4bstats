@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Common",
+    "category": "commons",
+    "image": "common.webp",
+    "health": {
+      "Standard": 20,
+      "Ferocious": 25,
+      "Monstrous": 30
+    },
+    "weakspot_multiplier": 2,
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    }
+  },
+  {
+    "name": "Armored Common",
+    "category": "commons",
+    "image": "armored_common.webp",
+    "health": {
+      "Standard": 300,
+      "Ferocious": 375,
+      "Monstrous": 450
+    },
+    "weakspot_multiplier": 13,
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    }
+  },
+  {
+    "name": "Stinger",
+    "category": "stingers",
+    "image": "stinger.png",
+    "health": {
+      "Standard": 90,
+      "HP Talent 1": 150
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Hocker",
+    "category": "stingers",
+    "image": "hocker.png",
+    "health": {
+      "Standard": 80,
+      "HP Talent 1": 120
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Stalker",
+    "category": "stingers",
+    "image": "stalker.png",
+    "health": {
+      "Standard": 120,
+      "HP Talent 1": 180
+    },
+    "weakspot_multiplier": 1.75
+  },
+  {
+    "name": "Exploder",
+    "category": "reekers",
+    "image": "exploder.png",
+    "health": 200,
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Retch",
+    "category": "reekers",
+    "image": "retch.png",
+    "health": 250,
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Reeker",
+    "category": "reekers",
+    "image": "reeker.png",
+    "health": 450
+  },
+  {
+    "name": "Tallboy",
+    "category": "tallboys",
+    "image": "tallboy.png",
+    "health": {
+      "Standard": 600,
+      "HP Talent 1": 690,
+      "HP Talent 2": 780
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Bruiser",
+    "category": "tallboys",
+    "image": "bruiser.png",
+    "health": {
+      "Standard": 800,
+      "HP Talent 1": 920,
+      "HP Talent 2": 1040
+    },
+    "weakspot_multiplier": 1.65
+  },
+  {
+    "name": "Crusher",
+    "category": "tallboys",
+    "image": "crusher.png",
+    "health": {
+      "Standard": 700,
+      "HP Talent 1": 805,
+      "HP Talent 2": 910
+    },
+    "weakspot_multiplier": 1.5
+  }
+]
