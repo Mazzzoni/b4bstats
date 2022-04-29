@@ -51,36 +51,122 @@
     "image": "m4.webp",
     "slot": "primary",
     "ammo": "rifle",
-    "rpm": 600,
-    "magazine_size": 30,
-    "reload_time": 2.73,
-    "stumble_power_multiplier": 0.75,
-    "bullet_penetration_multiplier": 0.75,
     "attachments": {
       "barrel": true,
       "magazine": true,
       "scope": true,
       "stock": true
     },
-    "movement_speed": {
-      "jog": 410,
-      "hipfire": 226,
-      "ads": 205,
-      "other": 164
-    },
-    "ads": {
-      "in": 0.50,
-      "out": 0.42
-    },
-    "swap": {
-      "in": 0.75,
-      "out": 0.47
-    },
-    "range_damages": {
-      "700": 13.90,
-      "1250": 9.80,
-      "1500": 7.40,
-      "2000": 4.40
+    "pellets": 1,
+    "qualities": {
+      "common": {
+        "rpm": 600,
+        "range_damages": {
+          "700": 13.90,
+          "1250": 9.80,
+          "1500": 7.40,
+          "2000": 4.40
+        },
+        "magazine_size": 30,
+        "reload_time": 2.73,
+        "stumble_power_multiplier": 0.75,
+        "bullet_penetration_multiplier": 0.75,
+        "movement_speed": {
+          "jog": 410,
+          "hipfire": 226,
+          "ads": 205,
+          "other": 164
+        },
+        "ads": {
+          "in": 0.50,
+          "out": 0.42
+        },
+        "swap": {
+          "in": 0.75,
+          "out": 0.47
+        }
+      },
+      "uncommon": {
+        "rpm": 600,
+        "range_damages": {
+          "700": 15.90,
+          "1250": 13.80,
+          "1500": 9.40,
+          "2000": 6.40
+        },
+        "magazine_size": 35,
+        "reload_time": 2.73,
+        "stumble_power_multiplier": 0.75,
+        "bullet_penetration_multiplier": 0.75,
+        "movement_speed": {
+          "jog": 410,
+          "hipfire": 226,
+          "ads": 205,
+          "other": 164
+        },
+        "ads": {
+          "in": 0.50,
+          "out": 0.42
+        },
+        "swap": {
+          "in": 0.75,
+          "out": 0.47
+        }
+      },
+      "rare": {
+        "rpm": 600,
+        "range_damages": {
+          "700": 17.90,
+          "1250": 15.80,
+          "1500": 13.40,
+          "2000": 10.40
+        },
+        "magazine_size": 40,
+        "reload_time": 2.73,
+        "stumble_power_multiplier": 0.75,
+        "bullet_penetration_multiplier": 0.75,
+        "movement_speed": {
+          "jog": 410,
+          "hipfire": 226,
+          "ads": 205,
+          "other": 164
+        },
+        "ads": {
+          "in": 0.50,
+          "out": 0.42
+        },
+        "swap": {
+          "in": 0.75,
+          "out": 0.47
+        }
+      },
+      "epic": {
+        "rpm": 750,
+        "range_damages": {
+          "700": 20.90,
+          "1250": 18.80,
+          "1500": 15.40,
+          "2000": 13.40
+        },
+        "magazine_size": 40,
+        "reload_time": 2.73,
+        "stumble_power_multiplier": 0.75,
+        "bullet_penetration_multiplier": 0.75,
+        "movement_speed": {
+          "jog": 410,
+          "hipfire": 226,
+          "ads": 205,
+          "other": 164
+        },
+        "ads": {
+          "in": 0.50,
+          "out": 0.42
+        },
+        "swap": {
+          "in": 0.75,
+          "out": 0.47
+        }
+      }
     }
   },
   {

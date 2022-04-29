@@ -7,9 +7,9 @@ import { WeaponsProps } from '@components/weapons/types';
 
 const Page: NextPage<WeaponsProps> = (props) => {
   return (
-    <MainLayout title="Riddens">
+    <MainLayout title="Weapons">
       <Head>
-        <meta name="description" content="Riddens statistics and information"/>
+        <meta name="description" content="Weapons statistics and information"/>
       </Head>
 
       <div>
@@ -20,13 +20,11 @@ const Page: NextPage<WeaponsProps> = (props) => {
 };
 
 export const getStaticProps: GetStaticProps<WeaponsProps> = async (context) => {
-  // TODO: Preprocess weapons to merge qualities for each
-
   return {
     props: {
       note: getDataFileSync('weapons/note.md'),
-      weapons: JSON.parse(getDataFileSync('weapons/common/weapons.json')),
-      // weapons: [JSON.parse(getDataFileSync('weapons/common/weapons.json'))[1]],
+      // weapons: JSON.parse(getDataFileSync('weapons/common/weapons.json')),
+      weapons: [JSON.parse(getDataFileSync('weapons/common/weapons.json'))[1]],
       attachments: [],
     },
   };

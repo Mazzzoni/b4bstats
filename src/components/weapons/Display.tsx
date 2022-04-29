@@ -3,18 +3,19 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { WeaponCategories, WeaponDefinition, WeaponsProps } from '@components/weapons/types';
 import ReactMarkdown from 'react-markdown';
 import WeaponsCategory from '@components/weapons/WeaponsCategory';
+import { ChartPluginCrosshair } from '@utils/chart-plugin-crosshair';
+
+// Register plugins globally
+Chart.register(ChartDataLabels, CategoryScale, Legend, Tooltip, LinearScale, PointElement, LineElement, ChartPluginCrosshair);
+
+// Configure defaults options of charts
+Chart.defaults.color = '#fff';
+Chart.defaults.plugins.legend.display = false;
+Chart.defaults.plugins.tooltip.displayColors = false;
 
 type Props = WeaponsProps
 
 export default function Display(props: Props) {
-  // Register plugins globally
-  Chart.register(ChartDataLabels, CategoryScale, Legend, Tooltip, LinearScale, PointElement, LineElement);
-
-  // Configure defaults options of charts
-  Chart.defaults.color = '#fff';
-  Chart.defaults.plugins.legend.display = false;
-  Chart.defaults.plugins.tooltip.displayColors = false;
-
   const sortedWeapons: Record<WeaponDefinition['category'], WeaponDefinition[]> = {
     [WeaponCategories.AssaultRifles]: [],
     [WeaponCategories.Handgun]: [],

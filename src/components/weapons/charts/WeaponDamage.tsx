@@ -5,6 +5,8 @@ import { ChartData, ChartOptions } from 'chart.js';
 import { getDamageData, getMetersScale } from '@components/weapons/utils';
 import { WeaponRarityColors } from '@utils/colors';
 import { Badge } from '@mantine/core';
+import { CrosshairOptions } from '@utils/chart-plugin-crosshair';
+import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
 
 // Show only few ticks on the overall meters axis
 const shownTicks = [250, 500, 1000, 1500, 2000, 3000, 4000];
@@ -20,7 +22,7 @@ type TooltipProps = {
 function Tooltip({meter, damages}: TooltipProps)
 {
   return (
-    <div className="primary-bg-color">
+    <div className="primary-bg-color min-w-[200px] border">
       <div className="font-bold text px-2 py-1">Distance: {meter / 100}m</div>
       <div className="px-2 py-1">
         <table>
@@ -32,9 +34,9 @@ function Tooltip({meter, damages}: TooltipProps)
           </thead>
 
           <tbody className="text-left">
-          {damages.map((row) => (
+          {damages.reverse().map((row) => (
             <tr key={row.damage}>
-              <td>{row.quality}</td>
+              <td><Badge>{row.quality}</Badge></td>
               <td>{row.damage.toFixed(2)}</td>
             </tr>
           ))}
@@ -51,23 +53,25 @@ type Props = {
 
 export default function WeaponDamage({weapon}: Props) {
   const metersScale = getMetersScale();
-  const damages = getDamageData(weapon, metersScale);
-  // console.log(damages);
+  const datasets = Object.keys(weapon.qualities).map((quality) => {
+    return {
+      label: quality,
+      data: getDamageData(weapon.qualities[quality as WeaponRarities].range_damages, metersScale),
+      borderColor: WeaponRarityColors[quality as WeaponRarities],
+    };
+  });
 
   const data: ChartData = {
     labels: metersScale,
-    datasets: [
-      // TODO: Loop over each weapon quality and display its damages over scale
-      {
-        label: 'Common',
-        data: damages,
-        borderColor: WeaponRarityColors[WeaponRarities.Common],
-      },
-    ],
+    datasets: datasets,
   };
 
-  const options: ChartOptions = {
+  // Extend options
+  const options: ChartOptions & { plugins: { crosshair: CrosshairOptions } } = {
     scales: {
+      y: {
+        suggestedMax: getSuggestedMaxFromArrayOfIntegers(datasets.map((d => Math.max(...d.data)))),
+      },
       xAxis: {
         ticks: {
           callback: (label, index, ticks) => {
@@ -88,11 +92,10 @@ export default function WeaponDamage({weapon}: Props) {
       },
     },
     hover: {
-      mode: 'x',
       intersect: false,
     },
     interaction: {
-      mode: 'nearest',
+      mode: 'index',
       intersect: false,
     },
     plugins: {
@@ -100,7 +103,6 @@ export default function WeaponDamage({weapon}: Props) {
         display: false,
       },
       tooltip: {
-        mode: 'x',
         enabled: false,
         // Create a custom HTML tooltip to be displayed
         external: ({chart, tooltip}) => {
@@ -111,11 +113,9 @@ export default function WeaponDamage({weapon}: Props) {
             tooltipEl.id = 'chartjs-custom-tooltip';
             tooltipEl.style.position = 'absolute';
             tooltipEl.style.pointerEvents = 'none';
-            document.body.appendChild(tooltipEl);
-            // ReactDOM.findDOMNode(this)?.appendChild(tooltipEl);
-            // document.getElementById('__next')!.appendChild(tooltipEl);
-
-            // console.log(document.getEle);
+            tooltipEl.style.transition = 'all 300ms';
+            tooltipEl.style.transform = 'translateY(-50%)';
+            document.getElementsByClassName('weapons')[0].appendChild(tooltipEl);
           }
 
           if (tooltip.opacity === 0) {
@@ -123,9 +123,6 @@ export default function WeaponDamage({weapon}: Props) {
 
             return;
           }
-
-          // console.log(tooltip);
-          // console.log(data);
 
           const dataIndex = tooltip.dataPoints[0].dataIndex;
           const meter = metersScale[dataIndex];
@@ -144,34 +141,25 @@ export default function WeaponDamage({weapon}: Props) {
           const position = chart.canvas.getBoundingClientRect();
 
           tooltipEl.style.opacity = '1';
-          tooltipEl.style.left = position.left + window.scrollX + tooltip.caretX + 10 + 'px';
+          tooltipEl.style.left = position.left + window.scrollX + tooltip.caretX + 20 + 'px';
           tooltipEl.style.top = position.top + window.scrollY + tooltip.caretY + 'px';
         },
-
-        // callbacks: {
-        //   title: (tooltipItems) => {
-        //     return `${tooltipItems[0].label}m`;
-        //   },
-        //   label: (tooltipItem) => {
-        //     // console.log(tooltipItem);
-        //     const dataIndex = tooltipItem.dataIndex;
-        //     const datasets = tooltipItem.chart.data.datasets;
-        //     let body = '';
-        //
-        //     for (const dataset of datasets) {
-        //       body += `${dataset.label}: ${dataset.data[dataIndex]}\n`;
-        //     }
-        //
-        //     return body;
-        //   },
-        // },
+      },
+      crosshair: {
+        horizontal: false,
+        vertical: true,
+        color: 'red',
+        dash: [5],
+        width: 0.5,
       },
     },
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 cursor-crosshair relative">
       <Chart data={data} options={options} type="line"/>
+
+      <span className="absolute z-10 top-12 right-16">{weapon.pellets} pellet{weapon.pellets > 1 && 's'}</span>
     </div>
   );
 }

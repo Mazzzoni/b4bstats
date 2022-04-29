@@ -39,20 +39,43 @@ export enum AttachmentEffect
   MoveSpeedWhileFiring = 'move_speed_while_firing',
 }
 
+export type WeaponStatisticsDefinition = {
+  rpm: number
+  range_damages: Record<string, number>
+  magazine_size: number
+  reload_speed: number
+  stumble_power_multiplier: number
+  bullet_penetration_multiplier: number
+  movement_speed: {
+    jog: number
+    hipfire: number
+    ads: number
+    other: number
+  }
+  ads: {
+    in: number
+    out: number
+  }
+  swap: {
+    in: number
+    out: number
+  }
+}
+
 export type WeaponDefinition = {
   name: string
   category: WeaponCategories
   image: string
   slot: 'primary' | 'secondary' | 'n/a'
   ammo: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper'
-  rpm: number
   attachments: {
     barrel: boolean
     magazine: boolean
     scope: boolean
     stock: boolean
   }
-  range_damages: Record<string, number>
+  pellets: number
+  qualities: Record<WeaponRarities, WeaponStatisticsDefinition>
 }
 
 export type AttachmentDefinition = {

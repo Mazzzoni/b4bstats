@@ -7,7 +7,7 @@ import * as fs from 'fs';
 const sheet = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens.csv`;
 
 // Those declaration mimics the ones from the actual app
-export enum Difficulties
+enum Difficulties
 {
   Recruit = 'easy',
   Veteran = 'normal',
@@ -16,7 +16,7 @@ export enum Difficulties
   Swarm = 'pvp',
 }
 
-export enum RiddenCategories
+enum RiddenCategories
 {
   Commons = 'commons',
   Stingers = 'stingers',
@@ -32,7 +32,7 @@ type WeakspotZone = {
   body_damage: number
 }
 
-export type RiddenDefinition = {
+type RiddenDefinition = {
   name: string
   category: RiddenCategories
   image: string

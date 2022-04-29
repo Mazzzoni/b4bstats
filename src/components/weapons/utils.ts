@@ -1,18 +1,18 @@
-import { WeaponDefinition } from '@components/weapons/types';
+import { WeaponStatisticsDefinition } from '@components/weapons/types';
 
 // Represent 0.5 meter
 const stepSize = 50;
 
-export const getDamageData = (weapon: WeaponDefinition, metersScale: number[]): number[] => {
+export const getDamageData = (range_damages: WeaponStatisticsDefinition['range_damages'], metersScale: number[]): number[] => {
   let damages: number[] = [];
 
   // Format ranges threshold
   const ranges: { range: number, damage: number }[] = [];
 
-  for (const range in weapon.range_damages) {
+  for (const range in range_damages) {
     ranges.push({
       range: +range,
-      damage: weapon.range_damages[range],
+      damage: range_damages[range],
     });
   }
 
@@ -70,6 +70,9 @@ export const getDamageData = (weapon: WeaponDefinition, metersScale: number[]): 
       }
     }
   }
+
+  // Duplicate last tick so it fills completely damages range
+  damages.push(damages[damages.length - 1]);
 
   return damages;
 };
