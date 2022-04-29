@@ -1,108 +1,12 @@
 [
   {
-    "name": "Common",
-    "category": "commons",
-    "image": "common.webp",
-    "health": {
-      "Standard": 20,
-      "Ferocious": 25,
-      "Monstrous": 30
-    },
-    "weakspot_multiplier": 2,
-    "stumble": {
-      "health": 1,
-      "recovery": 0,
-      "weakspot_multiplier": 1
-    }
-  },
-  {
-    "name": "Armored Common",
-    "category": "commons",
-    "image": "armored_common.webp",
-    "health": {
-      "Standard": 300,
-      "Ferocious": 375,
-      "Monstrous": 450
-    },
-    "weakspot_multiplier": 13,
-    "stumble": {
-      "health": 1,
-      "recovery": 0,
-      "weakspot_multiplier": 1
-    }
-  },
-  {
-    "name": "Stinger",
-    "category": "stingers",
-    "image": "stinger.webp",
-    "health": {
-      "Standard": 161.3,
-      "Ferocious": 201.6,
-      "Monstrous": 241.9
-    },
-    "weakspot_multiplier": 2,
-    "stumble": {
-      "health": 30,
-      "recovery": 15,
-      "weakspot_multiplier": 3
-    }
-  },
-  {
-    "name": "Hocker",
-    "category": "stingers",
-    "image": "hocker.webp",
-    "health": {
-      "Standard": 161.3,
-      "Ferocious": 201.6,
-      "Monstrous": 241.9
-    },
-    "weakspot_multiplier": 2,
-    "stumble": {
-      "health": 30,
-      "recovery": 15,
-      "weakspot_multiplier": 3
-    }
-  },
-  {
-    "name": "Stalker",
-    "category": "stingers",
-    "image": "stalker.webp",
-    "health": {
-      "Standard": 241.9,
-      "Ferocious": 302.4,
-      "Monstrous": 362.9
-    },
-    "weakspot_multiplier": 2.25,
-    "stumble": {
-      "health": 30,
-      "recovery": 15,
-      "weakspot_multiplier": 3
-    }
-  },
-  {
-    "name": "Exploder",
-    "category": "reekers",
-    "image": "exploder.webp",
-    "health": {
-      "Standard": 376.3,
-      "Ferocious": 470.4,
-      "Monstrous": 564.4
-    },
-    "weakspot_multiplier": 1.5,
-    "stumble": {
-      "health": 60,
-      "recovery": 80,
-      "weakspot_multiplier": 1.5
-    }
-  },
-  {
     "name": "Retch",
     "category": "reekers",
-    "image": "retch.webp",
+    "image": "retch.png",
     "health": {
-      "Standard": 376.3,
-      "Ferocious": 470.4,
-      "Monstrous": 564.4
+      "Standard": 376.25,
+      "Ferocious": 470.3125,
+      "Monstrous": 564.375
     },
     "weakspot_multiplier": 2,
     "stumble": {
@@ -114,25 +18,59 @@
   {
     "name": "Reeker",
     "category": "reekers",
-    "image": "reeker.webp",
+    "image": "reeker.png",
     "health": {
-      "Standard": 537.5,
-      "Ferocious": 671.9,
-      "Monstrous": 806.3
+      "Standard": 430,
+      "Ferocious": 537.5,
+      "Monstrous": 645
     },
+    "weakspot_multiplier": 0,
     "stumble": {
-      "health": 100,
-      "recovery": 80
+      "health": 75,
+      "recovery": 60,
+      "weakspot_multiplier": 0
+    }
+  },
+  {
+    "name": "Exploder",
+    "category": "reekers",
+    "image": "exploder.png",
+    "health": {
+      "Standard": 376.25,
+      "Ferocious": 470.3125,
+      "Monstrous": 564.375
+    },
+    "weakspot_multiplier": 1.5,
+    "stumble": {
+      "health": 60,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
+    }
+  },
+  {
+    "name": "Shredder",
+    "category": "reekers",
+    "image": "shredder.png",
+    "health": {
+      "Standard": 483.75,
+      "Ferocious": 604.6875,
+      "Monstrous": 725.625
+    },
+    "weakspot_multiplier": 1.5,
+    "stumble": {
+      "health": 200,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
     }
   },
   {
     "name": "Tallboy",
     "category": "tallboys",
-    "image": "tallboy.webp",
+    "image": "tallboy.png",
     "health": {
-      "Standard": 725.7,
-      "Ferocious": 907.1,
-      "Monstrous": 1088.5
+      "Standard": 725.625,
+      "Ferocious": 907.03125,
+      "Monstrous": 1088.4375
     },
     "weakspot_multiplier": 2,
     "stumble": {
@@ -144,11 +82,11 @@
   {
     "name": "Bruiser",
     "category": "tallboys",
-    "image": "bruiser.webp",
+    "image": "bruiser.png",
     "health": {
       "Standard": 1021.25,
-      "Ferocious": 1276.6,
-      "Monstrous": 1531.9
+      "Ferocious": 1276.5625,
+      "Monstrous": 1531.875
     },
     "weakspot_multiplier": 1.5,
     "stumble": {
@@ -160,11 +98,11 @@
   {
     "name": "Crusher",
     "category": "tallboys",
-    "image": "crusher.webp",
+    "image": "crusher.png",
     "health": {
-      "Standard": 806.3,
-      "Ferocious": 1007.9,
-      "Monstrous": 1209.4
+      "Standard": 806.25,
+      "Ferocious": 1007.8125,
+      "Monstrous": 1209.375
     },
     "weakspot_multiplier": 1.5,
     "stumble": {
@@ -174,21 +112,99 @@
     }
   },
   {
-    "name": "Sleeper",
-    "category": "specials",
-    "image": "sleeper.webp",
-    "health": 1
+    "name": "Ripper",
+    "category": "tallboys",
+    "image": "ripper.png",
+    "health": {
+      "Standard": 860,
+      "Ferocious": 1075,
+      "Monstrous": 1290
+    },
+    "weakspot_multiplier": 1.75,
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 2
+    }
   },
   {
-    "name": "Snitcher",
-    "category": "specials",
-    "image": "snitcher.webp",
-    "health": 600,
+    "name": "Stinger",
+    "category": "stingers",
+    "image": "stinger.png",
+    "health": {
+      "Standard": 161.25,
+      "Ferocious": 201.5625,
+      "Monstrous": 241.875
+    },
     "weakspot_multiplier": 2,
     "stumble": {
-      "health": 40,
-      "recovery": 30,
-      "weakspot_multiplier": 2.5
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    }
+  },
+  {
+    "name": "Hocker",
+    "category": "stingers",
+    "image": "hocker.png",
+    "health": {
+      "Standard": 161.25,
+      "Ferocious": 201.5625,
+      "Monstrous": 241.875
+    },
+    "weakspot_multiplier": 2,
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    }
+  },
+  {
+    "name": "Stalker",
+    "category": "stingers",
+    "image": "stalker.png",
+    "health": {
+      "Standard": 241.875,
+      "Ferocious": 302.34375,
+      "Monstrous": 362.8125
+    },
+    "weakspot_multiplier": 2.25,
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    }
+  },
+  {
+    "name": "Urchin",
+    "category": "stingers",
+    "image": "urchin.png",
+    "health": {
+      "Standard": 215,
+      "Ferocious": 268.75,
+      "Monstrous": 322.5
+    },
+    "weakspot_multiplier": 2,
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    }
+  },
+  {
+    "name": "Ogre",
+    "category": "bosses",
+    "image": "ogre.webp",
+    "health": {
+      "Standard": 17000,
+      "Ferocious": 21250,
+      "Monstrous": 25500
+    },
+    "weakspot_multiplier": 1.5,
+    "stumble": {
+      "health": 2500,
+      "recovery": 45,
+      "weakspot_multiplier": 3
     }
   },
   {
@@ -214,57 +230,84 @@
     "health": {
       "Standard": 16000,
       "Ferocious": 20000,
-      "Monstrous": 24000
+      "Monstrous": 16000
     },
+    "weakspot_multiplier": 4,
     "stumble": {
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 1
-    },
-    "weakspot_back": {
-      "health": 460,
-      "weakspot_multiplier": 5,
-      "body_damage": 1000
-    },
-    "weakspot_chest": {
-      "health": 632.5,
-      "weakspot_multiplier": 4,
-      "body_damage": 500
-    },
-    "weakspot_legs": {
-      "health": 402.5,
-      "weakspot_multiplier": 4,
-      "body_damage": 500
-    },
-    "note": "The Monstrous variant is bugged right now and doesn't get it's 50% health increase."
+    }
   },
   {
-    "name": "Ogre",
-    "category": "bosses",
-    "image": "ogre.webp",
+    "name": "Snitch",
+    "category": "specials",
+    "image": "snitcher.webp",
     "health": {
-      "Standard": 17000,
-      "Ferocious": 21250,
-      "Monstrous": 25500
+      "Standard": 600,
+      "Ferocious": 600,
+      "Monstrous": 600
     },
-    "weakspot_back": {
-      "health": 345,
-      "weakspot_multiplier": 1.5,
-      "body_damage": 2000
-    },
-    "weakspot_chest": {
-      "health": 575,
-      "weakspot_multiplier": 1.5,
-      "body_damage": 500
-    },
+    "weakspot_multiplier": 2,
     "stumble": {
-      "health": "2000-2500",
-      "recovery": 45,
-      "weakspot_multiplier": {
-        "Chest": 3,
-        "Back": 2
-      }
+      "health": 40,
+      "recovery": 30,
+      "weakspot_multiplier": 2.5
     }
+  },
+  {
+    "name": "Armored Common",
+    "category": "commons",
+    "image": "armored_common.webp",
+    "health": {
+      "Standard": 300,
+      "Ferocious": 375,
+      "Monstrous": 450
+    },
+    "weakspot_multiplier": 13,
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    }
+  },
+  {
+    "name": "Common",
+    "category": "commons",
+    "image": "common.webp",
+    "health": {
+      "Standard": 20,
+      "Ferocious": 25,
+      "Monstrous": 30
+    },
+    "weakspot_multiplier": 2,
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    }
+  },
+  {
+    "name": "Festering",
+    "category": "commons",
+    "image": "common.webp",
+    "health": {
+      "Standard": 80,
+      "Ferocious": 100,
+      "Monstrous": 120
+    },
+    "weakspot_multiplier": 2,
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    }
+  },
+  {
+    "name": "Sleeper",
+    "category": "specials",
+    "image": "sleeper.webp",
+    "health": 1
   },
   {
     "name": "Abomination - Tentacle",

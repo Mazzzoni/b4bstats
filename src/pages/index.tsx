@@ -15,21 +15,57 @@ const Page: NextPage = () => {
       </Head>
 
       <div>
-        <p>
-          <strong>B4BSTATS</strong> is an online tool centered around <strong>Back 4 Blood</strong> game to track your progress through campaigns and display your statistics.
-        </p>
+        <div>
+          <h2 className="font-bold text-2xl color-primary">B4BSTATS</h2>
 
-        <p className="mt-3">
-          Currently, two modes are available: <Link href="/self"><a className="color-primary">Self</a></Link> and <Link href="/compare"><a className="color-primary">Compare</a></Link>.
-        </p>
+          <p className="mt-3">
+            <strong>B4BSTATS</strong> is an <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">open source</a> online tool centered around <a href="https://back4blood.com/" target="_blank" rel="noreferrer" className="color-primary"><strong>Back 4 Blood</strong></a> game.
+          </p>
 
-        <p className="mt-3">
-          You can use this tool to enhance your game experience, helping you unlock achievements and also comparing your statistics with your friends !
-          <br/>
-          <i>Tip: you can track your statistics evolution if you make backups of your game statistics file and feed those to the compare mode.</i>
-        </p>
+          <p>
+            You can use this tool to enhance your game experience, helping you unlock achievements and also comparing your statistics with your friends !
+          </p>
+        </div>
 
-        <p className="mt-3">
+        <div className="grid grid-cols-12 gap-4">
+          <div className="col-span-6">
+            <h2 className="font-bold text-2xl color-primary mt-5">Self</h2>
+
+            <p className="mt-3">
+              <Link href="/self"><a className="color-primary">Self</a></Link> mode allows you to check your overall statistics and see your campaigns progresses (online / offline).
+            </p>
+          </div>
+
+          <div className="col-span-6">
+            <h2 className="font-bold text-2xl color-primary mt-5">Compare</h2>
+
+            <p className="mt-3">
+              <Link href="/compare"><a className="color-primary">Compare</a></Link> mode allows you to compare your statistics to other players, up to 4.
+            </p>
+
+            <p>
+              <i>Tip: you can track your statistics evolution if you make backups of your game statistics file and feed those to the compare mode.</i>
+            </p>
+          </div>
+
+          <div className="col-span-6">
+            <h2 className="font-bold text-2xl color-primary">Riddens</h2>
+
+            <p className="mt-3">
+              <Link href="/riddens"><a className="color-primary">Riddens</a></Link> page contains every statistics related to riddens, available per difficulty.
+            </p>
+          </div>
+
+          <div className="col-span-6">
+            <h2 className="font-bold text-2xl color-primary">Weapons</h2>
+
+            <p className="mt-3">
+              Weapons page is under development, come back later to see up to date weapons data!
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-8">
           Happy slaying ! <img className="inline" src="/images/yeah.png" alt="yeah" width={25}/>
         </p>
       </div>

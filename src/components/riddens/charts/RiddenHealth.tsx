@@ -35,7 +35,7 @@ export default function RiddenHealth({health}: Props) {
       datalabels: {
         anchor: 'end',
         align: 'end',
-        formatter: (value: number) => nFormatter(value, 1),
+        formatter: (value: number) => nFormatter(value, 2),
       },
     },
   };

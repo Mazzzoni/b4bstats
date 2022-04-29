@@ -7,10 +7,12 @@ import { createRef } from 'react';
 import { useMantineTheme } from '@mantine/core';
 import { getFormattedDate } from '@utils/generic';
 import ScreenshotTaker from '@components/common/ScreenshotTaker';
+import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function Achievements() {
   const elementToScreenshotRef = createRef<HTMLDivElement>();
   const statistics = useRecoilValue(StatisticsState);
+  const progressionType = useRecoilValue(SelectedProgressionTypeState);
   const theme = useMantineTheme();
 
   return (
@@ -53,7 +55,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="Complete 1 000 missions"
             maxValue={1000}
-            currentValue={statistics.missionsStatistics.missionsCompleted}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompleted}
             milestones={[
               {step: 250},
               {step: 500},
@@ -173,7 +175,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Evangelo"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_1.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_1.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -186,7 +188,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Walker"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_2.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_2.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -199,7 +201,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Holly"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_3.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_3.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -212,7 +214,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Hoffman"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_4.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_4.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -225,7 +227,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Doc"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_5.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_5.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -238,7 +240,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Jim"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_6.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_6.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -251,7 +253,7 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Karlee"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_7.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_7.total}
             milestones={[
               {step: 25},
               {step: 50},
@@ -264,7 +266,33 @@ export default function Achievements() {
           <ProgressMilestones
             title="250 Missions completed as Mom"
             maxValue={250}
-            currentValue={statistics.missionsStatistics.missionsCompletedPerCleaner.hero_8.total}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_8.total}
+            milestones={[
+              {step: 25},
+              {step: 50},
+              {step: 100},
+            ]}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <ProgressMilestones
+            title="250 Missions completed as Heng"
+            maxValue={250}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_9.total}
+            milestones={[
+              {step: 25},
+              {step: 50},
+              {step: 100},
+            ]}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <ProgressMilestones
+            title="250 Missions completed as Sharice"
+            maxValue={250}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_10.total}
             milestones={[
               {step: 25},
               {step: 50},

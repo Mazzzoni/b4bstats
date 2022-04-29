@@ -341,3 +341,10 @@ export type PvpStatistics = {
   killsAsCleaner: number
   killsAsRidden: number
 }
+
+export enum ProgressionTypes
+{
+  Online = 'online',
+  Offline = 'offline',
+  Merged = 'merged',
+}

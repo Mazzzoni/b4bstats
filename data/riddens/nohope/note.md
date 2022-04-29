@@ -1,1 +1,1 @@
-**No Hope difficulty data is not completed yet, please come back later**
+**No Hope difficulty data is not completed yet (still miss abomination data), please come back later**
