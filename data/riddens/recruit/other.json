@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Sleeper",
+    "category": "specials",
+    "image": "sleeper.webp",
+    "health": 0.7
+  },
+  {
+    "name": "Abomination - Tentacle",
+    "category": "bosses",
+    "image": "abomination.webp",
+    "health": 1333.4,
+    "weakspot_multiplier": 1
+  },
+  {
+    "name": "Abomination - Head",
+    "category": "bosses",
+    "image": "abomination.webp",
+    "health": 4333.4,
+    "weakspot_head": {
+      "health": 2166.7,
+      "weakspot_multiplier": 1,
+      "body_damage": 0
+    }
+  },
+  {
+    "name": "Abomination - Body",
+    "category": "bosses",
+    "image": "abomination.webp",
+    "health": 6666.7,
+    "weakspot_body": {
+      "health": 1666.7,
+      "weakspot_multiplier": 1,
+      "body_damage": 0
+    }
+  }
+]

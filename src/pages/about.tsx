@@ -51,12 +51,10 @@ const Page: NextPage = () => {
               <strong>B4BSTATS</strong> is a community tool centered around <strong>Back 4 Blood</strong> game, if you want to participate by translating into new languages, or giving feedback about it, please do !
             </p>
 
-            <p>
-              Feedback or issue ?
+            <p className="mt-3">
+              <i>Feedback or issue ?</i>
               <br/>
-              You can open issue or request feature on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">GitHub</a> or you can contact me at <a href="mailto:hello@mazz.lol" className="color-primary" rel="noreferrer" target="_blank">hello@mazz.lol</a> or ping me on
-              <br/>
-              <img src="/images/discord.svg" alt="discord" className="w-4 relative top-[-2px] inline"/> <b style={{color: '#7289DA'}}>Discord</b> <a href="https://discordapp.com/users/370123066594033668" className="color-primary" rel="noreferrer" target="_blank">@mazz#0385</a>.
+              You can open issue or request feature on <a href="https://github.com/Mazzzoni/b4bstats" target="_blank" rel="noreferrer" className="color-primary">GitHub</a>, contact me at <a href="mailto:hello@mazz.lol" className="color-primary" rel="noreferrer" target="_blank">hello@mazz.lol</a> or ping me on <img src="/images/discord.svg" alt="discord" className="w-4 relative top-[-2px] inline"/> <b style={{color: '#7289DA'}}>Discord</b> <a href="https://discordapp.com/users/370123066594033668" className="color-primary" rel="noreferrer" target="_blank">@mazz#0385</a>.
             </p>
           </div>
 
@@ -68,17 +66,19 @@ const Page: NextPage = () => {
             </p>
 
             <div className="space-y-3">
-              <Contributor name="LazyFox" discord={true} contribution="Russian translations."/>
-              <Contributor name="Ken" discord={true} contribution="Chinese traditional (Taiwan) translations."/>
-              <Contributor name="AikiPhoenix" discord={true} contribution="Japanese translations."/>
-              <Contributor name="Buttscratcher90" discord={true} contribution="Spanish translations."/>
-              <Contributor name="Hermano Juroso" discord={true} contribution="Dutch translations."/>
+              <Contributor discord name="LazyFox" contribution="Russian translations."/>
+              <Contributor discord name="Ken" contribution="Chinese traditional (Taiwan) translations."/>
+              <Contributor discord name="AikiPhoenix" contribution="Japanese translations."/>
+              <Contributor discord name="Buttscratcher90" contribution="Spanish translations."/>
+              <Contributor discord name="Hermano Juroso" contribution="Dutch translations."/>
+              <Contributor discord name="domme_xo" contribution="German translations."/>
+              <Contributor discord name="Hezu" contribution="riddens illustrations."/>
+              <Contributor discord name="Kaemanden" contribution="weapons & riddens data."/>
+              <Contributor discord name="B4B Discord" contribution="feedback and contributions."/>
+              <Contributor discord name="Back4Stats Discord" contribution="feedback and contributions."/>
               <Contributor name="디시인사이드 백4블러드 갤러리" contribution="Korean translations."/>
-              <Contributor name="domme_xo" discord={true} contribution="German translations."/>
-              <Contributor name="Hezu" discord={true} contribution="riddens illustrations."/>
-              <Contributor name="Keithustus" reddit={true} contribution="feedback and contributions."/>
-              <Contributor name="B4B Discord" discord={true} contribution="feedback and contributions."/>
-              <Contributor name="B4B Reddit" reddit={true} contribution="feedback and contributions."/>
+              <Contributor reddit name="Keithustus" contribution="feedback and contributions."/>
+              <Contributor reddit name="B4B Reddit" contribution="feedback and contributions."/>
             </div>
           </div>
         </div>
