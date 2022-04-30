@@ -236,7 +236,7 @@ class Parser
       case 'Armored Common':
         return 'armored_common.webp';
       case 'Festering':
-        return 'common.webp'; // need illustration for festering
+        return 'festering.png';
 
       case 'Retch':
         return 'retch.png';

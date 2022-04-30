@@ -290,7 +290,7 @@
   {
     "name": "Festering",
     "category": "commons",
-    "image": "common.webp",
+    "image": "festering.png",
     "health": {
       "Standard": 80,
       "Ferocious": 100,
