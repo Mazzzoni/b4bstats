@@ -46,7 +46,7 @@ export default function RiddenHealth({health}: Props) {
   const options: ChartOptions = {
     scales: {
       y: {
-        suggestedMax: getSuggestedMaxFromArrayOfIntegers(Object.values(health)),
+        suggestedMax: getSuggestedMaxFromArrayOfIntegers(Object.values(healthData)),
       },
     },
     plugins: {
