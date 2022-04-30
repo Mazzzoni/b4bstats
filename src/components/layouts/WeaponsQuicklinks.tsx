@@ -18,7 +18,7 @@ export default function WeaponsQuicklinks() {
           className="select-none"
           onChange={(e) => setSelectedRarity(e as WeaponRarities)}
         >
-          {Object.values(WeaponRarities).map((rarity) => (
+          {Object.values(WeaponRarities).reverse().map((rarity) => (
             <Radio key={rarity} value={rarity}>{rarity}</Radio>
           ))}
         </RadioGroup>

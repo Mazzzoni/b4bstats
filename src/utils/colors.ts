@@ -44,7 +44,7 @@ export const DifficultyColors: Record<Difficulties, string> = {
 export const WeaponRarityColors: Record<WeaponRarities, string> = {
   [WeaponRarities.Common]: '#c1c1c1',
   [WeaponRarities.Uncommon]: '#0d6e06',
-  [WeaponRarities.Rare]: '#000fb6',
+  [WeaponRarities.Rare]: '#4756ff',
   [WeaponRarities.Epic]: '#8000b5',
   [WeaponRarities.Legendary]: '#d68b00',
 };

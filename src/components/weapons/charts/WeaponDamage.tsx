@@ -159,7 +159,9 @@ export default function WeaponDamage({weapon}: Props) {
     <div className="p-4 cursor-crosshair relative">
       <Chart data={data} options={options} type="line"/>
 
-      <span className="absolute z-10 top-12 right-16">{weapon.pellets} pellet{weapon.pellets > 1 && 's'}</span>
+      {weapon.pellets > 1 && (
+        <span className="absolute z-10 top-12 right-16">{weapon.pellets} pellets</span>
+      )}
     </div>
   );
 }
