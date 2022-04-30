@@ -3,7 +3,7 @@
     "name": "Sleeper",
     "category": "specials",
     "image": "sleeper.webp",
-    "health": 0.9
+    "health": 1
   },
   {
     "name": "Abomination - Tentacle",

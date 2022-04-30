@@ -163,12 +163,17 @@ class Parser
       };
     }
 
-    ridden.weakspot_multiplier = +row.WS_Multiplier;
     ridden.stumble = {
       health: +row['Stumble HP'],
       recovery: +row['Stumble Regen'],
-      weakspot_multiplier: +row['Stumble WS Multiplier'],
     };
+
+    // Add exception for reekers that don't have weakspot
+    if (ridden.name !== 'Reeker') {
+      ridden.weakspot_multiplier = +row.WS_Multiplier;
+
+      ridden.stumble.weakspot_multiplier = +row['Stumble WS Multiplier'];
+    }
 
     this.riddens[difficulty].set(ridden.name, ridden);
   }

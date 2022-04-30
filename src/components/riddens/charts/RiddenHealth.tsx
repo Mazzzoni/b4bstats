@@ -11,29 +11,32 @@ type Props = {
   health: RiddenDefinition['health']
 }
 
+// Apply weapons damage bonus for certain difficulty to get effective health
+const convertToEffectiveHealth = (health: number, difficulty: Difficulties): number => {
+  switch (difficulty) {
+    case Difficulties.Recruit:
+      return health / 1.5;
+
+    case Difficulties.Veteran:
+      return health / 1.2;
+
+    default:
+      return health;
+  }
+};
+
 export default function RiddenHealth({health}: Props) {
   const selectedDifficulty = useRecoilValue(SelectedDifficultyState);
 
   if (typeof health === 'number') {
     return (
       <div>
-        {health}
+        {convertToEffectiveHealth(health, selectedDifficulty).toFixed(2)}
       </div>
     );
   }
 
-  // Apply weapons damage bonus for certain difficulty to get effective health
-  const healthData = Object.values(health).map((h) => {
-    if (selectedDifficulty === Difficulties.Recruit) {
-      return h * 0.5;
-    }
-
-    if (selectedDifficulty === Difficulties.Veteran) {
-      return h * 0.8;
-    }
-
-    return h;
-  });
+  const healthData = Object.values(health).map((h) => convertToEffectiveHealth(h, selectedDifficulty));
 
   const data: ChartData = {
     labels: Object.keys(health),

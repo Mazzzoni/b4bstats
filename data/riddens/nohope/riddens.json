@@ -8,12 +8,12 @@
       "Ferocious": 1001.060156,
       "Monstrous": 1273.348519
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 60,
       "recovery": 80,
       "weakspot_multiplier": 1.5
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Reeker",
@@ -24,11 +24,9 @@
       "Ferocious": 1144.06875,
       "Monstrous": 1455.25545
     },
-    "weakspot_multiplier": 0,
     "stumble": {
       "health": 75,
-      "recovery": 60,
-      "weakspot_multiplier": 0
+      "recovery": 60
     }
   },
   {
@@ -40,12 +38,12 @@
       "Ferocious": 1001.060156,
       "Monstrous": 1273.348519
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 60,
       "recovery": 80,
       "weakspot_multiplier": 1.5
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Shredder",
@@ -56,12 +54,12 @@
       "Ferocious": 1287.077344,
       "Monstrous": 1637.162381
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 200,
       "recovery": 80,
       "weakspot_multiplier": 1.5
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Tallboy",
@@ -72,12 +70,12 @@
       "Ferocious": 1930.616016,
       "Monstrous": 2455.743572
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 2
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Bruiser",
@@ -88,12 +86,12 @@
       "Ferocious": 2717.163281,
       "Monstrous": 3456.231694
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 300,
       "recovery": 100,
       "weakspot_multiplier": 2
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Crusher",
@@ -104,12 +102,12 @@
       "Ferocious": 2145.128906,
       "Monstrous": 2728.603969
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 2.5
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Ripper",
@@ -120,12 +118,12 @@
       "Ferocious": 2288.1375,
       "Monstrous": 2910.5109
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 2
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Stinger",
@@ -136,12 +134,12 @@
       "Ferocious": 429.0257813,
       "Monstrous": 545.7207938
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 30,
       "recovery": 15,
       "weakspot_multiplier": 3
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Hocker",
@@ -152,12 +150,12 @@
       "Ferocious": 429.0257813,
       "Monstrous": 545.7207938
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 30,
       "recovery": 15,
       "weakspot_multiplier": 3
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Stalker",
@@ -168,12 +166,12 @@
       "Ferocious": 643.5386719,
       "Monstrous": 818.5811906
     },
-    "weakspot_multiplier": 2.25,
     "stumble": {
       "health": 30,
       "recovery": 15,
       "weakspot_multiplier": 3
-    }
+    },
+    "weakspot_multiplier": 2.25
   },
   {
     "name": "Urchin",
@@ -184,12 +182,12 @@
       "Ferocious": 572.034375,
       "Monstrous": 727.627725
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 30,
       "recovery": 15,
       "weakspot_multiplier": 3
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Ogre",
@@ -200,12 +198,12 @@
       "Ferocious": 23985.9375,
       "Monstrous": 29687.7375
     },
-    "weakspot_multiplier": 1.5,
     "stumble": {
       "health": 2500,
       "recovery": 45,
       "weakspot_multiplier": 3
-    }
+    },
+    "weakspot_multiplier": 1.5
   },
   {
     "name": "Hag",
@@ -216,12 +214,12 @@
       "Ferocious": 10582.03125,
       "Monstrous": 13097.53125
     },
-    "weakspot_multiplier": 2.25,
     "stumble": {
       "health": 600,
       "recovery": 110,
       "weakspot_multiplier": 2.5
-    }
+    },
+    "weakspot_multiplier": 2.25
   },
   {
     "name": "Breaker",
@@ -232,12 +230,12 @@
       "Ferocious": 22575,
       "Monstrous": 18627.6
     },
-    "weakspot_multiplier": 4,
     "stumble": {
       "health": 250,
       "recovery": 90,
       "weakspot_multiplier": 1
-    }
+    },
+    "weakspot_multiplier": 4
   },
   {
     "name": "Snitch",
@@ -248,12 +246,12 @@
       "Ferocious": 960,
       "Monstrous": 960
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 0,
       "recovery": 30,
       "weakspot_multiplier": 2.5
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Armored Common",
@@ -264,12 +262,12 @@
       "Ferocious": 464.0625,
       "Monstrous": 670.78125
     },
-    "weakspot_multiplier": 13,
     "stumble": {
       "health": 1,
       "recovery": 0,
       "weakspot_multiplier": 1
-    }
+    },
+    "weakspot_multiplier": 13
   },
   {
     "name": "Common",
@@ -280,12 +278,12 @@
       "Ferocious": 30.9375,
       "Monstrous": 44.71875
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 1,
       "recovery": 0,
       "weakspot_multiplier": 1
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Festering",
@@ -296,12 +294,12 @@
       "Ferocious": 105.9375,
       "Monstrous": 134.2715625
     },
-    "weakspot_multiplier": 2,
     "stumble": {
       "health": 1,
       "recovery": 0,
       "weakspot_multiplier": 1
-    }
+    },
+    "weakspot_multiplier": 2
   },
   {
     "name": "Sleeper",
