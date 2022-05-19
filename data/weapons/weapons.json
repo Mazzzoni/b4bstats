@@ -14,6 +14,8 @@
     "qualities": {
       "common": {
         "rpm": 700.9345794392524,
+        "delayBetweenShots": 0.0856,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 330,
         "trueDps": 96.1277041985474,
@@ -211,6 +213,8 @@
       },
       "uncommon": {
         "rpm": 700.9345794392524,
+        "delayBetweenShots": 0.0856,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 379.5,
         "trueDps": 110.546859828329,
@@ -408,6 +412,8 @@
       },
       "rare": {
         "rpm": 700.9345794392524,
+        "delayBetweenShots": 0.0856,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 436.425,
         "trueDps": 127.128888802579,
@@ -605,6 +611,8 @@
       },
       "epic": {
         "rpm": 700.9345794392524,
+        "delayBetweenShots": 0.0856,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 501.88875,
         "trueDps": 146.198222122966,
@@ -817,6 +825,8 @@
     "qualities": {
       "common": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 280,
         "trueDps": 84.557232159934,
@@ -1014,6 +1024,8 @@
       },
       "uncommon": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 331.8,
         "trueDps": 100.200320109522,
@@ -1211,6 +1223,8 @@
       },
       "rare": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 393.183,
         "trueDps": 118.737379329783,
@@ -1408,6 +1422,8 @@
       },
       "epic": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 465.921855,
         "trueDps": 140.703794505793,
@@ -1620,6 +1636,8 @@
     "qualities": {
       "common": {
         "rpm": 462.7249357326478,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 320,
         "trueDps": 104.242827883816,
@@ -1817,6 +1835,8 @@
       },
       "uncommon": {
         "rpm": 462.7249357326478,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 356.8,
         "trueDps": 122.622827131494,
@@ -2014,6 +2034,8 @@
       },
       "rare": {
         "rpm": 462.7249357326478,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 397.832,
         "trueDps": 143.844044824039,
@@ -2211,6 +2233,8 @@
       },
       "epic": {
         "rpm": 462.7249357326478,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 443.58268,
         "trueDps": 168.272240026943,
@@ -2423,6 +2447,8 @@
     "qualities": {
       "common": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 300,
         "trueDps": 86.5871043420306,
@@ -2620,6 +2646,8 @@
       },
       "uncommon": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 355.5,
         "trueDps": 102.605718645306,
@@ -2817,6 +2845,8 @@
       },
       "rare": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 421.2675,
         "trueDps": 121.587776594688,
@@ -3014,6 +3044,8 @@
       },
       "epic": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 499.2019875,
         "trueDps": 144.081515264705,
@@ -3226,6 +3258,8 @@
     "qualities": {
       "common": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 330,
         "trueDps": 103.125,
@@ -3423,6 +3457,8 @@
       },
       "uncommon": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 367.95,
         "trueDps": 121.837748344371,
@@ -3620,6 +3656,8 @@
       },
       "rare": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 410.26425,
         "trueDps": 143.549422673198,
@@ -3817,6 +3855,8 @@
       },
       "epic": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 457.44463875,
         "trueDps": 168.661838636531,
@@ -4030,6 +4070,8 @@
     "qualities": {
       "legendary": {
         "rpm": 480,
+        "delayBetweenShots": 0.125,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 240,
         "trueDps": 57.2155117609663,
@@ -4242,6 +4284,8 @@
     "qualities": {
       "common": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 120,
         "trueDps": 49.3150684931507,
@@ -4439,6 +4483,8 @@
       },
       "uncommon": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 138,
         "trueDps": 56.7123287671233,
@@ -4636,6 +4682,8 @@
       },
       "rare": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 158.7,
         "trueDps": 65.2191780821918,
@@ -4833,6 +4881,8 @@
       },
       "epic": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 182.505,
         "trueDps": 75.0020547945205,
@@ -5045,6 +5095,8 @@
     "qualities": {
       "common": {
         "rpm": 500.00000000000006,
+        "delayBetweenShots": 0.12,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 120,
         "trueDps": 53.8116591928251,
@@ -5242,6 +5294,8 @@
       },
       "uncommon": {
         "rpm": 500.00000000000006,
+        "delayBetweenShots": 0.12,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 133.8,
         "trueDps": 63.8663484486874,
@@ -5439,6 +5493,8 @@
       },
       "rare": {
         "rpm": 500.00000000000006,
+        "delayBetweenShots": 0.12,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 149.187,
         "trueDps": 75.5951355459843,
@@ -5636,6 +5692,8 @@
       },
       "epic": {
         "rpm": 500.00000000000006,
+        "delayBetweenShots": 0.12,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 166.343505,
         "trueDps": 89.2328970308183,
@@ -5848,6 +5906,8 @@
     "qualities": {
       "common": {
         "rpm": 444.4444444444444,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 144,
         "trueDps": 50,
@@ -6045,6 +6105,8 @@
       },
       "uncommon": {
         "rpm": 444.4444444444444,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 160.56,
         "trueDps": 58.4918032786885,
@@ -6242,6 +6304,8 @@
       },
       "rare": {
         "rpm": 444.4444444444444,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 179.0244,
         "trueDps": 68.2387650085763,
@@ -6439,6 +6503,8 @@
       },
       "epic": {
         "rpm": 444.4444444444444,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 199.612206,
         "trueDps": 79.3955038482191,
@@ -6651,6 +6717,8 @@
     "qualities": {
       "common": {
         "rpm": 171.42857142857144,
+        "delayBetweenShots": 0.35,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 176,
         "trueDps": 52.4069478908189,
@@ -6848,6 +6916,8 @@
       },
       "uncommon": {
         "rpm": 171.42857142857144,
+        "delayBetweenShots": 0.35,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 208.56,
         "trueDps": 62.1022332506204,
@@ -7045,6 +7115,8 @@
       },
       "rare": {
         "rpm": 171.42857142857144,
+        "delayBetweenShots": 0.35,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 247.1436,
         "trueDps": 73.5911464019851,
@@ -7242,6 +7314,8 @@
       },
       "epic": {
         "rpm": 171.42857142857144,
+        "delayBetweenShots": 0.35,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 292.865166,
         "trueDps": 87.2055084863524,
@@ -7454,6 +7528,8 @@
     "qualities": {
       "common": {
         "rpm": 413.7931034482759,
+        "delayBetweenShots": 0.145,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 180,
         "trueDps": 63.0841121495327,
@@ -7651,6 +7727,8 @@
       },
       "uncommon": {
         "rpm": 413.7931034482759,
+        "delayBetweenShots": 0.145,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 207,
         "trueDps": 72.5467289719626,
@@ -7848,6 +7926,8 @@
       },
       "rare": {
         "rpm": 413.7931034482759,
+        "delayBetweenShots": 0.145,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 238.05,
         "trueDps": 83.428738317757,
@@ -8045,6 +8125,8 @@
       },
       "epic": {
         "rpm": 413.7931034482759,
+        "delayBetweenShots": 0.145,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 273.7575,
         "trueDps": 95.9430490654206,
@@ -8257,6 +8339,8 @@
     "qualities": {
       "common": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 150,
         "trueDps": 72.8155339805825,
@@ -8454,6 +8538,8 @@
       },
       "uncommon": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 172.5,
         "trueDps": 83.7378640776699,
@@ -8651,6 +8737,8 @@
       },
       "rare": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 198.375,
         "trueDps": 96.2985436893204,
@@ -8848,6 +8936,8 @@
       },
       "epic": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 228.13125,
         "trueDps": 110.743325242718,
@@ -9060,6 +9150,8 @@
     "qualities": {
       "common": {
         "rpm": 218.1818181818182,
+        "delayBetweenShots": 0.275,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 196,
         "trueDps": 69.3805309734513,
@@ -9257,6 +9349,8 @@
       },
       "uncommon": {
         "rpm": 218.1818181818182,
+        "delayBetweenShots": 0.275,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 232.26,
         "trueDps": 82.2159292035398,
@@ -9454,6 +9548,8 @@
       },
       "rare": {
         "rpm": 218.1818181818182,
+        "delayBetweenShots": 0.275,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 275.2281,
         "trueDps": 97.4258761061947,
@@ -9651,6 +9747,8 @@
       },
       "epic": {
         "rpm": 218.1818181818182,
+        "delayBetweenShots": 0.275,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 326.1452985,
         "trueDps": 115.449663185841,
@@ -9864,6 +9962,8 @@
     "qualities": {
       "legendary": {
         "rpm": 218.1818181818182,
+        "delayBetweenShots": 0.275,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 386.4821787225,
         "trueDps": 148.646991816346,
@@ -10076,6 +10176,8 @@
     "qualities": {
       "common": {
         "rpm": 666.6666666666666,
+        "delayBetweenShots": 0.09,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1120,
         "trueDps": 123.438648052902,
@@ -10273,6 +10375,8 @@
       },
       "uncommon": {
         "rpm": 666.6666666666666,
+        "delayBetweenShots": 0.09,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1288,
         "trueDps": 141.954445260838,
@@ -10470,6 +10574,8 @@
       },
       "rare": {
         "rpm": 666.6666666666666,
+        "delayBetweenShots": 0.09,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1481.2,
         "trueDps": 163.247612049963,
@@ -10667,6 +10773,8 @@
       },
       "epic": {
         "rpm": 666.6666666666666,
+        "delayBetweenShots": 0.09,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1703.38,
         "trueDps": 187.734753857458,
@@ -10879,6 +10987,8 @@
     "qualities": {
       "common": {
         "rpm": 428.57142857142856,
+        "delayBetweenShots": 0.14,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 720,
         "trueDps": 104.171690378587,
@@ -11076,6 +11186,8 @@
       },
       "uncommon": {
         "rpm": 428.57142857142856,
+        "delayBetweenShots": 0.14,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 853.2,
         "trueDps": 123.443453098626,
@@ -11273,6 +11385,8 @@
       },
       "rare": {
         "rpm": 428.57142857142856,
+        "delayBetweenShots": 0.14,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1011.042,
         "trueDps": 146.280491921871,
@@ -11470,6 +11584,8 @@
       },
       "epic": {
         "rpm": 428.57142857142856,
+        "delayBetweenShots": 0.14,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1198.08477,
         "trueDps": 173.342382927417,
@@ -11683,6 +11799,8 @@
     "qualities": {
       "legendary": {
         "rpm": 428.57142857142856,
+        "delayBetweenShots": 0.14,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1863.396219,
         "trueDps": 259.131343960914,
@@ -11895,6 +12013,8 @@
     "qualities": {
       "common": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 640,
         "trueDps": 138.871610303116,
@@ -12093,6 +12213,8 @@
       },
       "uncommon": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 736,
         "trueDps": 159.702351848584,
@@ -12291,6 +12413,8 @@
       },
       "rare": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 846.4,
         "trueDps": 183.657704625871,
@@ -12489,6 +12613,8 @@
       },
       "epic": {
         "rpm": 400,
+        "delayBetweenShots": 0.15,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 973.36,
         "trueDps": 211.206360319752,
@@ -12702,6 +12828,8 @@
     "qualities": {
       "common": {
         "rpm": 342.8571428571429,
+        "delayBetweenShots": 0.175,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 480,
         "trueDps": 132.292145153881,
@@ -12900,6 +13028,8 @@
       },
       "uncommon": {
         "rpm": 342.8571428571429,
+        "delayBetweenShots": 0.175,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 535.2,
         "trueDps": 157.697785198645,
@@ -13098,6 +13228,8 @@
       },
       "rare": {
         "rpm": 342.8571428571429,
+        "delayBetweenShots": 0.175,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 596.748,
         "trueDps": 187.492498703965,
@@ -13296,6 +13428,8 @@
       },
       "epic": {
         "rpm": 342.8571428571429,
+        "delayBetweenShots": 0.175,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 665.37402,
         "trueDps": 222.322072191225,
@@ -13509,6 +13643,8 @@
     "qualities": {
       "common": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 16,
         "fullMagazineDamage": 192,
         "trueDps": 150.943396226415,
@@ -13707,6 +13843,8 @@
       },
       "uncommon": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 16,
         "fullMagazineDamage": 227.52,
         "trueDps": 178.867924528302,
@@ -13905,6 +14043,8 @@
       },
       "rare": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 16,
         "fullMagazineDamage": 269.6112,
         "trueDps": 211.958490566038,
@@ -14103,6 +14243,8 @@
       },
       "epic": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 16,
         "fullMagazineDamage": 319.489272,
         "trueDps": 251.170811320755,
@@ -14316,6 +14458,8 @@
     "qualities": {
       "common": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 12,
         "fullMagazineDamage": 360,
         "trueDps": 158.823529411765,
@@ -14514,6 +14658,8 @@
       },
       "uncommon": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 12,
         "fullMagazineDamage": 426.6,
         "trueDps": 188.205882352941,
@@ -14712,6 +14858,8 @@
       },
       "rare": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 12,
         "fullMagazineDamage": 505.521,
         "trueDps": 223.023970588235,
@@ -14910,6 +15058,8 @@
       },
       "epic": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 12,
         "fullMagazineDamage": 599.042385,
         "trueDps": 264.283405147059,
@@ -15123,6 +15273,8 @@
     "qualities": {
       "common": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 432,
         "trueDps": 162,
@@ -15321,6 +15473,8 @@
       },
       "uncommon": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 481.68,
         "trueDps": 203.52676056338,
@@ -15519,6 +15673,8 @@
       },
       "rare": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 537.0732,
         "trueDps": 254.336164167324,
@@ -15717,6 +15873,8 @@
       },
       "epic": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 598.836618,
         "trueDps": 316.02266660803,
@@ -15931,6 +16089,8 @@
     "qualities": {
       "legendary": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 8,
         "fullMagazineDamage": 1854.73008075,
         "trueDps": 227.713944843462,
@@ -16144,6 +16304,8 @@
     "qualities": {
       "common": {
         "rpm": 857.1428571428571,
+        "delayBetweenShots": 0.07,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 275,
         "trueDps": 104.961832061069,
@@ -16341,6 +16503,8 @@
       },
       "uncommon": {
         "rpm": 857.1428571428571,
+        "delayBetweenShots": 0.07,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 306.625,
         "trueDps": 124.13967611336,
@@ -16538,6 +16702,8 @@
       },
       "rare": {
         "rpm": 857.1428571428571,
+        "delayBetweenShots": 0.07,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 341.886875,
         "trueDps": 146.418361884368,
@@ -16735,6 +16901,8 @@
       },
       "epic": {
         "rpm": 857.1428571428571,
+        "delayBetweenShots": 0.07,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 381.203865625,
         "trueDps": 172.217693980122,
@@ -16947,6 +17115,8 @@
     "qualities": {
       "common": {
         "rpm": 952.3809523809524,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 320,
         "trueDps": 114.204139900071,
@@ -17144,6 +17314,8 @@
       },
       "uncommon": {
         "rpm": 952.3809523809524,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 356.8,
         "trueDps": 134.539969834088,
@@ -17341,6 +17513,8 @@
       },
       "rare": {
         "rpm": 952.3809523809524,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 397.832,
         "trueDps": 158.058005562177,
@@ -17538,6 +17712,8 @@
       },
       "epic": {
         "rpm": 952.3809523809524,
+        "delayBetweenShots": 0.063,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 443.58268,
         "trueDps": 185.173316635358,
@@ -17750,6 +17926,8 @@
     "qualities": {
       "common": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 180,
         "trueDps": 74.6887966804979,
@@ -17947,6 +18125,8 @@
       },
       "uncommon": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 200.7,
         "trueDps": 89.3986636971047,
@@ -18144,6 +18324,8 @@
       },
       "rare": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 223.7805,
         "trueDps": 106.740042928691,
@@ -18341,6 +18523,8 @@
       },
       "epic": {
         "rpm": 1000.0000000000001,
+        "delayBetweenShots": 0.06,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 249.5152575,
         "trueDps": 127.1188616043,
@@ -18553,6 +18737,8 @@
     "qualities": {
       "common": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 286,
         "trueDps": 89.8429319371728,
@@ -18750,6 +18936,8 @@
       },
       "uncommon": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 338.91,
         "trueDps": 106.46387434555,
@@ -18947,6 +19135,8 @@
       },
       "rare": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 401.60835,
         "trueDps": 126.159691099476,
@@ -19144,6 +19334,8 @@
       },
       "epic": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 475.90589475,
         "trueDps": 149.49923395288,
@@ -19356,6 +19548,8 @@
     "qualities": {
       "common": {
         "rpm": 1200,
+        "delayBetweenShots": 0.05,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 209,
         "trueDps": 92.2058823529412,
@@ -19553,6 +19747,8 @@
       },
       "uncommon": {
         "rpm": 1200,
+        "delayBetweenShots": 0.05,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 240.35,
         "trueDps": 106.036764705882,
@@ -19750,6 +19946,8 @@
       },
       "rare": {
         "rpm": 1200,
+        "delayBetweenShots": 0.05,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 276.4025,
         "trueDps": 121.942279411765,
@@ -19947,6 +20145,8 @@
       },
       "epic": {
         "rpm": 1200,
+        "delayBetweenShots": 0.05,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 317.862875,
         "trueDps": 140.233621323529,
@@ -20160,6 +20360,8 @@
     "qualities": {
       "legendary": {
         "rpm": 600,
+        "delayBetweenShots": 0.1,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 713.8588422,
         "trueDps": 185.417881090909,
@@ -20372,6 +20574,8 @@
     "qualities": {
       "common": {
         "rpm": 240,
+        "delayBetweenShots": 0.25,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 380,
         "trueDps": 108.571428571429,
@@ -20569,6 +20773,8 @@
       },
       "uncommon": {
         "rpm": 240,
+        "delayBetweenShots": 0.25,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 437,
         "trueDps": 124.857142857143,
@@ -20766,6 +20972,8 @@
       },
       "rare": {
         "rpm": 240,
+        "delayBetweenShots": 0.25,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 502.55,
         "trueDps": 143.585714285714,
@@ -20963,6 +21171,8 @@
       },
       "epic": {
         "rpm": 240,
+        "delayBetweenShots": 0.25,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 577.9325,
         "trueDps": 165.123571428571,
@@ -21175,6 +21385,8 @@
     "qualities": {
       "common": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 450,
         "trueDps": 95.7446808510638,
@@ -21372,6 +21584,8 @@
       },
       "uncommon": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 533.25,
         "trueDps": 113.457446808511,
@@ -21569,6 +21783,8 @@
       },
       "rare": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 631.90125,
         "trueDps": 134.447074468085,
@@ -21766,6 +21982,8 @@
       },
       "epic": {
         "rpm": 200,
+        "delayBetweenShots": 0.3,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 748.80298125,
         "trueDps": 159.319783244681,
@@ -21978,6 +22196,8 @@
     "qualities": {
       "common": {
         "rpm": 133.33333333333334,
+        "delayBetweenShots": 0.45,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 660,
         "trueDps": 98.5074626865672,
@@ -22175,6 +22395,8 @@
       },
       "uncommon": {
         "rpm": 133.33333333333334,
+        "delayBetweenShots": 0.45,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 782.1,
         "trueDps": 116.731343283582,
@@ -22372,6 +22594,8 @@
       },
       "rare": {
         "rpm": 133.33333333333334,
+        "delayBetweenShots": 0.45,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 926.7885,
         "trueDps": 138.326641791045,
@@ -22569,6 +22793,8 @@
       },
       "epic": {
         "rpm": 133.33333333333334,
+        "delayBetweenShots": 0.45,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1098.2443725,
         "trueDps": 163.917070522388,
@@ -22782,6 +23008,8 @@
     "qualities": {
       "legendary": {
         "rpm": 300,
+        "delayBetweenShots": 0.2,
+        "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1155.865,
         "trueDps": 254.970220588235,

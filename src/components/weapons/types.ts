@@ -41,6 +41,8 @@ export enum AttachmentEffect
 
 export type WeaponStatisticsDefinition = {
   rpm: number
+  delayBetweenShots: number
+  delayBetweenBursts: number
   pellets: number
   fullMagazineDamage: number
   trueDps: number

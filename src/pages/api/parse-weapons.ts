@@ -150,6 +150,8 @@ class Parser
 
         computedWeapon.qualities[quality as WeaponQualities] = {
           rpm: rpm,
+          delayBetweenShots: delayBetweenShots,
+          delayBetweenBursts: delayBetweenBursts,
           pellets: pellets,
           fullMagazineDamage: data[RangedWeaponsColumns.FullClipDamage],
           trueDps: data[RangedWeaponsColumns.TrueDps],
