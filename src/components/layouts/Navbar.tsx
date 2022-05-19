@@ -6,6 +6,7 @@ import StatisticsState from '@components/self/StatisticsState';
 import { Fragment } from 'react';
 import SelfQuicklinks from '@components/layouts/SelfQuicklinks';
 import RiddensQuicklinks from '@components/layouts/RiddensQuicklinks';
+import WeaponsQuicklinks from '@components/layouts/WeaponsQuicklinks';
 
 const menu = [
   {
@@ -21,6 +22,10 @@ const menu = [
     href: '/compare',
   },
   {
+    label: 'Weapons',
+    href: '/weapons',
+  },
+  {
     label: 'Riddens',
     href: '/riddens',
   },
@@ -32,6 +37,7 @@ const menu = [
 
 const footerMainMenu = [
   {label: 'GitHub', href: 'https://github.com/Mazzzoni/b4bstats'},
+  {label: 'Discord', href: 'https://discord.gg/7DQnVNzUsV'},
   {label: 'Report bug', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
   {label: 'Request feature', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
 ];
@@ -58,6 +64,7 @@ export default function Navbar(props: Omit<NavbarProps, 'children'>) {
 
               {statistics.hydrated && item.label === 'Self' && router.pathname === '/self' && <SelfQuicklinks/>}
               {item.label === 'Riddens' && router.pathname === '/riddens' && <RiddensQuicklinks/>}
+              {item.label === 'Weapons' && router.pathname === '/weapons' && <WeaponsQuicklinks/>}
             </Fragment>
           ))}
         </Group>

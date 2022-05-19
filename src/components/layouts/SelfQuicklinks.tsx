@@ -99,15 +99,15 @@ export default function SelfQuicklinks() {
 
       <div className="space-y-2 pt-2">
         <a href="#miscellaneous" className="block hover:bg-white/10 flex items-center px-3">
-          <List size={16} className="mr-4"/> {t('miscellaneous.title')}
+          <List size={16} className="mr-4 relative top-[-2px]"/> {t('miscellaneous.title')}
         </a>
 
         <a href="#graphs" className="block hover:bg-white/10 flex items-center px-3">
-          <PieChart size={16} className="mr-4"/> {t('graphs.title')}
+          <PieChart size={16} className="mr-4 relative top-[-2px]"/> {t('graphs.title')}
         </a>
 
         <a href="#achievements" className="block hover:bg-white/10 flex items-center px-3">
-          <Award size={16} className="mr-4"/> {t('achievements.title')}
+          <Award size={16} className="mr-4 relative top-[-2px]"/> {t('achievements.title')}
         </a>
       </div>
     </div>

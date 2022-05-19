@@ -1,0 +1,50 @@
+/**
+ * Overrides for Mantine components
+ */
+
+.mantine-Table-root {
+  th {
+    border-bottom-width: 2px !important;
+  }
+
+  th, td {
+    border-bottom-style: dashed !important;
+  }
+
+  tbody tr:last-of-type td {
+    border-bottom: none !important;
+  }
+}
+
+.mantine-RadioGroup-root {
+  .mantine-RadioGroup-radioWrapper {
+    @apply hover:bg-white/10 w-full grow;
+  }
+
+  label {
+    font-size: 14px;
+    @apply flex w-full cursor-pointer;
+
+    input {
+      width: 24px;
+    }
+
+    span {
+      @apply w-full;
+
+      div {
+        @apply w-full;
+      }
+    }
+  }
+}
+
+.mantine-Checkbox-root {
+  label {
+    @apply inline-block w-full cursor-pointer;
+  }
+}
+
+.mantine-Menu-itemHovered {
+  background-color: var(--secondary-bg-color);
+}

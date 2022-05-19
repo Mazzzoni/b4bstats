@@ -2,11 +2,11 @@ import type { GetStaticProps, NextPage } from 'next';
 import MainLayout from '@components/layouts/MainLayout';
 import Head from 'next/head';
 import Display from '@components/riddens/Display';
-import { RiddenProps } from '@components/riddens/RiddenProps';
+import { RiddensProps } from '@components/riddens/types';
 import { Difficulties } from '@components/statistics/types';
 import { getDataFileSync } from '@utils/server-generic';
 
-const Page: NextPage<RiddenProps> = (props) => {
+const Page: NextPage<RiddensProps> = (props) => {
   return (
     <MainLayout title="Riddens">
       <Head>
@@ -20,7 +20,7 @@ const Page: NextPage<RiddenProps> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps<RiddenProps> = async (context) => {
+export const getStaticProps: GetStaticProps<RiddensProps> = async (context) => {
   const notes = {
     [Difficulties.Recruit]: getDataFileSync('riddens/recruit/note.md'),
     [Difficulties.Veteran]: getDataFileSync('riddens/veteran/note.md'),

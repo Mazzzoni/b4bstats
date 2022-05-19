@@ -216,8 +216,7 @@ export default class Statistics
       },
       riddenCommonKilled: _.get(data, 'riddenKilledByType.keys.Common', 0),
       riddenSleeperKilled: _.get(data, 'riddenKilledByType.keys.Sleeper', 0),
-      // We add ogre kill count since it's not counted in
-      riddenKilledTotal: _.get(data, 'riddenKilled.base', 0) + _.get(data, 'riddenBossesKilled.base', 0),
+      riddenKilledTotal: _.get(data, 'riddenKilled.base', 0),
       riddenMutationsKilled: _.get(data, 'riddenMutationsKilled.base', 0),
     };
 

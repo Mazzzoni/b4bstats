@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-import { RiddenDefinition } from '@components/riddens/RiddenProps';
+import { RiddenDefinition } from '@components/riddens/types';
 import { getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
 import { useRecoilValue } from 'recoil';
 import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';

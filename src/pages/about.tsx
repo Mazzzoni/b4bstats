@@ -73,6 +73,7 @@ const Page: NextPage = () => {
               <Contributor discord name="Hermano Juroso" contribution="Dutch translations."/>
               <Contributor discord name="domme_xo" contribution="German translations."/>
               <Contributor discord name="Hezu" contribution="riddens illustrations."/>
+              <Contributor discord name="G4B3" contribution="weapons statistics icons."/>
               <Contributor discord name="Kaemanden" contribution="weapons & riddens data."/>
               <Contributor discord name="B4B Discord" contribution="feedback and contributions."/>
               <Contributor discord name="Back4Stats Discord" contribution="feedback and contributions."/>

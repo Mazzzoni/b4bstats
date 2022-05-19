@@ -1,58 +1,13 @@
 // Run script with:
-// ts-node -O '{"module": "commonjs"}' src/scripts/parse-riddens.ts
+// http://localhost:3000/api/parse-riddens
 
 import * as csv from '@fast-csv/parse';
 import * as fs from 'fs';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { Difficulties } from '@components/statistics/types';
+import { RiddenCategories, RiddenDefinition } from '@components/riddens/types';
 
-const sheet = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens.csv`;
-
-// Those declaration mimics the ones from the actual app
-export enum Difficulties
-{
-  Recruit = 'easy',
-  Veteran = 'normal',
-  Nightmare = 'hard',
-  NoHope = 'veryhard',
-  Swarm = 'pvp',
-}
-
-export enum RiddenCategories
-{
-  Commons = 'commons',
-  Stingers = 'stingers',
-  Reekers = 'reekers',
-  Tallboys = 'tallboys',
-  Specials = 'specials',
-  Bosses = 'bosses',
-}
-
-type WeakspotZone = {
-  health: number
-  weakspot_multiplier: number
-  body_damage: number
-}
-
-export type RiddenDefinition = {
-  name: string
-  category: RiddenCategories
-  image: string
-  health: number | { [key: string]: number }
-  weakspot_multiplier?: number
-  stumble?: {
-    health: number | string,
-    recovery: number,
-    weakspot_multiplier?: number | { [key: string]: number },
-  }
-  note?: string
-
-  weakspot_back?: WeakspotZone
-  weakspot_chest?: WeakspotZone
-  weakspot_legs?: WeakspotZone
-
-  // Used by Abomination only
-  weakspot_head?: WeakspotZone
-  weakspot_body?: WeakspotZone
-}
+const file = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens.csv`;
 
 class Saver
 {
@@ -286,16 +241,20 @@ class Parser
   }
 }
 
-const saver = new Saver();
-const parser = new Parser();
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  const saver = new Saver();
+  const parser = new Parser();
 
-fs.createReadStream(sheet)
-  .pipe(csv.parse({headers: true}))
-  .on('error', (err: any) => console.log(err))
-  .on('data', (row: any) => parser.parse(row))
-  .on('end', (rowCount: number) => {
-    console.log(`Parsed ${rowCount} rows`);
-    console.log('Saving riddens...');
-    saver.save(parser.riddens);
-    console.log('Riddens saved !');
-  });
+  fs.createReadStream(file)
+    .pipe(csv.parse({headers: true}))
+    .on('error', (err: any) => console.log(err))
+    .on('data', (row: any) => parser.parse(row))
+    .on('end', (rowCount: number) => {
+      console.log(`Parsed ${rowCount} rows`);
+      console.log('Saving riddens...');
+      saver.save(parser.riddens);
+      console.log('Riddens saved !');
+    });
+
+  res.status(200).json({message: 'Parsing done'});
+}

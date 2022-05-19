@@ -15,7 +15,7 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
   const {t} = useTranslation();
   const difficultiesFilter = useRecoilValue(DifficultyFiltersState);
 
-  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? 18 : 33;
+  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? 18 : 40;
   let missionsCompletedCount = 0;
 
   // Increment missions completed based on cleaner progression

@@ -1,6 +1,6 @@
+import { RiddenDefinition } from '@components/riddens/types';
 import { Badge, Table } from '@mantine/core';
 import { GlassMagnifier } from 'react-image-magnifiers';
-import { RiddenDefinition } from '@components/riddens/RiddenProps';
 import RiddenHealth from '@components/riddens/charts/RiddenHealth';
 
 type Props = {
