@@ -12,7 +12,7 @@ export default function WeaponsCategory({categoryName, weapons}: Props) {
   }
 
   return (
-    <div id={categoryName} className="mb-12">
+    <div id={categoryName.toLowerCase()} className="mb-12">
       <h2 className="text-2xl font-bold mb-3 capitalize">{categoryName}</h2>
 
       {weapons.map((weapon) => (

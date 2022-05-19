@@ -1,9 +1,12 @@
 import { WeaponStatisticsDefinition } from '@components/weapons/types';
 
 // Represent 0.5 meter
-const stepSize = 50;
+export const rangedStepSize = 50;
 
-export const getDamageData = (range_damages: WeaponStatisticsDefinition['range_damages'], metersScale: number[]): number[] => {
+// Represent 0.1 meter
+export const meleeStepSize = 10;
+
+export const getDamageData = (range_damages: WeaponStatisticsDefinition['rangeDamages'], metersScale: number[]): number[] => {
   let damages: number[] = [];
 
   // Format ranges threshold
@@ -77,7 +80,7 @@ export const getDamageData = (range_damages: WeaponStatisticsDefinition['range_d
   return damages;
 };
 
-export const getMetersScale = (max: number = 4000) => {
+export const getMetersScale = (max: number, stepSize: number) => {
   let scale = [0];
   let value = 0;
 

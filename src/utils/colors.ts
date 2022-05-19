@@ -1,14 +1,22 @@
 import { Difficulties, Riddens, WeaponTypes } from '@components/statistics/types';
-import { WeaponRarities } from '@components/weapons/types';
+import { WeaponCategories, WeaponQualities } from '@components/weapons/types';
 
-export const WeaponColors: Record<WeaponTypes, string> = {
+// FIXME: yes I know, I'm lazy
+export const WeaponColors: Record<WeaponTypes | WeaponCategories, string> = {
   [WeaponTypes.Melee]: '#b4b4b4',
+  [WeaponCategories.Melee]: '#b4b4b4',
   [WeaponTypes.AssaultRifle]: '#dc2424',
+  [WeaponCategories.AssaultRifle]: '#dc2424',
   [WeaponTypes.Handgun]: '#622fe5',
+  [WeaponCategories.Handgun]: '#622fe5',
   [WeaponTypes.Shotgun]: '#d9ee59ff',
+  [WeaponCategories.Shotgun]: '#d9ee59ff',
   [WeaponTypes.SMG]: '#04e5b2',
+  [WeaponCategories.SMG]: '#04e5b2',
   [WeaponTypes.LMG]: '#d433da',
+  [WeaponCategories.LMG]: '#d433da',
   [WeaponTypes.Sniper]: '#004386',
+  [WeaponCategories.Sniper]: '#004386',
 };
 
 export const RiddenColors: Record<Riddens, string> = {
@@ -41,12 +49,12 @@ export const DifficultyColors: Record<Difficulties, string> = {
   [Difficulties.Swarm]: '#102d7a',
 };
 
-export const WeaponRarityColors: Record<WeaponRarities, string> = {
-  [WeaponRarities.Common]: '#c1c1c1',
-  [WeaponRarities.Uncommon]: '#0d6e06',
-  [WeaponRarities.Rare]: '#4756ff',
-  [WeaponRarities.Epic]: '#8000b5',
-  [WeaponRarities.Legendary]: '#d68b00',
+export const WeaponQualityColors: Record<WeaponQualities, string> = {
+  [WeaponQualities.Common]: '#c1c1c1',
+  [WeaponQualities.Uncommon]: '#0d6e06',
+  [WeaponQualities.Rare]: '#4756ff',
+  [WeaponQualities.Epic]: '#8000b5',
+  [WeaponQualities.Legendary]: '#d68b00',
 };
 
 export const PlayerColors: string[] = [

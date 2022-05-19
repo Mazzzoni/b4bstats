@@ -1,81 +1,70 @@
 import * as ReactDOM from 'react-dom';
-import { WeaponDefinition, WeaponRarities } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition, WeaponQualities } from '@components/weapons/types';
 import { Chart } from 'react-chartjs-2';
-import { ChartData, ChartOptions } from 'chart.js';
-import { getDamageData, getMetersScale } from '@components/weapons/utils';
-import { WeaponRarityColors } from '@utils/colors';
-import { Badge } from '@mantine/core';
+import { ChartData, ChartDataset, ChartOptions } from 'chart.js';
+import { WeaponQualityColors } from '@utils/colors';
+import { Badge, Tooltip } from '@mantine/core';
 import { CrosshairOptions } from '@utils/chart-plugin-crosshair';
 import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
+import { useRecoilValue } from 'recoil';
+import SelectedQualityState from '@components/weapons/SelectedQualityState';
+import ChartTooltip, { TooltipProps } from '@components/weapons/charts/ChartTooltip';
 
 // Show only few ticks on the overall meters axis
 const shownTicks = [250, 500, 1000, 1500, 2000, 3000, 4000];
-
-type TooltipProps = {
-  meter: number
-  damages: {
-    quality: string
-    damage: number
-  }[]
-}
-
-function Tooltip({meter, damages}: TooltipProps)
-{
-  return (
-    <div className="primary-bg-color min-w-[200px] border">
-      <div className="font-bold text px-2 py-1">Distance: {meter / 100}m</div>
-      <div className="px-2 py-1">
-        <table>
-          <thead>
-          <tr>
-            <th>Quality</th>
-            <th>Damage</th>
-          </tr>
-          </thead>
-
-          <tbody className="text-left">
-          {damages.reverse().map((row) => (
-            <tr key={row.damage}>
-              <td><Badge>{row.quality}</Badge></td>
-              <td>{row.damage.toFixed(2)}</td>
-            </tr>
-          ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
 
 type Props = {
   weapon: WeaponDefinition
 }
 
 export default function WeaponDamage({weapon}: Props) {
-  const metersScale = getMetersScale();
-  const datasets = Object.keys(weapon.qualities).map((quality) => {
+  const selectedQuality = useRecoilValue(SelectedQualityState);
+
+  const datasets: ChartDataset[] = Object.keys(weapon.qualities).map((quality) => {
+    const data = weapon.qualities[quality as WeaponQualities].rangeDamagesComputed;
+
     return {
       label: quality,
-      data: getDamageData(weapon.qualities[quality as WeaponRarities].range_damages, metersScale),
-      borderColor: WeaponRarityColors[quality as WeaponRarities],
+      data: data,
+      borderColor: WeaponQualityColors[quality as WeaponQualities],
+      borderWidth: selectedQuality === quality ? 4 : 2,
+      pointHoverRadius: selectedQuality === quality ? 6 : 4,
     };
-  });
+  }).reverse();
+
+  const weaponQuality = Object.keys(weapon.qualities).includes(selectedQuality)
+    ? weapon.qualities[selectedQuality]
+    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+
+  const qualityColor = Object.keys(weapon.qualities).includes(selectedQuality)
+    ? WeaponQualityColors[selectedQuality]
+    : datasets[0].borderColor;
+
+  let baseDamage = datasets.find(d => d.label === selectedQuality)?.data[0];
+
+  // In case of selected quality not existing for the current weapon, fallback to the first available one
+  if (!baseDamage) {
+    baseDamage = datasets[0].data[0];
+  }
 
   const data: ChartData = {
-    labels: metersScale,
+    labels: weaponQuality.metersScale,
     datasets: datasets,
   };
 
   // Extend options
   const options: ChartOptions & { plugins: { crosshair: CrosshairOptions } } = {
+    // Disable animation, save a bit of performance
+    animation: false,
     scales: {
       y: {
-        suggestedMax: getSuggestedMaxFromArrayOfIntegers(datasets.map((d => Math.max(...d.data)))),
+        suggestedMin: 0,
+        suggestedMax: getSuggestedMaxFromArrayOfIntegers(datasets.map((d => Math.max(...(d.data as number[])))), 0.3),
       },
       xAxis: {
         ticks: {
           callback: (label, index, ticks) => {
-            const range = metersScale[index];
+            const range = weaponQuality.metersScale[index];
 
             if (shownTicks.includes(range)) {
               const meter = range / 100;
@@ -115,6 +104,7 @@ export default function WeaponDamage({weapon}: Props) {
             tooltipEl.style.pointerEvents = 'none';
             tooltipEl.style.transition = 'all 300ms';
             tooltipEl.style.transform = 'translateY(-50%)';
+            tooltipEl.style.zIndex = '15';
             document.getElementsByClassName('weapons')[0].appendChild(tooltipEl);
           }
 
@@ -125,7 +115,7 @@ export default function WeaponDamage({weapon}: Props) {
           }
 
           const dataIndex = tooltip.dataPoints[0].dataIndex;
-          const meter = metersScale[dataIndex];
+          const meter = weaponQuality.metersScale[dataIndex];
           const datasets = chart.data.datasets;
           let damages: TooltipProps['damages'] = [];
 
@@ -136,12 +126,24 @@ export default function WeaponDamage({weapon}: Props) {
             });
           }
 
-          ReactDOM.render(<Tooltip meter={meter} damages={damages}/>, tooltipEl);
+          ReactDOM.render(
+            <ChartTooltip
+              meter={meter}
+              damages={damages}
+              baseDamage={baseDamage as number}
+              baseFullMagazineDamage={weaponQuality.fullMagazineDamage}
+              baseTrueDps={weaponQuality.trueDps}
+              baseStumblePerShot={weaponQuality.stumblePerShot}
+              baseStumblePerSecond={weaponQuality.stumblePerSecond}
+              isMelee={weapon.category === WeaponCategories.Melee}
+            />,
+            tooltipEl,
+          );
 
           const position = chart.canvas.getBoundingClientRect();
 
           tooltipEl.style.opacity = '1';
-          tooltipEl.style.left = position.left + window.scrollX + tooltip.caretX + 20 + 'px';
+          tooltipEl.style.left = position.left + window.scrollX + tooltip.caretX - tooltipEl.offsetWidth - 20 + 'px';
           tooltipEl.style.top = position.top + window.scrollY + tooltip.caretY + 'px';
         },
       },
@@ -159,8 +161,88 @@ export default function WeaponDamage({weapon}: Props) {
     <div className="p-4 cursor-crosshair relative">
       <Chart data={data} options={options} type="line"/>
 
-      {weapon.pellets > 1 && (
-        <span className="absolute z-10 top-12 right-16">{weapon.pellets} pellets</span>
+      <div className="absolute z-10 top-12 left-16 space-x-2">
+        <Tooltip
+          label={<div>
+            <b>Base damage</b>
+            <br/>
+            <span>Base damage done per shot</span>
+          </div>}
+        >
+          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{(baseDamage as number).toFixed(2)} DMG</Badge>
+        </Tooltip>
+
+        {weapon.category !== WeaponCategories.Melee && (
+          <>
+            <Tooltip
+              label={<div>
+                <b>True DPS</b>
+                <br/>
+                <span>Base damage done per second</span>
+                <br/>
+                <span className="bg-stone-400 px-1">Full Magazine Damage * 1.5 / (Empty Magazine Time + Reload Speed)</span>
+              </div>}
+            >
+              <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.trueDps.toFixed(2)} DPS</Badge>
+            </Tooltip>
+
+            <Tooltip
+              label={<div>
+                <b>Full Magazine Damage</b>
+                <br/>
+                <span>Overall damage done for a full magazine fired</span>
+                <br/>
+                <span className="bg-stone-400 px-1">Magazine Size * Base Damage</span>
+              </div>}
+            >
+              <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.fullMagazineDamage.toFixed(2)} FMD</Badge>
+            </Tooltip>
+          </>
+        )}
+      </div>
+
+      <div className="absolute z-10 bottom-16 left-16 space-x-2">
+        <Tooltip
+          label={<div>
+            <b>Stumble Per Shot</b>
+            <br/>
+            <span>Stumble applied per shot</span>
+            <br/>
+            <span className="bg-stone-400 px-1">Base Damage * Stumble Ratio</span>
+          </div>}
+        >
+          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerShot.toFixed(2)} Stumble</Badge>
+        </Tooltip>
+
+        {weapon.category !== WeaponCategories.Melee && (
+          <Tooltip
+            label={<div>
+              <b>Stumble Per Second</b>
+              <br/>
+              <span>Stumble applied per second</span>
+              <br/>
+              <span className="bg-stone-400 px-1">Stumble Per Shot * (1 / Delay Between Shots + Rechamber Time)</span>
+            </div>}
+          >
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerSecond.toFixed(2)} SPS</Badge>
+          </Tooltip>
+        )}
+      </div>
+
+      {weaponQuality.pellets > 1 && (
+        <div className="absolute z-10 top-12 right-16">
+          <Tooltip label="Pellets per shot">
+            <Badge color="dark" size="sm">{weaponQuality.pellets} pellets</Badge>
+          </Tooltip>
+        </div>
+      )}
+
+      {weaponQuality.stamina && (
+        <div className="absolute z-10 top-12 right-16">
+          <Tooltip label="Stamina consumed per hit">
+            <Badge color="dark" size="sm">{weaponQuality.stamina} stamina</Badge>
+          </Tooltip>
+        </div>
       )}
     </div>
   );

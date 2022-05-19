@@ -15,6 +15,10 @@ const Page: NextPage<WeaponsProps> = (props) => {
       <div>
         <Display {...props}/>
       </div>
+
+      <div className="text-center italic">
+        <a href="https://statty.net/" target="_blank" rel="noreferrer">{`"Knowledge is Power"`}</a>
+      </div>
     </MainLayout>
   );
 };
@@ -23,8 +27,7 @@ export const getStaticProps: GetStaticProps<WeaponsProps> = async (context) => {
   return {
     props: {
       note: getDataFileSync('weapons/note.md'),
-      // weapons: JSON.parse(getDataFileSync('weapons/common/weapons.json')),
-      weapons: [JSON.parse(getDataFileSync('weapons/common/weapons.json'))[1]],
+      weapons: JSON.parse(getDataFileSync('weapons/weapons.json')),
       attachments: [],
     },
   };

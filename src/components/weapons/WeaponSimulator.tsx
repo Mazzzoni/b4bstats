@@ -1,4 +1,4 @@
-import { Accordion, Badge } from '@mantine/core';
+import { Accordion } from '@mantine/core';
 import { WeaponDefinition } from '@components/weapons/types';
 
 type Props = {

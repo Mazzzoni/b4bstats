@@ -60,7 +60,7 @@ const Page: NextPage = () => {
             <h2 className="font-bold text-2xl color-primary">Weapons</h2>
 
             <p className="mt-3">
-              Weapons page is under development, come back later to see up to date weapons data!
+              <Link href="/weapons"><a className="color-primary">Weapons</a></Link> page contains every statistics related to weapons.
             </p>
           </div>
         </div>

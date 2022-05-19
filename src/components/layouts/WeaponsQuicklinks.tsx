@@ -1,10 +1,11 @@
 import { Radio, RadioGroup } from '@mantine/core';
 import { useRecoilState } from 'recoil';
-import SelectedRarityState from '@components/weapons/SelectedRarityState';
-import { WeaponCategories, WeaponRarities } from '@components/weapons/types';
+import { WeaponCategories, WeaponQualities } from '@components/weapons/types';
+import SelectedQualityState from '@components/weapons/SelectedQualityState';
+import { PieChart } from 'react-feather';
 
 export default function WeaponsQuicklinks() {
-  const [selectedRarity, setSelectedRarity] = useRecoilState(SelectedRarityState);
+  const [selectedQuality, setSelectedQuality] = useRecoilState(SelectedQualityState);
 
   return (
     <div className="border-left-subtle pl-3">
@@ -13,13 +14,13 @@ export default function WeaponsQuicklinks() {
 
         <RadioGroup
           variant="vertical"
-          defaultValue={selectedRarity}
+          defaultValue={selectedQuality}
           defaultChecked={true}
           className="select-none"
-          onChange={(e) => setSelectedRarity(e as WeaponRarities)}
+          onChange={(e) => setSelectedQuality(e as WeaponQualities)}
         >
-          {Object.values(WeaponRarities).reverse().map((rarity) => (
-            <Radio key={rarity} value={rarity}>{rarity}</Radio>
+          {Object.values(WeaponQualities).reverse().map((rarity) => (
+            <Radio key={rarity} value={rarity} className="capitalize">{rarity}</Radio>
           ))}
         </RadioGroup>
       </div>
@@ -28,8 +29,18 @@ export default function WeaponsQuicklinks() {
         <strong>Categories</strong>
 
         {Object.values(WeaponCategories).map((category) => (
-          <a key={category} href={`#${category}`} className="hover:bg-white/10 block capitalize">{category}</a>
+          <a
+            key={category}
+            href={`#${category.toLowerCase()}`}
+            className="hover:bg-white/10 block capitalize"
+          >
+            {category}
+          </a>
         ))}
+
+        <a href="#graphs" className="hover:bg-white/10 block capitalize flex items-center">
+          <PieChart size={16} className="mr-2 relative top-[-2px]"/> Graphs
+        </a>
       </div>
     </div>
   );

@@ -12,15 +12,14 @@ export default function WeaponAttachments({weapon}: Props) {
   const borderStock = weapon.attachments.stock ? 'border-white' : 'border-red-600';
 
   return (
-    <div className="flex justify-center space-x-4">
+    <div className="mt-5 flex justify-center space-x-4">
       <Menu withArrow control={
         <ActionIcon style={{width: 36, height: 36}} className={`border-2 border-dashed ${borderBarrel}`}>
           <div style={{backgroundImage: `url(/images/icons/barrel.webp)`, width: 32, height: 32}} className="bg-center bg-cover bg-no-repeat"/>
         </ActionIcon>
       }>
         <Menu.Label>Barrels</Menu.Label>
-        <Menu.Item>Long Barrel</Menu.Item>
-        <Menu.Item>Short Barrel</Menu.Item>
+        {/*TODO: Loop over attachment available*/}
       </Menu>
 
       <Menu withArrow control={
@@ -29,8 +28,7 @@ export default function WeaponAttachments({weapon}: Props) {
         </ActionIcon>
       }>
         <Menu.Label>Magazines</Menu.Label>
-        <Menu.Item>Extended magazine</Menu.Item>
-        <Menu.Item>Fast magazine</Menu.Item>
+        {/*TODO: Loop over attachment available*/}
       </Menu>
 
       <Menu withArrow control={
@@ -39,8 +37,7 @@ export default function WeaponAttachments({weapon}: Props) {
         </ActionIcon>
       }>
         <Menu.Label>Scopes</Menu.Label>
-        <Menu.Item>A scope</Menu.Item>
-        <Menu.Item>B Scope</Menu.Item>
+        {/*TODO: Loop over attachment available*/}
       </Menu>
 
       <Menu withArrow control={
@@ -49,8 +46,7 @@ export default function WeaponAttachments({weapon}: Props) {
         </ActionIcon>
       }>
         <Menu.Label>Stocks</Menu.Label>
-        <Menu.Item>A Stock</Menu.Item>
-        <Menu.Item>B Stock</Menu.Item>
+        {/*TODO: Loop over attachment available*/}
       </Menu>
     </div>
   );

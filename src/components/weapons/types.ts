@@ -1,4 +1,4 @@
-export enum WeaponRarities
+export enum WeaponQualities
 {
   Common = 'common',
   Uncommon = 'uncommon',
@@ -9,7 +9,7 @@ export enum WeaponRarities
 
 export enum WeaponCategories
 {
-  AssaultRifles = 'assault_rifle',
+  AssaultRifle = 'assault rifle',
   Handgun = 'handgun',
   Shotgun = 'shotgun',
   SMG = 'SMG',
@@ -41,12 +41,20 @@ export enum AttachmentEffect
 
 export type WeaponStatisticsDefinition = {
   rpm: number
-  range_damages: Record<string, number>
-  magazine_size: number
-  reload_speed: number
-  stumble_power_multiplier: number
-  bullet_penetration_multiplier: number
-  movement_speed: {
+  pellets: number
+  fullMagazineDamage: number
+  trueDps: number
+  stumblePerShot: number
+  stumblePerSecond: number
+  rangeDamages: Record<string, number>
+  rangeDamagesComputed: number[]
+  metersScale: number[]
+  magazineSize: number
+  reloadSpeed: number
+  stumblePowerMultiplier: number
+  bulletPenetrationMultiplier: number
+  stamina?: number
+  movementSpeed: {
     jog: number
     hipfire: number
     ads: number
@@ -67,15 +75,15 @@ export type WeaponDefinition = {
   category: WeaponCategories
   image: string
   slot: 'primary' | 'secondary' | 'n/a'
-  ammo: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper'
+  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper'
   attachments: {
     barrel: boolean
     magazine: boolean
     scope: boolean
     stock: boolean
   }
-  pellets: number
-  qualities: Record<WeaponRarities, WeaponStatisticsDefinition>
+  qualities: Record<WeaponQualities, WeaponStatisticsDefinition>
+  notes?: string
 }
 
 export type AttachmentDefinition = {
