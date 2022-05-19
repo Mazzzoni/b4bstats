@@ -37,6 +37,7 @@ const menu = [
 
 const footerMainMenu = [
   {label: 'GitHub', href: 'https://github.com/Mazzzoni/b4bstats'},
+  {label: 'Discord', href: 'https://discord.gg/7DQnVNzUsV'},
   {label: 'Report bug', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
   {label: 'Request feature', href: 'https://github.com/Mazzzoni/b4bstats/issues'},
 ];
