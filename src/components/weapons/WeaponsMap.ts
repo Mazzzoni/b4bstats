@@ -606,7 +606,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.BarrettM95,
       category: WeaponCategories.Sniper,
-      image: 'phoenix_350l.webp',
+      image: 'barrett_m95.webp',
       slot: 'primary',
       ammo: 'sniper',
       attachments: {
