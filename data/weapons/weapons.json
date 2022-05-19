@@ -1619,7 +1619,7 @@
     },
     "qualities": {
       "common": {
-        "rpm": 952.3809523809524,
+        "rpm": 462.7249357326478,
         "pellets": 1,
         "fullMagazineDamage": 320,
         "trueDps": 104.242827883816,
@@ -1816,7 +1816,7 @@
         }
       },
       "uncommon": {
-        "rpm": 952.3809523809524,
+        "rpm": 462.7249357326478,
         "pellets": 1,
         "fullMagazineDamage": 356.8,
         "trueDps": 122.622827131494,
@@ -2013,7 +2013,7 @@
         }
       },
       "rare": {
-        "rpm": 952.3809523809524,
+        "rpm": 462.7249357326478,
         "pellets": 1,
         "fullMagazineDamage": 397.832,
         "trueDps": 143.844044824039,
@@ -2210,7 +2210,7 @@
         }
       },
       "epic": {
-        "rpm": 952.3809523809524,
+        "rpm": 462.7249357326478,
         "pellets": 1,
         "fullMagazineDamage": 443.58268,
         "trueDps": 168.272240026943,
@@ -5847,7 +5847,7 @@
     },
     "qualities": {
       "common": {
-        "rpm": 1000.0000000000001,
+        "rpm": 444.4444444444444,
         "pellets": 1,
         "fullMagazineDamage": 144,
         "trueDps": 50,
@@ -6044,7 +6044,7 @@
         }
       },
       "uncommon": {
-        "rpm": 1000.0000000000001,
+        "rpm": 444.4444444444444,
         "pellets": 1,
         "fullMagazineDamage": 160.56,
         "trueDps": 58.4918032786885,
@@ -6241,7 +6241,7 @@
         }
       },
       "rare": {
-        "rpm": 1000.0000000000001,
+        "rpm": 444.4444444444444,
         "pellets": 1,
         "fullMagazineDamage": 179.0244,
         "trueDps": 68.2387650085763,
@@ -6438,7 +6438,7 @@
         }
       },
       "epic": {
-        "rpm": 1000.0000000000001,
+        "rpm": 444.4444444444444,
         "pellets": 1,
         "fullMagazineDamage": 199.612206,
         "trueDps": 79.3955038482191,

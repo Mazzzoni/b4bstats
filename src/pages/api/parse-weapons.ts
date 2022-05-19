@@ -11,6 +11,9 @@ import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@c
 
 const file = `${process.cwd()}/data/weapons/sheets/trs-weapons.xlsm`;
 
+// All weapons that fire in bursts, shot 3 times (Beretta M9 / M16)
+const burstCount = 3;
+
 enum RangedWeaponsColumns
 {
   TrueDps = 3,
@@ -19,6 +22,7 @@ enum RangedWeaponsColumns
   StumblePerShot = 8,
   StumblePerSecond = 9,
   DelayBetweenShots = 11,
+  DelayBetweenBursts = 12,
   StumbleDamageRatio = 21,
   Range1 = 24,
   RangeDamage1 = 22,
@@ -133,8 +137,19 @@ class Parser
         const metersScale = getMetersScale(4000, rangedStepSize);
         const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
 
+        const delayBetweenShots = data[RangedWeaponsColumns.DelayBetweenShots];
+        const delayBetweenBursts = data[RangedWeaponsColumns.DelayBetweenBursts];
+
+        // Apply default formula by default
+        let rpm = 1 / delayBetweenShots * 60;
+
+        // If weapon fires in bursts, change formula
+        if (delayBetweenBursts !== 0) {
+          rpm = 60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts);
+        }
+
         computedWeapon.qualities[quality as WeaponQualities] = {
-          rpm: 1 / data[RangedWeaponsColumns.DelayBetweenShots] * 60,
+          rpm: rpm,
           pellets: pellets,
           fullMagazineDamage: data[RangedWeaponsColumns.FullClipDamage],
           trueDps: data[RangedWeaponsColumns.TrueDps],
