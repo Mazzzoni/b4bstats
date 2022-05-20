@@ -10,6 +10,9 @@ type WeaponsMapDefinition = {
   [key in 'Ranged' | 'Melee']: WeaponMapDefinition[];
 };
 
+// All weapons that fire in bursts, shot 3 times (Beretta M9 / M16)
+export const burstCount = 3;
+
 // Map each weapon to their matching line (per quality) from data document
 export const WeaponsMap: WeaponsMapDefinition = {
   Ranged: [

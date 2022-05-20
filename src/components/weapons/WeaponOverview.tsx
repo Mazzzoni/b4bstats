@@ -10,6 +10,16 @@ type Props = {
 export default function WeaponOverview({weapon}: Props) {
   const selectedQuality = useRecoilValue(SelectedQualityState);
 
+  const weaponQuality = Object.keys(weapon.qualities).includes(selectedQuality)
+    ? weapon.qualities[selectedQuality]
+    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+
+  let rpmFormula = '1 / Delay Between Shots * 60';
+
+  if (weapon.category !== WeaponCategories.Melee && weaponQuality.delayBetweenBursts !== 0) {
+    rpmFormula = '60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts)';
+  }
+
   return (
     <div className="relative">
       {weapon.category !== WeaponCategories.Melee && (
@@ -38,9 +48,11 @@ export default function WeaponOverview({weapon}: Props) {
               <b>RPM</b>
               <br/>
               <span>Rounds fired per minute</span>
+              <br/>
+              <span className="bg-stone-400 px-1">{rpmFormula}</span>
             </div>}
           >
-            <Badge size="lg">{weapon.qualities[selectedQuality]?.rpm.toFixed(0) || weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities].rpm.toFixed(0)} RPM</Badge>
+            <Badge size="lg">{weaponQuality.rpm.toFixed(0)} RPM</Badge>
           </Tooltip>
         </div>
       )}

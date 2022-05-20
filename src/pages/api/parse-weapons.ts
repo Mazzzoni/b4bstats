@@ -2,17 +2,14 @@
 // http://localhost:3000/api/parse-weapons
 
 import * as fs from 'fs';
-import { WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
 import { NextApiRequest, NextApiResponse } from 'next';
 import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
-import { WeaponsMap } from '@components/weapons/WeaponsMap';
+import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
 import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
 
 const file = `${process.cwd()}/data/weapons/sheets/trs-weapons.xlsm`;
-
-// All weapons that fire in bursts, shot 3 times (Beretta M9 / M16)
-const burstCount = 3;
 
 enum RangedWeaponsColumns
 {
@@ -33,6 +30,14 @@ enum RangedWeaponsColumns
   Range4 = 33,
   RangeDamage4 = 31,
   PelletCount = 34,
+  ShotgunRange1 = 37,
+  ShotgunRangeDamage1 = 35,
+  ShotgunRange2 = 40,
+  ShotgunRangeDamage2 = 38,
+  ShotgunRange3 = 43,
+  ShotgunRangeDamage3 = 41,
+  ShotgunRange4 = 46,
+  ShotgunRangeDamage4 = 44,
   MaxClipAmount = 71,
   BulletPenetrationPower = 195,
   MoveSpeedBase = 197,
@@ -115,6 +120,8 @@ class Parser
         const row = weapon.qualities[quality as WeaponQualities]! - 1;
         const data = guns.data[row] as any[];
 
+        const pellets = data[RangedWeaponsColumns.PelletCount] ? data[RangedWeaponsColumns.PelletCount] : 1;
+
         let rangeDamages: { [key: string]: number } = {};
 
         if (data[RangedWeaponsColumns.Range1] && data[RangedWeaponsColumns.RangeDamage1]) {
@@ -133,9 +140,43 @@ class Parser
           rangeDamages[data[RangedWeaponsColumns.Range4]] = data[RangedWeaponsColumns.RangeDamage4];
         }
 
-        const pellets = data[RangedWeaponsColumns.PelletCount] ? data[RangedWeaponsColumns.PelletCount] : 1;
+        let shotgunRangeDamages: { [key: string]: number } = {};
+
+        if (weapon.category === WeaponCategories.Shotgun) {
+          if (data[RangedWeaponsColumns.ShotgunRange1] && data[RangedWeaponsColumns.ShotgunRangeDamage1]) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange1]] = data[RangedWeaponsColumns.ShotgunRangeDamage1];
+          }
+
+          if (data[RangedWeaponsColumns.ShotgunRange2] && data[RangedWeaponsColumns.ShotgunRangeDamage2]) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange2]] = data[RangedWeaponsColumns.ShotgunRangeDamage2];
+          }
+
+          if (data[RangedWeaponsColumns.ShotgunRange3] && data[RangedWeaponsColumns.ShotgunRangeDamage3]) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange3]] = data[RangedWeaponsColumns.ShotgunRangeDamage3];
+          }
+
+          if (data[RangedWeaponsColumns.ShotgunRange4] && data[RangedWeaponsColumns.ShotgunRangeDamage4]) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange4]] = data[RangedWeaponsColumns.ShotgunRangeDamage4];
+          }
+
+          // Compute real shotgun damage
+          let i = 0;
+
+          for (const range of Object.keys(shotgunRangeDamages)) {
+            shotgunRangeDamages[range] = pellets * shotgunRangeDamages[range] + Object.values(rangeDamages)[i];
+
+            i++;
+          }
+        }
+
         const metersScale = getMetersScale(4000, rangedStepSize);
-        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
+
+        const rangeDamagesComputed = getDamageData(
+          weapon.category === WeaponCategories.Shotgun
+            ? shotgunRangeDamages
+            : rangeDamages,
+          metersScale,
+        );
 
         const delayBetweenShots = data[RangedWeaponsColumns.DelayBetweenShots];
         const delayBetweenBursts = data[RangedWeaponsColumns.DelayBetweenBursts];
@@ -148,7 +189,7 @@ class Parser
           rpm = 60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts);
         }
 
-        computedWeapon.qualities[quality as WeaponQualities] = {
+        const weaponStatistics: WeaponStatisticsDefinition = {
           rpm: rpm,
           delayBetweenShots: delayBetweenShots,
           delayBetweenBursts: delayBetweenBursts,
@@ -179,6 +220,12 @@ class Parser
             out: data[RangedWeaponsColumns.SwapSpeedLower],
           },
         };
+
+        if (weapon.category === WeaponCategories.Shotgun) {
+          weaponStatistics.shotgunRangeDamages = shotgunRangeDamages;
+        }
+
+        computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
       }
 
       this.weapons.set(computedWeapon.name, computedWeapon);

@@ -50,6 +50,7 @@ export type WeaponStatisticsDefinition = {
   stumblePerSecond: number
   rangeDamages: Record<string, number>
   rangeDamagesComputed: number[]
+  shotgunRangeDamages?: Record<string, number>
   metersScale: number[]
   magazineSize: number
   reloadSpeed: number

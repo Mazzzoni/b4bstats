@@ -10,7 +10,7 @@ export default function WeaponsQuicklinks() {
   return (
     <div className="border-left-subtle pl-3">
       <div className="border-bottom-subtle pb-3">
-        <strong>Rarity</strong>
+        <strong>Quality</strong>
 
         <RadioGroup
           variant="vertical"
