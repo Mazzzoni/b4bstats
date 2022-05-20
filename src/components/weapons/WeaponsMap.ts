@@ -190,7 +190,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Handgun,
       image: '357_magnum.webp',
       slot: 'secondary',
-      ammo: 'sniper',
+      ammo: 'rifle',
       attachments: {
         barrel: true,
         magazine: true,
@@ -266,7 +266,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Handgun,
       image: 'embezzler.webp',
       slot: 'secondary',
-      ammo: 'sniper',
+      ammo: 'rifle',
       attachments: {
         barrel: false,
         magazine: false,
@@ -493,7 +493,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       name: Weapons.TEC9,
       category: WeaponCategories.SMG,
       image: 'tec9.webp',
-      slot: 'primary',
+      slot: 'secondary',
       ammo: 'pistol_smg',
       attachments: {
         barrel: true,
