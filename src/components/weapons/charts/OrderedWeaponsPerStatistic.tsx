@@ -4,7 +4,7 @@ import { WeaponColors, WeaponQualityColors } from '@utils/colors';
 import { useRecoilValue } from 'recoil';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import { ChartData, ChartOptions } from 'chart.js';
-import { getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
+import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
 import { Chart } from 'react-chartjs-2';
 
 type Props = {
@@ -54,7 +54,8 @@ export default function OrderedWeaponsPerStatistic({title, weapons, statisticCal
       datalabels: {
         anchor: 'end',
         align: 'end',
-        formatter: (value: number) => nFormatter(value),
+        formatter: (value: number) => value ? value.toFixed(0) : 0,
+        color: context => WeaponQualityColors[qualities[context.dataIndex] as WeaponQualities],
       },
       tooltip: {
         callbacks: {
