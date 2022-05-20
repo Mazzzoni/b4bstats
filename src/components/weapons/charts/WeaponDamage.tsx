@@ -237,6 +237,16 @@ export default function WeaponDamage({weapon}: Props) {
         </div>
       )}
 
+      {weapon.category === WeaponCategories.Shotgun && (
+        <div className="absolute z-10 top-20 right-16">
+          <Tooltip label="First pellet bonus damage">
+            <Badge color="dark" size="sm">
+              {weaponQuality.rangeDamages[Object.keys(weaponQuality.rangeDamages)[0]].toFixed(2)} DMG
+            </Badge>
+          </Tooltip>
+        </div>
+      )}
+
       {weaponQuality.stamina && (
         <div className="absolute z-10 top-12 right-16">
           <Tooltip label="Stamina consumed per hit">
