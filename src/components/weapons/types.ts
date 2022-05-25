@@ -54,6 +54,9 @@ export type WeaponStatisticsDefinition = {
   metersScale: number[]
   magazineSize: number
   reloadSpeed: number
+  rechamberLength: number
+  rechamberAnimationLength: number
+  weakspotDamageMultiplier: number
   stumblePowerMultiplier: number
   bulletPenetrationMultiplier: number
   stamina?: number

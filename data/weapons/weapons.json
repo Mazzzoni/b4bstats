@@ -195,6 +195,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 30,
         "reloadSpeed": 2.667,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 410,
@@ -394,6 +397,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 30,
         "reloadSpeed": 2.667,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 410,
@@ -593,6 +599,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 30,
         "reloadSpeed": 2.667,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 410,
@@ -792,6 +801,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 30,
         "reloadSpeed": 2.667,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 410,
@@ -1006,6 +1018,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 20,
         "reloadSpeed": 3.06705,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 389.5,
@@ -1205,6 +1220,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 20,
         "reloadSpeed": 3.06705,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 389.5,
@@ -1404,6 +1422,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 20,
         "reloadSpeed": 3.06705,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 389.5,
@@ -1603,6 +1624,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 20,
         "reloadSpeed": 3.06705,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 389.5,
@@ -1817,6 +1841,9 @@
         "bulletPenetrationMultiplier": 0.6375,
         "magazineSize": 20,
         "reloadSpeed": 2.4003,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 430.5,
@@ -2016,6 +2043,9 @@
         "bulletPenetrationMultiplier": 0.6375,
         "magazineSize": 20,
         "reloadSpeed": 2.16027,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 430.5,
@@ -2215,6 +2245,9 @@
         "bulletPenetrationMultiplier": 0.6375,
         "magazineSize": 20,
         "reloadSpeed": 1.944243,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 430.5,
@@ -2414,6 +2447,9 @@
         "bulletPenetrationMultiplier": 0.6375,
         "magazineSize": 20,
         "reloadSpeed": 1.7498187,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 430.5,
@@ -2628,6 +2664,9 @@
         "bulletPenetrationMultiplier": 0.8625,
         "magazineSize": 20,
         "reloadSpeed": 3.29707875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 389.5,
@@ -2827,6 +2866,9 @@
         "bulletPenetrationMultiplier": 0.991875,
         "magazineSize": 20,
         "reloadSpeed": 3.29707875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 389.5,
@@ -3026,6 +3068,9 @@
         "bulletPenetrationMultiplier": 1.14065625,
         "magazineSize": 20,
         "reloadSpeed": 3.29707875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 389.5,
@@ -3225,6 +3270,9 @@
         "bulletPenetrationMultiplier": 1.3117546875,
         "magazineSize": 20,
         "reloadSpeed": 3.29707875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 389.5,
@@ -3442,6 +3490,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 15,
         "reloadSpeed": 2.7,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 420,
@@ -3641,6 +3692,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 15,
         "reloadSpeed": 2.43,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 420,
@@ -3840,6 +3894,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 15,
         "reloadSpeed": 2.187,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 420,
@@ -4039,6 +4096,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 15,
         "reloadSpeed": 1.9683,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 420,
@@ -4256,6 +4316,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 30,
         "reloadSpeed": 2.667,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.5,
         "movementSpeed": {
           "jog": 410,
@@ -4470,6 +4533,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 8,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -4669,6 +4735,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 8,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -4868,6 +4937,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 8,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -5067,6 +5139,9 @@
         "bulletPenetrationMultiplier": 0.75,
         "magazineSize": 8,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -5284,6 +5359,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 2.025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -5483,6 +5561,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.8225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -5682,6 +5763,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.64025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -5881,6 +5965,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.476225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -6098,6 +6185,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 2.025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -6297,6 +6387,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.8225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -6496,6 +6589,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.64025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -6695,6 +6791,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 1.476225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1.1,
         "stumblePowerMultiplier": 0.6375,
         "movementSpeed": {
           "jog": 441,
@@ -6909,6 +7008,9 @@
         "bulletPenetrationMultiplier": 1.15,
         "magazineSize": 8,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 399,
@@ -7108,6 +7210,9 @@
         "bulletPenetrationMultiplier": 1.3225,
         "magazineSize": 8,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 399,
@@ -7307,6 +7412,9 @@
         "bulletPenetrationMultiplier": 1.520875,
         "magazineSize": 8,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 399,
@@ -7506,6 +7614,9 @@
         "bulletPenetrationMultiplier": 1.74900625,
         "magazineSize": 8,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 399,
@@ -7720,6 +7831,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -7919,6 +8033,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -8118,6 +8235,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -8317,6 +8437,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -8531,6 +8654,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -8730,6 +8856,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -8929,6 +9058,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -9128,6 +9260,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 15,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -9342,6 +9477,9 @@
         "bulletPenetrationMultiplier": 1.15,
         "magazineSize": 7,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 399,
@@ -9541,6 +9679,9 @@
         "bulletPenetrationMultiplier": 1.3225,
         "magazineSize": 7,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 399,
@@ -9740,6 +9881,9 @@
         "bulletPenetrationMultiplier": 1.520875,
         "magazineSize": 7,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 399,
@@ -9939,6 +10083,9 @@
         "bulletPenetrationMultiplier": 1.74900625,
         "magazineSize": 7,
         "reloadSpeed": 2.5875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 399,
@@ -10156,6 +10303,9 @@
         "bulletPenetrationMultiplier": 2.0113571875,
         "magazineSize": 7,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.957211171875,
         "movementSpeed": {
           "jog": 399,
@@ -10370,6 +10520,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 80,
         "reloadSpeed": 6.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 390,
@@ -10569,6 +10722,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 80,
         "reloadSpeed": 6.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 390,
@@ -10768,6 +10924,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 80,
         "reloadSpeed": 6.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 390,
@@ -10967,6 +11126,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 80,
         "reloadSpeed": 6.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 390,
@@ -11181,6 +11343,9 @@
         "bulletPenetrationMultiplier": 1,
         "magazineSize": 40,
         "reloadSpeed": 4.9075,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 370.5,
@@ -11380,6 +11545,9 @@
         "bulletPenetrationMultiplier": 1.15,
         "magazineSize": 40,
         "reloadSpeed": 4.9075,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 370.5,
@@ -11579,6 +11747,9 @@
         "bulletPenetrationMultiplier": 1.3225,
         "magazineSize": 40,
         "reloadSpeed": 4.9075,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 370.5,
@@ -11778,6 +11949,9 @@
         "bulletPenetrationMultiplier": 1.520875,
         "magazineSize": 40,
         "reloadSpeed": 4.9075,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 370.5,
@@ -11995,6 +12169,9 @@
         "bulletPenetrationMultiplier": 2.623509375,
         "magazineSize": 50,
         "reloadSpeed": 3.9264,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 1.196513965,
         "movementSpeed": {
           "jog": 389.025,
@@ -12210,6 +12387,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 8,
         "reloadSpeed": 4.11286,
+        "rechamberLength": 0.25,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.85,
         "movementSpeed": {
           "jog": 410,
@@ -12416,6 +12596,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 8,
         "reloadSpeed": 4.11286,
+        "rechamberLength": 0.25,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.85,
         "movementSpeed": {
           "jog": 410,
@@ -12622,6 +12805,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 8,
         "reloadSpeed": 4.11286,
+        "rechamberLength": 0.25,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.85,
         "movementSpeed": {
           "jog": 410,
@@ -12828,6 +13014,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 8,
         "reloadSpeed": 4.11286,
+        "rechamberLength": 0.25,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.85,
         "movementSpeed": {
           "jog": 410,
@@ -13049,6 +13238,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 3.5175,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -13255,6 +13447,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 3.16575,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -13461,6 +13656,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 2.849175,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -13667,6 +13865,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 12,
         "reloadSpeed": 2.5642575,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -13888,6 +14089,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 2,
         "reloadSpeed": 1.608,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.8925,
         "movementSpeed": {
           "jog": 389.5,
@@ -14094,6 +14298,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 2,
         "reloadSpeed": 1.608,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.937125,
         "movementSpeed": {
           "jog": 389.5,
@@ -14300,6 +14507,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 2,
         "reloadSpeed": 1.608,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.98398125,
         "movementSpeed": {
           "jog": 389.5,
@@ -14506,6 +14716,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 2,
         "reloadSpeed": 1.608,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 1.0331803125,
         "movementSpeed": {
           "jog": 389.5,
@@ -14727,6 +14940,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 3,
         "reloadSpeed": 1.8,
+        "rechamberLength": 0.5,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.8925,
         "movementSpeed": {
           "jog": 389.5,
@@ -14933,6 +15149,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 3,
         "reloadSpeed": 1.8,
+        "rechamberLength": 0.5,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.937125,
         "movementSpeed": {
           "jog": 389.5,
@@ -15139,6 +15358,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 3,
         "reloadSpeed": 1.8,
+        "rechamberLength": 0.5,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.98398125,
         "movementSpeed": {
           "jog": 389.5,
@@ -15345,6 +15567,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 3,
         "reloadSpeed": 1.8,
+        "rechamberLength": 0.5,
+        "rechamberAnimationLength": 0.63,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 1.0331803125,
         "movementSpeed": {
           "jog": 389.5,
@@ -15566,6 +15791,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 6,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -15772,6 +16000,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 6,
         "reloadSpeed": 2.55,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -15978,6 +16209,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 6,
         "reloadSpeed": 2.1675,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -16184,6 +16418,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 6,
         "reloadSpeed": 1.842375,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -16408,6 +16645,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 30,
         "reloadSpeed": 3.5175,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.765,
         "movementSpeed": {
           "jog": 430.5,
@@ -16628,6 +16868,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 25,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -16827,6 +17070,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 25,
         "reloadSpeed": 2.025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -17026,6 +17272,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 25,
         "reloadSpeed": 1.8225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -17225,6 +17474,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 25,
         "reloadSpeed": 1.64025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -17439,6 +17691,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 32,
         "reloadSpeed": 2.25,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -17638,6 +17893,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 32,
         "reloadSpeed": 2.025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -17837,6 +18095,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 32,
         "reloadSpeed": 1.8225,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -18036,6 +18297,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 32,
         "reloadSpeed": 1.64025,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -18250,6 +18514,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 20,
         "reloadSpeed": 2.475,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -18449,6 +18716,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 20,
         "reloadSpeed": 2.2275,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -18648,6 +18918,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 20,
         "reloadSpeed": 2.00475,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -18847,6 +19120,9 @@
         "bulletPenetrationMultiplier": 0.425,
         "magazineSize": 20,
         "reloadSpeed": 1.804275,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.675,
         "movementSpeed": {
           "jog": 441,
@@ -19061,6 +19337,9 @@
         "bulletPenetrationMultiplier": 0.575,
         "magazineSize": 20,
         "reloadSpeed": 2.875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 399,
@@ -19260,6 +19539,9 @@
         "bulletPenetrationMultiplier": 0.66125,
         "magazineSize": 20,
         "reloadSpeed": 2.875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 399,
@@ -19459,6 +19741,9 @@
         "bulletPenetrationMultiplier": 0.7604375,
         "magazineSize": 20,
         "reloadSpeed": 2.875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 399,
@@ -19658,6 +19943,9 @@
         "bulletPenetrationMultiplier": 0.874503125,
         "magazineSize": 20,
         "reloadSpeed": 2.875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 399,
@@ -19872,6 +20160,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 19,
         "reloadSpeed": 2.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -20071,6 +20362,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 19,
         "reloadSpeed": 2.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -20270,6 +20564,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 19,
         "reloadSpeed": 2.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -20469,6 +20766,9 @@
         "bulletPenetrationMultiplier": 0.5,
         "magazineSize": 19,
         "reloadSpeed": 2.5,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 420,
@@ -20686,6 +20986,9 @@
         "bulletPenetrationMultiplier": 1.00567859375,
         "magazineSize": 30,
         "reloadSpeed": 2.875,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 1.002792656,
         "movementSpeed": {
           "jog": 420,
@@ -20900,6 +21203,9 @@
         "bulletPenetrationMultiplier": 1.25,
         "magazineSize": 10,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 400,
@@ -21099,6 +21405,9 @@
         "bulletPenetrationMultiplier": 1.25,
         "magazineSize": 10,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 400,
@@ -21298,6 +21607,9 @@
         "bulletPenetrationMultiplier": 1.25,
         "magazineSize": 10,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 400,
@@ -21497,6 +21809,9 @@
         "bulletPenetrationMultiplier": 1.25,
         "magazineSize": 10,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 400,
@@ -21711,6 +22026,9 @@
         "bulletPenetrationMultiplier": 1.5,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 0.6,
+        "rechamberAnimationLength": 0.7068,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 380,
@@ -21910,6 +22228,9 @@
         "bulletPenetrationMultiplier": 1.5,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 0.6,
+        "rechamberAnimationLength": 0.7068,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 380,
@@ -22109,6 +22430,9 @@
         "bulletPenetrationMultiplier": 1.5,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 0.6,
+        "rechamberAnimationLength": 0.7068,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 380,
@@ -22308,6 +22632,9 @@
         "bulletPenetrationMultiplier": 1.5,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 0.6,
+        "rechamberAnimationLength": 0.7068,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 380,
@@ -22522,6 +22849,9 @@
         "bulletPenetrationMultiplier": 1.75,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 1.2,
+        "rechamberAnimationLength": 1.4136,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.7875,
         "movementSpeed": {
           "jog": 380,
@@ -22721,6 +23051,9 @@
         "bulletPenetrationMultiplier": 1.75,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 1.2,
+        "rechamberAnimationLength": 1.4136,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.826875,
         "movementSpeed": {
           "jog": 380,
@@ -22920,6 +23253,9 @@
         "bulletPenetrationMultiplier": 1.75,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 1.2,
+        "rechamberAnimationLength": 1.4136,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.86821875,
         "movementSpeed": {
           "jog": 380,
@@ -23119,6 +23455,9 @@
         "bulletPenetrationMultiplier": 1.75,
         "magazineSize": 5,
         "reloadSpeed": 3.45,
+        "rechamberLength": 1.2,
+        "rechamberAnimationLength": 1.4136,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.9116296875,
         "movementSpeed": {
           "jog": 380,
@@ -23337,6 +23676,9 @@
         "bulletPenetrationMultiplier": 1.25,
         "magazineSize": 20,
         "reloadSpeed": 3,
+        "rechamberLength": 0,
+        "rechamberAnimationLength": 0,
+        "weakspotDamageMultiplier": 1,
         "stumblePowerMultiplier": 0.75,
         "movementSpeed": {
           "jog": 400,
