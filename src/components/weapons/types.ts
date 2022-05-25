@@ -86,7 +86,7 @@ export type WeaponDefinition = {
     stock: boolean
   }
   qualities: Record<WeaponQualities, WeaponStatisticsDefinition>
-  notes?: string
+  notes?: Record<string, string>
 }
 
 export type AttachmentDefinition = {

@@ -111,6 +111,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Rare]: 149,
         [WeaponQualities.Epic]: 150,
       },
+      notes: {
+        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
+      },
     },
     {
       name: Weapons.Pestilence,
@@ -127,7 +130,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 10,
       },
-      notes: 'Atrophy: Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%.',
+      notes: {
+        'Atrophy': 'Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%.',
+      },
     },
 
     // Handgun
@@ -168,6 +173,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Rare]: 35,
         [WeaponQualities.Epic]: 36,
       },
+      notes: {
+        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
+      },
     },
     {
       name: Weapons.BerettaM9Burst,
@@ -186,6 +194,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Uncommon]: 39,
         [WeaponQualities.Rare]: 40,
         [WeaponQualities.Epic]: 41,
+      },
+      notes: {
+        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
       },
     },
     {
@@ -279,7 +290,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 62,
       },
-      notes: 'Death and Taxes: Killing blows generate up to 10 Copper per kill.',
+      notes: {
+        'Death and Taxes': 'Killing blows generate up to 10 Copper per kill.',
+      },
     },
 
     // LMG
@@ -336,7 +349,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 74,
       },
-      notes: 'Final Showdown: Enemies within 30 meters are drawn to the wielder of this weapon.',
+      notes: {
+        'Final Showdown': 'Enemies within 30 meters are drawn to the wielder of this weapon.',
+      },
     },
 
     // Shotgun
@@ -450,7 +465,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 86,
       },
-      notes: 'Fire and Brimstone: Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation\'s wielder is immune to Fire Damage.',
+      notes: {
+        'Fire and Brimstone': 'Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation\'s wielder is immune to Fire Damage.',
+      },
     },
 
     // SMG
@@ -564,7 +581,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 123,
       },
-      notes: 'ZAP!: Significantly slows targets for 1 seconds.',
+      notes: {
+        'ZAP!': 'Significantly slows targets for 1 seconds.',
+      },
     },
 
     // Snipers
@@ -640,7 +659,10 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 145,
       },
-      notes: 'Sight Unseen: Highlights targets and increases damage dealt to them by 20%.',
+      notes: {
+        'Sight Unseen': 'Highlights targets and increases damage dealt to them by 20%.',
+        'Attachments': 'Always have a 4x scope (does not increase weakspot damage) and suppressor (does not increase damage to unaware enemies) equipped.',
+      },
     },
   ],
 
@@ -701,7 +723,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       qualities: {
         [WeaponQualities.Legendary]: 13,
       },
-      notes: 'Mincemeat: Dismembers enemies upon impact, and deals 90 damage in a large area of effect.',
+      notes: {
+        'Mincemeat': 'Dismembers enemies upon impact, and deals 90 damage in a large area of effect.',
+      },
     },
     {
       name: Weapons.SkullTotem,

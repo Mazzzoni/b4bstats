@@ -158,7 +158,13 @@ export default function WeaponStatistics({weapon}: Props) {
         <div className="px-3 py-2">
           <p>
             <b className="flex">Notes <Info size={16} className="ml-1 relative top-[3px]"/></b>
-            {weapon.notes}
+
+            {Object.keys(weapon.notes).map(note => (
+              <div key="note">
+                <b>{note}:</b>
+                <p>{weapon.notes![note]}</p>
+              </div>
+            ))}
           </p>
         </div>
       )}

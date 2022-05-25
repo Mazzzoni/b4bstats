@@ -3255,6 +3255,9 @@
       "scope": true,
       "stock": true
     },
+    "notes": {
+      "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus."
+    },
     "qualities": {
       "common": {
         "rpm": 400,
@@ -4066,7 +4069,9 @@
       "scope": false,
       "stock": false
     },
-    "notes": "Atrophy: Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%.",
+    "notes": {
+      "Atrophy": "Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%."
+    },
     "qualities": {
       "legendary": {
         "rpm": 480,
@@ -5092,6 +5097,9 @@
       "scope": false,
       "stock": true
     },
+    "notes": {
+      "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus."
+    },
     "qualities": {
       "common": {
         "rpm": 500.00000000000006,
@@ -5902,6 +5910,9 @@
       "magazine": true,
       "scope": false,
       "stock": true
+    },
+    "notes": {
+      "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus."
     },
     "qualities": {
       "common": {
@@ -9958,7 +9969,9 @@
       "scope": false,
       "stock": false
     },
-    "notes": "Death and Taxes: Killing blows generate up to 10 Copper per kill.",
+    "notes": {
+      "Death and Taxes": "Killing blows generate up to 10 Copper per kill."
+    },
     "qualities": {
       "legendary": {
         "rpm": 218.1818181818182,
@@ -11795,7 +11808,9 @@
       "scope": false,
       "stock": false
     },
-    "notes": "Final Showdown: Enemies within 30 meters are drawn to the wielder of this weapon.",
+    "notes": {
+      "Final Showdown": "Enemies within 30 meters are drawn to the wielder of this weapon."
+    },
     "qualities": {
       "legendary": {
         "rpm": 428.57142857142856,
@@ -16205,7 +16220,9 @@
       "scope": false,
       "stock": false
     },
-    "notes": "Fire and Brimstone: Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation's wielder is immune to Fire Damage.",
+    "notes": {
+      "Fire and Brimstone": "Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation's wielder is immune to Fire Damage."
+    },
     "qualities": {
       "legendary": {
         "rpm": 200,
@@ -20482,7 +20499,9 @@
       "scope": false,
       "stock": false
     },
-    "notes": "ZAP!: Significantly slows targets for 1 seconds.",
+    "notes": {
+      "ZAP!": "Significantly slows targets for 1 seconds."
+    },
     "qualities": {
       "legendary": {
         "rpm": 600,
@@ -23130,7 +23149,10 @@
       "scope": false,
       "stock": false
     },
-    "notes": "Sight Unseen: Highlights targets and increases damage dealt to them by 20%.",
+    "notes": {
+      "Sight Unseen": "Highlights targets and increases damage dealt to them by 20%.",
+      "Attachments": "Always have a 4x scope (does not increase weakspot damage) and suppressor (does not increase damage to unaware enemies) equipped."
+    },
     "qualities": {
       "legendary": {
         "rpm": 300,
@@ -24778,7 +24800,9 @@
     "category": "melee",
     "image": "tenderizer.webp",
     "slot": "secondary",
-    "notes": "Mincemeat: Dismembers enemies upon impact, and deals 90 damage in a large area of effect.",
+    "notes": {
+      "Mincemeat": "Dismembers enemies upon impact, and deals 90 damage in a large area of effect."
+    },
     "qualities": {
       "legendary": {
         "rpm": 0,
