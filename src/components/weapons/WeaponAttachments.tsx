@@ -2,8 +2,8 @@ import { ActionIcon, Menu } from '@mantine/core';
 import { WeaponDefinition } from '@components/weapons/types';
 
 type Props = {
-  weapon: WeaponDefinition
-}
+  weapon: WeaponDefinition;
+};
 
 export default function WeaponAttachments({weapon}: Props) {
   const borderBarrel = weapon.attachments.barrel ? 'border-white' : 'border-red-600';

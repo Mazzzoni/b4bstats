@@ -40,67 +40,67 @@ export enum AttachmentEffect
 }
 
 export type WeaponStatisticsDefinition = {
-  rpm: number
-  delayBetweenShots: number
-  delayBetweenBursts: number
-  pellets: number
-  fullMagazineDamage: number
-  trueDps: number
-  stumblePerShot: number
-  stumblePerSecond: number
-  rangeDamages: Record<string, number>
-  rangeDamagesComputed: number[]
-  shotgunRangeDamages?: Record<string, number>
-  metersScale: number[]
-  magazineSize: number
-  reloadSpeed: number
-  rechamberLength: number
-  rechamberAnimationLength: number
-  weakspotDamageMultiplier: number
-  stumblePowerMultiplier: number
-  bulletPenetrationMultiplier: number
-  stamina?: number
+  rpm: number;
+  delayBetweenShots: number;
+  delayBetweenBursts: number;
+  pellets: number;
+  fullMagazineDamage: number;
+  trueDps: number;
+  stumblePerShot: number;
+  stumblePerSecond: number;
+  rangeDamages: Record<string, number>;
+  rangeDamagesComputed: number[];
+  shotgunRangeDamages?: Record<string, number>;
+  metersScale: number[];
+  magazineSize: number;
+  reloadSpeed: number;
+  rechamberLength: number;
+  rechamberAnimationLength: number;
+  weakspotDamageMultiplier: number;
+  stumblePowerMultiplier: number;
+  bulletPenetrationMultiplier: number;
+  stamina?: number;
   movementSpeed: {
-    jog: number
-    hipfire: number
-    ads: number
-    other: number
-  }
+    jog: number;
+    hipfire: number;
+    ads: number;
+    other: number;
+  };
   ads: {
-    in: number
-    out: number
-  }
+    in: number;
+    out: number;
+  };
   swap: {
-    in: number
-    out: number
-  }
-}
+    in: number;
+    out: number;
+  };
+};
 
 export type WeaponDefinition = {
-  name: string
-  category: WeaponCategories
-  image: string
-  slot: 'primary' | 'secondary' | 'n/a'
-  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper'
+  name: string;
+  category: WeaponCategories;
+  image: string;
+  slot: 'primary' | 'secondary' | 'n/a';
+  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper';
   attachments: {
-    barrel: boolean
-    magazine: boolean
-    scope: boolean
-    stock: boolean
-  }
-  qualities: Record<WeaponQualities, WeaponStatisticsDefinition>
-  upgrades: Partial<Record<keyof WeaponStatisticsDefinition | string, boolean>>
-  notes?: Record<string, string>
-}
+    barrel: boolean;
+    magazine: boolean;
+    scope: boolean;
+    stock: boolean;
+  };
+  qualities: Record<WeaponQualities, WeaponStatisticsDefinition>;
+  upgrades: Partial<Record<keyof WeaponStatisticsDefinition | string, boolean>>;
+  notes?: Record<string, string>;
+};
 
 export type AttachmentDefinition = {
-  name: string
-  category: AttachmentCategories
-  effects: Record<AttachmentEffect, number>
-}
+  name: string;
+  category: AttachmentCategories;
+  effects: Record<AttachmentEffect, number>;
+};
 
 export type WeaponsProps = {
-  note: string
-  weapons: WeaponDefinition[]
-  attachments: AttachmentDefinition[]
-}
+  note: string;
+  weapons: WeaponDefinition[];
+  attachments: AttachmentDefinition[];
+};

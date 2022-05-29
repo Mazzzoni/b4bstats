@@ -11,7 +11,7 @@ type Props = {
   title: string;
   weapons: WeaponDefinition[];
   statisticCallback: (weapon: WeaponStatisticsDefinition) => number;
-}
+};
 
 export default function OrderedWeaponsPerStatistic({title, weapons, statisticCallback}: Props) {
   const {t} = useTranslation();

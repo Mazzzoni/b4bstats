@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 
 type Props = {
   weapon: WeaponDefinition;
-}
+};
 
 export default function WeaponCard({weapon}: Props) {
   const {t} = useTranslation();

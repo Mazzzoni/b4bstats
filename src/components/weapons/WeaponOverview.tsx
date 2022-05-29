@@ -1,18 +1,16 @@
-import { WeaponCategories, WeaponDefinition, WeaponQualities } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition } from '@components/weapons/types';
 import { Badge, Tooltip } from '@mantine/core';
 import { useRecoilValue } from 'recoil';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
+import { getWeaponQuality } from './utils';
 
 type Props = {
   weapon: WeaponDefinition;
-}
+};
 
 export default function WeaponOverview({weapon}: Props) {
   const selectedQuality = useRecoilValue(SelectedQualityState);
-
-  const weaponQuality = Object.keys(weapon.qualities).includes(selectedQuality)
-    ? weapon.qualities[selectedQuality]
-    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+  const weaponQuality = getWeaponQuality(weapon, selectedQuality);
 
   let rpmFormula = '1 / Delay Between Shots * 60';
 

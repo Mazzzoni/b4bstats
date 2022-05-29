@@ -4,7 +4,7 @@ import { WeaponCategories, WeaponDefinition, WeaponQualities } from '@components
 type WeaponMapDefinition = Partial<Omit<WeaponDefinition, 'name' | 'qualities'>> & {
   name: Weapons;
   qualities: Partial<Record<WeaponQualities, number>>;
-}
+};
 
 type WeaponsMapDefinition = {
   [key in 'Ranged' | 'Melee']: WeaponMapDefinition[];

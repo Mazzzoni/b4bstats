@@ -1,18 +1,17 @@
-import { WeaponCategories, WeaponDefinition, WeaponQualities } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition } from '@components/weapons/types';
 import { useRecoilValue } from 'recoil';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import IndividualStatistic from '@components/weapons/IndividualStatistic';
 import { Info } from 'react-feather';
+import { getWeaponQuality } from '@components/weapons/utils';
 
 type Props = {
   weapon: WeaponDefinition;
-}
+};
 
 export default function WeaponStatistics({weapon}: Props) {
   const selectedQuality = useRecoilValue(SelectedQualityState);
-  const weaponQuality = Object.keys(weapon.qualities).includes(selectedQuality)
-    ? weapon.qualities[selectedQuality]
-    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+  const weaponQuality = getWeaponQuality(weapon, selectedQuality);
 
   return (
     <div className="border-top-subtle mt-5">

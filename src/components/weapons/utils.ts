@@ -1,4 +1,4 @@
-import { WeaponStatisticsDefinition } from '@components/weapons/types';
+import { WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
 
 // Represent 0.5 meter
 export const rangedStepSize = 50;
@@ -90,4 +90,26 @@ export const getMetersScale = (max: number, stepSize: number) => {
   }
 
   return scale;
+};
+
+export const getWeaponQuality = (
+  weapon: WeaponDefinition,
+  selectedQuality: WeaponQualities,
+  bestFallback: boolean = true,
+): WeaponStatisticsDefinition => {
+  const weaponHasSelectedQuality = Object.keys(weapon.qualities).includes(selectedQuality);
+
+  if (bestFallback) {
+    const quality = weaponHasSelectedQuality
+      ? selectedQuality
+      // Take the latest weapon quality in set (best one normally)
+      : Object.keys(weapon.qualities)[Object.keys(weapon.qualities).length - 1];
+
+    return weapon.qualities[quality as WeaponQualities];
+  }
+
+  return weaponHasSelectedQuality
+    ? weapon.qualities[selectedQuality]
+    // Return first quality (the lowest one normally)
+    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
 };

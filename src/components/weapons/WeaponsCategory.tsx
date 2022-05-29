@@ -2,9 +2,9 @@ import { WeaponDefinition } from '@components/weapons/types';
 import WeaponCard from '@components/weapons/WeaponCard';
 
 type Props = {
-  categoryName: string
-  weapons: WeaponDefinition[]
-}
+  categoryName: string;
+  weapons: WeaponDefinition[];
+};
 
 export default function WeaponsCategory({categoryName, weapons}: Props) {
   if (weapons.length === 0) {

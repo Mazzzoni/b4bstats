@@ -9,6 +9,7 @@ import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
 import { useRecoilValue } from 'recoil';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import ChartTooltip, { TooltipProps } from '@components/weapons/charts/ChartTooltip';
+import { getWeaponQuality } from '@components/weapons/utils';
 
 // Show only few ticks on the overall meters axis
 const shownTicks = [250, 500, 1000, 1500, 2000, 3000, 4000];
@@ -32,9 +33,7 @@ export default function WeaponDamage({weapon}: Props) {
     };
   }).reverse();
 
-  const weaponQuality = Object.keys(weapon.qualities).includes(selectedQuality)
-    ? weapon.qualities[selectedQuality]
-    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+  const weaponQuality = getWeaponQuality(weapon, selectedQuality);
 
   const qualityColor = Object.keys(weapon.qualities).includes(selectedQuality)
     ? WeaponQualityColors[selectedQuality]

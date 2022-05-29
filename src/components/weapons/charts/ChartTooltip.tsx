@@ -14,7 +14,7 @@ export type TooltipProps = {
   baseStumblePerShot: number;
   baseStumblePerSecond: number;
   isMelee: boolean;
-}
+};
 
 export default function ChartTooltip(props: TooltipProps) {
   const showCell = !props.isMelee;

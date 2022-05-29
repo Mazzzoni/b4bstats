@@ -2,8 +2,8 @@ import { Accordion } from '@mantine/core';
 import { WeaponDefinition } from '@components/weapons/types';
 
 type Props = {
-  weapon: WeaponDefinition
-}
+  weapon: WeaponDefinition;
+};
 
 export default function WeaponSimulator({weapon}: Props) {
   return (

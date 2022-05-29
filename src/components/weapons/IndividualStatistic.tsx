@@ -8,7 +8,7 @@ type Props = {
   value: number;
   upgrade?: boolean;
   fractionDigits?: number;
-}
+};
 
 export default function IndividualStatistic(statistic: Props) {
   const fractionDigits = statistic.fractionDigits !== undefined ? statistic.fractionDigits : 2;
