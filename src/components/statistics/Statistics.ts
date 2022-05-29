@@ -19,7 +19,7 @@ import {
 } from '@components/statistics/types';
 import { isSkippableWeaponInOverall } from '@utils/charts';
 
-type RawData = { [key: string]: any; }
+type RawData = { [key: string]: any; };
 
 export default class Statistics
 {
@@ -44,6 +44,18 @@ export default class Statistics
     [MiscellaneousStatistics.TreasureDoorsOpened]: 0,
     [MiscellaneousStatistics.HordesTriggered]: 0,
     [MiscellaneousStatistics.SnitchersSilenced]: 0,
+  };
+
+  public currencies = {
+    supplyPoints: {
+      balanceFromInventory: 0,
+      acquired: 0,
+      spent: 0,
+    },
+    skullTotemPoints: {
+      acquired: 0,
+      spent: 0,
+    },
   };
 
   public missionsStatistics: Record<ProgressionTypes, MissionsStatistics> = {
@@ -149,52 +161,64 @@ export default class Statistics
   };
 
   /**
-   * @param rawStatistics
+   * @param rawData
    * @throws Throws error if the object format isn't expected
    */
-  public static build(rawStatistics: RawData): Statistics
+  public static build(rawData: RawData): Statistics
   {
     // Access main data, if it fails it'll throw error
-    const data = rawStatistics.offlineData.stats;
+    const rawStatistics = rawData.offlineData.stats;
 
     const miscellaneousStatistics: Record<MiscellaneousStatistics, number> = {
-      [MiscellaneousStatistics.AmmoDropped]: _.get(data, 'ammoDropped.base', 0),
-      [MiscellaneousStatistics.CaravanItemsPurchased]: _.get(data, 'caravanItemsPurchased.base', 0),
-      [MiscellaneousStatistics.CardsPlayed]: _.get(data, 'cardsPlayed.base', 0),
-      [MiscellaneousStatistics.CleanersRescued]: _.get(data, 'cleanersRescued.base', 0),
-      [MiscellaneousStatistics.CleanersRevived]: _.get(data, 'cleanersRevived.base', 0),
-      [MiscellaneousStatistics.CommonRiddenDamageInflicted]: _.get(data, 'commonRiddenDamageInflicted.base', 0),
-      [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: _.get(data, 'specialRiddenDamageInflicted.base', 0),
-      [MiscellaneousStatistics.WeakSpotDamageInflicted]: _.get(data, 'weakSpotDamageInflicted.base', 0),
-      [MiscellaneousStatistics.EnemyDamageInflicted]: _.get(data, 'enemyDamageInflicted.base', 0),
-      [MiscellaneousStatistics.FriendlyCleanersKilled]: _.get(data, 'friendlyCleanersKilled.base', 0),
-      [MiscellaneousStatistics.FriendlyDamageInflicted]: _.get(data, 'friendlyDamageInflicted.base', 0),
-      [MiscellaneousStatistics.HealingAppliedOther]: _.get(data, 'healingApplied.keys.Other', 0),
-      [MiscellaneousStatistics.HealingAppliedSelf]: _.get(data, 'healingApplied.keys.Self', 0),
-      [MiscellaneousStatistics.TimesDiedAsCleaner]: _.get(data, 'timesDiedAsCleaner.base', 0),
-      [MiscellaneousStatistics.TimesIncappedAsCleaner]: _.get(data, 'timesIncappedAsCleaner.base', 0),
-      [MiscellaneousStatistics.TreasureDoorsOpened]: _.get(data, 'treasureDoorsOpened.base', 0),
-      [MiscellaneousStatistics.HordesTriggered]: _.get(data, 'hordesTriggered.base', 0),
-      [MiscellaneousStatistics.SnitchersSilenced]: _.get(data, 'snitchersSilenced.base', 0),
+      [MiscellaneousStatistics.AmmoDropped]: _.get(rawStatistics, 'ammoDropped.base', 0),
+      [MiscellaneousStatistics.CaravanItemsPurchased]: _.get(rawStatistics, 'caravanItemsPurchased.base', 0),
+      [MiscellaneousStatistics.CardsPlayed]: _.get(rawStatistics, 'cardsPlayed.base', 0),
+      [MiscellaneousStatistics.CleanersRescued]: _.get(rawStatistics, 'cleanersRescued.base', 0),
+      [MiscellaneousStatistics.CleanersRevived]: _.get(rawStatistics, 'cleanersRevived.base', 0),
+      [MiscellaneousStatistics.CommonRiddenDamageInflicted]: _.get(rawStatistics, 'commonRiddenDamageInflicted.base', 0),
+      [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: _.get(rawStatistics, 'specialRiddenDamageInflicted.base', 0),
+      [MiscellaneousStatistics.WeakSpotDamageInflicted]: _.get(rawStatistics, 'weakSpotDamageInflicted.base', 0),
+      [MiscellaneousStatistics.EnemyDamageInflicted]: _.get(rawStatistics, 'enemyDamageInflicted.base', 0),
+      [MiscellaneousStatistics.FriendlyCleanersKilled]: _.get(rawStatistics, 'friendlyCleanersKilled.base', 0),
+      [MiscellaneousStatistics.FriendlyDamageInflicted]: _.get(rawStatistics, 'friendlyDamageInflicted.base', 0),
+      [MiscellaneousStatistics.HealingAppliedOther]: _.get(rawStatistics, 'healingApplied.keys.Other', 0),
+      [MiscellaneousStatistics.HealingAppliedSelf]: _.get(rawStatistics, 'healingApplied.keys.Self', 0),
+      [MiscellaneousStatistics.TimesDiedAsCleaner]: _.get(rawStatistics, 'timesDiedAsCleaner.base', 0),
+      [MiscellaneousStatistics.TimesIncappedAsCleaner]: _.get(rawStatistics, 'timesIncappedAsCleaner.base', 0),
+      [MiscellaneousStatistics.TreasureDoorsOpened]: _.get(rawStatistics, 'treasureDoorsOpened.base', 0),
+      [MiscellaneousStatistics.HordesTriggered]: _.get(rawStatistics, 'hordesTriggered.base', 0),
+      [MiscellaneousStatistics.SnitchersSilenced]: _.get(rawStatistics, 'snitchersSilenced.base', 0),
+    };
+
+    const currencies: Statistics['currencies'] = {
+      supplyPoints: {
+        balanceFromInventory: _.get(rawData.offlineData, 'supplyPoints.balanceFromInventory', 0),
+        acquired: _.get(rawData.offlineData, 'supplyPoints.acquired', 0),
+        spent: _.get(rawData.offlineData, 'supplyPoints.spent', 0),
+      },
+      skullTotemPoints: {
+        acquired: _.get(rawData.offlineData, 'skullTotemPoints.acquired', 0),
+        spent: _.get(rawData.offlineData, 'skullTotemPoints.spent', 0),
+      },
     };
 
     const missionsStatistics = {
-      [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Merged),
-      [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Online),
-      [ProgressionTypes.Offline]: Statistics.getMissionsStatisticsPerProgressionType(data, ProgressionTypes.Offline),
+      [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Merged),
+      [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Online),
+      [ProgressionTypes.Offline]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Offline),
     };
 
     const progressions = {
-      [ProgressionTypes.Merged]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Merged),
-      [ProgressionTypes.Online]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Online),
-      [ProgressionTypes.Offline]: Statistics.getOverallProgressionPerType(data, ProgressionTypes.Offline),
+      [ProgressionTypes.Merged]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Merged),
+      [ProgressionTypes.Online]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Online),
+      [ProgressionTypes.Offline]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Offline),
     };
 
-    const rawRiddenKilled = _.get(data, 'riddenKilledByType.keys', {});
+    const rawRiddenKilled = _.get(rawStatistics, 'riddenKilledByType.keys', {});
 
     const riddenKilled: RiddenKilled = {
       specials: {
-        [Riddens.Ogre]: _.get(data, 'riddenBossesKilled.base', 0),
+        [Riddens.Ogre]: _.get(rawStatistics, 'riddenBossesKilled.base', 0),
         [Riddens.Breaker]: _.get(rawRiddenKilled, 'Breaker', 0),
         [Riddens.Hag]: _.get(rawRiddenKilled, 'Brute', 0),
         [Riddens.Snitcher]: _.get(rawRiddenKilled, 'Snitcher', 0),
@@ -214,13 +238,13 @@ export default class Statistics
         [Riddens.Tallboy]: _.get(rawRiddenKilled, 'Tallboy', 0),
         [Riddens.Ripper]: _.get(rawRiddenKilled, 'Heckboy', 0),
       },
-      riddenCommonKilled: _.get(data, 'riddenKilledByType.keys.Common', 0),
-      riddenSleeperKilled: _.get(data, 'riddenKilledByType.keys.Sleeper', 0),
-      riddenKilledTotal: _.get(data, 'riddenKilled.base', 0),
-      riddenMutationsKilled: _.get(data, 'riddenMutationsKilled.base', 0),
+      riddenCommonKilled: _.get(rawStatistics, 'riddenKilledByType.keys.Common', 0),
+      riddenSleeperKilled: _.get(rawStatistics, 'riddenKilledByType.keys.Sleeper', 0),
+      riddenKilledTotal: _.get(rawStatistics, 'riddenKilled.base', 0),
+      riddenMutationsKilled: _.get(rawStatistics, 'riddenMutationsKilled.base', 0),
     };
 
-    const rawWeaponsKills = _.get(data, 'riddenKilledByWeapon.keys', {});
+    const rawWeaponsKills = _.get(rawStatistics, 'riddenKilledByWeapon.keys', {});
 
     const weaponsKills: WeaponsKills = {
       [Weapons.Axe]: _.get(rawWeaponsKills, 'Axe', 0),
@@ -277,17 +301,18 @@ export default class Statistics
     };
 
     const pvpStatistics: PvpStatistics = {
-      gamesPlayed: _.get(data, 'pVPGamesPlayed.base', 0),
-      gamesWon: _.get(data, 'pVPGamesWon.base', 0),
-      gamesLost: _.get(data, 'pVPGamesPlayed.base', 0) - _.get(data, 'pVPGamesWon.base', 0),
-      killsAsCleaner: _.get(data, 'pVPKillsAsCleaners.base', 0),
-      killsAsRidden: _.get(data, 'pVPKillsAsRidden.base', 0),
+      gamesPlayed: _.get(rawStatistics, 'pVPGamesPlayed.base', 0),
+      gamesWon: _.get(rawStatistics, 'pVPGamesWon.base', 0),
+      gamesLost: _.get(rawStatistics, 'pVPGamesPlayed.base', 0) - _.get(rawStatistics, 'pVPGamesWon.base', 0),
+      killsAsCleaner: _.get(rawStatistics, 'pVPKillsAsCleaners.base', 0),
+      killsAsRidden: _.get(rawStatistics, 'pVPKillsAsRidden.base', 0),
     };
 
     const statistics = new Statistics();
 
     statistics.miscellaneousStatistics = miscellaneousStatistics;
     statistics.missionsStatistics = missionsStatistics;
+    statistics.currencies = currencies;
     statistics.progressions = progressions;
     statistics.riddenKilled = riddenKilled;
     statistics.weaponsKills = weaponsKills;

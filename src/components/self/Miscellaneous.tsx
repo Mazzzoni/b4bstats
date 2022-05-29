@@ -121,6 +121,8 @@ export default function Miscellaneous() {
         <ScreenshotTaker elementToScreenshotRef={elementToScreenshotRef} filename={`b4bstats_mazz__miscellaneous__${getFormattedDate()}`}/>
       </div>
 
+      <h2 className="text-2xl font-bold mt-5">Statistics</h2>
+
       <Table
         highlightOnHover
         verticalSpacing="sm"
@@ -133,6 +135,37 @@ export default function Miscellaneous() {
         </tr>
         </thead>
         <tbody>{rows}</tbody>
+      </Table>
+
+      <h2 className="text-2xl font-bold mt-5">Currencies</h2>
+
+      <Table
+        highlightOnHover
+        verticalSpacing="sm"
+      >
+        <thead>
+        <tr>
+          <th className="w-1/4">Currency</th>
+          <th>Balance from inventory</th>
+          <th>Acquired</th>
+          <th>Spent</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Supply Points</td>
+          <td>{statistics.currencies.supplyPoints.balanceFromInventory}</td>
+          <td>{statistics.currencies.supplyPoints.acquired}</td>
+          <td>{statistics.currencies.supplyPoints.spent}</td>
+        </tr>
+
+        <tr>
+          <td>Skull Totem Points</td>
+          <td>-</td>
+          <td>{statistics.currencies.skullTotemPoints.acquired}</td>
+          <td>{statistics.currencies.skullTotemPoints.spent}</td>
+        </tr>
+        </tbody>
       </Table>
     </div>
   );
