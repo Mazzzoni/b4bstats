@@ -25811,6 +25811,9 @@
     "category": "melee",
     "image": "skull_totem.webp",
     "slot": "n/a",
+    "notes": {
+      "Inversed quality": "Statistics worsen when you increase quality. (not applicable for damage and stumble)"
+    },
     "qualities": {
       "rare": {
         "rpm": 0,

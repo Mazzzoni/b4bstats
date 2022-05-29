@@ -737,6 +737,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Epic]: 27,
         [WeaponQualities.Legendary]: 28,
       },
+      notes: {
+        'Inversed quality': 'Statistics worsen when you increase quality. (not applicable for damage and stumble)',
+      },
     },
     {
       name: Weapons.Knife,
