@@ -89,6 +89,7 @@ export type WeaponDefinition = {
     stock: boolean
   }
   qualities: Record<WeaponQualities, WeaponStatisticsDefinition>
+  upgrades: Partial<Record<keyof WeaponStatisticsDefinition | string, boolean>>
   notes?: Record<string, string>
 }
 

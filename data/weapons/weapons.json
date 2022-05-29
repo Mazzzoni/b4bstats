@@ -820,6 +820,21 @@
           "out": 0.4725
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -1643,6 +1658,21 @@
           "out": 0.4725
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -2466,6 +2496,21 @@
           "out": 0.246647953125
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -3289,6 +3334,21 @@
           "out": 0.543375
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": true,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -4115,6 +4175,21 @@
           "out": 0.26309115
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -4335,6 +4410,21 @@
           "out": 0.4725
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -5158,6 +5248,21 @@
           "out": 0.315
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -5984,6 +6089,21 @@
           "out": 0.16443196875
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -6810,6 +6930,21 @@
           "out": 0.16443196875
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -7633,6 +7768,21 @@
           "out": 0.36225
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": true,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -8456,6 +8606,21 @@
           "out": 0.315
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -9279,6 +9444,21 @@
           "out": 0.315
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -10102,6 +10282,21 @@
           "out": 0.36225
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": true,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -10322,6 +10517,21 @@
           "out": 0.23625
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -11145,6 +11355,21 @@
           "out": 0.567
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -11968,6 +12193,21 @@
           "out": 0.65205
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": true,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -12188,6 +12428,21 @@
           "out": 0.326025
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -13039,6 +13294,21 @@
           "1250": 41.94147405
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -13890,6 +14160,21 @@
           "1000": 35.850074958425004
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -14741,6 +15026,21 @@
           "1500": 83.78672718465
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -15592,6 +15892,21 @@
           "1500": 81.04710667725
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -16443,6 +16758,21 @@
           "1000": 37.751935698925
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -16670,6 +17000,21 @@
           "1000": 39.97283357864387
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -17493,6 +17838,21 @@
           "out": 0.1973183625
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -18316,6 +18676,21 @@
           "out": 0.1973183625
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -19139,6 +19514,21 @@
           "out": 0.16443196875
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": true,
+      "ads.out": true,
+      "swap.in": true,
+      "swap.out": true,
+      "reloadSpeed": true,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -19962,6 +20352,21 @@
           "out": 0.4347
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": true,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -20785,6 +21190,21 @@
           "out": 0.378
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -21005,6 +21425,21 @@
           "out": 0.2835
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -21828,6 +22263,21 @@
           "out": 0.504
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -22651,6 +23101,21 @@
           "out": 0.5796
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -23474,6 +23939,21 @@
           "out": 0.5796
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": true,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -23695,6 +24175,21 @@
           "out": 0.3024
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -24055,6 +24550,21 @@
           "other": 205
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -24415,6 +24925,21 @@
           "other": 197.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -24775,6 +25300,21 @@
           "other": 220.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25135,6 +25675,21 @@
           "other": 212.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25234,6 +25789,21 @@
           "other": 197.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25506,6 +26076,21 @@
           "other": 197.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": true,
+      "movementSpeed.hipfire": true,
+      "movementSpeed.ads": true,
+      "movementSpeed.other": true,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": true,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25602,6 +26187,21 @@
           "other": 220.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25698,6 +26298,21 @@
           "other": 220.5
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   },
   {
@@ -25794,6 +26409,21 @@
           "other": 200.13
         }
       }
+    },
+    "upgrades": {
+      "bulletPenetrationMultiplier": false,
+      "magazineSize": false,
+      "movementSpeed.jog": false,
+      "movementSpeed.hipfire": false,
+      "movementSpeed.ads": false,
+      "movementSpeed.other": false,
+      "ads.in": false,
+      "ads.out": false,
+      "swap.in": false,
+      "swap.out": false,
+      "reloadSpeed": false,
+      "stumblePowerMultiplier": false,
+      "weakspotDamageMultiplier": false
     }
   }
 ]

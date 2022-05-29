@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import WeaponsCategory from '@components/weapons/WeaponsCategory';
 import { ChartPluginCrosshair } from '@utils/chart-plugin-crosshair';
 import Graphs from '@components/weapons/Graphs';
+import { ChevronsUp } from 'react-feather';
 
 // Register plugins globally
 Chart.register(
@@ -52,6 +53,10 @@ export default function Display(props: Props) {
 
         <div className="mt-3 weapons-note">
           <ReactMarkdown>{props.note}</ReactMarkdown>
+
+          <div className="mt-10 text-sm">
+            <ChevronsUp size={18} className="color-primary inline"/> = Statistic is influenced by weapon quality.
+          </div>
         </div>
 
         <div className="mt-5 weapons">

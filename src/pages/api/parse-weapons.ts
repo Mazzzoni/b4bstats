@@ -8,6 +8,7 @@ import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
 import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
 import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
+import _ from 'lodash';
 
 const file = `${process.cwd()}/data/weapons/sheets/trs-weapons.xlsm`;
 
@@ -85,7 +86,7 @@ class Parser
    * Parse weapons and extract data from document
    * Also compute damage right away, so it saves a bit of performance on client side
    */
-  parse(): void
+  public parse(): void
   {
     if (!fs.existsSync(file)) {
       throw new Error('Make sure to have actual document file available');
@@ -293,6 +294,66 @@ class Parser
 
       this.weapons.set(computedWeapon.name, computedWeapon);
     }
+
+    this.computeUpgrades();
+  }
+
+  // Check whether statistics are upgrading when you switch quality
+  private computeUpgrades(): void
+  {
+    this.weapons.forEach((weapon) => {
+      // by default, no upgrades at all
+      const upgrades: WeaponDefinition['upgrades'] = {
+        bulletPenetrationMultiplier: false,
+        magazineSize: false,
+        'movementSpeed.jog': false,
+        'movementSpeed.hipfire': false,
+        'movementSpeed.ads': false,
+        'movementSpeed.other': false,
+        'ads.in': false,
+        'ads.out': false,
+        'swap.in': false,
+        'swap.out': false,
+        reloadSpeed: false,
+        stumblePowerMultiplier: false,
+        weakspotDamageMultiplier: false,
+      };
+
+      const qualities = Object.keys(weapon.qualities);
+
+      // if there's only one quality then the weapon can't upgrade
+      if (qualities.length === 1) {
+        weapon.upgrades = upgrades;
+
+        return;
+      }
+
+      let previousWeaponQuality = null;
+
+      for (const quality of qualities) {
+        const currentWeaponQuality = weapon.qualities[quality as WeaponQualities];
+
+        if (!previousWeaponQuality) {
+          previousWeaponQuality = currentWeaponQuality;
+
+          continue;
+        }
+
+        for (const upgrade of Object.keys(upgrades)) {
+          const previousValue = _.get(previousWeaponQuality, upgrade);
+          const currentValue = _.get(currentWeaponQuality, upgrade);
+
+          // if values don't match then it means the weapon gets an upgrade in some way (positive or negative)
+          if (previousValue !== currentValue) {
+            upgrades[upgrade as keyof WeaponStatisticsDefinition] = true;
+          }
+        }
+
+        previousWeaponQuality = currentWeaponQuality;
+      }
+
+      weapon.upgrades = upgrades;
+    });
   }
 }
 
