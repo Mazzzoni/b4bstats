@@ -8,6 +8,7 @@ import {
   Riddens,
   Weapons,
   WeaponTypes,
+  BurnCards,
   MissionsCompletedPerCleaner,
   MissionsCompletedPerDifficulty,
   MissionsStatistics,
@@ -57,6 +58,8 @@ export default class Statistics
       spent: 0,
     },
   };
+
+  public burnCardsStatistics: Partial<Record<BurnCards, { acquired: number, spent: number }>> = {};
 
   public missionsStatistics: Record<ProgressionTypes, MissionsStatistics> = {
     [ProgressionTypes.Merged]: {} as MissionsStatistics,
@@ -202,6 +205,8 @@ export default class Statistics
       },
     };
 
+    const burnCardsStatistics = Statistics.getBurnCardsStatistics(_.get(rawData.offlineData, 'consumables', {}));
+
     const missionsStatistics = {
       [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Merged),
       [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Online),
@@ -313,6 +318,7 @@ export default class Statistics
     statistics.miscellaneousStatistics = miscellaneousStatistics;
     statistics.missionsStatistics = missionsStatistics;
     statistics.currencies = currencies;
+    statistics.burnCardsStatistics = burnCardsStatistics;
     statistics.progressions = progressions;
     statistics.riddenKilled = riddenKilled;
     statistics.weaponsKills = weaponsKills;
@@ -540,5 +546,23 @@ export default class Statistics
     });
 
     return progressions;
+  }
+
+  private static getBurnCardsStatistics(rawConsumables: RawData)
+  {
+    const burnCardsStatistics: Statistics['burnCardsStatistics'] = {};
+    const burnCardsKeys = Object.values(BurnCards);
+
+    for (const key of Object.keys(rawConsumables)) {
+      for (const burnCardKey of burnCardsKeys) {
+        if (key.includes(burnCardKey)) {
+          burnCardsStatistics[burnCardKey] = rawConsumables[key];
+
+          break;
+        }
+      }
+    }
+
+    return burnCardsStatistics;
   }
 }

@@ -3,9 +3,10 @@ import { useRecoilValue } from 'recoil';
 import { useTranslation } from 'react-i18next';
 import { localeFormat, getFormattedDate } from '@utils/generic';
 import StatisticsState from '@components/self/StatisticsState';
-import { MiscellaneousStatistics } from '@components/statistics/types';
+import { BurnCards, MiscellaneousStatistics } from '@components/statistics/types';
 import { createRef } from 'react';
 import ScreenshotTaker from '@components/common/ScreenshotTaker';
+import { burnCardKeyToString } from '@translations/helpers';
 
 export default function Miscellaneous() {
   const elementToScreenshotRef = createRef<HTMLDivElement>();
@@ -106,14 +107,6 @@ export default function Miscellaneous() {
     },
   ];
 
-  const rows = stats.map((stat) => (
-    <tr key={stat.statistic}>
-      <td>{stat.statistic}</td>
-      <td>{stat.value}</td>
-      <td>{stat.avg}</td>
-    </tr>
-  ));
-
   return (
     <div ref={elementToScreenshotRef} id="miscellaneous" style={{backgroundColor: theme.colors.dark[8]}}>
       <div className="flex justify-between">
@@ -129,12 +122,20 @@ export default function Miscellaneous() {
       >
         <thead>
         <tr>
-          <th className="w-1/4">Statistic</th>
-          <th>Value</th>
+          <th className="w-72">Statistic</th>
+          <th className="w-56">Value</th>
           <th>Average per mission</th>
         </tr>
         </thead>
-        <tbody>{rows}</tbody>
+        <tbody>
+        {stats.map((stat) => (
+          <tr key={stat.statistic}>
+            <td><b>{stat.statistic}</b></td>
+            <td>{stat.value}</td>
+            <td>{stat.avg || '-'}</td>
+          </tr>
+        ))}
+        </tbody>
       </Table>
 
       <h2 className="text-2xl font-bold mt-5">Currencies</h2>
@@ -145,26 +146,50 @@ export default function Miscellaneous() {
       >
         <thead>
         <tr>
-          <th className="w-1/4">Currency</th>
+          <th className="w-72">Currency</th>
+          <th className="w-56">Acquired</th>
+          <th className="w-56">Spent</th>
           <th>Balance from inventory</th>
-          <th>Acquired</th>
-          <th>Spent</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>Supply Points</td>
-          <td>{statistics.currencies.supplyPoints.balanceFromInventory}</td>
-          <td>{statistics.currencies.supplyPoints.acquired}</td>
-          <td>{statistics.currencies.supplyPoints.spent}</td>
+          <td><b>Supply Points</b></td>
+          <td>{localeFormat(statistics.currencies.supplyPoints.acquired)}</td>
+          <td>{localeFormat(statistics.currencies.supplyPoints.spent)}</td>
+          <td>{localeFormat(statistics.currencies.supplyPoints.balanceFromInventory)}</td>
         </tr>
 
         <tr>
-          <td>Skull Totem Points</td>
+          <td><b>Skull Totem Points</b></td>
+          <td>{localeFormat(statistics.currencies.skullTotemPoints.acquired)}</td>
+          <td>{localeFormat(statistics.currencies.skullTotemPoints.spent)}</td>
           <td>-</td>
-          <td>{statistics.currencies.skullTotemPoints.acquired}</td>
-          <td>{statistics.currencies.skullTotemPoints.spent}</td>
         </tr>
+        </tbody>
+      </Table>
+
+      <h2 className="text-2xl font-bold mt-5">Burn cards</h2>
+
+      <Table
+        highlightOnHover
+        verticalSpacing="sm"
+      >
+        <thead>
+        <tr>
+          <th className="w-72">Card</th>
+          <th className="w-56">Acquired</th>
+          <th>Spent</th>
+        </tr>
+        </thead>
+        <tbody>
+        {Object.keys(statistics.burnCardsStatistics).sort().map((burnCardKey) => (
+          <tr key={burnCardKey}>
+            <td><b>{burnCardKeyToString(burnCardKey as BurnCards)}</b></td>
+            <td>{statistics.burnCardsStatistics[burnCardKey as BurnCards]!.acquired}</td>
+            <td>{statistics.burnCardsStatistics[burnCardKey as BurnCards]!.spent}</td>
+          </tr>
+        ))}
         </tbody>
       </Table>
     </div>

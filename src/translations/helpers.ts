@@ -1,5 +1,5 @@
 import { localeFormat } from '@utils/generic';
-import { Weapons, WeaponTypes } from '@components/statistics/types';
+import { BurnCards, Weapons, WeaponTypes } from '@components/statistics/types';
 
 export function translateKillsTooltip(t: Function, count: number, percent: number)
 {
@@ -135,4 +135,40 @@ export function weaponToString(weapon: Weapons): string
   }
 
   return 'unknown';
+}
+
+export function burnCardKeyToString(burnCardKey: BurnCards): string
+{
+  switch (burnCardKey) {
+    case BurnCards.AmmoDrop:
+      return 'Ammo Drop';
+    case BurnCards.DustyCustomAssaultRifle:
+      return "Dusty's Customs: Assault Rifle";
+    case BurnCards.DustyCustomHandgun:
+      return "Dusty's Customs: Handgun";
+    case BurnCards.DustyCustomShotgun:
+      return "Dusty's Customs: Shotgun";
+    case BurnCards.DustyCustomSMG:
+      return "Dusty's Customs: SMG";
+    case BurnCards.DustyCustomLMG:
+      return "Dusty's Customs: LMG";
+    case BurnCards.DustyCustomSniper:
+      return "Dusty's Customs: Sniper Rifle";
+    case BurnCards.ExtraPadding:
+      return 'Extra Padding';
+    case BurnCards.HazardSuit:
+      return 'Hazard Suit';
+    case BurnCards.HellCanWait:
+      return 'Hell Can Wait';
+    case BurnCards.HiredGun:
+      return 'Hired Gun';
+    case BurnCards.SlipperyWhenWet:
+      return 'Slippery When Wet';
+    case BurnCards.UrgentCare:
+      return 'Urgent Care';
+    case BurnCards.Windfall:
+      return 'Windfall';
+  }
+
+  return 'Unknown Card';
 }

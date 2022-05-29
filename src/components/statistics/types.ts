@@ -1,3 +1,10 @@
+export enum ProgressionTypes
+{
+  Online = 'online',
+  Offline = 'offline',
+  Merged = 'merged',
+}
+
 export enum Missions
 {
   // Act 1
@@ -103,6 +110,32 @@ export enum MiscellaneousStatistics
   TreasureDoorsOpened,
   HordesTriggered,
   SnitchersSilenced,
+}
+
+export enum BurnCards
+{
+  AmmoDrop = 'Burn_AmmoRestoreMaxTeam_25',
+  DustyCustomAssaultRifle = 'Burn_RollGunAR',
+  DustyCustomHandgun = 'Burn_RollGunHG',
+  DustyCustomShotgun = 'Burn_RollGunSG',
+  DustyCustomSMG = 'Burn_RollGunSMG',
+  DustyCustomLMG = 'Burn_RollGunLMG',
+  DustyCustomSniper = 'Burn_RollGunSNI',
+  ExtraPadding = 'Burn_TraumaResistTeam_25',
+  HazardSuit = 'Burn_ElementalResistTeam_25',
+  HellCanWait = 'Burn_ExtraContinue_1',
+  HiredGun = 'Burn_HiredGun_5',
+  SlipperyWhenWet = 'Burn_BreakoutTeam',
+  UrgentCare = 'Burn_TraumaRecoverTeam_25',
+  Windfall = 'Burn_TeamCurrency_250',
+
+  // Not used released at the moment
+  DefenseUpgrade = 'DefenseUpgrade',
+  GroupHug = 'GroupHug',
+  AttachmentScavenger = 'AttachmentScavenger',
+  MedicalSupplyScavenger = 'MedicalSupplyScavenger',
+  OffensiveSupplyScavenger = 'OffensiveSupplyScavenger',
+  SquadArmor = 'SquadArmor',
 }
 
 export enum Cleaners
@@ -340,11 +373,4 @@ export type PvpStatistics = {
   gamesLost: number
   killsAsCleaner: number
   killsAsRidden: number
-}
-
-export enum ProgressionTypes
-{
-  Online = 'online',
-  Offline = 'offline',
-  Merged = 'merged',
 }
