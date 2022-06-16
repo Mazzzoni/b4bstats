@@ -109,8 +109,8 @@ export default function Achievements() {
 
         <div className="col-span-4">
           <ProgressMilestones
-            title="Kill 1 000 snitches without them triggering a horde"
-            maxValue={1000}
+            title="Kill 100 snitches without them triggering a horde"
+            maxValue={100}
             currentValue={statistics.miscellaneousStatistics[MiscellaneousStatistics.SnitchersSilenced]}
           />
         </div>
