@@ -1,5 +1,5 @@
 import { Weapons } from '@components/statistics/types';
-import { WeaponCategories, WeaponDefinition, WeaponQualities } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas } from '@components/weapons/types';
 
 type WeaponMapDefinition = Partial<Omit<WeaponDefinition, 'name' | 'qualities'>> & {
   name: Weapons;
@@ -29,6 +29,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 6,
         [WeaponQualities.Uncommon]: 7,
@@ -48,6 +49,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 12,
         [WeaponQualities.Uncommon]: 13,
@@ -67,6 +69,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Burst,
       qualities: {
         [WeaponQualities.Common]: 17,
         [WeaponQualities.Uncommon]: 18,
@@ -86,6 +89,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 22,
         [WeaponQualities.Uncommon]: 23,
@@ -105,6 +109,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 147,
         [WeaponQualities.Uncommon]: 148,
@@ -127,6 +132,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 10,
       },
@@ -148,6 +154,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 28,
         [WeaponQualities.Uncommon]: 29,
@@ -167,6 +174,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 33,
         [WeaponQualities.Uncommon]: 34,
@@ -189,6 +197,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Burst,
       qualities: {
         [WeaponQualities.Common]: 38,
         [WeaponQualities.Uncommon]: 39,
@@ -211,6 +220,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 43,
         [WeaponQualities.Uncommon]: 44,
@@ -230,6 +240,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 48,
         [WeaponQualities.Uncommon]: 49,
@@ -249,6 +260,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Burst,
       qualities: {
         [WeaponQualities.Common]: 53,
         [WeaponQualities.Uncommon]: 54,
@@ -268,6 +280,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 58,
         [WeaponQualities.Uncommon]: 59,
@@ -287,6 +300,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 62,
       },
@@ -308,6 +322,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 65,
         [WeaponQualities.Uncommon]: 66,
@@ -327,6 +342,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 70,
         [WeaponQualities.Uncommon]: 71,
@@ -346,6 +362,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 74,
       },
@@ -367,6 +384,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 77,
         [WeaponQualities.Uncommon]: 78,
@@ -386,6 +404,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 82,
         [WeaponQualities.Uncommon]: 83,
@@ -405,6 +424,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.TheBelgian,
       qualities: {
         [WeaponQualities.Common]: 88,
         [WeaponQualities.Uncommon]: 89,
@@ -424,6 +444,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.TAC14,
       qualities: {
         [WeaponQualities.Common]: 93,
         [WeaponQualities.Uncommon]: 94,
@@ -443,6 +464,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 98,
         [WeaponQualities.Uncommon]: 99,
@@ -462,6 +484,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 86,
       },
@@ -483,6 +506,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 104,
         [WeaponQualities.Uncommon]: 105,
@@ -502,6 +526,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 109,
         [WeaponQualities.Uncommon]: 110,
@@ -521,6 +546,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 114,
         [WeaponQualities.Uncommon]: 115,
@@ -540,6 +566,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 119,
         [WeaponQualities.Uncommon]: 120,
@@ -559,6 +586,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Common]: 125,
         [WeaponQualities.Uncommon]: 126,
@@ -578,6 +606,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 123,
       },
@@ -599,6 +628,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 141,
         [WeaponQualities.Uncommon]: 142,
@@ -618,6 +648,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 131,
         [WeaponQualities.Uncommon]: 132,
@@ -637,6 +668,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 136,
         [WeaponQualities.Uncommon]: 137,
@@ -656,6 +688,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
+      rpmFormula: WeaponRpmFormulas.Default,
       qualities: {
         [WeaponQualities.Legendary]: 145,
       },

@@ -39,8 +39,25 @@ export enum AttachmentEffect
   MoveSpeedWhileFiring = 'move_speed_while_firing',
 }
 
+export enum WeaponRpmFormulas
+{
+  // Apply to most weapons
+  Default,
+
+  // Apply to weapons that fire in burst sequences
+  Burst,
+
+  // Apply to some weapons that have rechamber behaviours (shotguns / snipers mostly)
+  Rechamber,
+
+  // Custom formulas
+  TAC14,
+  TheBelgian,
+}
+
 export type WeaponStatisticsDefinition = {
   rpm: number;
+  rpmFormula: string;
   delayBetweenShots: number;
   delayBetweenBursts: number;
   pellets: number;
@@ -88,6 +105,7 @@ export type WeaponDefinition = {
     scope: boolean;
     stock: boolean;
   };
+  rpmFormula: WeaponRpmFormulas;
   qualities: Record<WeaponQualities, WeaponStatisticsDefinition>;
   upgrades: Partial<Record<keyof WeaponStatisticsDefinition | string, boolean>>;
   notes?: Record<string, string>;

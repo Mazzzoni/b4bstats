@@ -2,7 +2,7 @@
 // http://localhost:3000/api/parse-weapons
 
 import * as fs from 'fs';
-import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas, WeaponStatisticsDefinition } from '@components/weapons/types';
 import { NextApiRequest, NextApiResponse } from 'next';
 import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
@@ -185,16 +185,7 @@ class Parser
         const delayBetweenShots = data[RangedWeaponsColumns.DelayBetweenShots];
         const delayBetweenBursts = data[RangedWeaponsColumns.DelayBetweenBursts];
 
-        // Apply default formula by default
-        let rpm = 1 / delayBetweenShots * 60;
-
-        // If weapon fires in bursts, change formula
-        if (delayBetweenBursts !== 0) {
-          rpm = 60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts);
-        }
-
-        const weaponStatistics: WeaponStatisticsDefinition = {
-          rpm: rpm,
+        const weaponStatistics = {
           delayBetweenShots: delayBetweenShots,
           delayBetweenBursts: delayBetweenBursts,
           pellets: pellets,
@@ -226,7 +217,12 @@ class Parser
             in: data[RangedWeaponsColumns.SwapSpeedRaise],
             out: data[RangedWeaponsColumns.SwapSpeedLower],
           },
-        };
+        } as WeaponStatisticsDefinition;
+
+        const [rpm, rpmFormula] = this.getRpmByWeapon(weapon.rpmFormula!, weaponStatistics);
+
+        weaponStatistics.rpm = rpm;
+        weaponStatistics.rpmFormula = rpmFormula;
 
         if (weapon.category === WeaponCategories.Shotgun) {
           weaponStatistics.shotgunRangeDamages = shotgunRangeDamages;
@@ -298,7 +294,9 @@ class Parser
     this.computeUpgrades();
   }
 
-  // Check whether statistics are upgrading when you switch quality
+  /**
+   * Check whether statistics are upgrading when you switch quality
+   */
   private computeUpgrades(): void
   {
     this.weapons.forEach((weapon) => {
@@ -354,6 +352,46 @@ class Parser
 
       weapon.upgrades = upgrades;
     });
+  }
+
+  /**
+   * Determine the RPM and the RPM formula for a given weapon and based on its statistics
+   */
+  private getRpmByWeapon(rpmFormula: WeaponRpmFormulas, weaponStatistics: WeaponStatisticsDefinition): [number, string]
+  {
+    switch (rpmFormula) {
+      case WeaponRpmFormulas.Default:
+        return [
+          (1 / weaponStatistics.delayBetweenShots * 60),
+          '(1 / delayBetweenShots * 60)',
+        ];
+
+      case WeaponRpmFormulas.Burst:
+        return [
+          (60 * burstCount / (weaponStatistics.delayBetweenShots * burstCount + weaponStatistics.delayBetweenBursts)),
+          '(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))',
+        ];
+
+      case WeaponRpmFormulas.TAC14:
+        return [
+          (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed / 3)),
+          '(60 / (rechamberLength + reloadSpeed / 3))',
+        ];
+
+      case WeaponRpmFormulas.TheBelgian:
+        return [
+          (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed)),
+          '(60 / (rechamberLength + reloadSpeed))',
+        ];
+
+      case WeaponRpmFormulas.Rechamber:
+        return [
+          (60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength)),
+          '(60 / (delayBetweenShots + 0.1 + rechamberLength))',
+        ];
+    }
+
+    throw Error(`Unknown RPM formula passed (${rpmFormula})`);
   }
 }
 
