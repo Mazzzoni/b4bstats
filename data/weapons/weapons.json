@@ -13,7 +13,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 700.9345794392524,
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -212,10 +211,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 700.9345794392524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 700.9345794392524,
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -414,10 +414,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 700.9345794392524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 700.9345794392524,
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -616,10 +617,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 700.9345794392524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 700.9345794392524,
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -818,7 +820,9 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 700.9345794392524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -851,7 +855,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -1050,10 +1053,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -1252,10 +1256,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -1454,10 +1459,11 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -1656,7 +1662,9 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -1689,7 +1697,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 462.7249357326478,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0.2,
         "pellets": 1,
@@ -1888,10 +1895,11 @@
         "swap": {
           "in": 0.6375,
           "out": 0.401625
-        }
+        },
+        "rpm": 462.7249357326478,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "uncommon": {
-        "rpm": 462.7249357326478,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0.2,
         "pellets": 1,
@@ -2090,10 +2098,11 @@
         "swap": {
           "in": 0.541875,
           "out": 0.34138125
-        }
+        },
+        "rpm": 462.7249357326478,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "rare": {
-        "rpm": 462.7249357326478,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0.2,
         "pellets": 1,
@@ -2292,10 +2301,11 @@
         "swap": {
           "in": 0.46059375,
           "out": 0.2901740625
-        }
+        },
+        "rpm": 462.7249357326478,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "epic": {
-        "rpm": 462.7249357326478,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0.2,
         "pellets": 1,
@@ -2494,7 +2504,9 @@
         "swap": {
           "in": 0.3915046875,
           "out": 0.246647953125
-        }
+        },
+        "rpm": 462.7249357326478,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       }
     },
     "upgrades": {
@@ -2527,7 +2539,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -2726,10 +2737,11 @@
         "swap": {
           "in": 0.8625,
           "out": 0.543375
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -2928,10 +2940,11 @@
         "swap": {
           "in": 0.8625,
           "out": 0.543375
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -3130,10 +3143,11 @@
         "swap": {
           "in": 0.8625,
           "out": 0.543375
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -3332,7 +3346,9 @@
         "swap": {
           "in": 0.8625,
           "out": 0.543375
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -3368,7 +3384,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -3567,10 +3582,11 @@
         "swap": {
           "in": 0.68,
           "out": 0.4284
-        }
+        },
+        "rpm": 400,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -3769,10 +3785,11 @@
         "swap": {
           "in": 0.578,
           "out": 0.36414
-        }
+        },
+        "rpm": 400,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -3971,10 +3988,11 @@
         "swap": {
           "in": 0.4913,
           "out": 0.309519
-        }
+        },
+        "rpm": 400,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -4173,7 +4191,9 @@
         "swap": {
           "in": 0.417605,
           "out": 0.26309115
-        }
+        },
+        "rpm": 400,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -4209,7 +4229,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 480,
         "delayBetweenShots": 0.125,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -4408,7 +4427,9 @@
         "swap": {
           "in": 0.75,
           "out": 0.4725
-        }
+        },
+        "rpm": 480,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -4441,7 +4462,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -4640,10 +4660,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -4842,10 +4863,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -5044,10 +5066,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -5246,7 +5269,9 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -5282,7 +5307,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 500.00000000000006,
         "delayBetweenShots": 0.12,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -5481,10 +5505,11 @@
         "swap": {
           "in": 0.425,
           "out": 0.26775
-        }
+        },
+        "rpm": 500.00000000000006,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 500.00000000000006,
         "delayBetweenShots": 0.12,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -5683,10 +5708,11 @@
         "swap": {
           "in": 0.36125,
           "out": 0.2275875
-        }
+        },
+        "rpm": 500.00000000000006,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 500.00000000000006,
         "delayBetweenShots": 0.12,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -5885,10 +5911,11 @@
         "swap": {
           "in": 0.3070625,
           "out": 0.193449375
-        }
+        },
+        "rpm": 500.00000000000006,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 500.00000000000006,
         "delayBetweenShots": 0.12,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -6087,7 +6114,9 @@
         "swap": {
           "in": 0.261003125,
           "out": 0.16443196875
-        }
+        },
+        "rpm": 500.00000000000006,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -6123,7 +6152,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 444.4444444444444,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
@@ -6322,10 +6350,11 @@
         "swap": {
           "in": 0.425,
           "out": 0.26775
-        }
+        },
+        "rpm": 444.4444444444444,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "uncommon": {
-        "rpm": 444.4444444444444,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
@@ -6524,10 +6553,11 @@
         "swap": {
           "in": 0.36125,
           "out": 0.2275875
-        }
+        },
+        "rpm": 444.4444444444444,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "rare": {
-        "rpm": 444.4444444444444,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
@@ -6726,10 +6756,11 @@
         "swap": {
           "in": 0.3070625,
           "out": 0.193449375
-        }
+        },
+        "rpm": 444.4444444444444,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "epic": {
-        "rpm": 444.4444444444444,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
@@ -6928,7 +6959,9 @@
         "swap": {
           "in": 0.261003125,
           "out": 0.16443196875
-        }
+        },
+        "rpm": 444.4444444444444,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       }
     },
     "upgrades": {
@@ -6961,7 +6994,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 171.42857142857144,
         "delayBetweenShots": 0.35,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -7160,10 +7192,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 171.42857142857144,
         "delayBetweenShots": 0.35,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -7362,10 +7395,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 171.42857142857144,
         "delayBetweenShots": 0.35,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -7564,10 +7598,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 171.42857142857144,
         "delayBetweenShots": 0.35,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -7766,7 +7801,9 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -7799,7 +7836,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 413.7931034482759,
         "delayBetweenShots": 0.145,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -7998,10 +8034,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 413.7931034482759,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 413.7931034482759,
         "delayBetweenShots": 0.145,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -8200,10 +8237,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 413.7931034482759,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 413.7931034482759,
         "delayBetweenShots": 0.145,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -8402,10 +8440,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 413.7931034482759,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 413.7931034482759,
         "delayBetweenShots": 0.145,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -8604,7 +8643,9 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 413.7931034482759,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -8637,7 +8678,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -8836,10 +8876,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 1000,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "uncommon": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -9038,10 +9079,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 1000,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "rare": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -9240,10 +9282,11 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 1000,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       },
       "epic": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -9442,7 +9485,9 @@
         "swap": {
           "in": 0.5,
           "out": 0.315
-        }
+        },
+        "rpm": 1000,
+        "rpmFormula": "(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))"
       }
     },
     "upgrades": {
@@ -9475,7 +9520,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 218.1818181818182,
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -9674,10 +9718,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 218.1818181818182,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 218.1818181818182,
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -9876,10 +9921,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 218.1818181818182,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 218.1818181818182,
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -10078,10 +10124,11 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 218.1818181818182,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 218.1818181818182,
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -10280,7 +10327,9 @@
         "swap": {
           "in": 0.575,
           "out": 0.36225
-        }
+        },
+        "rpm": 218.1818181818182,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -10316,7 +10365,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 218.1818181818182,
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -10515,7 +10563,9 @@
         "swap": {
           "in": 0.375,
           "out": 0.23625
-        }
+        },
+        "rpm": 218.1818181818182,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -10548,7 +10598,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 666.6666666666666,
         "delayBetweenShots": 0.09,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -10747,10 +10796,11 @@
         "swap": {
           "in": 0.9,
           "out": 0.567
-        }
+        },
+        "rpm": 666.6666666666666,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 666.6666666666666,
         "delayBetweenShots": 0.09,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -10949,10 +10999,11 @@
         "swap": {
           "in": 0.9,
           "out": 0.567
-        }
+        },
+        "rpm": 666.6666666666666,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 666.6666666666666,
         "delayBetweenShots": 0.09,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -11151,10 +11202,11 @@
         "swap": {
           "in": 0.9,
           "out": 0.567
-        }
+        },
+        "rpm": 666.6666666666666,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 666.6666666666666,
         "delayBetweenShots": 0.09,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -11353,7 +11405,9 @@
         "swap": {
           "in": 0.9,
           "out": 0.567
-        }
+        },
+        "rpm": 666.6666666666666,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -11386,7 +11440,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 428.57142857142856,
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -11585,10 +11638,11 @@
         "swap": {
           "in": 1.035,
           "out": 0.65205
-        }
+        },
+        "rpm": 428.57142857142856,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 428.57142857142856,
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -11787,10 +11841,11 @@
         "swap": {
           "in": 1.035,
           "out": 0.65205
-        }
+        },
+        "rpm": 428.57142857142856,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 428.57142857142856,
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -11989,10 +12044,11 @@
         "swap": {
           "in": 1.035,
           "out": 0.65205
-        }
+        },
+        "rpm": 428.57142857142856,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 428.57142857142856,
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -12191,7 +12247,9 @@
         "swap": {
           "in": 1.035,
           "out": 0.65205
-        }
+        },
+        "rpm": 428.57142857142856,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -12227,7 +12285,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 428.57142857142856,
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -12426,7 +12483,9 @@
         "swap": {
           "in": 0.5175,
           "out": 0.326025
-        }
+        },
+        "rpm": 428.57142857142856,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -12459,7 +12518,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -12660,6 +12718,8 @@
           "in": 0.65,
           "out": 0.4095
         },
+        "rpm": 120,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 80.4,
           "750": 56.28,
@@ -12668,7 +12728,6 @@
         }
       },
       "uncommon": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -12869,6 +12928,8 @@
           "in": 0.65,
           "out": 0.4095
         },
+        "rpm": 120,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 92.46,
           "750": 64.722,
@@ -12877,7 +12938,6 @@
         }
       },
       "rare": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -13078,6 +13138,8 @@
           "in": 0.65,
           "out": 0.4095
         },
+        "rpm": 120,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 106.329,
           "750": 74.43029999999999,
@@ -13086,7 +13148,6 @@
         }
       },
       "epic": {
-        "rpm": 400,
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -13287,6 +13348,8 @@
           "in": 0.65,
           "out": 0.4095
         },
+        "rpm": 120,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 122.27834999999999,
           "750": 85.59484499999999,
@@ -13325,7 +13388,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 342.8571428571429,
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -13526,6 +13588,8 @@
           "in": 0.5525,
           "out": 0.348075
         },
+        "rpm": 342.8571428571429,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 75.4,
           "500": 52.78,
@@ -13534,7 +13598,6 @@
         }
       },
       "uncommon": {
-        "rpm": 342.8571428571429,
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -13735,6 +13798,8 @@
           "in": 0.469625,
           "out": 0.29586375
         },
+        "rpm": 342.8571428571429,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 84.071,
           "500": 58.8497,
@@ -13743,7 +13808,6 @@
         }
       },
       "rare": {
-        "rpm": 342.8571428571429,
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -13944,6 +14008,8 @@
           "in": 0.39918125,
           "out": 0.2514841875
         },
+        "rpm": 342.8571428571429,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 93.739165,
           "500": 65.6174155,
@@ -13952,7 +14018,6 @@
         }
       },
       "epic": {
-        "rpm": 342.8571428571429,
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -14153,6 +14218,8 @@
           "in": 0.3393040625,
           "out": 0.213761559375
         },
+        "rpm": 342.8571428571429,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 104.51916897500001,
           "500": 73.16341828249999,
@@ -14191,7 +14258,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
@@ -14392,6 +14458,8 @@
           "in": 0.7475,
           "out": 0.470925
         },
+        "rpm": 37.31343283582089,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
         "shotgunRangeDamages": {
           "750": 146.8,
           "1000": 102.76,
@@ -14400,7 +14468,6 @@
         }
       },
       "uncommon": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
@@ -14601,6 +14668,8 @@
           "in": 0.7475,
           "out": 0.470925
         },
+        "rpm": 37.31343283582089,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
         "shotgunRangeDamages": {
           "750": 173.95800000000003,
           "1000": 121.7706,
@@ -14609,7 +14678,6 @@
         }
       },
       "rare": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
@@ -14810,6 +14878,8 @@
           "in": 0.7475,
           "out": 0.470925
         },
+        "rpm": 37.31343283582089,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
         "shotgunRangeDamages": {
           "750": 206.14023,
           "1000": 144.298161,
@@ -14818,7 +14888,6 @@
         }
       },
       "epic": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
@@ -15019,6 +15088,8 @@
           "in": 0.7475,
           "out": 0.470925
         },
+        "rpm": 37.31343283582089,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
         "shotgunRangeDamages": {
           "750": 244.27617254999998,
           "1000": 170.99332078499998,
@@ -15057,7 +15128,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
@@ -15258,6 +15328,8 @@
           "in": 0.65,
           "out": 0.348075
         },
+        "rpm": 54.54545454545454,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
         "shotgunRangeDamages": {
           "750": 142,
           "1000": 99.4,
@@ -15266,7 +15338,6 @@
         }
       },
       "uncommon": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
@@ -15467,6 +15538,8 @@
           "in": 0.65,
           "out": 0.348075
         },
+        "rpm": 54.54545454545454,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
         "shotgunRangeDamages": {
           "750": 168.27,
           "1000": 117.789,
@@ -15475,7 +15548,6 @@
         }
       },
       "rare": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
@@ -15676,6 +15748,8 @@
           "in": 0.65,
           "out": 0.348075
         },
+        "rpm": 54.54545454545454,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
         "shotgunRangeDamages": {
           "750": 199.39995,
           "1000": 139.579965,
@@ -15684,7 +15758,6 @@
         }
       },
       "epic": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
@@ -15885,6 +15958,8 @@
           "in": 0.65,
           "out": 0.348075
         },
+        "rpm": 54.54545454545454,
+        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
         "shotgunRangeDamages": {
           "750": 236.28894074999997,
           "1000": 165.402258525,
@@ -15923,7 +15998,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -16124,6 +16198,8 @@
           "in": 0.5525,
           "out": 0.348075
         },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 79.4,
           "500": 55.58,
@@ -16132,7 +16208,6 @@
         }
       },
       "uncommon": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -16333,6 +16408,8 @@
           "in": 0.469625,
           "out": 0.29586375
         },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 88.53099999999999,
           "500": 61.9717,
@@ -16341,7 +16418,6 @@
         }
       },
       "rare": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -16542,6 +16618,8 @@
           "in": 0.39918125,
           "out": 0.2514841875
         },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 98.712065,
           "500": 69.0984455,
@@ -16550,7 +16628,6 @@
         }
       },
       "epic": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -16751,6 +16828,8 @@
           "in": 0.3393040625,
           "out": 0.213761559375
         },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 110.06395247500001,
           "500": 77.0447667325,
@@ -16792,7 +16871,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 8,
@@ -16993,6 +17071,8 @@
           "in": 0.288408453125,
           "out": 0.18169732546875
         },
+        "rpm": 200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "250": 116.538873407125,
           "500": 81.5772113849875,
@@ -17031,7 +17111,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 857.1428571428571,
         "delayBetweenShots": 0.07,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -17230,10 +17309,11 @@
         "swap": {
           "in": 0.51,
           "out": 0.3213
-        }
+        },
+        "rpm": 857.1428571428571,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 857.1428571428571,
         "delayBetweenShots": 0.07,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -17432,10 +17512,11 @@
         "swap": {
           "in": 0.4335,
           "out": 0.273105
-        }
+        },
+        "rpm": 857.1428571428571,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 857.1428571428571,
         "delayBetweenShots": 0.07,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -17634,10 +17715,11 @@
         "swap": {
           "in": 0.368475,
           "out": 0.23213925
-        }
+        },
+        "rpm": 857.1428571428571,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 857.1428571428571,
         "delayBetweenShots": 0.07,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -17836,7 +17918,9 @@
         "swap": {
           "in": 0.31320375,
           "out": 0.1973183625
-        }
+        },
+        "rpm": 857.1428571428571,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -17869,7 +17953,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 952.3809523809524,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -18068,10 +18151,11 @@
         "swap": {
           "in": 0.51,
           "out": 0.3213
-        }
+        },
+        "rpm": 952.3809523809524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 952.3809523809524,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -18270,10 +18354,11 @@
         "swap": {
           "in": 0.4335,
           "out": 0.273105
-        }
+        },
+        "rpm": 952.3809523809524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 952.3809523809524,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -18472,10 +18557,11 @@
         "swap": {
           "in": 0.368475,
           "out": 0.23213925
-        }
+        },
+        "rpm": 952.3809523809524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 952.3809523809524,
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -18674,7 +18760,9 @@
         "swap": {
           "in": 0.31320375,
           "out": 0.1973183625
-        }
+        },
+        "rpm": 952.3809523809524,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -18707,7 +18795,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -18906,10 +18993,11 @@
         "swap": {
           "in": 0.425,
           "out": 0.26775
-        }
+        },
+        "rpm": 1000.0000000000001,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -19108,10 +19196,11 @@
         "swap": {
           "in": 0.36125,
           "out": 0.2275875
-        }
+        },
+        "rpm": 1000.0000000000001,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -19310,10 +19399,11 @@
         "swap": {
           "in": 0.3070625,
           "out": 0.193449375
-        }
+        },
+        "rpm": 1000.0000000000001,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 1000.0000000000001,
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -19512,7 +19602,9 @@
         "swap": {
           "in": 0.261003125,
           "out": 0.16443196875
-        }
+        },
+        "rpm": 1000.0000000000001,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -19545,7 +19637,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -19744,10 +19835,11 @@
         "swap": {
           "in": 0.69,
           "out": 0.4347
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -19946,10 +20038,11 @@
         "swap": {
           "in": 0.69,
           "out": 0.4347
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -20148,10 +20241,11 @@
         "swap": {
           "in": 0.69,
           "out": 0.4347
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -20350,7 +20444,9 @@
         "swap": {
           "in": 0.69,
           "out": 0.4347
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -20383,7 +20479,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 1200,
         "delayBetweenShots": 0.05,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -20582,10 +20677,11 @@
         "swap": {
           "in": 0.6,
           "out": 0.378
-        }
+        },
+        "rpm": 1200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "uncommon": {
-        "rpm": 1200,
         "delayBetweenShots": 0.05,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -20784,10 +20880,11 @@
         "swap": {
           "in": 0.6,
           "out": 0.378
-        }
+        },
+        "rpm": 1200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "rare": {
-        "rpm": 1200,
         "delayBetweenShots": 0.05,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -20986,10 +21083,11 @@
         "swap": {
           "in": 0.6,
           "out": 0.378
-        }
+        },
+        "rpm": 1200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       },
       "epic": {
-        "rpm": 1200,
         "delayBetweenShots": 0.05,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -21188,7 +21286,9 @@
         "swap": {
           "in": 0.6,
           "out": 0.378
-        }
+        },
+        "rpm": 1200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -21224,7 +21324,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 600,
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -21423,7 +21522,9 @@
         "swap": {
           "in": 0.45,
           "out": 0.2835
-        }
+        },
+        "rpm": 600,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
@@ -21456,7 +21557,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 240,
         "delayBetweenShots": 0.25,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -21655,10 +21755,11 @@
         "swap": {
           "in": 0.8,
           "out": 0.504
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "uncommon": {
-        "rpm": 240,
         "delayBetweenShots": 0.25,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -21857,10 +21958,11 @@
         "swap": {
           "in": 0.8,
           "out": 0.504
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "rare": {
-        "rpm": 240,
         "delayBetweenShots": 0.25,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -22059,10 +22161,11 @@
         "swap": {
           "in": 0.8,
           "out": 0.504
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "epic": {
-        "rpm": 240,
         "delayBetweenShots": 0.25,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -22261,7 +22364,9 @@
         "swap": {
           "in": 0.8,
           "out": 0.504
-        }
+        },
+        "rpm": 171.42857142857144,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       }
     },
     "upgrades": {
@@ -22294,7 +22399,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -22493,10 +22597,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 60,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "uncommon": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -22695,10 +22800,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 60,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "rare": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -22897,10 +23003,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 60,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "epic": {
-        "rpm": 200,
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -23099,7 +23206,9 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 60,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       }
     },
     "upgrades": {
@@ -23132,7 +23241,6 @@
     },
     "qualities": {
       "common": {
-        "rpm": 133.33333333333334,
         "delayBetweenShots": 0.45,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -23331,10 +23439,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 34.285714285714285,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "uncommon": {
-        "rpm": 133.33333333333334,
         "delayBetweenShots": 0.45,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -23533,10 +23642,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 34.285714285714285,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "rare": {
-        "rpm": 133.33333333333334,
         "delayBetweenShots": 0.45,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -23735,10 +23845,11 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 34.285714285714285,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "epic": {
-        "rpm": 133.33333333333334,
         "delayBetweenShots": 0.45,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -23937,7 +24048,9 @@
         "swap": {
           "in": 0.92,
           "out": 0.5796
-        }
+        },
+        "rpm": 34.285714285714285,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       }
     },
     "upgrades": {
@@ -23974,7 +24087,6 @@
     },
     "qualities": {
       "legendary": {
-        "rpm": 300,
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 1,
@@ -24173,7 +24285,9 @@
         "swap": {
           "in": 0.48,
           "out": 0.3024
-        }
+        },
+        "rpm": 300,
+        "rpmFormula": "(1 / delayBetweenShots * 60)"
       }
     },
     "upgrades": {
