@@ -2,7 +2,7 @@
 // http://localhost:3000/api/parse-weapons
 
 import * as fs from 'fs';
-import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormula, WeaponStatisticsDefinition } from '@components/weapons/types';
+import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas, WeaponStatisticsDefinition } from '@components/weapons/types';
 import { NextApiRequest, NextApiResponse } from 'next';
 import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
@@ -357,34 +357,34 @@ class Parser
   /**
    * Determine the RPM and the RPM formula for a given weapon and based on its statistics
    */
-  private getRpmByWeapon(rpmFormula: WeaponRpmFormula, weaponStatistics: WeaponStatisticsDefinition): [number, string]
+  private getRpmByWeapon(rpmFormula: WeaponRpmFormulas, weaponStatistics: WeaponStatisticsDefinition): [number, string]
   {
     switch (rpmFormula) {
-      case WeaponRpmFormula.Default:
+      case WeaponRpmFormulas.Default:
         return [
           (1 / weaponStatistics.delayBetweenShots * 60),
           '(1 / delayBetweenShots * 60)',
         ];
 
-      case WeaponRpmFormula.Burst:
+      case WeaponRpmFormulas.Burst:
         return [
           (60 * burstCount / (weaponStatistics.delayBetweenShots * burstCount + weaponStatistics.delayBetweenBursts)),
           '(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))',
         ];
 
-      case WeaponRpmFormula.TAC14:
+      case WeaponRpmFormulas.TAC14:
         return [
           (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed / 3)),
           '(60 / (rechamberLength + reloadSpeed / 3))',
         ];
 
-      case WeaponRpmFormula.TheBelgian:
+      case WeaponRpmFormulas.TheBelgian:
         return [
           (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed)),
           '(60 / (rechamberLength + reloadSpeed))',
         ];
 
-      case WeaponRpmFormula.Rechamber:
+      case WeaponRpmFormulas.Rechamber:
         return [
           (60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength)),
           '(60 / (delayBetweenShots + 0.1 + rechamberLength))',

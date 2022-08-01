@@ -39,7 +39,7 @@ export enum AttachmentEffect
   MoveSpeedWhileFiring = 'move_speed_while_firing',
 }
 
-export enum WeaponRpmFormula
+export enum WeaponRpmFormulas
 {
   // Apply to most weapons
   Default,
@@ -105,7 +105,7 @@ export type WeaponDefinition = {
     scope: boolean;
     stock: boolean;
   };
-  rpmFormula: WeaponRpmFormula;
+  rpmFormula: WeaponRpmFormulas;
   qualities: Record<WeaponQualities, WeaponStatisticsDefinition>;
   upgrades: Partial<Record<keyof WeaponStatisticsDefinition | string, boolean>>;
   notes?: Record<string, string>;
