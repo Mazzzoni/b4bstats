@@ -278,8 +278,6 @@ class Parser
 
         // Weapon statistics definition is a bit different for melee category
         const weaponStatistics = {
-          // TODO: Find how DPS is computed
-          trueDps: 0,
           rangeDamages: rangeDamages,
           rangeDamagesComputed: rangeDamagesComputed,
           metersScale: metersScale,
@@ -306,6 +304,10 @@ class Parser
 
         weaponStatistics.rpm = rpm;
         weaponStatistics.rpmFormula = rpmFormula;
+
+        // Compute weapon DPS & SPS
+        weaponStatistics.trueDps = (weaponStatistics.rangeDamagesComputed[0] * weaponStatistics.rpm) / 60;
+        weaponStatistics.stumblePerSecond = (weaponStatistics.stumblePerShot * weaponStatistics.rpm) / 60;
 
         computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
       }

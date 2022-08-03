@@ -31,10 +31,10 @@ export default function ChartTooltip(props: TooltipProps) {
           <tr className="text-left">
             <th className="pr-5">Quality</th>
             <th className="pr-5">Damage</th>
-            {showCell && <th className="pr-5">DPS</th>}
+            <th className="pr-5">DPS</th>
             {showCell && <th className="pr-5">FMD</th>}
             <th className="pr-5">Stumble</th>
-            {showCell && <th className="pr-5">SPS</th>}
+            <th className="pr-5">SPS</th>
           </tr>
           </thead>
 
@@ -55,14 +55,12 @@ export default function ChartTooltip(props: TooltipProps) {
                 {row.damage.toFixed(2)}
               </td>
 
-              {showCell &&
-                <td
-                  className="pr-5 pt-1 border-top-subtle"
-                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
-                >
-                  {((row.damage * props.baseTrueDps) / props.baseDamage).toFixed(2)}
-                </td>
-              }
+              <td
+                className="pr-5 pt-1 border-top-subtle"
+                style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+              >
+                {((row.damage * props.baseTrueDps) / props.baseDamage).toFixed(2)}
+              </td>
 
               {showCell &&
                 <td
@@ -80,14 +78,12 @@ export default function ChartTooltip(props: TooltipProps) {
                 {((row.damage * props.baseStumblePerShot) / props.baseDamage).toFixed(2)}
               </td>
 
-              {showCell &&
-                <td
-                  className="pr-5 pt-1 border-top-subtle"
-                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
-                >
-                  {((row.damage * props.baseStumblePerSecond) / props.baseDamage).toFixed(2)}
-                </td>
-              }
+              <td
+                className="pr-5 pt-1 border-top-subtle"
+                style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+              >
+                {((row.damage * props.baseStumblePerSecond) / props.baseDamage).toFixed(2)}
+              </td>
             </tr>
           ))}
           </tbody>
