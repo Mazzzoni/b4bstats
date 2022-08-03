@@ -33,21 +33,19 @@ export default function WeaponOverview({weapon}: Props) {
         </div>
       )}
 
-      {weapon.category !== WeaponCategories.Melee && (
-        <div className="absolute bottom-0 right-0">
-          <Tooltip
-            label={<div>
-              <b>RPM</b>
-              <br/>
-              <span>Rounds fired per minute</span>
-              <br/>
-              <span className="bg-stone-400 px-1">{weaponQuality.rpmFormula} = {weaponQuality.rpm.toFixed(2)}</span>
-            </div>}
-          >
-            <Badge size="lg">{weaponQuality.rpm.toFixed(0)} RPM</Badge>
-          </Tooltip>
-        </div>
-      )}
+      <div className="absolute bottom-0 right-0">
+        <Tooltip
+          label={<div>
+            <b>RPM</b>
+            <br/>
+            <span>Rounds fired per minute</span>
+            <br/>
+            <span className="bg-stone-400 px-1">{weaponQuality.rpmFormula} = {weaponQuality.rpm.toFixed(2)}</span>
+          </div>}
+        >
+          <Badge size="lg">{weaponQuality.rpm.toFixed(0)} RPM</Badge>
+        </Tooltip>
+      </div>
 
       <div className="space-x-2">
         <Tooltip

@@ -705,6 +705,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'bat.webp',
       slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 5,
         [WeaponQualities.Uncommon]: 6,
@@ -717,6 +718,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'fire_axe.webp',
       slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 9,
         [WeaponQualities.Uncommon]: 10,
@@ -729,6 +731,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'hatchet.webp',
       slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 14,
         [WeaponQualities.Uncommon]: 15,
@@ -741,6 +744,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'machete.webp',
       slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 18,
         [WeaponQualities.Uncommon]: 19,
@@ -753,6 +757,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'tenderizer.webp',
       slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Legendary]: 13,
       },
@@ -765,6 +770,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'skull_totem.webp',
       slot: 'n/a',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Rare]: 26,
         [WeaponQualities.Epic]: 27,
@@ -779,6 +785,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'knife.webp',
       slot: 'n/a',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 23,
       },
@@ -788,6 +795,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'fist.png',
       slot: 'n/a',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 22,
       },
@@ -797,6 +805,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       category: WeaponCategories.Melee,
       image: 'bob_arm.png',
       slot: 'n/a',
+      rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 25,
       },

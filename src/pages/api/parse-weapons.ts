@@ -60,6 +60,9 @@ enum MeleeWeaponsColumns
   LightStumbleDamageScale = 3,
   StaminaCost = 9,
   TraceLength = 15,
+  MeleeStateLength = 26,
+  MeleeStateInterruptLength = 27,
+  MeleeImpactStateLength = 28,
   MoveSpeedBase = 74,
   MoveSpeedAds = 77,
   MoveSpeedHipFire = 80,
@@ -96,6 +99,14 @@ class Parser
     const guns = workSheets[0];
     const melees = workSheets[1];
 
+    this.parseRangedWeapons(guns);
+    this.parseMeleeWeapons(melees);
+
+    this.computeUpgrades();
+  }
+
+  private parseRangedWeapons(guns: { name: string; data: unknown[] })
+  {
     for (const weapon of WeaponsMap.Ranged) {
       const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
 
@@ -233,7 +244,10 @@ class Parser
 
       this.weapons.set(computedWeapon.name, computedWeapon);
     }
+  }
 
+  private parseMeleeWeapons(melees: { name: string; data: unknown[] })
+  {
     for (const weapon of WeaponsMap.Melee) {
       const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
 
@@ -263,15 +277,16 @@ class Parser
         const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
 
         // Weapon statistics definition is a bit different for melee category
-        computedWeapon.qualities[quality as WeaponQualities] = {
-          // TODO: Find how RPM (HPM) is computed
-          rpm: 0,
+        const weaponStatistics = {
           // TODO: Find how DPS is computed
           trueDps: 0,
           rangeDamages: rangeDamages,
           rangeDamagesComputed: rangeDamagesComputed,
           metersScale: metersScale,
           stamina: data[MeleeWeaponsColumns.StaminaCost],
+          meleeStateLength: data[MeleeWeaponsColumns.MeleeStateLength],
+          meleeStateInterruptLength: data[MeleeWeaponsColumns.MeleeStateInterruptLength],
+          meleeImpactStateLength: data[MeleeWeaponsColumns.MeleeImpactStateLength],
           stumblePowerMultiplier: data[MeleeWeaponsColumns.LightStumbleDamageScale],
           stumblePerShot: data[MeleeWeaponsColumns.LightAttackDamage] * data[MeleeWeaponsColumns.LightStumbleDamageScale],
           pellets: pellets,
@@ -286,12 +301,17 @@ class Parser
             other: data[MeleeWeaponsColumns.MoveSpeedOther],
           },
         } as WeaponStatisticsDefinition;
+
+        const [rpm, rpmFormula] = this.getRpmByWeapon(weapon.rpmFormula!, weaponStatistics);
+
+        weaponStatistics.rpm = rpm;
+        weaponStatistics.rpmFormula = rpmFormula;
+
+        computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
       }
 
       this.weapons.set(computedWeapon.name, computedWeapon);
     }
-
-    this.computeUpgrades();
   }
 
   /**
@@ -372,6 +392,18 @@ class Parser
           '(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))',
         ];
 
+      case WeaponRpmFormulas.Rechamber:
+        return [
+          (60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength)),
+          '(60 / (delayBetweenShots + 0.1 + rechamberLength))',
+        ];
+
+      case WeaponRpmFormulas.Melee:
+        return [
+          (60 / (weaponStatistics.meleeStateLength! * weaponStatistics.meleeStateInterruptLength! + 0.05)),
+          '(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))',
+        ];
+
       case WeaponRpmFormulas.TAC14:
         return [
           (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed / 3)),
@@ -382,12 +414,6 @@ class Parser
         return [
           (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed)),
           '(60 / (rechamberLength + reloadSpeed))',
-        ];
-
-      case WeaponRpmFormulas.Rechamber:
-        return [
-          (60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength)),
-          '(60 / (delayBetweenShots + 0.1 + rechamberLength))',
         ];
     }
 
