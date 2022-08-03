@@ -24313,7 +24313,6 @@
     "slot": "secondary",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 15,
           "241": 0
@@ -24402,10 +24401,11 @@
           "other": 205
         },
         "rpm": 96.7741935483871,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 24.193548387096776,
+        "stumblePerSecond": 72.58064516129032
       },
       "uncommon": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 19.5,
           "241": 0
@@ -24494,10 +24494,11 @@
           "other": 205
         },
         "rpm": 96.7741935483871,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 31.451612903225808,
+        "stumblePerSecond": 94.35483870967742
       },
       "rare": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 25.35,
           "241": 0
@@ -24586,10 +24587,11 @@
           "other": 205
         },
         "rpm": 96.7741935483871,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 40.88709677419355,
+        "stumblePerSecond": 122.66129032258067
       },
       "epic": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 32.955,
           "241": 0
@@ -24678,7 +24680,9 @@
           "other": 205
         },
         "rpm": 96.7741935483871,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 53.15322580645161,
+        "stumblePerSecond": 159.45967741935482
       }
     },
     "upgrades": {
@@ -24704,7 +24708,6 @@
     "slot": "secondary",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 70,
           "241": 0
@@ -24793,10 +24796,11 @@
           "other": 197.5
         },
         "rpm": 69.47660954145438,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 81.0560444650301,
+        "stumblePerSecond": 40.52802223251505
       },
       "uncommon": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 91,
           "241": 0
@@ -24885,10 +24889,11 @@
           "other": 197.5
         },
         "rpm": 69.47660954145438,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 105.37285780453914,
+        "stumblePerSecond": 52.68642890226957
       },
       "rare": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 118.3,
           "241": 0
@@ -24977,10 +24982,11 @@
           "other": 197.5
         },
         "rpm": 69.47660954145438,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 136.98471514590088,
+        "stumblePerSecond": 68.49235757295044
       },
       "epic": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 153.79,
           "241": 0
@@ -25069,7 +25075,9 @@
           "other": 197.5
         },
         "rpm": 69.47660954145438,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 178.08012968967114,
+        "stumblePerSecond": 89.04006484483557
       }
     },
     "upgrades": {
@@ -25095,7 +25103,6 @@
     "slot": "secondary",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 40,
           "211": 0
@@ -25184,10 +25191,11 @@
           "other": 220.5
         },
         "rpm": 86.20689655172413,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 57.47126436781608,
+        "stumblePerSecond": 28.73563218390804
       },
       "uncommon": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 52,
           "211": 0
@@ -25276,10 +25284,11 @@
           "other": 220.5
         },
         "rpm": 86.20689655172413,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 74.71264367816092,
+        "stumblePerSecond": 37.35632183908046
       },
       "rare": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 67.6,
           "211": 0
@@ -25368,10 +25377,11 @@
           "other": 220.5
         },
         "rpm": 86.20689655172413,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 97.12643678160917,
+        "stumblePerSecond": 48.563218390804586
       },
       "epic": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 87.88,
           "211": 0
@@ -25460,7 +25470,9 @@
           "other": 220.5
         },
         "rpm": 86.20689655172413,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 126.26436781609193,
+        "stumblePerSecond": 63.13218390804597
       }
     },
     "upgrades": {
@@ -25486,7 +25498,6 @@
     "slot": "secondary",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 18,
           "211": 0
@@ -25575,10 +25586,11 @@
           "other": 212.5
         },
         "rpm": 107.14285714285714,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 32.14285714285714,
+        "stumblePerSecond": 32.14285714285714
       },
       "uncommon": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 23.4,
           "211": 0
@@ -25667,10 +25679,11 @@
           "other": 212.5
         },
         "rpm": 107.14285714285714,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 41.785714285714285,
+        "stumblePerSecond": 41.785714285714285
       },
       "rare": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 30.42,
           "211": 0
@@ -25759,10 +25772,11 @@
           "other": 212.5
         },
         "rpm": 107.14285714285714,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 54.32142857142857,
+        "stumblePerSecond": 54.32142857142857
       },
       "epic": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 39.546,
           "211": 0
@@ -25851,7 +25865,9 @@
           "other": 212.5
         },
         "rpm": 107.14285714285714,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 70.61785714285715,
+        "stumblePerSecond": 70.61785714285715
       }
     },
     "upgrades": {
@@ -25880,7 +25896,6 @@
     },
     "qualities": {
       "legendary": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 250,
           "241": 0
@@ -25969,7 +25984,9 @@
           "other": 197.5
         },
         "rpm": 69.47660954145438,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 289.48587308939324,
+        "stumblePerSecond": 144.74293654469662
       }
     },
     "upgrades": {
@@ -25998,7 +26015,6 @@
     },
     "qualities": {
       "rare": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 125,
           "241": 0
@@ -26087,10 +26103,11 @@
           "other": 220.5
         },
         "rpm": 56.23242736644798,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 117.15089034676662,
+        "stumblePerSecond": 117.15089034676662
       },
       "epic": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 162.5,
           "241": 0
@@ -26179,10 +26196,11 @@
           "other": 207.5
         },
         "rpm": 48.52405984634047,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 131.41932875050546,
+        "stumblePerSecond": 131.41932875050546
       },
       "legendary": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 211.25,
           "241": 0
@@ -26271,7 +26289,9 @@
           "other": 197.5
         },
         "rpm": 42.674253200568984,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 150.24893314366997,
+        "stumblePerSecond": 150.24893314366997
       }
     },
     "upgrades": {
@@ -26297,7 +26317,6 @@
     "slot": "n/a",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 40,
           "211": 0
@@ -26386,7 +26405,9 @@
           "other": 220.5
         },
         "rpm": 120,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 80,
+        "stumblePerSecond": 40
       }
     },
     "upgrades": {
@@ -26412,7 +26433,6 @@
     "slot": "n/a",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "210": 1,
           "211": 0
@@ -26501,7 +26521,9 @@
           "other": 220.5
         },
         "rpm": 136.36363636363637,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 2.272727272727273,
+        "stumblePerSecond": 90.90909090909092
       }
     },
     "upgrades": {
@@ -26527,7 +26549,6 @@
     "slot": "n/a",
     "qualities": {
       "common": {
-        "trueDps": 0,
         "rangeDamages": {
           "240": 50,
           "241": 0
@@ -26616,7 +26637,9 @@
           "other": 200.13
         },
         "rpm": 96.7741935483871,
-        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))"
+        "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
+        "trueDps": 80.64516129032259,
+        "stumblePerSecond": 1209.6774193548388
       }
     },
     "upgrades": {
