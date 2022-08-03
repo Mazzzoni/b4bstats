@@ -50,6 +50,9 @@ export enum WeaponRpmFormulas
   // Apply to some weapons that have rechamber behaviours (shotguns / snipers mostly)
   Rechamber,
 
+  // Apply to melee weapons,
+  Melee,
+
   // Custom formulas
   TAC14,
   TheBelgian,
@@ -77,6 +80,9 @@ export type WeaponStatisticsDefinition = {
   stumblePowerMultiplier: number;
   bulletPenetrationMultiplier: number;
   stamina?: number;
+  meleeStateLength?: number;
+  meleeStateInterruptLength?: number;
+  meleeImpactStateLength?: number;
   movementSpeed: {
     jog: number;
     hipfire: number;
