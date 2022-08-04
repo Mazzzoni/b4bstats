@@ -733,10 +733,10 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'secondary',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Common]: 14,
-        [WeaponQualities.Uncommon]: 15,
-        [WeaponQualities.Rare]: 16,
-        [WeaponQualities.Epic]: 17,
+        [WeaponQualities.Common]: 15,
+        [WeaponQualities.Uncommon]: 16,
+        [WeaponQualities.Rare]: 17,
+        [WeaponQualities.Epic]: 18,
       },
     },
     {
@@ -746,10 +746,10 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'secondary',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Common]: 18,
-        [WeaponQualities.Uncommon]: 19,
-        [WeaponQualities.Rare]: 20,
-        [WeaponQualities.Epic]: 21,
+        [WeaponQualities.Common]: 19,
+        [WeaponQualities.Uncommon]: 20,
+        [WeaponQualities.Rare]: 21,
+        [WeaponQualities.Epic]: 22,
       },
     },
     {
@@ -772,9 +772,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'n/a',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Rare]: 26,
-        [WeaponQualities.Epic]: 27,
-        [WeaponQualities.Legendary]: 28,
+        [WeaponQualities.Rare]: 27,
+        [WeaponQualities.Epic]: 28,
+        [WeaponQualities.Legendary]: 29,
       },
       notes: {
         'Inversed quality': 'Statistics worsen when you increase quality. (not applicable for damage and stumble)',
@@ -787,7 +787,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'n/a',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Common]: 23,
+        [WeaponQualities.Common]: 24,
       },
     },
     {
@@ -797,7 +797,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'n/a',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Common]: 22,
+        [WeaponQualities.Common]: 23,
       },
     },
     {
@@ -807,7 +807,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       slot: 'n/a',
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
-        [WeaponQualities.Common]: 25,
+        [WeaponQualities.Common]: 26,
       },
     },
   ],

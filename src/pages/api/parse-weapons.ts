@@ -10,7 +10,7 @@ import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
 import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
 import _ from 'lodash';
 
-const file = `${process.cwd()}/data/weapons/sheets/trs-weapons.xlsm`;
+const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-08-04.xlsm`;
 
 enum RangedWeaponsColumns
 {
