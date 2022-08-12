@@ -54,6 +54,7 @@ export const WeaponQualityColors: Record<WeaponQualities, string> = {
   [WeaponQualities.Uncommon]: '#0d6e06',
   [WeaponQualities.Rare]: '#4756ff',
   [WeaponQualities.Epic]: '#8000b5',
+  [WeaponQualities.LegendaryWeak]: '#4756ff',
   [WeaponQualities.Legendary]: '#d68b00',
 };
 

@@ -4,6 +4,7 @@ export enum WeaponQualities
   Uncommon = 'uncommon',
   Rare = 'rare',
   Epic = 'epic',
+  LegendaryWeak = 'legendary weak',
   Legendary = 'legendary',
 }
 
