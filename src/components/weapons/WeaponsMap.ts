@@ -693,7 +693,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
-      rpmFormula: WeaponRpmFormulas.Default,
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.LegendaryWeak]: 150,
         [WeaponQualities.Legendary]: 151,
@@ -715,7 +715,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: false,
         stock: false,
       },
-      rpmFormula: WeaponRpmFormulas.Default,
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.LegendaryWeak]: 158,
         [WeaponQualities.Legendary]: 159,

@@ -415,6 +415,7 @@ export default class Statistics
         [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_8'),
         [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
         [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
+        [Cleaners.Dan]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_11'),
       },
       missionsCompletedRaw: _.get(missions, 'keys', {}),
     };

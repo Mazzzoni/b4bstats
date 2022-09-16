@@ -54,6 +54,14 @@ export enum Missions
   // Act 4
   TheAbomination = 'titan_a',
 
+  // Act 5
+  LightGuideUs = 'bodysnatchers_a',
+  ToTheDenOfEvil = 'bodysnatchers_b',
+  WhereMeFlockChained = 'bodysnatchers_b2',
+  InTheDepths = 'bodysnatchers_c',
+  SurroundedByDevils = 'bodysnatchers_d',
+  AwaitingOurJustice = 'bodysnatchers_e',
+
   // Hives
   CausticCesspool = 'dungeon_trench',
   BloodStream = 'dungeon_river',
@@ -150,6 +158,7 @@ export enum Cleaners
   Mom = 'hero_8',
   Heng = 'hero_9',
   Sharice = 'hero_10',
+  Dan = 'hero_11',
 }
 
 export enum Difficulties

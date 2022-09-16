@@ -41,7 +41,8 @@
     "hero_7": "Karlee",
     "hero_8": "Mom",
     "hero_9": "Heng",
-    "hero_10": "Sharice"
+    "hero_10": "Sharice",
+    "hero_11": "Dan"
   },
   "difficulties": {
     "easy": "Recruit",
@@ -54,7 +55,8 @@
     "act_1": "ACT 1",
     "act_2": "ACT 2",
     "act_3": "ACT 3",
-    "act_4": "ACT 4"
+    "act_4": "ACT 4",
+    "act_5": "ACT 5"
   },
   "segments": {
     "1_1": "1.1: The Devil's Return",
@@ -67,6 +69,7 @@
     "3_1": "3.1: Dr. Rogers Neighborhood",
     "3_2": "3.2: Remnants",
     "4": "4: The Abomination",
+    "12_7": "12:7 Dan",
     "hives": "Hives"
   },
   "progressions": {
@@ -105,6 +108,12 @@
       "cdc_c": "The Road to Hell",
       "cdc_d": "The Body Dump",
       "titan_a": "The Abomination",
+      "bodysnatchers_a": "Light Guide Us",
+      "bodysnatchers_b": "To The Den Of Evil",
+      "bodysnatchers_b2": "Where Me Flock's Chained",
+      "bodysnatchers_c": "In The Depths",
+      "bodysnatchers_d": "Surrounded By Devils",
+      "bodysnatchers_e": "Awaiting Our Justice",
       "dungeon_chasm": "The Cut",
       "dungeon_river": "Blood Stream",
       "dungeon_trench": "Caustic Cesspool",

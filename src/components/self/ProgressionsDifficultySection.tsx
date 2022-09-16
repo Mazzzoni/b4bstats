@@ -49,7 +49,7 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
         <strong>{t(`difficulties.${difficulty}`)}</strong> <span style={{fontSize: '75%'}}>- {missionsCompletedCount}/{maxMissionsCompletedCount}</span>
       </div>
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 gap-y-6">
         <div className="col-span-3">
           <strong>{t('acts.act_1')}</strong>
 
@@ -144,9 +144,30 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
               <strong>{t('segments.4')}</strong>
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheAbomination}/>
             </div>
+          </div>
+        )}
+
+        {!isPvpDifficulty && (
+          <div className="col-span-3">
+            <strong>{t('acts.act_5')}</strong>
 
             <div className="mt-3">
-              <strong>{t('segments.hives')}</strong>
+              <strong>{t('segments.12_7')}</strong>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.LightGuideUs}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.ToTheDenOfEvil}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.WhereMeFlockChained}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.InTheDepths}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.SurroundedByDevils}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.AwaitingOurJustice}/>
+            </div>
+          </div>
+        )}
+
+        {!isPvpDifficulty && (
+          <div className="col-span-3">
+            <strong>{t('segments.hives')}</strong>
+
+            <div className="mt-3">
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheCut}/>
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BloodStream}/>
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.CausticCesspool}/>
