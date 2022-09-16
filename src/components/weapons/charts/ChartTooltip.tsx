@@ -14,11 +14,10 @@ export type TooltipProps = {
   baseStumblePerShot: number;
   baseStumblePerSecond: number;
   isMelee: boolean;
+  isBow: boolean;
 };
 
 export default function ChartTooltip(props: TooltipProps) {
-  const showCell = !props.isMelee;
-
   return (
     <div className="color-bg-secondary min-w-[200px] border">
       <div className="font-bold text">
@@ -31,10 +30,10 @@ export default function ChartTooltip(props: TooltipProps) {
           <tr className="text-left">
             <th className="pr-5">Quality</th>
             <th className="pr-5">Damage</th>
-            <th className="pr-5">DPS</th>
-            {showCell && <th className="pr-5">FMD</th>}
-            <th className="pr-5">Stumble</th>
-            <th className="pr-5">SPS</th>
+            {!props.isBow && <th className="pr-5">DPS</th>}
+            {!props.isMelee && !props.isBow && <th className="pr-5">FMD</th>}
+            {!props.isBow && <th className="pr-5">Stumble</th>}
+            {!props.isBow && <th className="pr-5">SPS</th>}
           </tr>
           </thead>
 
@@ -55,14 +54,16 @@ export default function ChartTooltip(props: TooltipProps) {
                 {row.damage.toFixed(2)}
               </td>
 
-              <td
-                className="pr-5 pt-1 border-top-subtle"
-                style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
-              >
-                {((row.damage * props.baseTrueDps) / props.baseDamage).toFixed(2)}
-              </td>
+              {!props.isBow &&
+                <td
+                  className="pr-5 pt-1 border-top-subtle"
+                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+                >
+                  {((row.damage * props.baseTrueDps) / props.baseDamage).toFixed(2)}
+                </td>
+              }
 
-              {showCell &&
+              {!props.isMelee && !props.isBow &&
                 <td
                   className="pr-5 pt-1 border-top-subtle"
                   style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
@@ -71,19 +72,23 @@ export default function ChartTooltip(props: TooltipProps) {
                 </td>
               }
 
-              <td
-                className="pr-5 pt-1 border-top-subtle"
-                style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
-              >
-                {((row.damage * props.baseStumblePerShot) / props.baseDamage).toFixed(2)}
-              </td>
+              {!props.isBow &&
+                <td
+                  className="pr-5 pt-1 border-top-subtle"
+                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+                >
+                  {((row.damage * props.baseStumblePerShot) / props.baseDamage).toFixed(2)}
+                </td>
+              }
 
-              <td
-                className="pr-5 pt-1 border-top-subtle"
-                style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
-              >
-                {((row.damage * props.baseStumblePerSecond) / props.baseDamage).toFixed(2)}
-              </td>
+              {!props.isBow &&
+                <td
+                  className="pr-5 pt-1 border-top-subtle"
+                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+                >
+                  {((row.damage * props.baseStumblePerSecond) / props.baseDamage).toFixed(2)}
+                </td>
+              }
             </tr>
           ))}
           </tbody>

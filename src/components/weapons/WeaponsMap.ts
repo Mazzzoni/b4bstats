@@ -7,7 +7,7 @@ type WeaponMapDefinition = Partial<Omit<WeaponDefinition, 'name' | 'qualities'>>
 };
 
 type WeaponsMapDefinition = {
-  [key in 'Ranged' | 'Melee']: WeaponMapDefinition[];
+  [key in 'Ranged' | 'Melee' | 'Bow']: WeaponMapDefinition[];
 };
 
 // All weapons that fire in bursts, shot 3 times (Beretta M9 / M16)
@@ -703,6 +703,28 @@ export const WeaponsMap: WeaponsMapDefinition = {
         'Attachments': 'Always have a 4x scope (does not increase weakspot damage) and suppressor (does not increase damage to unaware enemies) equipped.',
       },
     },
+    {
+      name: Weapons.Lockjaw,
+      category: WeaponCategories.Sniper,
+      image: 'lockjaw.webp',
+      slot: 'primary',
+      ammo: 'sniper',
+      attachments: {
+        barrel: false,
+        magazine: false,
+        scope: false,
+        stock: false,
+      },
+      rpmFormula: WeaponRpmFormulas.Default,
+      qualities: {
+        [WeaponQualities.LegendaryWeak]: 158,
+        [WeaponQualities.Legendary]: 159,
+      },
+      notes: {
+        'Armor-piercing Rounds': 'Damage dealt to armor is also dealt to the Ridden\'s health.',
+        'Clean Shot': 'Destroying armor with this weapon creates Makeshift Armor.',
+      },
+    },
   ],
 
   Melee: [
@@ -815,6 +837,36 @@ export const WeaponsMap: WeaponsMapDefinition = {
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 26,
+      },
+    },
+    {
+      name: Weapons.Claws,
+      category: WeaponCategories.Melee,
+      image: 'iron_claws.webp',
+      slot: 'secondary',
+      rpmFormula: WeaponRpmFormulas.Melee,
+      qualities: {
+        [WeaponQualities.Common]: 30,
+        [WeaponQualities.Uncommon]: 31,
+        [WeaponQualities.Rare]: 32,
+        [WeaponQualities.Epic]: 33,
+      },
+    },
+  ],
+
+  Bow: [
+    {
+      name: Weapons.Bow,
+      category: WeaponCategories.Bow,
+      image: 'bow.webp',
+      slot: 'secondary',
+      ammo: 'arrow',
+      rpmFormula: WeaponRpmFormulas.Bow,
+      qualities: {
+        [WeaponQualities.Common]: 6,
+        [WeaponQualities.Uncommon]: 7,
+        [WeaponQualities.Rare]: 8,
+        [WeaponQualities.Epic]: 9,
       },
     },
   ],

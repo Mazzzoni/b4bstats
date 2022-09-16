@@ -193,6 +193,7 @@ export enum WeaponTypes
   SMG = 'SMG',
   LMG = 'LMG',
   Sniper = 'Sniper',
+  Bow = 'Bow',
 }
 
 export enum Weapons
@@ -206,6 +207,7 @@ export enum Weapons
   Machete,
   Knife,
   Tenderizer,
+  Claws,
 
   M4Carbine,
   AK47,
@@ -245,6 +247,9 @@ export enum Weapons
   Phoenix350L,
   BarrettM95,
   Witness,
+  Lockjaw,
+
+  Bow,
 
   // I don't know what these correspond to (explosions ?)
   None,
@@ -261,6 +266,7 @@ export const WeaponsMelee: Weapons[] = [
   Weapons.Machete,
   Weapons.Knife,
   Weapons.Tenderizer,
+  Weapons.Claws,
 ];
 
 export const WeaponsAssaultRifle: Weapons[] = [
@@ -312,6 +318,11 @@ export const WeaponsSniper: Weapons[] = [
   Weapons.Phoenix350L,
   Weapons.BarrettM95,
   Weapons.Witness,
+  Weapons.Lockjaw,
+];
+
+export const WeaponsBow: Weapons[] = [
+  Weapons.Bow,
 ];
 
 export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
@@ -322,6 +333,7 @@ export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.SMG]: WeaponsSMG,
   [WeaponTypes.LMG]: WeaponsLMG,
   [WeaponTypes.Sniper]: WeaponsSniper,
+  [WeaponTypes.Bow]: WeaponsBow,
 };
 
 export type MissionsCompletedPerCleaner = {

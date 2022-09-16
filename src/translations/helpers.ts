@@ -60,6 +60,8 @@ export function weaponToString(weapon: Weapons): string
       return 'Knife';
     case Weapons.Tenderizer:
       return 'FireAxeCorrupted';
+    case Weapons.Claws:
+      return 'Claws';
 
     case Weapons.M4Carbine:
       return 'AR01';
@@ -132,6 +134,11 @@ export function weaponToString(weapon: Weapons): string
       return 'Sni02';
     case Weapons.Witness:
       return 'AR03Corrupted';
+    case Weapons.Lockjaw:
+      return 'Sni03';
+
+    case Weapons.Bow:
+      return 'Bow';
   }
 
   return 'unknown';
