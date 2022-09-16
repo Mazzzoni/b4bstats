@@ -25308,8 +25308,8 @@
           "in": 0.48,
           "out": 0.3024
         },
-        "rpm": 300,
-        "rpmFormula": "(1 / delayBetweenShots * 60)"
+        "rpm": 199.99999999999997,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "legendary": {
         "delayBetweenShots": 0.2,
@@ -25511,8 +25511,8 @@
           "in": 0.48,
           "out": 0.3024
         },
-        "rpm": 300,
-        "rpmFormula": "(1 / delayBetweenShots * 60)"
+        "rpm": 199.99999999999997,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       }
     },
     "upgrades": {
@@ -25748,8 +25748,8 @@
           "in": 0.8,
           "out": 0.504
         },
-        "rpm": 200,
-        "rpmFormula": "(1 / delayBetweenShots * 60)"
+        "rpm": 46.15384615384615,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       },
       "legendary": {
         "delayBetweenShots": 0.3,
@@ -25951,8 +25951,8 @@
           "in": 0.8,
           "out": 0.504
         },
-        "rpm": 200,
-        "rpmFormula": "(1 / delayBetweenShots * 60)"
+        "rpm": 46.15384615384615,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))"
       }
     },
     "upgrades": {
