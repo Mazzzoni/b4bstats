@@ -16,7 +16,7 @@ export default function WeaponStatistics({weapon}: Props) {
   return (
     <div className="border-top-subtle mt-5">
       <div className="grid grid-cols-12 gap-1">
-        {weapon.category !== WeaponCategories.Melee && (
+        {weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow && (
           <>
             <IndividualStatistic
               tooltipLabel={<div>
@@ -57,16 +57,18 @@ export default function WeaponStatistics({weapon}: Props) {
         {/*Create an empty offset for aligning melee statistics*/}
         {weapon.category === WeaponCategories.Melee && <div className="col-span-3"/>}
 
-        <IndividualStatistic
-          tooltipLabel={<div>
-            <b>Stumble power multiplier</b>
-            <br/>
-            <span>How much damage applies as stumble damage (%)</span>
-          </div>}
-          icon="stumble_power.svg"
-          value={weaponQuality.stumblePowerMultiplier}
-          upgrade={weapon.upgrades.stumblePowerMultiplier}
-        />
+        {weapon.category !== WeaponCategories.Bow && (
+          <IndividualStatistic
+            tooltipLabel={<div>
+              <b>Stumble power multiplier</b>
+              <br/>
+              <span>How much damage applies as stumble damage (%)</span>
+            </div>}
+            icon="stumble_power.svg"
+            value={weaponQuality.stumblePowerMultiplier}
+            upgrade={weapon.upgrades.stumblePowerMultiplier}
+          />
+        )}
 
         {weapon.category !== WeaponCategories.Melee && (
           <>
@@ -167,16 +169,16 @@ export default function WeaponStatistics({weapon}: Props) {
 
       {weapon.notes && (
         <div className="px-3 py-2">
-          <p>
+          <div>
             <b className="flex">Notes <Info size={16} className="ml-1 relative top-[3px]"/></b>
 
             {Object.keys(weapon.notes).map(note => (
-              <div key="note">
+              <div key={note}>
                 <b>{note}:</b>
                 <p>{weapon.notes![note]}</p>
               </div>
             ))}
-          </p>
+          </div>
         </div>
       )}
     </div>

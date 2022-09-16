@@ -119,6 +119,7 @@ export default class Statistics
     [Weapons.Machete]: 0,
     [Weapons.Knife]: 0,
     [Weapons.Tenderizer]: 0,
+    [Weapons.Claws]: 0,
 
     [Weapons.M4Carbine]: 0,
     [Weapons.AK47]: 0,
@@ -158,6 +159,9 @@ export default class Statistics
     [Weapons.Phoenix350L]: 0,
     [Weapons.BarrettM95]: 0,
     [Weapons.Witness]: 0,
+    [Weapons.Lockjaw]: 0,
+
+    [Weapons.Bow]: 0,
 
     [Weapons.None]: 0,
     [Weapons.Unarmed]: 0,
@@ -261,6 +265,7 @@ export default class Statistics
       [Weapons.Machete]: _.get(rawWeaponsKills, 'Machete', 0),
       [Weapons.Knife]: _.get(rawWeaponsKills, 'Knife', 0),
       [Weapons.Tenderizer]: _.get(rawWeaponsKills, 'FireAxeCorrupted', 0),
+      [Weapons.Claws]: _.get(rawWeaponsKills, 'Claws01', 0),
 
       [Weapons.M4Carbine]: _.get(rawWeaponsKills, 'AR01', 0),
       [Weapons.AK47]: _.get(rawWeaponsKills, 'AR02', 0),
@@ -300,6 +305,10 @@ export default class Statistics
       [Weapons.Phoenix350L]: _.get(rawWeaponsKills, 'Sni01', 0),
       [Weapons.BarrettM95]: _.get(rawWeaponsKills, 'Sni02', 0),
       [Weapons.Witness]: _.get(rawWeaponsKills, 'AR03Corrupted', 0),
+      [Weapons.Lockjaw]: _.get(rawWeaponsKills, 'Sni03', 0),
+
+      // Bow kills do not seem to be tracked in save file
+      [Weapons.Bow]: 0,
 
       [Weapons.None]: _.get(rawWeaponsKills, 'None', 0),
       [Weapons.Unarmed]: _.get(rawWeaponsKills, 'Unarmed', 0),
@@ -501,6 +510,11 @@ export default class Statistics
 
       // Handle special case for Evangelo (Hero_1) and Sharice (Hero_10) overlapping includes condition
       if (cleaner === 'Hero_1' && mission.includes('hero_10')) {
+        return;
+      }
+
+      // Handle special case for Evangelo (Hero_1) and Dan (Hero_11) overlapping includes condition
+      if (cleaner === 'Hero_1' && mission.includes('hero_11')) {
         return;
       }
 

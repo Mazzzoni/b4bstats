@@ -153,6 +153,7 @@ export default function WeaponDamage({weapon}: Props) {
               baseStumblePerShot={weaponQuality.stumblePerShot}
               baseStumblePerSecond={weaponQuality.stumblePerSecond}
               isMelee={weapon.category === WeaponCategories.Melee}
+              isBow={weapon.category === WeaponCategories.Bow}
             />,
             tooltipEl,
           );
@@ -189,19 +190,21 @@ export default function WeaponDamage({weapon}: Props) {
           <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{(baseDamage as number).toFixed(2)} DMG</Badge>
         </Tooltip>
 
-        <Tooltip
-          label={<div>
-            <b>True DPS</b>
-            <br/>
-            <span>Base damage done per second</span>
-            <br/>
-            <span className="bg-stone-400 px-1">{getDpsFormula(weapon)}</span>
-          </div>}
-        >
-          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.trueDps.toFixed(2)} DPS</Badge>
-        </Tooltip>
+        {weapon.category !== WeaponCategories.Bow && (
+          <Tooltip
+            label={<div>
+              <b>True DPS</b>
+              <br/>
+              <span>Base damage done per second</span>
+              <br/>
+              <span className="bg-stone-400 px-1">{getDpsFormula(weapon)}</span>
+            </div>}
+          >
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.trueDps.toFixed(2)} DPS</Badge>
+          </Tooltip>
+        )}
 
-        {weapon.category !== WeaponCategories.Melee && (
+        {weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow && (
           <Tooltip
             label={<div>
               <b>Full Magazine Damage</b>
@@ -216,31 +219,33 @@ export default function WeaponDamage({weapon}: Props) {
         )}
       </div>
 
-      <div className="absolute z-10 bottom-16 left-16 space-x-2">
-        <Tooltip
-          label={<div>
-            <b>Stumble Per Shot</b>
-            <br/>
-            <span>Stumble applied per shot</span>
-            <br/>
-            <span className="bg-stone-400 px-1">Base Damage * Stumble Ratio</span>
-          </div>}
-        >
-          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerShot.toFixed(2)} Stumble</Badge>
-        </Tooltip>
+      {weapon.category !== WeaponCategories.Bow && (
+        <div className="absolute z-10 bottom-16 left-16 space-x-2">
+          <Tooltip
+            label={<div>
+              <b>Stumble Per Shot</b>
+              <br/>
+              <span>Stumble applied per shot</span>
+              <br/>
+              <span className="bg-stone-400 px-1">Base Damage * Stumble Ratio</span>
+            </div>}
+          >
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerShot.toFixed(2)} Stumble</Badge>
+          </Tooltip>
 
-        <Tooltip
-          label={<div>
-            <b>Stumble Per Second</b>
-            <br/>
-            <span>Stumble applied per second</span>
-            <br/>
-            <span className="bg-stone-400 px-1">{getSpsFormula(weapon)}</span>
-          </div>}
-        >
-          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerSecond.toFixed(2)} SPS</Badge>
-        </Tooltip>
-      </div>
+          <Tooltip
+            label={<div>
+              <b>Stumble Per Second</b>
+              <br/>
+              <span>Stumble applied per second</span>
+              <br/>
+              <span className="bg-stone-400 px-1">{getSpsFormula(weapon)}</span>
+            </div>}
+          >
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerSecond.toFixed(2)} SPS</Badge>
+          </Tooltip>
+        </div>
+      )}
 
       {weaponQuality.pellets > 1 && (
         <div className="absolute z-10 top-12 right-16">

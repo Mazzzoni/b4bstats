@@ -10,7 +10,7 @@ import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
 import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
 import _ from 'lodash';
 
-const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-08-04.xlsm`;
+const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-09-02.xlsm`;
 
 enum RangedWeaponsColumns
 {
@@ -71,6 +71,20 @@ enum MeleeWeaponsColumns
   SwapSpeedLower = 103,
 }
 
+enum BowWeaponsColumns
+{
+  StaminaCost = 1,
+  StaminaCostPerSecond = 3,
+  MoveSpeedBase = 32,
+  MoveSpeedAds = 35,
+  MoveSpeedHipFire = 38,
+  MoveSpeedOther = 41,
+  SwapSpeedRaise = 58,
+  SwapSpeedLower = 61,
+  AdsSpeedIn = 63,
+  AdsSpeedOut = 64,
+}
+
 class Saver
 {
   save(weapons: WeaponDefinition[]): void
@@ -98,9 +112,11 @@ class Parser
     const workSheets = xlsx.parse(fs.readFileSync(file));
     const guns = workSheets[0];
     const melees = workSheets[1];
+    const bows = workSheets[2];
 
     this.parseRangedWeapons(guns);
     this.parseMeleeWeapons(melees);
+    this.parseBowWeapons(bows);
 
     this.computeUpgrades();
   }
@@ -267,9 +283,11 @@ class Parser
         const row = weapon.qualities[quality as WeaponQualities]! - 1;
         const data = melees.data[row] as any[];
 
+        const range = data[MeleeWeaponsColumns.TraceLength];
+
         let rangeDamages: { [key: string]: number } = {
-          [data[MeleeWeaponsColumns.TraceLength]]: data[MeleeWeaponsColumns.LightAttackDamage],
-          [data[MeleeWeaponsColumns.TraceLength] + 1]: 0,
+          [range]: data[MeleeWeaponsColumns.LightAttackDamage],
+          [range + 1]: 0,
         };
 
         const pellets = 1;
@@ -308,6 +326,78 @@ class Parser
         // Compute weapon DPS & SPS
         weaponStatistics.trueDps = (weaponStatistics.rangeDamagesComputed[0] * weaponStatistics.rpm) / 60;
         weaponStatistics.stumblePerSecond = (weaponStatistics.stumblePerShot * weaponStatistics.rpm) / 60;
+
+        computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
+      }
+
+      this.weapons.set(computedWeapon.name, computedWeapon);
+    }
+  }
+
+  private parseBowWeapons(bows: { name: string; data: unknown[] })
+  {
+    for (const weapon of WeaponsMap.Bow) {
+      const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
+
+      computedWeapon.name = weaponToString(weapon.name);
+      computedWeapon.category = weapon.category!;
+      computedWeapon.image = weapon.image!;
+      computedWeapon.slot = weapon.slot!;
+      computedWeapon.ammo = weapon.ammo;
+
+      if (weapon.notes) {
+        computedWeapon.notes = weapon.notes;
+      }
+
+      computedWeapon.qualities = {} as WeaponDefinition['qualities'];
+
+      for (const quality in weapon.qualities) {
+        // Subtract one to get the actual row number
+        const row = weapon.qualities[quality as WeaponQualities]! - 1;
+        const data = bows.data[row] as any[];
+
+        // FIXME: No idea of the range of the bow
+        const range = 4000;
+
+        let rangeDamages: { [key: string]: number } = {
+          // FIXME: No idea of how damages are computed, spreadsheet don't seems to refer to any firepower, taking value from wiki
+          [range]: 80,
+          [range + 1]: 0,
+        };
+
+        const pellets = 1;
+        const metersScale = getMetersScale(4000, meleeStepSize);
+        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
+
+        // Weapon statistics definition is a bit different for melee category
+        const weaponStatistics = {
+          rangeDamages: rangeDamages,
+          rangeDamagesComputed: rangeDamagesComputed,
+          metersScale: metersScale,
+          stamina: data[BowWeaponsColumns.StaminaCost],
+          pellets: pellets,
+          swap: {
+            in: data[BowWeaponsColumns.SwapSpeedRaise],
+            out: data[BowWeaponsColumns.SwapSpeedLower],
+          },
+          ads: {
+            in: data[BowWeaponsColumns.AdsSpeedIn],
+            out: data[BowWeaponsColumns.AdsSpeedOut],
+          },
+          movementSpeed: {
+            jog: data[BowWeaponsColumns.MoveSpeedBase],
+            ads: data[BowWeaponsColumns.MoveSpeedAds],
+            hipfire: data[BowWeaponsColumns.MoveSpeedHipFire],
+            other: data[BowWeaponsColumns.MoveSpeedOther],
+          },
+        } as WeaponStatisticsDefinition;
+
+        const [rpm, rpmFormula] = this.getRpmByWeapon(weapon.rpmFormula!, weaponStatistics);
+
+        weaponStatistics.rpm = rpm;
+        weaponStatistics.rpmFormula = rpmFormula;
+
+        // TODO: Nice to have -> TrueDPS & Stumble values
 
         computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
       }
@@ -404,6 +494,12 @@ class Parser
         return [
           (60 / (weaponStatistics.meleeStateLength! * weaponStatistics.meleeStateInterruptLength! + 0.05)),
           '(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))',
+        ];
+
+      case WeaponRpmFormulas.Bow:
+        return [
+          0,
+          'Unknown',
         ];
 
       case WeaponRpmFormulas.TAC14:

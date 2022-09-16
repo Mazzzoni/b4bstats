@@ -27,7 +27,7 @@ export default function Graphs({sortedWeapons}: Props) {
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
           title="Damage Per Second"
-          weapons={overallWeapons}
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
           statisticCallback={weapon => (weapon.trueDps)}
         />
       </div>
@@ -35,7 +35,7 @@ export default function Graphs({sortedWeapons}: Props) {
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
           title="Full Magazine Damage"
-          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Melee)}
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow)}
           statisticCallback={weapon => (weapon.fullMagazineDamage)}
         />
       </div>
@@ -43,7 +43,7 @@ export default function Graphs({sortedWeapons}: Props) {
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
           title="Stumble Per Shot"
-          weapons={overallWeapons}
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
           statisticCallback={weapon => (weapon.stumblePerShot)}
         />
       </div>
@@ -51,7 +51,7 @@ export default function Graphs({sortedWeapons}: Props) {
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
           title="Stumble Per Second"
-          weapons={overallWeapons}
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
           statisticCallback={weapon => (weapon.stumblePerSecond)}
         />
       </div>
@@ -59,7 +59,7 @@ export default function Graphs({sortedWeapons}: Props) {
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
           title="RPM"
-          weapons={overallWeapons}
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
           statisticCallback={weapon => (weapon.rpm)}
         />
       </div>

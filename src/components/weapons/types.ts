@@ -17,6 +17,7 @@ export enum WeaponCategories
   LMG = 'LMG',
   Sniper = 'sniper',
   Melee = 'melee',
+  Bow = 'bow',
 }
 
 export enum AttachmentCategories
@@ -53,6 +54,9 @@ export enum WeaponRpmFormulas
 
   // Apply to melee weapons,
   Melee,
+
+  // Apply to bow weapons,
+  Bow,
 
   // Custom formulas
   TAC14,
@@ -105,7 +109,7 @@ export type WeaponDefinition = {
   category: WeaponCategories;
   image: string;
   slot: 'primary' | 'secondary' | 'n/a';
-  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper';
+  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper' | 'arrow';
   attachments: {
     barrel: boolean;
     magazine: boolean;

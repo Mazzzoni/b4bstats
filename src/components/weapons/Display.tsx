@@ -39,6 +39,7 @@ export default function Display(props: Props) {
     [WeaponCategories.LMG]: [],
     [WeaponCategories.Sniper]: [],
     [WeaponCategories.Melee]: [],
+    [WeaponCategories.Bow]: [],
   };
 
   // Order each ridden in their own category

@@ -176,6 +176,7 @@
     "Knife": "Knife",
     "FireAxeCorrupted": "Tenderizer",
     "Machete": "Machete",
+    "Claws": "Claws",
     "AR01": "M4 Carbine",
     "AR02": "AK47",
     "AR01Corrupted": "Pestilence",
@@ -208,6 +209,8 @@
     "AR03": "M1A",
     "Sni01": "Phoenix 350L",
     "Sni02": "Barrett M95",
+    "Sni03": "Lockjaw",
+    "Bow": "Bow",
     "AR03Corrupted": "Witness"
   },
   "graphs": {

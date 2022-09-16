@@ -17,6 +17,8 @@ export const WeaponColors: Record<WeaponTypes | WeaponCategories, string> = {
   [WeaponCategories.LMG]: '#d433da',
   [WeaponTypes.Sniper]: '#004386',
   [WeaponCategories.Sniper]: '#004386',
+  [WeaponTypes.Bow]: '#e77d05',
+  [WeaponCategories.Bow]: '#e77d05',
 };
 
 export const RiddenColors: Record<Riddens, string> = {

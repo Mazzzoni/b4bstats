@@ -23,7 +23,7 @@ export default function WeaponCard({weapon}: Props) {
             <WeaponOverview weapon={weapon}/>
           </div>
 
-          {weapon.category !== WeaponCategories.Melee && (
+          {weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow && (
             <div>
               <WeaponAttachments weapon={weapon}/>
             </div>
