@@ -4,7 +4,7 @@ import { Difficulties } from '@components/statistics/types';
 
 const {persistAtom} = recoilPersist();
 
-export type SelectedDifficulty = Difficulties
+export type SelectedDifficulty = Difficulties;
 
 const state = atom<SelectedDifficulty>({
   key: 'SelectedDifficulty',

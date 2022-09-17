@@ -8,8 +8,8 @@ import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState
 import { Difficulties } from '@components/statistics/types';
 
 type Props = {
-  health: RiddenDefinition['health']
-}
+  health: RiddenDefinition['health'];
+};
 
 // Apply weapons damage bonus for certain difficulty to get effective health
 const convertToEffectiveHealth = (health: number, difficulty: Difficulties): number => {

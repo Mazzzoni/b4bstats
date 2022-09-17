@@ -4,8 +4,8 @@ import { GlassMagnifier } from 'react-image-magnifiers';
 import RiddenHealth from '@components/riddens/charts/RiddenHealth';
 
 type Props = {
-  ridden: RiddenDefinition
-}
+  ridden: RiddenDefinition;
+};
 
 export default function RiddenCard({ridden}: Props) {
   return (
