@@ -18,7 +18,7 @@ export default function MainLayout({children, title}: Props) {
         padding="xs"
         height="100vh"
         className="pt-[79px] overflow-y-auto"
-        width={{base: 225}}
+        width={{base: 240}}
       />}
       header={<Header
         height="auto"

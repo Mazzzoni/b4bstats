@@ -7,7 +7,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Difficulties } from '@components/statistics/types';
 import { RiddenCategories, RiddenDefinition } from '@components/riddens/types';
 
-const file = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens.csv`;
+const file = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens-2022-09-17.csv`;
 
 class Saver
 {
@@ -96,8 +96,9 @@ class Parser
   parse(row: any): void
   {
     let ridden: RiddenDefinition;
+    const riddenName = this.getRiddenName(row.Monster);
     const difficulty = this.getDifficulty(row.Difficulty);
-    const savedRidden = this.riddens[difficulty].get(row.Monster);
+    const savedRidden = this.riddens[difficulty].get(riddenName);
 
     if (savedRidden) {
       ridden = savedRidden;
@@ -105,9 +106,9 @@ class Parser
       ridden = {} as RiddenDefinition;
     }
 
-    ridden.name = row.Monster;
-    ridden.category = this.getCategory(row.Monster);
-    ridden.image = this.getImage(row.Monster);
+    ridden.name = riddenName;
+    ridden.category = this.getCategory(riddenName);
+    ridden.image = this.getImage(riddenName);
     const healthRank = row.Rank === 'None' ? 'Standard' : row.Rank;
 
     if (typeof ridden.health === 'object') {
@@ -123,14 +124,37 @@ class Parser
       recovery: +row['Stumble Regen'],
     };
 
-    // Add exception for reekers that don't have weakspot
-    if (ridden.name !== 'Reeker') {
-      ridden.weakspot_multiplier = +row.WS_Multiplier;
+    const weakspotMultiplier = +row.WS_Multiplier;
+    const stumbleWeakspotMultiplier = +row['Stumble WS Multiplier'];
 
-      ridden.stumble.weakspot_multiplier = +row['Stumble WS Multiplier'];
+    if (weakspotMultiplier) {
+      ridden.weakspot_multiplier = weakspotMultiplier;
+    }
+
+    if (stumbleWeakspotMultiplier) {
+      ridden.stumble.weakspot_multiplier = stumbleWeakspotMultiplier;
     }
 
     this.riddens[difficulty].set(ridden.name, ridden);
+  }
+
+  /**
+   * Convert raw name to final one
+   */
+  private getRiddenName(rawName: string): string
+  {
+    switch (rawName) {
+      case 'CultistMelee':
+        return 'Slasher';
+      case 'CultistGrenadier':
+        return 'Pusflinger';
+      case 'CultistArcher':
+        return 'Crone';
+      case 'CultistSniper':
+        return 'Sniper';
+    }
+
+    return rawName;
   }
 
   private getDifficulty(rawDifficulty: string): Difficulties
@@ -145,7 +169,7 @@ class Parser
       case 'No Hope':
         return Difficulties.NoHope;
       default:
-        throw Error('Unexpected difficulty');
+        throw Error(`Unexpected difficulty (${rawDifficulty})`);
     }
   }
 
@@ -175,6 +199,12 @@ class Parser
       case 'Urchin':
         return RiddenCategories.Stingers;
 
+      case 'Slasher':
+      case 'Crone':
+      case 'Pusflinger':
+      case 'Sniper':
+        return RiddenCategories.Cultists;
+
       case 'Ogre':
       case 'Breaker':
         return RiddenCategories.Bosses;
@@ -184,7 +214,7 @@ class Parser
         return RiddenCategories.Specials;
 
       default:
-        throw Error('Unexpected ridden');
+        throw Error(`Unexpected ridden (${rawName})`);
     }
   }
 
@@ -225,6 +255,15 @@ class Parser
       case 'Urchin':
         return 'urchin.png';
 
+      case 'Slasher':
+        return 'slasher.webp';
+      case 'Crone':
+        return 'crone.webp';
+      case 'Pusflinger':
+        return 'pusflinger.webp';
+      case 'Sniper':
+        return 'sniper.webp';
+
       case 'Ogre':
         return 'ogre.webp';
       case 'Breaker':
@@ -236,7 +275,7 @@ class Parser
         return 'hag.webp';
 
       default:
-        throw Error('Unexpected ridden');
+        throw Error(`Unexpected ridden (${rawName})`);
     }
   }
 }

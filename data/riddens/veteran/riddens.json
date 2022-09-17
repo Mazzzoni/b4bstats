@@ -25,7 +25,7 @@
       "Monstrous": 600
     },
     "stumble": {
-      "health": 100,
+      "health": 75,
       "recovery": 80
     }
   },
@@ -188,6 +188,68 @@
       "weakspot_multiplier": 3
     },
     "weakspot_multiplier": 2
+  },
+  {
+    "name": "Slasher",
+    "category": "cultists",
+    "image": "slasher.webp",
+    "health": {
+      "Standard": 550,
+      "Ferocious": 687.5,
+      "Monstrous": 825
+    },
+    "stumble": {
+      "health": 70,
+      "recovery": 10,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Pusflinger",
+    "category": "cultists",
+    "image": "pusflinger.webp",
+    "health": {
+      "Standard": 350,
+      "Ferocious": 437.5,
+      "Monstrous": 525
+    },
+    "stumble": {
+      "health": 40,
+      "recovery": 10,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Crone",
+    "category": "cultists",
+    "image": "crone.webp",
+    "health": {
+      "Standard": 100,
+      "Ferocious": 125,
+      "Monstrous": 150
+    },
+    "stumble": {
+      "health": 1,
+      "recovery": 1,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Sniper",
+    "category": "cultists",
+    "image": "sniper.webp",
+    "health": {
+      "Standard": 20,
+      "Ferocious": 25,
+      "Monstrous": 30
+    },
+    "stumble": {
+      "health": 0,
+      "recovery": 0
+    }
   },
   {
     "name": "Ogre",

@@ -26,6 +26,7 @@ export default function Display(props: Props) {
     [RiddenCategories.Stingers]: [],
     [RiddenCategories.Reekers]: [],
     [RiddenCategories.Tallboys]: [],
+    [RiddenCategories.Cultists]: [],
     [RiddenCategories.Specials]: [],
     [RiddenCategories.Bosses]: [],
   };

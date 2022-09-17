@@ -2,9 +2,9 @@ import { RiddenDefinition } from '@components/riddens/types';
 import RiddenCard from '@components/riddens/RiddenCard';
 
 type Props = {
-  categoryName: string
-  riddens: RiddenDefinition[]
-}
+  categoryName: string;
+  riddens: RiddenDefinition[];
+};
 
 export default function RiddensCategory({categoryName, riddens}: Props) {
   if (riddens.length === 0) {
