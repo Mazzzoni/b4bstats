@@ -146,7 +146,7 @@ export default function Achievements() {
 
         <div className="col-span-4">
           <ProgressMilestones
-            title="15 000 Heal"
+            title="15 000 Heal applied (self + other)"
             maxValue={15_000}
             currentValue={statistics.miscellaneousStatistics[MiscellaneousStatistics.HealingAppliedOther] + statistics.miscellaneousStatistics[MiscellaneousStatistics.HealingAppliedSelf]}
             milestones={[
@@ -293,6 +293,19 @@ export default function Achievements() {
             title="250 Missions completed as Sharice"
             maxValue={250}
             currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_10.total}
+            milestones={[
+              {step: 25},
+              {step: 50},
+              {step: 100},
+            ]}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <ProgressMilestones
+            title="250 Missions completed as Dan"
+            maxValue={250}
+            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_11.total}
             milestones={[
               {step: 25},
               {step: 50},
