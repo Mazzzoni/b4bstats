@@ -26,6 +26,7 @@ export const getStaticProps: GetStaticProps<RiddensProps> = async (context) => {
     [Difficulties.Veteran]: getDataFileSync('riddens/veteran/note.md'),
     [Difficulties.Nightmare]: getDataFileSync('riddens/nightmare/note.md'),
     [Difficulties.NoHope]: getDataFileSync('riddens/nohope/note.md'),
+    [Difficulties.Legendary]: getDataFileSync('riddens/legendary/note.md'),
     [Difficulties.Swarm]: getDataFileSync('riddens/swarm/note.md'),
   };
 
@@ -34,6 +35,7 @@ export const getStaticProps: GetStaticProps<RiddensProps> = async (context) => {
     [Difficulties.Veteran]: JSON.parse(getDataFileSync('riddens/veteran/riddens.json')),
     [Difficulties.Nightmare]: JSON.parse(getDataFileSync('riddens/nightmare/riddens.json')),
     [Difficulties.NoHope]: JSON.parse(getDataFileSync('riddens/nohope/riddens.json')),
+    [Difficulties.Legendary]: JSON.parse(getDataFileSync('riddens/legendary/riddens.json')),
     [Difficulties.Swarm]: JSON.parse(getDataFileSync('riddens/swarm/riddens.json')),
   };
 

@@ -48,6 +48,7 @@ export const DifficultyColors: Record<Difficulties, string> = {
   [Difficulties.Veteran]: '#b47c00',
   [Difficulties.Nightmare]: '#bb0000',
   [Difficulties.NoHope]: '#8000b5',
+  [Difficulties.Legendary]: '#ffeacc',
   [Difficulties.Swarm]: '#102d7a',
 };
 

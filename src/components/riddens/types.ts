@@ -46,6 +46,7 @@ export type RiddensProps = {
     [Difficulties.Veteran]: string;
     [Difficulties.Nightmare]: string;
     [Difficulties.NoHope]: string;
+    [Difficulties.Legendary]: string;
     [Difficulties.Swarm]: string;
   };
 
@@ -55,6 +56,7 @@ export type RiddensProps = {
     [Difficulties.Veteran]: RiddenDefinition[];
     [Difficulties.Nightmare]: RiddenDefinition[];
     [Difficulties.NoHope]: RiddenDefinition[];
+    [Difficulties.Legendary]: RiddenDefinition[];
     [Difficulties.Swarm]: RiddenDefinition[];
   };
 };
