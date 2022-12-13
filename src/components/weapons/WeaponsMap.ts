@@ -468,7 +468,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         scope: true,
         stock: true,
       },
-      rpmFormula: WeaponRpmFormulas.TAC14,
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 97,
         [WeaponQualities.Uncommon]: 98,
