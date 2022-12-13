@@ -416,6 +416,7 @@ export default class Statistics
         [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
         [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
         [Cleaners.Dan]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_11'),
+        [Cleaners.Tala]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_12'),
       },
       missionsCompletedRaw: _.get(missions, 'keys', {}),
     };
@@ -461,6 +462,7 @@ export default class Statistics
       [Difficulties.Veteran]: 0,
       [Difficulties.Nightmare]: 0,
       [Difficulties.NoHope]: 0,
+      [Difficulties.Legendary]: 0,
       [Difficulties.Swarm]: 0,
     };
 
@@ -480,6 +482,8 @@ export default class Statistics
         missionsCompleteByDifficulties[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
         missionsCompleteByDifficulties[Difficulties.Nightmare] += value;
+      } else if (mission.includes('legendary')) {
+        missionsCompleteByDifficulties[Difficulties.Legendary] += value;
       } else if (mission.includes('pvp')) {
         missionsCompleteByDifficulties[Difficulties.Swarm] += value;
       }
@@ -496,6 +500,7 @@ export default class Statistics
       [Difficulties.Veteran]: 0,
       [Difficulties.Nightmare]: 0,
       [Difficulties.NoHope]: 0,
+      [Difficulties.Legendary]: 0,
       [Difficulties.Swarm]: 0,
     };
 
@@ -519,6 +524,11 @@ export default class Statistics
         return;
       }
 
+      // Handle special case for Evangelo (Hero_1) and Tala (Hero_11) overlapping includes condition
+      if (cleaner === 'Hero_1' && mission.includes('hero_12')) {
+        return;
+      }
+
       if (!mission.includes(cleaner.toLowerCase())) {
         return;
       }
@@ -531,6 +541,8 @@ export default class Statistics
         missionsCompleteByCleaner[Difficulties.NoHope] += value;
       } else if (mission.includes('hard')) {
         missionsCompleteByCleaner[Difficulties.Nightmare] += value;
+      } else if (mission.includes('legendary')) {
+        missionsCompleteByCleaner[Difficulties.Legendary] += value;
       } else if (mission.includes('pvp')) {
         missionsCompleteByCleaner[Difficulties.Swarm] += value;
       }

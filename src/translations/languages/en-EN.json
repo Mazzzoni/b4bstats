@@ -42,13 +42,15 @@
     "hero_8": "Mom",
     "hero_9": "Heng",
     "hero_10": "Sharice",
-    "hero_11": "Dan"
+    "hero_11": "Dan",
+    "hero_12": "Tala"
   },
   "difficulties": {
     "easy": "Recruit",
     "normal": "Veteran",
     "hard": "Nightmare",
     "veryhard": "No Hope",
+    "legendary": "Legendary",
     "pvp": "Swarm"
   },
   "acts": {
@@ -56,7 +58,8 @@
     "act_2": "ACT 2",
     "act_3": "ACT 3",
     "act_4": "ACT 4",
-    "act_5": "ACT 5"
+    "act_5": "ACT 5",
+    "act_6": "ACT 6"
   },
   "segments": {
     "1_1": "1.1: The Devil's Return",
@@ -70,6 +73,7 @@
     "3_2": "3.2: Remnants",
     "4": "4: The Abomination",
     "12_7": "12:7 Dan",
+    "river_of_blood": "River of Blood",
     "hives": "Hives"
   },
   "progressions": {
@@ -120,7 +124,12 @@
       "dungeon_chamber": "Sunken Passage",
       "dungeon_infestation": "Brood Lair",
       "dungeon_mines": "300 Below",
-      "dungeon_arena": "The Nursery"
+      "dungeon_arena": "The Nursery",
+      "riverboat_a": "No Sanctuary",
+      "riverboat_b": "Emergency Broadcast",
+      "riverboat_c": "Grim Recovery",
+      "riverboat_d": "The Waterfront",
+      "riverboat_e": "Behold The Harbinger"
     }
   },
   "miscellaneous": {

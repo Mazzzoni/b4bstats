@@ -70,6 +70,15 @@ export default function SelfQuicklinks() {
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
+          label={t('difficulties.legendary')}
+          defaultChecked={difficultyFilters.showLegendary}
+          onChange={(e) => {
+            setDifficultyFilters({...difficultyFilters, ...{showLegendary: e.target.checked}});
+          }}
+        />
+
+        <Checkbox
+          className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.pvp')}
           defaultChecked={difficultyFilters.showSwarm}
           onChange={(e) => {
