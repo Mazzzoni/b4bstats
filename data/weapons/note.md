@@ -1,4 +1,4 @@
-**Data provided by TRS | Last data update: 2022/09/02.**
+**Data provided by TRS | Last data update: 2022/12/06.**
 
 **Notes:**  
 You can find all raw statistics used [here](https://github.com/Mazzzoni/b4bstats/blob/main/data/weapons/weapons.json).
