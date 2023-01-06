@@ -34,6 +34,10 @@ export function weaponTypeToString(weaponType: WeaponTypes): string
       return 'LMG';
     case WeaponTypes.Sniper:
       return 'SNIPER';
+    case WeaponTypes.Bow:
+      return 'BOW';
+    case WeaponTypes.Flamethrower:
+      return 'FLAMETHROWER';
   }
 
   return 'unknown';
@@ -139,6 +143,9 @@ export function weaponToString(weapon: Weapons): string
 
     case Weapons.Bow:
       return 'Bow';
+
+    case Weapons.Flamethrower:
+      return 'FlameThrower01';
   }
 
   return 'unknown';

@@ -20,7 +20,7 @@ export default function Progressions() {
   const theme = useMantineTheme();
   const {t} = useTranslation();
 
-  if (!filters.showRecruit && !filters.showVeteran && !filters.showNightmare && !filters.showNoHope && !filters.showSwarm) {
+  if (!filters.showRecruit && !filters.showVeteran && !filters.showNightmare && !filters.showNoHope && !filters.showLegendary && !filters.showSwarm) {
     return null;
   }
 

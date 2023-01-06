@@ -1,13 +1,13 @@
-import { Weapons } from '@components/statistics/types';
-import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas } from '@components/weapons/types';
+import { Weapons } from "@components/statistics/types";
+import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas } from "@components/weapons/types";
 
-type WeaponMapDefinition = Partial<Omit<WeaponDefinition, 'name' | 'qualities'>> & {
+type WeaponMapDefinition = Partial<Omit<WeaponDefinition, "name" | "qualities">> & {
   name: Weapons;
   qualities: Partial<Record<WeaponQualities, number>>;
 };
 
 type WeaponsMapDefinition = {
-  [key in 'Ranged' | 'Melee' | 'Bow']: WeaponMapDefinition[];
+  [key in "Ranged" | "Melee" | "Bow" | "Flamethrowers"]: WeaponMapDefinition[];
 };
 
 // All weapons that fire in bursts, shot 3 times (Beretta M9 / M16)
@@ -20,9 +20,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.M4Carbine,
       category: WeaponCategories.AssaultRifle,
-      image: 'm4.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "m4.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -40,9 +40,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Pestilence,
       category: WeaponCategories.AssaultRifle,
-      image: 'pestilence.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "pestilence.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: false,
         magazine: false,
@@ -55,15 +55,15 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 11,
       },
       notes: {
-        'Atrophy': 'Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%.',
+        "Atrophy": "Successful hits with this weapon apply a stacking 3 damage per second and reduces the damage the target deals by 1%.",
       },
     },
     {
       name: Weapons.AK47,
       category: WeaponCategories.AssaultRifle,
-      image: 'ak47.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "ak47.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -81,9 +81,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.M16,
       category: WeaponCategories.AssaultRifle,
-      image: 'm16.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "m16.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -101,9 +101,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Scar,
       category: WeaponCategories.AssaultRifle,
-      image: 'scar.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "scar.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -121,9 +121,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.RanchRifle,
       category: WeaponCategories.AssaultRifle,
-      image: 'ranch_rifle.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "ranch_rifle.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -138,7 +138,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Epic]: 156,
       },
       notes: {
-        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
+        "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus.",
       },
     },
 
@@ -146,9 +146,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.M1911,
       category: WeaponCategories.Handgun,
-      image: 'm1911.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "m1911.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -166,9 +166,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.BerettaM9,
       category: WeaponCategories.Handgun,
-      image: 'beretta_m9.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "beretta_m9.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -183,15 +183,15 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Epic]: 37,
       },
       notes: {
-        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
+        "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus.",
       },
     },
     {
       name: Weapons.BerettaM9Burst,
       category: WeaponCategories.Handgun,
-      image: 'beretta_m9.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "beretta_m9.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -206,15 +206,15 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Epic]: 42,
       },
       notes: {
-        'Weakspot Multiplier Bonus': 'x1.1 weakspot multiplier bonus.',
+        "Weakspot Multiplier Bonus": "x1.1 weakspot multiplier bonus.",
       },
     },
     {
       name: Weapons.Magnum357,
       category: WeaponCategories.Handgun,
-      image: '357_magnum.webp',
-      slot: 'secondary',
-      ammo: 'rifle',
+      image: "357_magnum.webp",
+      slot: "secondary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -232,9 +232,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Glock23,
       category: WeaponCategories.Handgun,
-      image: 'glock_23.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "glock_23.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -252,9 +252,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Glock23Burst,
       category: WeaponCategories.Handgun,
-      image: 'glock_23.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "glock_23.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -272,9 +272,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.DesertEagle,
       category: WeaponCategories.Handgun,
-      image: 'desert_eagle.webp',
-      slot: 'secondary',
-      ammo: 'sniper',
+      image: "desert_eagle.webp",
+      slot: "secondary",
+      ammo: "sniper",
       attachments: {
         barrel: true,
         magazine: true,
@@ -292,9 +292,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Embezzler,
       category: WeaponCategories.Handgun,
-      image: 'embezzler.webp',
-      slot: 'secondary',
-      ammo: 'rifle',
+      image: "embezzler.webp",
+      slot: "secondary",
+      ammo: "rifle",
       attachments: {
         barrel: false,
         magazine: false,
@@ -307,7 +307,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 64,
       },
       notes: {
-        'Death and Taxes': 'Killing blows generate up to 10 Copper per kill.',
+        "Death and Taxes": "Killing blows generate up to 10 Copper per kill.",
       },
     },
 
@@ -315,9 +315,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.M249,
       category: WeaponCategories.LMG,
-      image: 'm249.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "m249.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -335,9 +335,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.RPK,
       category: WeaponCategories.LMG,
-      image: 'rpk.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "rpk.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: true,
         magazine: true,
@@ -355,9 +355,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Nemesis,
       category: WeaponCategories.LMG,
-      image: 'rpk.webp',
-      slot: 'primary',
-      ammo: 'rifle',
+      image: "rpk.webp",
+      slot: "primary",
+      ammo: "rifle",
       attachments: {
         barrel: false,
         magazine: false,
@@ -370,7 +370,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 77,
       },
       notes: {
-        'Final Showdown': 'Enemies within 30 meters are drawn to the wielder of this weapon.',
+        "Final Showdown": "Enemies within 30 meters are drawn to the wielder of this weapon.",
       },
     },
 
@@ -378,9 +378,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Express870,
       category: WeaponCategories.Shotgun,
-      image: '870_express.webp',
-      slot: 'primary',
-      ammo: 'shotgun',
+      image: "870_express.webp",
+      slot: "primary",
+      ammo: "shotgun",
       attachments: {
         barrel: true,
         magazine: true,
@@ -398,9 +398,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.AA12,
       category: WeaponCategories.Shotgun,
-      image: 'aa12.webp',
-      slot: 'primary',
-      ammo: 'shotgun',
+      image: "aa12.webp",
+      slot: "primary",
+      ammo: "shotgun",
       attachments: {
         barrel: true,
         magazine: true,
@@ -418,9 +418,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Damnation,
       category: WeaponCategories.Shotgun,
-      image: 'aa12.webp',
-      slot: 'primary',
-      ammo: 'shotgun',
+      image: "aa12.webp",
+      slot: "primary",
+      ammo: "shotgun",
       attachments: {
         barrel: false,
         magazine: false,
@@ -433,15 +433,15 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 90,
       },
       notes: {
-        'Fire and Brimstone': 'Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation\'s wielder is immune to Fire Damage.',
+        "Fire and Brimstone": "Incendiary rounds burn targets for 50 damage per second for 3 seconds. Damnation's wielder is immune to Fire Damage.",
       },
     },
     {
       name: Weapons.TheBelgian,
       category: WeaponCategories.Shotgun,
-      image: 'the_belgian.webp',
-      slot: 'secondary',
-      ammo: 'shotgun',
+      image: "the_belgian.webp",
+      slot: "secondary",
+      ammo: "shotgun",
       attachments: {
         barrel: false,
         magazine: false,
@@ -459,16 +459,16 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.TAC14,
       category: WeaponCategories.Shotgun,
-      image: 'tac14.webp',
-      slot: 'primary',
-      ammo: 'shotgun',
+      image: "tac14.webp",
+      slot: "primary",
+      ammo: "shotgun",
       attachments: {
         barrel: true,
         magazine: true,
-        scope: true,
+        scope: false,
         stock: true,
       },
-      rpmFormula: WeaponRpmFormulas.TAC14,
+      rpmFormula: WeaponRpmFormulas.Rechamber,
       qualities: {
         [WeaponQualities.Common]: 97,
         [WeaponQualities.Uncommon]: 98,
@@ -479,9 +479,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Super90,
       category: WeaponCategories.Shotgun,
-      image: 'super90.webp',
-      slot: 'primary',
-      ammo: 'shotgun',
+      image: "super90.webp",
+      slot: "primary",
+      ammo: "shotgun",
       attachments: {
         barrel: true,
         magazine: true,
@@ -501,9 +501,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.MP5,
       category: WeaponCategories.SMG,
-      image: 'mp5.webp',
-      slot: 'primary',
-      ammo: 'pistol_smg',
+      image: "mp5.webp",
+      slot: "primary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -521,9 +521,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.UZI,
       category: WeaponCategories.SMG,
-      image: 'uzi.webp',
-      slot: 'primary',
-      ammo: 'pistol_smg',
+      image: "uzi.webp",
+      slot: "primary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -541,9 +541,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.TEC9,
       category: WeaponCategories.SMG,
-      image: 'tec9.webp',
-      slot: 'secondary',
-      ammo: 'pistol_smg',
+      image: "tec9.webp",
+      slot: "secondary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -561,9 +561,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.UMP45,
       category: WeaponCategories.SMG,
-      image: 'ump45.webp',
-      slot: 'primary',
-      ammo: 'pistol_smg',
+      image: "ump45.webp",
+      slot: "primary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -581,9 +581,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Prototype378,
       category: WeaponCategories.SMG,
-      image: 'ump45.webp',
-      slot: 'primary',
-      ammo: 'pistol_smg',
+      image: "ump45.webp",
+      slot: "primary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: false,
         magazine: false,
@@ -596,15 +596,15 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 128,
       },
       notes: {
-        'ZAP!': 'Significantly slows targets for 1 seconds.',
+        "ZAP!": "Significantly slows targets for 1 seconds.",
       },
     },
     {
       name: Weapons.Vector,
       category: WeaponCategories.SMG,
-      image: 'vector.webp',
-      slot: 'primary',
-      ammo: 'pistol_smg',
+      image: "vector.webp",
+      slot: "primary",
+      ammo: "pistol_smg",
       attachments: {
         barrel: true,
         magazine: true,
@@ -624,9 +624,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Phoenix350L,
       category: WeaponCategories.Sniper,
-      image: 'phoenix_350l.webp',
-      slot: 'primary',
-      ammo: 'sniper',
+      image: "phoenix_350l.webp",
+      slot: "primary",
+      ammo: "sniper",
       attachments: {
         barrel: true,
         magazine: true,
@@ -644,9 +644,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.BarrettM95,
       category: WeaponCategories.Sniper,
-      image: 'barrett_m95.webp',
-      slot: 'primary',
-      ammo: 'sniper',
+      image: "barrett_m95.webp",
+      slot: "primary",
+      ammo: "sniper",
       attachments: {
         barrel: true,
         magazine: true,
@@ -664,9 +664,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.M1A,
       category: WeaponCategories.Sniper,
-      image: 'm1a.webp',
-      slot: 'primary',
-      ammo: 'sniper',
+      image: "m1a.webp",
+      slot: "primary",
+      ammo: "sniper",
       attachments: {
         barrel: true,
         magazine: true,
@@ -684,9 +684,9 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Witness,
       category: WeaponCategories.Sniper,
-      image: 'witness.webp',
-      slot: 'primary',
-      ammo: 'sniper',
+      image: "witness.webp",
+      slot: "primary",
+      ammo: "sniper",
       attachments: {
         barrel: false,
         magazine: false,
@@ -699,16 +699,16 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 151,
       },
       notes: {
-        'Sight Unseen': 'Highlights targets and increases damage dealt to them by 20%.',
-        'Attachments': 'Always have a 4x scope (does not increase weakspot damage) and suppressor (does not increase damage to unaware enemies) equipped.',
+        "Sight Unseen": "Highlights targets and increases damage dealt to them by 20%.",
+        "Attachments": "Always have a 4x scope (does not increase weakspot damage) and suppressor (does not increase damage to unaware enemies) equipped.",
       },
     },
     {
       name: Weapons.Lockjaw,
       category: WeaponCategories.Sniper,
-      image: 'lockjaw.webp',
-      slot: 'primary',
-      ammo: 'sniper',
+      image: "lockjaw.webp",
+      slot: "primary",
+      ammo: "sniper",
       attachments: {
         barrel: false,
         magazine: false,
@@ -721,8 +721,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 159,
       },
       notes: {
-        'Armor-piercing Rounds': 'Damage dealt to armor is also dealt to the Ridden\'s health.',
-        'Clean Shot': 'Destroying armor with this weapon creates Makeshift Armor.',
+        "Armor-piercing Rounds": "Damage dealt to armor is also dealt to the Ridden's health.",
+        "Clean Shot": "Destroying armor with this weapon creates Makeshift Armor.",
       },
     },
   ],
@@ -731,8 +731,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Bat,
       category: WeaponCategories.Melee,
-      image: 'bat.webp',
-      slot: 'secondary',
+      image: "bat.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 5,
@@ -744,8 +744,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Axe,
       category: WeaponCategories.Melee,
-      image: 'fire_axe.webp',
-      slot: 'secondary',
+      image: "fire_axe.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 9,
@@ -757,8 +757,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Hatchet,
       category: WeaponCategories.Melee,
-      image: 'hatchet.webp',
-      slot: 'secondary',
+      image: "hatchet.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 15,
@@ -770,8 +770,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Machete,
       category: WeaponCategories.Melee,
-      image: 'machete.webp',
-      slot: 'secondary',
+      image: "machete.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 19,
@@ -783,22 +783,22 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Tenderizer,
       category: WeaponCategories.Melee,
-      image: 'tenderizer.webp',
-      slot: 'secondary',
+      image: "tenderizer.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.LegendaryWeak]: 13,
         [WeaponQualities.Legendary]: 14,
       },
       notes: {
-        'Mincemeat': 'Dismembers enemies upon impact, and deals 90 damage in a large area of effect.',
+        "Mincemeat": "Dismembers enemies upon impact, and deals 90 damage in a large area of effect.",
       },
     },
     {
       name: Weapons.SkullTotem,
       category: WeaponCategories.Melee,
-      image: 'skull_totem.webp',
-      slot: 'n/a',
+      image: "skull_totem.webp",
+      slot: "n/a",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Rare]: 27,
@@ -806,14 +806,14 @@ export const WeaponsMap: WeaponsMapDefinition = {
         [WeaponQualities.Legendary]: 29,
       },
       notes: {
-        'Inversed quality': 'Statistics worsen when you increase quality. (not applicable for damage and stumble)',
+        "Inversed quality": "Statistics worsen when you increase quality. (not applicable for damage and stumble)",
       },
     },
     {
       name: Weapons.Knife,
       category: WeaponCategories.Melee,
-      image: 'knife.webp',
-      slot: 'n/a',
+      image: "knife.webp",
+      slot: "n/a",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 24,
@@ -822,8 +822,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Fist,
       category: WeaponCategories.Melee,
-      image: 'fist.png',
-      slot: 'n/a',
+      image: "fist.png",
+      slot: "n/a",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 23,
@@ -832,8 +832,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.BobArm,
       category: WeaponCategories.Melee,
-      image: 'bob_arm.png',
-      slot: 'n/a',
+      image: "bob_arm.png",
+      slot: "n/a",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 26,
@@ -842,8 +842,8 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Claws,
       category: WeaponCategories.Melee,
-      image: 'iron_claws.webp',
-      slot: 'secondary',
+      image: "iron_claws.webp",
+      slot: "secondary",
       rpmFormula: WeaponRpmFormulas.Melee,
       qualities: {
         [WeaponQualities.Common]: 30,
@@ -858,15 +858,29 @@ export const WeaponsMap: WeaponsMapDefinition = {
     {
       name: Weapons.Bow,
       category: WeaponCategories.Bow,
-      image: 'bow.webp',
-      slot: 'secondary',
-      ammo: 'arrow',
+      image: "bow.webp",
+      slot: "secondary",
+      ammo: "arrow",
       rpmFormula: WeaponRpmFormulas.Bow,
       qualities: {
         [WeaponQualities.Common]: 6,
         [WeaponQualities.Uncommon]: 7,
         [WeaponQualities.Rare]: 8,
         [WeaponQualities.Epic]: 9,
+      },
+    },
+  ],
+
+  Flamethrowers: [
+    {
+      name: Weapons.Flamethrower,
+      category: WeaponCategories.Flamethrower,
+      image: "flamethrower.webp",
+      slot: "primary",
+      ammo: "fuel",
+      rpmFormula: WeaponRpmFormulas.Flamethrower,
+      qualities: {
+        [WeaponQualities.Common]: 6,
       },
     },
   ],

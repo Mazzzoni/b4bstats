@@ -1,0 +1,372 @@
+[
+  {
+    "name": "Retch",
+    "category": "reekers",
+    "image": "retch.png",
+    "health": {
+      "Standard": 728.04375,
+      "Ferocious": 1001.060156,
+      "Monstrous": 1273.348519
+    },
+    "stumble": {
+      "health": 60,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Reeker",
+    "category": "reekers",
+    "image": "reeker.png",
+    "health": {
+      "Standard": 832.05,
+      "Ferocious": 1144.06875,
+      "Monstrous": 1455.25545
+    },
+    "stumble": {
+      "health": 75,
+      "recovery": 80
+    }
+  },
+  {
+    "name": "Exploder",
+    "category": "reekers",
+    "image": "exploder.png",
+    "health": {
+      "Standard": 728.04375,
+      "Ferocious": 1001.060156,
+      "Monstrous": 1273.348519
+    },
+    "stumble": {
+      "health": 60,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Shredder",
+    "category": "reekers",
+    "image": "shredder.png",
+    "health": {
+      "Standard": 936.05625,
+      "Ferocious": 1287.077344,
+      "Monstrous": 1637.162381
+    },
+    "stumble": {
+      "health": 200,
+      "recovery": 80,
+      "weakspot_multiplier": 1.5
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Tallboy",
+    "category": "tallboys",
+    "image": "tallboy.png",
+    "health": {
+      "Standard": 1404.084375,
+      "Ferocious": 1930.616016,
+      "Monstrous": 2455.743572
+    },
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Bruiser",
+    "category": "tallboys",
+    "image": "bruiser.png",
+    "health": {
+      "Standard": 1976.11875,
+      "Ferocious": 2717.163281,
+      "Monstrous": 3456.231694
+    },
+    "stumble": {
+      "health": 300,
+      "recovery": 100,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Crusher",
+    "category": "tallboys",
+    "image": "crusher.png",
+    "health": {
+      "Standard": 1560.09375,
+      "Ferocious": 2145.128906,
+      "Monstrous": 2728.603969
+    },
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 2.5
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Ripper",
+    "category": "tallboys",
+    "image": "ripper.png",
+    "health": {
+      "Standard": 1664.1,
+      "Ferocious": 2288.1375,
+      "Monstrous": 2910.5109
+    },
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Stinger",
+    "category": "stingers",
+    "image": "stinger.png",
+    "health": {
+      "Standard": 312.01875,
+      "Ferocious": 429.0257813,
+      "Monstrous": 545.7207938
+    },
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Hocker",
+    "category": "stingers",
+    "image": "hocker.png",
+    "health": {
+      "Standard": 312.01875,
+      "Ferocious": 429.0257813,
+      "Monstrous": 545.7207938
+    },
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Stalker",
+    "category": "stingers",
+    "image": "stalker.png",
+    "health": {
+      "Standard": 468.028125,
+      "Ferocious": 643.5386719,
+      "Monstrous": 818.5811906
+    },
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    },
+    "weakspot_multiplier": 2.25
+  },
+  {
+    "name": "Urchin",
+    "category": "stingers",
+    "image": "urchin.png",
+    "health": {
+      "Standard": 416.025,
+      "Ferocious": 572.034375,
+      "Monstrous": 727.627725
+    },
+    "stumble": {
+      "health": 30,
+      "recovery": 15,
+      "weakspot_multiplier": 3
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Slasher",
+    "category": "cultists",
+    "image": "slasher.webp",
+    "health": {
+      "Standard": 1144.06875,
+      "Ferocious": 1573.094531,
+      "Monstrous": 2000.976244
+    },
+    "stumble": {
+      "health": 70,
+      "recovery": 10,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Pusflinger",
+    "category": "cultists",
+    "image": "pusflinger.webp",
+    "health": {
+      "Standard": 728.04375,
+      "Ferocious": 1001.060156,
+      "Monstrous": 1273.348519
+    },
+    "stumble": {
+      "health": 40,
+      "recovery": 10,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Crone",
+    "category": "cultists",
+    "image": "crone.webp",
+    "health": {
+      "Standard": 208.0125,
+      "Ferocious": 286.0171875,
+      "Monstrous": 363.8138625
+    },
+    "stumble": {
+      "health": 1,
+      "recovery": 1,
+      "weakspot_multiplier": 2
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Sniper",
+    "category": "cultists",
+    "image": "sniper.webp",
+    "health": {
+      "Standard": 41.6025,
+      "Ferocious": 57.2034375,
+      "Monstrous": 72.7627725
+    },
+    "stumble": {
+      "health": 0,
+      "recovery": 0
+    }
+  },
+  {
+    "name": "Ogre",
+    "category": "bosses",
+    "image": "ogre.webp",
+    "health": {
+      "Standard": 18275,
+      "Ferocious": 23985.9375,
+      "Monstrous": 29687.7375
+    },
+    "stumble": {
+      "health": 2500,
+      "recovery": 45,
+      "weakspot_multiplier": 3
+    },
+    "weakspot_multiplier": 1.5
+  },
+  {
+    "name": "Hag",
+    "category": "specials",
+    "image": "hag.webp",
+    "health": {
+      "Standard": 8062.5,
+      "Ferocious": 10582.03125,
+      "Monstrous": 13097.53125
+    },
+    "stumble": {
+      "health": 600,
+      "recovery": 110,
+      "weakspot_multiplier": 2.5
+    },
+    "weakspot_multiplier": 2.25
+  },
+  {
+    "name": "Breaker",
+    "category": "bosses",
+    "image": "breaker.webp",
+    "health": {
+      "Standard": 17200,
+      "Ferocious": 22575,
+      "Monstrous": 18627.6
+    },
+    "stumble": {
+      "health": 250,
+      "recovery": 90,
+      "weakspot_multiplier": 1
+    },
+    "weakspot_multiplier": 4
+  },
+  {
+    "name": "Snitch",
+    "category": "specials",
+    "image": "snitcher.webp",
+    "health": {
+      "Standard": 960,
+      "Ferocious": 960,
+      "Monstrous": 960
+    },
+    "stumble": {
+      "health": 40,
+      "recovery": 30,
+      "weakspot_multiplier": 2.5
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Armored Common",
+    "category": "commons",
+    "image": "armored_common.webp",
+    "health": {
+      "Standard": 337.5,
+      "Ferocious": 464.0625,
+      "Monstrous": 670.78125
+    },
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    },
+    "weakspot_multiplier": 13
+  },
+  {
+    "name": "Common",
+    "category": "commons",
+    "image": "common.webp",
+    "health": {
+      "Standard": 22.5,
+      "Ferocious": 30.9375,
+      "Monstrous": 44.71875
+    },
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Festering",
+    "category": "commons",
+    "image": "festering.png",
+    "health": {
+      "Standard": 82.5,
+      "Ferocious": 105.9375,
+      "Monstrous": 134.2715625
+    },
+    "stumble": {
+      "health": 1,
+      "recovery": 0,
+      "weakspot_multiplier": 1
+    },
+    "weakspot_multiplier": 2
+  },
+  {
+    "name": "Sleeper",
+    "category": "specials",
+    "image": "sleeper.webp",
+    "health": 1
+  }
+]

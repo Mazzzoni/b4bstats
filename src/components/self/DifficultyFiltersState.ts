@@ -8,6 +8,7 @@ export type DifficultyFilters = {
   showVeteran: boolean,
   showNightmare: boolean,
   showNoHope: boolean,
+  showLegendary: boolean,
   showSwarm: boolean
 }
 
@@ -18,6 +19,7 @@ const state = atom<DifficultyFilters>({
     showVeteran: false,
     showNightmare: true,
     showNoHope: true,
+    showLegendary: false,
     showSwarm: false,
   },
   effects_UNSTABLE: [persistAtom],

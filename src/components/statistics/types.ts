@@ -62,6 +62,13 @@ export enum Missions
   SurroundedByDevils = 'bodysnatchers_d',
   AwaitingOurJustice = 'bodysnatchers_e',
 
+  // Act 6
+  NoSanctuary = 'riverboat_a',
+  EmergencyBroadcast = 'riverboat_b',
+  GrimRecovery = 'riverboat_c',
+  TheWaterfront = 'riverboat_d',
+  BeholdTheHarbinger = 'riverboat_e',
+
   // Hives
   CausticCesspool = 'dungeon_trench',
   BloodStream = 'dungeon_river',
@@ -159,6 +166,7 @@ export enum Cleaners
   Heng = 'hero_9',
   Sharice = 'hero_10',
   Dan = 'hero_11',
+  Tala = 'hero_12',
 }
 
 export enum Difficulties
@@ -167,6 +175,7 @@ export enum Difficulties
   Veteran = 'normal',
   Nightmare = 'hard',
   NoHope = 'veryhard',
+  Legendary = 'legendary',
   Swarm = 'pvp',
 }
 
@@ -203,6 +212,7 @@ export enum WeaponTypes
   LMG = 'LMG',
   Sniper = 'Sniper',
   Bow = 'Bow',
+  Flamethrower = 'Flamethrower',
 }
 
 export enum Weapons
@@ -259,6 +269,8 @@ export enum Weapons
   Lockjaw,
 
   Bow,
+
+  Flamethrower,
 
   // I don't know what these correspond to (explosions ?)
   None,
@@ -333,6 +345,9 @@ export const WeaponsSniper: Weapons[] = [
 export const WeaponsBow: Weapons[] = [
   Weapons.Bow,
 ];
+export const WeaponsFlamethrower: Weapons[] = [
+  Weapons.Flamethrower,
+];
 
 export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.Melee]: WeaponsMelee,
@@ -343,6 +358,7 @@ export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.LMG]: WeaponsLMG,
   [WeaponTypes.Sniper]: WeaponsSniper,
   [WeaponTypes.Bow]: WeaponsBow,
+  [WeaponTypes.Flamethrower]: WeaponsFlamethrower,
 };
 
 export type MissionsCompletedPerCleaner = {
@@ -351,6 +367,7 @@ export type MissionsCompletedPerCleaner = {
   [Difficulties.Veteran]: number
   [Difficulties.Nightmare]: number
   [Difficulties.NoHope]: number
+  [Difficulties.Legendary]: number
   [Difficulties.Swarm]: number
 }
 
@@ -359,6 +376,7 @@ export type MissionsCompletedPerDifficulty = {
   [Difficulties.Veteran]: number
   [Difficulties.Nightmare]: number
   [Difficulties.NoHope]: number
+  [Difficulties.Legendary]: number
   [Difficulties.Swarm]: number
 }
 

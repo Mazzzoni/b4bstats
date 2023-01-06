@@ -20,6 +20,7 @@ export default function MissionsCompletedPerCleaner() {
   let missionsVeteranCompleted: number[] = [];
   let missionsNightmareCompleted: number[] = [];
   let missionsNoHopeCompleted: number[] = [];
+  let missionsLegendaryCompleted: number[] = [];
   let missionsSwarmCompleted: number[] = [];
   let missionsTotalCompleted: number[] = [];
 
@@ -28,6 +29,7 @@ export default function MissionsCompletedPerCleaner() {
     missionsVeteranCompleted.push(cleaner.normal);
     missionsNightmareCompleted.push(cleaner.hard);
     missionsNoHopeCompleted.push(cleaner.veryhard);
+    missionsLegendaryCompleted.push(cleaner.legendary);
     missionsSwarmCompleted.push(cleaner.pvp);
     missionsTotalCompleted.push(cleaner.total);
   });
@@ -52,6 +54,11 @@ export default function MissionsCompletedPerCleaner() {
       label: t(`difficulties.veryhard`),
       data: missionsNoHopeCompleted,
       backgroundColor: DifficultyColors[Difficulties.NoHope],
+    },
+    {
+      label: t(`difficulties.legendary`),
+      data: missionsLegendaryCompleted,
+      backgroundColor: DifficultyColors[Difficulties.Legendary],
     },
     {
       label: t(`difficulties.pvp`),
@@ -110,7 +117,10 @@ export default function MissionsCompletedPerCleaner() {
                 case 3: // veryhard
                   overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.veryhard;
                   break;
-                case 4: // pvp
+                case 4: // legendary
+                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.legendary;
+                  break;
+                case 5: // pvp
                   overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.pvp;
                   break;
               }

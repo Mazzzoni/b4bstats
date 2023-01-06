@@ -18,6 +18,7 @@ export enum WeaponCategories
   Sniper = 'sniper',
   Melee = 'melee',
   Bow = 'bow',
+  Flamethrower = 'flamethrower',
 }
 
 export enum AttachmentCategories
@@ -57,6 +58,9 @@ export enum WeaponRpmFormulas
 
   // Apply to bow weapons,
   Bow,
+
+  // Apply to flamethrowers
+  Flamethrower,
 
   // Custom formulas
   TAC14,
@@ -109,7 +113,7 @@ export type WeaponDefinition = {
   category: WeaponCategories;
   image: string;
   slot: 'primary' | 'secondary' | 'n/a';
-  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper' | 'arrow';
+  ammo?: 'rifle' | 'pistol_smg' | 'shotgun' | 'sniper' | 'arrow' | 'fuel';
   attachments: {
     barrel: boolean;
     magazine: boolean;

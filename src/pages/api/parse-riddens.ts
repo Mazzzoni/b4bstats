@@ -43,6 +43,10 @@ class Saver
         otherRiddensFile = `${process.cwd()}/data/riddens/nohope/other.json`;
         break;
 
+      case Difficulties.Legendary:
+        otherRiddensFile = `${process.cwd()}/data/riddens/legendary/other.json`;
+        break;
+
       case Difficulties.Swarm:
         otherRiddensFile = `${process.cwd()}/data/riddens/swarm/other.json`;
         break;
@@ -74,6 +78,10 @@ class Saver
         riddenFile = `${process.cwd()}/data/riddens/nohope/riddens.json`;
         break;
 
+      case Difficulties.Legendary:
+        riddenFile = `${process.cwd()}/data/riddens/legendary/riddens.json`;
+        break;
+
       case Difficulties.Swarm:
         riddenFile = `${process.cwd()}/data/riddens/swarm/riddens.json`;
         break;
@@ -90,6 +98,7 @@ class Parser
     [Difficulties.Veteran]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
     [Difficulties.Nightmare]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
     [Difficulties.NoHope]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
+    [Difficulties.Legendary]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
     [Difficulties.Swarm]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
   };
 

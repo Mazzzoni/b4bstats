@@ -39,6 +39,10 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
     return null;
   }
 
+  if (!difficultiesFilter.showLegendary && difficulty === Difficulties.Legendary) {
+    return null;
+  }
+
   if (!difficultiesFilter.showSwarm && difficulty === Difficulties.Swarm) {
     return null;
   }
@@ -159,6 +163,21 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.InTheDepths}/>
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.SurroundedByDevils}/>
               <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.AwaitingOurJustice}/>
+            </div>
+          </div>
+        )}
+
+        {!isPvpDifficulty && (
+          <div className="col-span-3">
+            <strong>{t('acts.act_6')}</strong>
+
+            <div className="mt-3">
+              <strong>{t('segments.river_of_blood')}</strong>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.NoSanctuary}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.EmergencyBroadcast}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.GrimRecovery}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheWaterfront}/>
+              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BeholdTheHarbinger}/>
             </div>
           </div>
         )}
