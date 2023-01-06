@@ -34,6 +34,8 @@ export function weaponTypeToString(weaponType: WeaponTypes): string
       return 'LMG';
     case WeaponTypes.Sniper:
       return 'SNIPER';
+    case WeaponTypes.Bow:
+      return 'BOW';
   }
 
   return 'unknown';

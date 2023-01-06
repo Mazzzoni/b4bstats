@@ -182,7 +182,8 @@
     "SHOTGUN": "Shotguns",
     "SMG": "Sub Machine Guns",
     "LMG": "Light Machine Guns",
-    "SNIPER": "Snipers"
+    "SNIPER": "Snipers",
+    "BOW": "Bow"
   },
   "weapons": {
     "Axe": "Axe",
