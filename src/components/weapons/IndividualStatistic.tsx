@@ -1,6 +1,6 @@
-import { Tooltip } from '@mantine/core';
-import React from 'react';
-import { ChevronsUp } from 'react-feather';
+import { Tooltip } from "@mantine/core";
+import React from "react";
+import { ChevronsUp } from "react-feather";
 
 type Props = {
   tooltipLabel: React.ReactNode;
@@ -11,6 +11,15 @@ type Props = {
 };
 
 export default function IndividualStatistic(statistic: Props) {
+  if (typeof statistic.value === 'undefined') {
+    console.warn({
+      statistic: statistic,
+      warning: "Individual statistic not found, need fix !",
+    });
+
+    return null;
+  }
+
   const fractionDigits = statistic.fractionDigits !== undefined ? statistic.fractionDigits : 2;
 
   return (

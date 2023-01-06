@@ -16185,7 +16185,7 @@
     "attachments": {
       "barrel": true,
       "magazine": true,
-      "scope": true,
+      "scope": false,
       "stock": true
     },
     "qualities": {
@@ -16390,8 +16390,8 @@
           "in": 0.65,
           "out": 0.348075
         },
-        "rpm": 54.54545454545454,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
+        "rpm": 66.66666666666667,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 141,
           "750": 98.7,
@@ -16600,8 +16600,8 @@
           "in": 0.65,
           "out": 0.348075
         },
-        "rpm": 54.54545454545454,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
+        "rpm": 66.66666666666667,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 167.085,
           "750": 116.9595,
@@ -16810,8 +16810,8 @@
           "in": 0.65,
           "out": 0.348075
         },
-        "rpm": 54.54545454545454,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
+        "rpm": 66.66666666666667,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 197.995725,
           "750": 138.5970075,
@@ -17020,8 +17020,8 @@
           "in": 0.65,
           "out": 0.348075
         },
-        "rpm": 54.54545454545454,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed / 3))",
+        "rpm": 66.66666666666667,
+        "rpmFormula": "(60 / (delayBetweenShots + 0.1 + rechamberLength))",
         "shotgunRangeDamages": {
           "500": 234.62493412499998,
           "750": 164.2374538875,
@@ -26056,14 +26056,14 @@
         "stumblePerShot": 63,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 410,
-          "ads": 246,
+          "jog": 256.25,
+          "ads": 153.75,
           "hipfire": 307.5,
-          "other": 205
+          "other": 128.125
         },
         "rpm": 96.7741935483871,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26149,14 +26149,14 @@
         "stumblePerShot": 81.89999999999999,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 410,
-          "ads": 246,
+          "jog": 256.25,
+          "ads": 153.75,
           "hipfire": 307.5,
-          "other": 205
+          "other": 128.125
         },
         "rpm": 96.7741935483871,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26242,14 +26242,14 @@
         "stumblePerShot": 106.47,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 410,
-          "ads": 246,
+          "jog": 256.25,
+          "ads": 153.75,
           "hipfire": 307.5,
-          "other": 205
+          "other": 128.125
         },
         "rpm": 96.7741935483871,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26335,14 +26335,14 @@
         "stumblePerShot": 138.411,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 410,
-          "ads": 246,
+          "jog": 256.25,
+          "ads": 153.75,
           "hipfire": 307.5,
-          "other": 205
+          "other": 128.125
         },
         "rpm": 96.7741935483871,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26451,14 +26451,14 @@
         "stumblePerShot": 28,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26544,14 +26544,14 @@
         "stumblePerShot": 34.160000000000004,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26637,14 +26637,14 @@
         "stumblePerShot": 41.675200000000004,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26730,14 +26730,14 @@
         "stumblePerShot": 50.843744,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26846,14 +26846,14 @@
         "stumblePerShot": 16,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
-          "hipfire": 396.9,
-          "other": 220.5
+          "jog": 275.625,
+          "ads": 165.375,
+          "hipfire": 330.75,
+          "other": 137.8125
         },
         "rpm": 86.20689655172413,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -26939,14 +26939,14 @@
         "stumblePerShot": 20.8,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
-          "hipfire": 396.9,
-          "other": 220.5
+          "jog": 275.625,
+          "ads": 165.375,
+          "hipfire": 330.75,
+          "other": 137.8125
         },
         "rpm": 86.20689655172413,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27032,14 +27032,14 @@
         "stumblePerShot": 27.04,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
-          "hipfire": 396.9,
-          "other": 220.5
+          "jog": 275.625,
+          "ads": 165.375,
+          "hipfire": 330.75,
+          "other": 137.8125
         },
         "rpm": 86.20689655172413,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27125,14 +27125,14 @@
         "stumblePerShot": 35.152,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
-          "hipfire": 396.9,
-          "other": 220.5
+          "jog": 275.625,
+          "ads": 165.375,
+          "hipfire": 330.75,
+          "other": 137.8125
         },
         "rpm": 86.20689655172413,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27241,14 +27241,14 @@
         "stumblePerShot": 23,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 107.14285714285714,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27334,14 +27334,14 @@
         "stumblePerShot": 29.9,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 107.14285714285714,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27427,14 +27427,14 @@
         "stumblePerShot": 38.87,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 107.14285714285714,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27520,14 +27520,14 @@
         "stumblePerShot": 50.531,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 107.14285714285714,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27634,19 +27634,19 @@
         "stamina": 30,
         "meleeStateLength": 1.2,
         "meleeStateInterruptLength": 0.678,
-        "meleeImpactStateLength": 2.25,
+        "meleeImpactStateLength": 2,
         "stumblePowerMultiplier": 0.4,
         "stumblePerShot": 80,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27727,19 +27727,19 @@
         "stamina": 30,
         "meleeStateLength": 1.2,
         "meleeStateInterruptLength": 0.678,
-        "meleeImpactStateLength": 2.25,
+        "meleeImpactStateLength": 2,
         "stumblePowerMultiplier": 0.4,
         "stumblePerShot": 100,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 69.47660954145438,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27851,14 +27851,14 @@
         "stumblePerShot": 125,
         "pellets": 1,
         "swap": {
-          "in": 0.7625,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
-          "hipfire": 396.9,
-          "other": 220.5
+          "jog": 275.625,
+          "ads": 165.375,
+          "hipfire": 330.75,
+          "other": 137.8125
         },
         "rpm": 56.23242736644798,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -27944,14 +27944,14 @@
         "stumblePerShot": 162.5,
         "pellets": 1,
         "swap": {
-          "in": 0.915,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 415,
-          "ads": 249,
+          "jog": 259.375,
+          "ads": 155.625,
           "hipfire": 311.25,
-          "other": 207.5
+          "other": 129.6875
         },
         "rpm": 48.52405984634047,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28037,14 +28037,14 @@
         "stumblePerShot": 211.25,
         "pellets": 1,
         "swap": {
-          "in": 1.22,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 395,
-          "ads": 237,
-          "hipfire": 237,
-          "other": 197.5
+          "jog": 246.875,
+          "ads": 148.125,
+          "hipfire": 296.25,
+          "other": 123.4375
         },
         "rpm": 42.674253200568984,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28061,7 +28061,7 @@
       "movementSpeed.other": true,
       "ads.in": false,
       "ads.out": false,
-      "swap.in": true,
+      "swap.in": false,
       "swap.out": false,
       "reloadSpeed": false,
       "stumblePowerMultiplier": false,
@@ -28153,14 +28153,14 @@
         "stumblePerShot": 20,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
+          "jog": 275.625,
+          "ads": 165.375,
           "hipfire": 330.75,
-          "other": 220.5
+          "other": 137.8125
         },
         "rpm": 94.48818897637794,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28269,14 +28269,14 @@
         "stumblePerShot": 40,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 441,
-          "ads": 264.6,
+          "jog": 275.625,
+          "ads": 165.375,
           "hipfire": 330.75,
-          "other": 220.5
+          "other": 137.8125
         },
         "rpm": 136.36363636363637,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28385,14 +28385,14 @@
         "stumblePerShot": 750,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 400.26,
-          "ads": 240.156,
+          "jog": 250.1625,
+          "ads": 150.0975,
           "hipfire": 300.195,
-          "other": 200.13
+          "other": 125.08125
         },
         "rpm": 96.7741935483871,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28501,14 +28501,14 @@
         "stumblePerShot": 16,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 109.09090909090908,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28594,14 +28594,14 @@
         "stumblePerShot": 20.8,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 109.09090909090908,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28687,14 +28687,14 @@
         "stumblePerShot": 27.04,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 109.09090909090908,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -28780,14 +28780,14 @@
         "stumblePerShot": 35.152,
         "pellets": 1,
         "swap": {
-          "in": 0.5,
-          "out": 0.4
+          "in": 0.55,
+          "out": 0
         },
         "movementSpeed": {
-          "jog": 425,
-          "ads": 255,
-          "hipfire": 340,
-          "other": 212.5
+          "jog": 265.625,
+          "ads": 159.375,
+          "hipfire": 318.75,
+          "other": 132.8125
         },
         "rpm": 109.09090909090908,
         "rpmFormula": "(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))",
@@ -29630,21 +29630,21 @@
           3990,
           4000
         ],
-        "stamina": 4,
+        "stamina": 3.25,
         "pellets": 1,
         "swap": {
-          "in": 0.75,
-          "out": 0.5
+          "in": 0,
+          "out": 0.25
         },
         "ads": {
-          "in": 0.45,
-          "out": 0.45
+          "in": 0.5,
+          "out": 0.530725
         },
         "movementSpeed": {
-          "jog": 430,
-          "ads": 172,
-          "hipfire": 279.5,
-          "other": 107.5
+          "jog": 1,
+          "ads": 268.75,
+          "hipfire": 107.5,
+          "other": 174.6875
         },
         "rpm": 0,
         "rpmFormula": "Unknown"
@@ -30461,21 +30461,21 @@
           3990,
           4000
         ],
-        "stamina": 4,
+        "stamina": 3,
         "pellets": 1,
         "swap": {
-          "in": 0.6375,
-          "out": 0.425
+          "in": 0,
+          "out": 0.25
         },
         "ads": {
-          "in": 0.405,
-          "out": 0.405
+          "in": 0.425,
+          "out": 0.45111625
         },
         "movementSpeed": {
-          "jog": 430,
-          "ads": 189.2,
-          "hipfire": 307.45,
-          "other": 118.25
+          "jog": 1,
+          "ads": 268.75,
+          "hipfire": 118.25,
+          "other": 192.15625
         },
         "rpm": 0,
         "rpmFormula": "Unknown"
@@ -31292,21 +31292,21 @@
           3990,
           4000
         ],
-        "stamina": 4,
+        "stamina": 2.75,
         "pellets": 1,
         "swap": {
-          "in": 0.541875,
-          "out": 0.36125
+          "in": 0,
+          "out": 0.25
         },
         "ads": {
-          "in": 0.3645,
-          "out": 0.3645
+          "in": 0.36125,
+          "out": 0.3834488125
         },
         "movementSpeed": {
-          "jog": 430,
-          "ads": 208.12,
-          "hipfire": 338.195,
-          "other": 130.075
+          "jog": 1,
+          "ads": 268.75,
+          "hipfire": 130.075,
+          "other": 211.371875
         },
         "rpm": 0,
         "rpmFormula": "Unknown"
@@ -32123,21 +32123,21 @@
           3990,
           4000
         ],
-        "stamina": 4,
+        "stamina": 2.5,
         "pellets": 1,
         "swap": {
-          "in": 0.46059375,
-          "out": 0.3070625
+          "in": 0,
+          "out": 0.25
         },
         "ads": {
-          "in": 0.32805,
-          "out": 0.32805
+          "in": 0.3070625,
+          "out": 0.325931490625
         },
         "movementSpeed": {
-          "jog": 430,
-          "ads": 228.932,
-          "hipfire": 372.0145,
-          "other": 143.0825
+          "jog": 1,
+          "ads": 268.75,
+          "hipfire": 143.0825,
+          "other": 232.5090625
         },
         "rpm": 0,
         "rpmFormula": "Unknown"
@@ -32148,12 +32148,12 @@
       "magazineSize": false,
       "movementSpeed.jog": false,
       "movementSpeed.hipfire": true,
-      "movementSpeed.ads": true,
+      "movementSpeed.ads": false,
       "movementSpeed.other": true,
       "ads.in": true,
       "ads.out": true,
-      "swap.in": true,
-      "swap.out": true,
+      "swap.in": false,
+      "swap.out": false,
       "reloadSpeed": false,
       "stumblePowerMultiplier": false,
       "weakspotDamageMultiplier": false

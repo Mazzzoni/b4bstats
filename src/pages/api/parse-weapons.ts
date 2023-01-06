@@ -10,7 +10,7 @@ import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
 import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
 import _ from 'lodash';
 
-const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-09-02.xlsm`;
+const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-12-06.xlsm`;
 
 enum RangedWeaponsColumns
 {
@@ -63,12 +63,12 @@ enum MeleeWeaponsColumns
   MeleeStateLength = 26,
   MeleeStateInterruptLength = 27,
   MeleeImpactStateLength = 28,
-  MoveSpeedBase = 74,
-  MoveSpeedAds = 77,
-  MoveSpeedHipFire = 80,
-  MoveSpeedOther = 83,
-  SwapSpeedRaise = 100,
-  SwapSpeedLower = 103,
+  MoveSpeedBase = 84,
+  MoveSpeedAds = 87,
+  MoveSpeedHipFire = 90,
+  MoveSpeedOther = 93,
+  SwapSpeedRaise = 113,
+  SwapSpeedLower = 114,
 }
 
 enum BowWeaponsColumns
@@ -113,6 +113,9 @@ class Parser
     const guns = workSheets[0];
     const melees = workSheets[1];
     const bows = workSheets[2];
+
+    // TODO: Parse flamethrowers sheet
+    const flamethrowers = workSheets[3];
 
     this.parseRangedWeapons(guns);
     this.parseMeleeWeapons(melees);
