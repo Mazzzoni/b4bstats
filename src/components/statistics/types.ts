@@ -1,82 +1,82 @@
 export enum ProgressionTypes
 {
-  Online = 'online',
-  Offline = 'offline',
-  Merged = 'merged',
+  Online = "online",
+  Offline = "offline",
+  Merged = "merged",
 }
 
 export enum Missions
 {
   // Act 1
-  Resurgence = 'evans_a',
-  TunnelOfBlood = 'evans_b',
-  PainTrain = 'evans_c',
-  TheCrossing = 'evans_d',
+  Resurgence = "evans_a",
+  TunnelOfBlood = "evans_b",
+  PainTrain = "evans_c",
+  TheCrossing = "evans_d",
 
-  ACleanSweep = 'finley_rescue_a',
-  BookWorms = 'finley_rescue_b',
-  BarRoomBlitz = 'finley_rescue_c',
+  ACleanSweep = "finley_rescue_a",
+  BookWorms = "finley_rescue_b",
+  BarRoomBlitz = "finley_rescue_c",
 
-  SpecialDelivery = 'finley_diner_a',
-  TheDiner = 'finley_diner_b',
+  SpecialDelivery = "finley_diner_a",
+  TheDiner = "finley_diner_b",
 
-  BadSeeds = 'bluedog_a',
-  HellsBells = 'bluedog_b',
-  Abandoned = 'bluedog_c',
-  TheSoundOfThunder = 'bluedog_d',
+  BadSeeds = "bluedog_a",
+  HellsBells = "bluedog_b",
+  Abandoned = "bluedog_c",
+  TheSoundOfThunder = "bluedog_d",
 
   // Act 2
-  ACallToArms = 'finley_police_a',
-  TheHandyMan = 'finley_police_b',
+  ACallToArms = "finley_police_a",
+  TheHandyMan = "finley_police_b",
 
-  PipeCleaners = 'clog_a',
-  Hinterland = 'clog_b',
-  TrailerTrashed = 'clog_c',
-  TheClog = 'clog_d',
-  TheBrokenBird = 'clog_e',
+  PipeCleaners = "clog_a",
+  Hinterland = "clog_b",
+  TrailerTrashed = "clog_c",
+  TheClog = "clog_d",
+  TheBrokenBird = "clog_e",
 
-  HeraldsOfTheWormPart1 = 'finley_church_a',
-  HeraldsOfTheWormPart2 = 'finley_church_b',
-  GraveDanger = 'finley_church_c',
+  HeraldsOfTheWormPart1 = "finley_church_a",
+  HeraldsOfTheWormPart2 = "finley_church_b",
+  GraveDanger = "finley_church_c",
 
   // Act 3
-  FartherAfield = 'manor_a',
-  BlazingTrails = 'manor_b',
-  CabinsByTheLake = 'manor_c',
-  GardenParty = 'manor_d',
-  T5 = 'manor_e',
+  FartherAfield = "manor_a",
+  BlazingTrails = "manor_b",
+  CabinsByTheLake = "manor_c",
+  GardenParty = "manor_d",
+  T5 = "manor_e",
 
-  AFriendInNeed = 'cdc_a',
-  MakingTheGrade = 'cdc_b',
-  TheRoadToHell = 'cdc_c',
-  TheBodyDump = 'cdc_d',
+  AFriendInNeed = "cdc_a",
+  MakingTheGrade = "cdc_b",
+  TheRoadToHell = "cdc_c",
+  TheBodyDump = "cdc_d",
 
   // Act 4
-  TheAbomination = 'titan_a',
+  TheAbomination = "titan_a",
 
   // Act 5
-  LightGuideUs = 'bodysnatchers_a',
-  ToTheDenOfEvil = 'bodysnatchers_b',
-  WhereMeFlockChained = 'bodysnatchers_b2',
-  InTheDepths = 'bodysnatchers_c',
-  SurroundedByDevils = 'bodysnatchers_d',
-  AwaitingOurJustice = 'bodysnatchers_e',
+  LightGuideUs = "bodysnatchers_a",
+  ToTheDenOfEvil = "bodysnatchers_b",
+  WhereMeFlockChained = "bodysnatchers_b2",
+  InTheDepths = "bodysnatchers_c",
+  SurroundedByDevils = "bodysnatchers_d",
+  AwaitingOurJustice = "bodysnatchers_e",
 
   // Act 6
-  NoSanctuary = 'riverboat_a',
-  EmergencyBroadcast = 'riverboat_b',
-  GrimRecovery = 'riverboat_c',
-  TheWaterfront = 'riverboat_d',
-  BeholdTheHarbinger = 'riverboat_e',
+  NoSanctuary = "riverboat_a",
+  EmergencyBroadcast = "riverboat_b",
+  GrimRecovery = "riverboat_c",
+  TheWaterfront = "riverboat_d",
+  BeholdTheHarbinger = "riverboat_e",
 
   // Hives
-  CausticCesspool = 'dungeon_trench',
-  BloodStream = 'dungeon_river',
-  TheCut = 'dungeon_chasm',
-  SunkenPassage = 'dungeon_chamber',
-  TheNursery = 'dungeon_arena',
-  BroodLair = 'dungeon_infestation',
-  Below300 = 'dungeon_mines',
+  CausticCesspool = "dungeon_trench",
+  BloodStream = "dungeon_river",
+  TheCut = "dungeon_chasm",
+  SunkenPassage = "dungeon_chamber",
+  TheNursery = "dungeon_arena",
+  BroodLair = "dungeon_infestation",
+  Below300 = "dungeon_mines",
 }
 
 export const SwarmMissions: Missions[] = [
@@ -129,54 +129,54 @@ export enum MiscellaneousStatistics
 
 export enum BurnCards
 {
-  AmmoDrop = 'Burn_AmmoRestoreMaxTeam_25',
-  DustyCustomAssaultRifle = 'Burn_RollGunAR',
-  DustyCustomHandgun = 'Burn_RollGunHG',
-  DustyCustomShotgun = 'Burn_RollGunSG',
-  DustyCustomSMG = 'Burn_RollGunSMG',
-  DustyCustomLMG = 'Burn_RollGunLMG',
-  DustyCustomSniper = 'Burn_RollGunSNI',
-  ExtraPadding = 'Burn_TraumaResistTeam_25',
-  HazardSuit = 'Burn_ElementalResistTeam_25',
-  HellCanWait = 'Burn_ExtraContinue_1',
-  HiredGun = 'Burn_HiredGun_5',
-  SlipperyWhenWet = 'Burn_BreakoutTeam',
-  UrgentCare = 'Burn_TraumaRecoverTeam_25',
-  Windfall = 'Burn_TeamCurrency_250',
+  AmmoDrop = "Burn_AmmoRestoreMaxTeam_25",
+  DustyCustomAssaultRifle = "Burn_RollGunAR",
+  DustyCustomHandgun = "Burn_RollGunHG",
+  DustyCustomShotgun = "Burn_RollGunSG",
+  DustyCustomSMG = "Burn_RollGunSMG",
+  DustyCustomLMG = "Burn_RollGunLMG",
+  DustyCustomSniper = "Burn_RollGunSNI",
+  ExtraPadding = "Burn_TraumaResistTeam_25",
+  HazardSuit = "Burn_ElementalResistTeam_25",
+  HellCanWait = "Burn_ExtraContinue_1",
+  HiredGun = "Burn_HiredGun_5",
+  SlipperyWhenWet = "Burn_BreakoutTeam",
+  UrgentCare = "Burn_TraumaRecoverTeam_25",
+  Windfall = "Burn_TeamCurrency_250",
 
   // Not used released at the moment
-  DefenseUpgrade = 'DefenseUpgrade',
-  GroupHug = 'GroupHug',
-  AttachmentScavenger = 'AttachmentScavenger',
-  MedicalSupplyScavenger = 'MedicalSupplyScavenger',
-  OffensiveSupplyScavenger = 'OffensiveSupplyScavenger',
-  SquadArmor = 'SquadArmor',
+  DefenseUpgrade = "DefenseUpgrade",
+  GroupHug = "GroupHug",
+  AttachmentScavenger = "AttachmentScavenger",
+  MedicalSupplyScavenger = "MedicalSupplyScavenger",
+  OffensiveSupplyScavenger = "OffensiveSupplyScavenger",
+  SquadArmor = "SquadArmor",
 }
 
 export enum Cleaners
 {
-  Evangelo = 'hero_1',
-  Walker = 'hero_2',
-  Holly = 'hero_3',
-  Hoffman = 'hero_4',
-  Doc = 'hero_5',
-  Jim = 'hero_6',
-  Karlee = 'hero_7',
-  Mom = 'hero_8',
-  Heng = 'hero_9',
-  Sharice = 'hero_10',
-  Dan = 'hero_11',
-  Tala = 'hero_12',
+  Evangelo = "hero_1",
+  Walker = "hero_2",
+  Holly = "hero_3",
+  Hoffman = "hero_4",
+  Doc = "hero_5",
+  Jim = "hero_6",
+  Karlee = "hero_7",
+  Mom = "hero_8",
+  Heng = "hero_9",
+  Sharice = "hero_10",
+  Dan = "hero_11",
+  Tala = "hero_12",
 }
 
 export enum Difficulties
 {
-  Recruit = 'easy',
-  Veteran = 'normal',
-  Nightmare = 'hard',
-  NoHope = 'veryhard',
-  Legendary = 'legendary',
-  Swarm = 'pvp',
+  Recruit = "easy",
+  Veteran = "normal",
+  Nightmare = "hard",
+  NoHope = "veryhard",
+  Legendary = "legendary",
+  Swarm = "pvp",
 }
 
 export enum Riddens
@@ -200,19 +200,23 @@ export enum Riddens
   Crusher,
   Tallboy,
   Ripper,
+
+  Lobber,
+  Swarmer,
+  Wailer,
 }
 
 export enum WeaponTypes
 {
-  Melee = 'Melee',
-  AssaultRifle = 'AssaultRifle',
-  Handgun = 'Handgun',
-  Shotgun = 'Shotgun',
-  SMG = 'SMG',
-  LMG = 'LMG',
-  Sniper = 'Sniper',
-  Bow = 'Bow',
-  Flamethrower = 'Flamethrower',
+  Melee = "Melee",
+  AssaultRifle = "AssaultRifle",
+  Handgun = "Handgun",
+  Shotgun = "Shotgun",
+  SMG = "SMG",
+  LMG = "LMG",
+  Sniper = "Sniper",
+  Bow = "Bow",
+  Flamethrower = "Flamethrower",
 }
 
 export enum Weapons

@@ -173,7 +173,10 @@
     "bruiser": "Bruiser",
     "crusher": "Crusher",
     "tallboy": "Tallboy",
-    "ripper": "Ripper"
+    "ripper": "Ripper",
+    "lobber": "Lobber",
+    "swarmer": "Swarmer",
+    "wailer": "Wailer"
   },
   "weapons_types": {
     "MELEE": "Melee",
