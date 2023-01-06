@@ -18,6 +18,7 @@ export enum WeaponCategories
   Sniper = 'sniper',
   Melee = 'melee',
   Bow = 'bow',
+  Flamethrower = 'flamethrower',
 }
 
 export enum AttachmentCategories

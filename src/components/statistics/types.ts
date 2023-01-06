@@ -212,6 +212,7 @@ export enum WeaponTypes
   LMG = 'LMG',
   Sniper = 'Sniper',
   Bow = 'Bow',
+  Flamethrower = 'Flamethrower',
 }
 
 export enum Weapons
@@ -268,6 +269,8 @@ export enum Weapons
   Lockjaw,
 
   Bow,
+
+  Flamethrower,
 
   // I don't know what these correspond to (explosions ?)
   None,
@@ -342,6 +345,9 @@ export const WeaponsSniper: Weapons[] = [
 export const WeaponsBow: Weapons[] = [
   Weapons.Bow,
 ];
+export const WeaponsFlamethrower: Weapons[] = [
+  Weapons.Flamethrower,
+];
 
 export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.Melee]: WeaponsMelee,
@@ -352,6 +358,7 @@ export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.LMG]: WeaponsLMG,
   [WeaponTypes.Sniper]: WeaponsSniper,
   [WeaponTypes.Bow]: WeaponsBow,
+  [WeaponTypes.Flamethrower]: WeaponsFlamethrower,
 };
 
 export type MissionsCompletedPerCleaner = {

@@ -163,6 +163,8 @@ export default class Statistics
 
     [Weapons.Bow]: 0,
 
+    [Weapons.Flamethrower]: 0,
+
     [Weapons.None]: 0,
     [Weapons.Unarmed]: 0,
   };
@@ -309,6 +311,8 @@ export default class Statistics
 
       // Bow kills do not seem to be tracked in save file
       [Weapons.Bow]: 0,
+
+      [Weapons.Flamethrower]: _.get(rawWeaponsKills, 'FlameThrower01', 0),
 
       [Weapons.None]: _.get(rawWeaponsKills, 'None', 0),
       [Weapons.Unarmed]: _.get(rawWeaponsKills, 'Unarmed', 0),

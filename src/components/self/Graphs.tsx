@@ -93,24 +93,17 @@ export default function Graphs() {
       <Space my={50}/>
 
       <div className="grid grid-cols-12">
-        <div className="col-span-4">
+        <div className="col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_ar')}
             type={WeaponTypes.AssaultRifle}
           />
         </div>
 
-        <div className="col-span-4">
+        <div className="col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_shotgun')}
             type={WeaponTypes.Shotgun}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <RiddenKilledPerWeaponTypeSet
-            title={t('graphs.ridden_killed_smg')}
-            type={WeaponTypes.SMG}
           />
         </div>
       </div>
@@ -118,13 +111,24 @@ export default function Graphs() {
       <Space my={50}/>
 
       <div className="grid grid-cols-12">
-        <div className="col-span-4">
+        <div className="col-span-6">
+          <RiddenKilledPerWeaponTypeSet
+            title={t('graphs.ridden_killed_smg')}
+            type={WeaponTypes.SMG}
+          />
+        </div>
+
+        <div className="col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_melee')}
             type={WeaponTypes.Melee}
           />
         </div>
+      </div>
 
+      <Space my={50}/>
+
+      <div className="grid grid-cols-12">
         <div className="col-span-4">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_lmg')}
@@ -136,6 +140,13 @@ export default function Graphs() {
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_sniper')}
             type={WeaponTypes.Sniper}
+          />
+        </div>
+
+        <div className="col-span-4">
+          <RiddenKilledPerWeaponTypeSet
+            title={t('graphs.ridden_killed_flamethrower')}
+            type={WeaponTypes.Flamethrower}
           />
         </div>
       </div>

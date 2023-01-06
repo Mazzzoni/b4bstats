@@ -183,7 +183,8 @@
     "SMG": "Sub Machine Guns",
     "LMG": "Light Machine Guns",
     "SNIPER": "Snipers",
-    "BOW": "Bow"
+    "BOW": "Bow",
+    "FLAMETHROWER": "Flamethrower"
   },
   "weapons": {
     "Axe": "Axe",
@@ -230,6 +231,7 @@
     "Sni02": "Barrett M95",
     "Sni03": "Lockjaw",
     "Bow": "Bow",
+    "FlameThrower01": "Flamethrower",
     "AR03Corrupted": "Witness"
   },
   "graphs": {
@@ -268,7 +270,8 @@
     "ridden_killed_smg": "Ridden killed with Sub Machine Guns",
     "ridden_killed_melee": "Ridden killed with Melee weapons",
     "ridden_killed_lmg": "Ridden killed with Light Machine Guns",
-    "ridden_killed_sniper": "Ridden killed with Snipers"
+    "ridden_killed_sniper": "Ridden killed with Snipers",
+    "ridden_killed_flamethrower": "Ridden killed with Flamethrowers"
   },
   "achievements": {
     "title": "Achievements"
