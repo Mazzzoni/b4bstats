@@ -465,7 +465,7 @@ export const WeaponsMap: WeaponsMapDefinition = {
       attachments: {
         barrel: true,
         magazine: true,
-        scope: true,
+        scope: false,
         stock: true,
       },
       rpmFormula: WeaponRpmFormulas.Rechamber,
