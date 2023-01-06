@@ -43,6 +43,10 @@ export const RiddenColors: Record<Riddens, string> = {
   [Riddens.Crusher]: '#bb0000',
   [Riddens.Tallboy]: '#bb0000',
   [Riddens.Ripper]: '#bb0000',
+
+  [Riddens.Lobber]: '#875432',
+  [Riddens.Swarmer]: '#875432',
+  [Riddens.Wailer]: '#875432',
 };
 
 export const DifficultyColors: Record<Difficulties, string> = {
