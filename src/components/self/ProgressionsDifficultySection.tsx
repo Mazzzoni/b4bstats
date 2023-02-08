@@ -1,4 +1,4 @@
-import { Cleaners, Difficulties, Missions, Progressions } from '@components/statistics/types';
+import { Cleaners, Difficulties, Missions, Progressions, SwarmMissions } from '@components/statistics/types';
 import { Divider } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import { useRecoilValue } from 'recoil';
@@ -15,7 +15,9 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
   const {t} = useTranslation();
   const difficultiesFilter = useRecoilValue(DifficultyFiltersState);
 
-  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? 18 : 40;
+  const maxMissionsCount = Object.keys(Missions).length;
+  const maxSwarmMissionsCount = Object.keys(SwarmMissions).length
+  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? maxSwarmMissionsCount : maxMissionsCount;
   let missionsCompletedCount = 0;
 
   // Increment missions completed based on cleaner progression
