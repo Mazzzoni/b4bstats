@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { Cleaners, ProgressionTypes } from '@components/statistics/types';
-import { getCleanerNameById } from '@utils/generic';
 import { Award, List, PieChart, X } from 'react-feather';
+import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById } from '@utils/generic';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
@@ -18,6 +18,7 @@ export default function SelfQuicklinks() {
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
   const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
   const [showRemoveCachedStatsButton, setShowRemoveCachedStatsButton] = useState(false);
+  const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
 
   useEffect(() => {
     // Don't check right away, local storage won't be updated yet
@@ -127,7 +128,7 @@ export default function SelfQuicklinks() {
       </div>
 
       <div className="space-y-2 pt-1 pb-2 border-bottom-subtle">
-        {Object.values(Cleaners).map((cleanerId, i) => (
+        {cleanerIds.map((cleanerId, i) => (
           <a
             key={cleanerId}
             className={`flex items-center cursor-pointer hover:bg-white/10`}
