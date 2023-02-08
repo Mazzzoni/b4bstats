@@ -172,22 +172,20 @@ export default function Achievements() {
           />
         </div>
 
-        {
-          cleanerIds.map((cleanerId) => (
-            <div key={cleanerId} className="col-span-4">
-              <ProgressMilestones
-                title={`250 Missions completed as ${getCleanerNameById(cleanerId)}`}
-                maxValue={250}
-                currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner[cleanerId].total}
-                milestones={[
-                  {step: 25},
-                  {step: 50},
-                  {step: 100},
-                ]}
-              />
+        {cleanerIds.map((cleanerId) => (
+          <div key={cleanerId} className="col-span-4">
+            <ProgressMilestones
+              title={`250 Missions completed as ${getCleanerNameById(cleanerId)}`}
+              maxValue={250}
+              currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner[cleanerId].total}
+              milestones={[
+                {step: 25},
+                {step: 50},
+                {step: 100},
+              ]}
+            />
           </div>
-          ))
-        }
+        ))}
 
         <div className="col-span-4">
           <ProgressMilestones

@@ -26,9 +26,11 @@ export default function MissionsCompletedPerCleaner() {
   let missionsTotalCompleted: number[] = [];
 
   const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
+
   cleanerIds.map((cleanerId) => _.replace(cleanerId, "hero_", "")).map((cleanerId) => {
-    const index = +cleanerId - 1;
-    const cleaner = Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner)[index];
+    const cleanerIndex = +cleanerId - 1;
+    const cleaner = Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner)[cleanerIndex];
+
     missionsRecruitCompleted.push(cleaner.easy);
     missionsVeteranCompleted.push(cleaner.normal);
     missionsNightmareCompleted.push(cleaner.hard);

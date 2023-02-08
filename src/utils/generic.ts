@@ -8,8 +8,21 @@ export function getCleanerNameById(cleanerId: string): string
   return Object.keys(Cleaners)[index];
 }
 
-// just change the order here if needed
-export const currentCleanerOrder: CleanerNames[] = ["Evangelo", "Walker", "Holly", "Mom", "Doc", "Hoffman", "Jim", "Karlee", "Heng", "Sharice", "Dan", "Tala"]
+// Change cleaners order here if needed
+export const currentCleanerOrder: CleanerNames[] = [
+  'Evangelo',
+  'Walker',
+  'Holly',
+  'Mom',
+  'Doc',
+  'Hoffman',
+  'Jim',
+  'Karlee',
+  'Heng',
+  'Sharice',
+  'Dan',
+  'Tala',
+];
 
 export function getCleanerIdsByNames(cleanerNames: CleanerNames[]): Cleaners[]
 {
