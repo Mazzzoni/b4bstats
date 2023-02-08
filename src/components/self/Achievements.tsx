@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 import StatisticsState from '@components/self/StatisticsState';
 import ProgressMilestones from '@components/common/ProgressMilestones';
 import Statistics from '@components/statistics/Statistics';
-import { Cleaners, MiscellaneousStatistics, Riddens, Weapons, WeaponTypes } from '@components/statistics/types';
+import { MiscellaneousStatistics, Riddens, Weapons, WeaponTypes } from '@components/statistics/types';
 import { createRef } from 'react';
 import { useMantineTheme } from '@mantine/core';
 import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById, getFormattedDate } from '@utils/generic';
