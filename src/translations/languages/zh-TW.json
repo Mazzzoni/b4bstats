@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "請注意 <b>Xbox Game Pass</b> 在每個人的存取位置不同 (包含子資料夾)，你可能需要重複試幾次直到成功顯示數據為止。",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "如果你是使用Epic Games Store遊玩，你會在這裡找到你的數據檔案:",
-    "windows_disclaimer": "請注意 <b>Windows</b> 某些資料夾是預設隱藏的 (<code>AppData</code> 便是其中之一)，如果你找不到檔案，請嘗試在 <b>Windows</b> 設定裡選取顯示隱藏資料夾。"
+    "windows_disclaimer": "請注意 <b>Windows</b> 某些資料夾是預設隱藏的 (<code>AppData</code> 便是其中之一)，如果你找不到檔案，請嘗試在 <b>Windows</b> 設定裡選取顯示隱藏資料夾。",
+    "save_to_local": "保存至本地"
   },
   "dropzone": {
     "label": "請將檔案拖入，或者點取視窗以選擇檔案位置"

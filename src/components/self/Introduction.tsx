@@ -1,11 +1,14 @@
-import { useSetRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
 import StatisticsState from '@components/self/StatisticsState';
-import { Divider, Kbd } from '@mantine/core';
+import SavetoLocalState from '@components/self/SaveToLocal';
+import { Divider, Kbd, Checkbox } from '@mantine/core';
 import Dropzone from '@components/common/Dropzone';
 
 export default function Introduction() {
   const setStatistics = useSetRecoilState(StatisticsState);
+  const saveToLocal = useRecoilValue(SavetoLocalState);
+  const setSaveToLocal = useSetRecoilState(SavetoLocalState);
   const {t} = useTranslation();
 
   return (
@@ -69,6 +72,12 @@ export default function Introduction() {
       </div>
 
       <Dropzone setStatistics={setStatistics}/>
+      <Checkbox
+          className="mt-2 select-none cursor-pointer hover:bg-white/10"
+          label={t("introduction.save_to_local")}
+          checked={saveToLocal}
+          onChange={(e) => setSaveToLocal(e.target.checked)}
+        />
     </div>
   );
 }

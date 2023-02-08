@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Beachte bitte, dass <b>Xbox Game Pass</b> deine Dateien anders aufbewahrt (in Unterordner), deshalb musst du mehrere Dateien versuchen, um alles angezeigt zu bekommen.",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "Wenn du das Spiel auf Epic Games spielst findest du die Datei für Staistiken hier:",
-    "windows_disclaimer": "Beachte bitte, dass <b>Windows</b> von vornherein Ordner versteckt (<code>AppData</code> ist einer davon), falls du den Ordner nicht sehen kannst stelle es in deinen <b>Windows</b> Einstellungen um."
+    "windows_disclaimer": "Beachte bitte, dass <b>Windows</b> von vornherein Ordner versteckt (<code>AppData</code> ist einer davon), falls du den Ordner nicht sehen kannst stelle es in deinen <b>Windows</b> Einstellungen um.",
+    "save_to_local": "Bewahrt es lokal auf."
   },
   "dropzone": {
     "label": "Zieh die Datei in dieses Feld, um eine neue Seite zu öffnen"

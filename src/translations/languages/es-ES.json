@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Ten en cuenta que <b>Xbox Game Pass</b> almacena sus archivos de diferente manera(dentro de subcarpetas), por lo que tendrás que probar con varios archivos hasta que aparezcan en pantalla.",
     "epic_games_store": "Tienda Epic Games",
     "epic_games_store_instructions": "Si juegas a través de Epic Games Store, deberías encontrar tu archivo de estadísticas en:",
-    "windows_disclaimer": "Ten en cuenta que <b>Windows</b> oculta algunas carpetas por defecto (<code>AppData</code> siendo una de ellas); si no puedes verla, muestra las carpetas ocultas en la configuración de <b>Windows</b>."
+    "windows_disclaimer": "Ten en cuenta que <b>Windows</b> oculta algunas carpetas por defecto (<code>AppData</code> siendo una de ellas); si no puedes verla, muestra las carpetas ocultas en la configuración de <b>Windows</b>.",
+    "save_to_local": "Guardar en local"
   },
   "dropzone": {
     "label": "Arrastra y suelta el archivo aquí o clickea para abrir una nueva ventana."

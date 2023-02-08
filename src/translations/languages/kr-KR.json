@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "<b>Xbox Game Pass</b>는 하위 폴더 내에서 파일을 다르게 저장하므로 브라우저에 표시될 때까지 여러 파일들을 첨부 시도해야 합니다.",
     "epic_games_store": "에픽 게임즈 스토어(Epic Games Store)",
     "epic_games_store_instructions": "에픽 게임즈 스토어를 통해 게임을 플레이하는 경우 다음 경로에서 파일을 찾을 수 있습니다.",
-    "windows_disclaimer": "<b>윈도우</b>는 기본적으로 일부 폴더를 숨깁니다(<code>AppData</code>폴더는 그 중 하나임). 표시되지 않으면 <b>윈도우</b> 폴더 옵션에서 숨겨진 폴더를 표시하도록 설정 합니다."
+    "windows_disclaimer": "<b>윈도우</b>는 기본적으로 일부 폴더를 숨깁니다(<code>AppData</code>폴더는 그 중 하나임). 표시되지 않으면 <b>윈도우</b> 폴더 옵션에서 숨겨진 폴더를 표시하도록 설정 합니다.",
+    "save_to_local": "로컬로 저장"
   },
   "dropzone": {
     "label": "여기에 파일을 끌어다 놓거나, 클릭하여 파일을 찾아 첨부하세요."
