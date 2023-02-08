@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
 import { useRecoilState } from 'recoil';
 import { Cleaners, ProgressionTypes } from '@components/statistics/types';
-import { getCleanerNameById } from '@utils/generic';
+import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById } from '@utils/generic';
 import { Award, List, PieChart } from 'react-feather';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
@@ -11,6 +11,7 @@ export default function SelfQuicklinks() {
   const {t} = useTranslation();
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
   const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
+  const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
 
   return (
     <div className="border-left-subtle pl-3">
@@ -88,7 +89,7 @@ export default function SelfQuicklinks() {
       </div>
 
       <div className="space-y-2 pt-1 pb-2 border-bottom-subtle">
-        {Object.values(Cleaners).map((cleanerId, i) => (
+        {cleanerIds.map((cleanerId, i) => (
           <a
             key={cleanerId}
             className={`flex items-center cursor-pointer hover:bg-white/10`}
