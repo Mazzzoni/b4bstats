@@ -1,11 +1,32 @@
 import i18n from '@translations/i18n';
-import { Cleaners } from '@components/statistics/types';
+import { CleanerNames, Cleaners } from '@components/statistics/types';
 
 export function getCleanerNameById(cleanerId: string): string
 {
   const index = Object.values(Cleaners).indexOf(cleanerId as Cleaners);
 
   return Object.keys(Cleaners)[index];
+}
+
+// Change cleaners order here if needed
+export const currentCleanerOrder: CleanerNames[] = [
+  'Evangelo',
+  'Walker',
+  'Holly',
+  'Mom',
+  'Doc',
+  'Hoffman',
+  'Jim',
+  'Karlee',
+  'Heng',
+  'Sharice',
+  'Dan',
+  'Tala',
+];
+
+export function getCleanerIdsByNames(cleanerNames: CleanerNames[]): Cleaners[]
+{
+  return cleanerNames.map((cleaner) => Cleaners[cleaner]);
 }
 
 export function localeFormat(x: number): string
