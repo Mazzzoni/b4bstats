@@ -2,7 +2,7 @@ import { useRecoilValue } from 'recoil';
 import StatisticsState from '@components/self/StatisticsState';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import { getCleanerNameById, getFormattedDate } from '@utils/generic';
+import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById, getFormattedDate } from '@utils/generic';
 import { Cleaners, Difficulties } from '@components/statistics/types';
 import { useMantineTheme } from '@mantine/core';
 import ScrollSpy from 'react-ui-scrollspy';
@@ -20,6 +20,8 @@ export default function Progressions() {
   const theme = useMantineTheme();
   const {t} = useTranslation();
 
+  const progressionsOrderByCurrentCleanerNames = getCleanerIdsByNames(currentCleanerOrder);
+
   if (!filters.showRecruit && !filters.showVeteran && !filters.showNightmare && !filters.showNoHope && !filters.showLegendary && !filters.showSwarm) {
     return null;
   }
@@ -32,7 +34,7 @@ export default function Progressions() {
       </div>
 
       <ScrollSpy activeClass="bg-white/5" scrollThrottle={100}>
-        {Object.keys(progressions).map((cleanerId, i) => (
+        {progressionsOrderByCurrentCleanerNames.map((cleanerId, i) => (
           <div key={cleanerId} id={getCleanerNameById(cleanerId).toLowerCase()} className="grid gap-4 grid-cols-12">
             <div className="text-center col-span-2">
               <div className="sticky top-[80px] flex flex-col items-center">

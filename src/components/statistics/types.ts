@@ -169,6 +169,20 @@ export enum Cleaners
   Tala = "hero_12",
 }
 
+export type CleanerNames =
+  | "Evangelo"
+  | "Walker"
+  | "Holly"
+  | "Hoffman"
+  | "Doc"
+  | "Jim"
+  | "Karlee"
+  | "Mom"
+  | "Heng"
+  | "Sharice"
+  | "Dan"
+  | "Tala";
+
 export enum Difficulties
 {
   Recruit = "easy",
@@ -186,20 +200,20 @@ export enum Riddens
   Hag,
   Snitcher,
 
-  Stinger,
-  Stalker,
-  Hocker,
-  Urchin,
-
-  Reeker,
-  Retch,
-  Exploder,
-  Shredder,
-
   Bruiser,
   Crusher,
   Tallboy,
   Ripper,
+
+  Hocker,
+  Stalker,
+  Stinger,
+  Urchin,
+
+  Retch,
+  Exploder,
+  Reeker,
+  Shredder,
 
   Lobber,
   Swarmer,

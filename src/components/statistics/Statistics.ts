@@ -92,20 +92,20 @@ export default class Statistics
       [Riddens.Hag]: 0,
       [Riddens.Snitcher]: 0,
 
-      [Riddens.Stinger]: 0,
-      [Riddens.Stalker]: 0,
-      [Riddens.Hocker]: 0,
-      [Riddens.Urchin]: 0,
-
-      [Riddens.Reeker]: 0,
-      [Riddens.Retch]: 0,
-      [Riddens.Exploder]: 0,
-      [Riddens.Shredder]: 0,
-
       [Riddens.Bruiser]: 0,
       [Riddens.Crusher]: 0,
       [Riddens.Tallboy]: 0,
       [Riddens.Ripper]: 0,
+
+      [Riddens.Hocker]: 0,
+      [Riddens.Stalker]: 0,
+      [Riddens.Stinger]: 0,
+      [Riddens.Urchin]: 0,
+
+      [Riddens.Retch]: 0,
+      [Riddens.Exploder]: 0,
+      [Riddens.Reeker]: 0,
+      [Riddens.Shredder]: 0,
 
       [Riddens.Lobber]: 0,
       [Riddens.Swarmer]: 0,
@@ -238,20 +238,20 @@ export default class Statistics
         [Riddens.Hag]: _.get(rawRiddenKilled, "Brute", 0),
         [Riddens.Snitcher]: _.get(rawRiddenKilled, "Snitcher", 0),
 
-        [Riddens.Stinger]: _.get(rawRiddenKilled, "BunnyKick", 0),
-        [Riddens.Stalker]: _.get(rawRiddenKilled, "Chaser", 0),
-        [Riddens.Hocker]: _.get(rawRiddenKilled, "Chucker", 0),
-        [Riddens.Urchin]: _.get(rawRiddenKilled, "Burner", 0),
-
-        [Riddens.Reeker]: _.get(rawRiddenKilled, "Bloater", 0),
-        [Riddens.Retch]: _.get(rawRiddenKilled, "Vomiter", 0),
-        [Riddens.Exploder]: _.get(rawRiddenKilled, "Exploder", 0),
-        [Riddens.Shredder]: _.get(rawRiddenKilled, "Imploder", 0),
-
         [Riddens.Bruiser]: _.get(rawRiddenKilled, "Smasher", 0),
         [Riddens.Crusher]: _.get(rawRiddenKilled, "Squeezer", 0),
         [Riddens.Tallboy]: _.get(rawRiddenKilled, "Tallboy", 0),
         [Riddens.Ripper]: _.get(rawRiddenKilled, "Heckboy", 0),
+
+        [Riddens.Hocker]: _.get(rawRiddenKilled, "Chucker", 0),
+        [Riddens.Stalker]: _.get(rawRiddenKilled, "Chaser", 0),
+        [Riddens.Stinger]: _.get(rawRiddenKilled, "BunnyKick", 0),
+        [Riddens.Urchin]: _.get(rawRiddenKilled, "Burner", 0),
+
+        [Riddens.Retch]: _.get(rawRiddenKilled, "Vomiter", 0),
+        [Riddens.Exploder]: _.get(rawRiddenKilled, "Exploder", 0),
+        [Riddens.Reeker]: _.get(rawRiddenKilled, "Bloater", 0),
+        [Riddens.Shredder]: _.get(rawRiddenKilled, "Imploder", 0),
 
         [Riddens.Lobber]: _.get(rawRiddenKilled, "Bombardier", 0),
         [Riddens.Swarmer]: _.get(rawRiddenKilled, "Swarmer", 0),
