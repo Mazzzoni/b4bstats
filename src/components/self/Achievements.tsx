@@ -2,10 +2,10 @@ import { useRecoilValue } from 'recoil';
 import StatisticsState from '@components/self/StatisticsState';
 import ProgressMilestones from '@components/common/ProgressMilestones';
 import Statistics from '@components/statistics/Statistics';
-import { MiscellaneousStatistics, Riddens, Weapons, WeaponTypes } from '@components/statistics/types';
+import { Cleaners, MiscellaneousStatistics, Riddens, Weapons, WeaponTypes } from '@components/statistics/types';
 import { createRef } from 'react';
 import { useMantineTheme } from '@mantine/core';
-import { getFormattedDate } from '@utils/generic';
+import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById, getFormattedDate } from '@utils/generic';
 import ScreenshotTaker from '@components/common/ScreenshotTaker';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
@@ -14,6 +14,7 @@ export default function Achievements() {
   const statistics = useRecoilValue(StatisticsState);
   const progressionType = useRecoilValue(SelectedProgressionTypeState);
   const theme = useMantineTheme();
+  const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
 
   return (
     <div ref={elementToScreenshotRef} id="achievements" className="mt-7" style={{backgroundColor: theme.colors.dark[8]}}>
@@ -171,161 +172,22 @@ export default function Achievements() {
           />
         </div>
 
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Evangelo"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_1.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Walker"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_2.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Holly"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_3.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Hoffman"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_4.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Doc"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_5.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Jim"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_6.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Karlee"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_7.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Mom"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_8.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Heng"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_9.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Sharice"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_10.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Dan"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_11.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
-
-        <div className="col-span-4">
-          <ProgressMilestones
-            title="250 Missions completed as Tala"
-            maxValue={250}
-            currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner.hero_12.total}
-            milestones={[
-              {step: 25},
-              {step: 50},
-              {step: 100},
-            ]}
-          />
-        </div>
+        {
+          cleanerIds.map((cleanerId) => (
+            <div key={cleanerId} className="col-span-4">
+              <ProgressMilestones
+                title={`250 Missions completed as ${getCleanerNameById(cleanerId)}`}
+                maxValue={250}
+                currentValue={statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner[cleanerId].total}
+                milestones={[
+                  {step: 25},
+                  {step: 50},
+                  {step: 100},
+                ]}
+              />
+          </div>
+          ))
+        }
 
         <div className="col-span-4">
           <ProgressMilestones
