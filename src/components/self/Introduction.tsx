@@ -1,14 +1,14 @@
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 import { Trans, useTranslation } from 'react-i18next';
 import StatisticsState from '@components/self/StatisticsState';
-import SavetoLocalState from '@components/self/SaveToLocal';
-import { Divider, Kbd, Checkbox } from '@mantine/core';
+import SavetoLocalState from '@components/self/SaveToLocalState';
+import { Divider, Kbd, Checkbox, Tooltip } from '@mantine/core';
 import Dropzone from '@components/common/Dropzone';
+import { HelpCircle } from 'react-feather';
 
 export default function Introduction() {
+  const [saveToLocal, setSaveToLocal] = useRecoilState(SavetoLocalState);
   const setStatistics = useSetRecoilState(StatisticsState);
-  const saveToLocal = useRecoilValue(SavetoLocalState);
-  const setSaveToLocal = useSetRecoilState(SavetoLocalState);
   const {t} = useTranslation();
 
   return (
@@ -72,12 +72,20 @@ export default function Introduction() {
       </div>
 
       <Dropzone setStatistics={setStatistics}/>
-      <Checkbox
+
+      <Tooltip label="Put statistics file into your browser cache, you can clear it at any moment">
+        <Checkbox
           className="mt-2 select-none cursor-pointer hover:bg-white/10"
-          label={t("introduction.save_to_local")}
+          label={(
+            <span className="flex">
+              {t('introduction.save_to_local')}
+              <HelpCircle size={16} className="relative top-[2px] ml-1"/>
+            </span>
+          )}
           checked={saveToLocal}
           onChange={(e) => setSaveToLocal(e.target.checked)}
         />
+      </Tooltip>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { SetterOrUpdater, useRecoilValue } from 'recoil';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import Statistics from '@components/statistics/Statistics';
-import SavetoLocalState from '@components/self/SaveToLocal';
+import SavetoLocalState from '@components/self/SaveToLocalState';
 import { Group, Text } from '@mantine/core';
 import { Dropzone as DropzoneMT } from '@mantine/dropzone';
 
