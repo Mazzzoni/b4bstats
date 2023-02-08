@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Xbox Game Passではファイルの保存方法が異なるため、表示されるまでに複数のファイルを試す必要があることをご了承ください。",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "Epic Games Storeでゲームをプレイしている場合、統計情報が保存されているファイルは以下のパスにあります：",
-    "windows_disclaimer": "Windowsはデフォルトでいくつかのフォルダを隠しており、「AppData」もその一つです。表示されていない場合は、Windowsの設定で「隠しフォルダを表示」を有効にしてください。"
+    "windows_disclaimer": "Windowsはデフォルトでいくつかのフォルダを隠しており、「AppData」もその一つです。表示されていない場合は、Windowsの設定で「隠しフォルダを表示」を有効にしてください。",
+    "save_to_local": "ローカルに保存します"
   },
   "dropzone": {
     "label": "ファイルをドラッグ＆ドロップするか、クリックすると新しいウィンドウが開きます。"
