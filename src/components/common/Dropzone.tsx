@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
-import { SetterOrUpdater } from 'recoil';
+import { SetterOrUpdater, useRecoilValue } from 'recoil';
 import { useTranslation } from 'react-i18next';
 import { toast } from 'react-toastify';
 import Statistics from '@components/statistics/Statistics';
+import SavetoLocalState from '@components/self/SaveToLocalState';
 import { Group, Text } from '@mantine/core';
 import { Dropzone as DropzoneMT } from '@mantine/dropzone';
 
@@ -11,6 +12,7 @@ type Props = {
 }
 
 export default function Dropzone({setStatistics}: Props) {
+  const saveToLocal = useRecoilValue(SavetoLocalState);
   const {t} = useTranslation();
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -27,6 +29,10 @@ export default function Dropzone({setStatistics}: Props) {
           rawStats = JSON.parse(data);
           const stats = Statistics.build(rawStats);
           setStatistics(stats);
+
+          if (saveToLocal) {
+            localStorage.setItem("statsFile", data);
+          }
         } catch (error) {
           toast.error(t('errors.cannot_parse_file'));
         }
@@ -35,7 +41,7 @@ export default function Dropzone({setStatistics}: Props) {
       reader.onabort = () => toast.error(t('errors.fail_reading_file'));
       reader.onerror = () => toast.error(t('errors.error_while_reading_file'));
     });
-  }, [setStatistics, t]);
+  }, [setStatistics, t, saveToLocal]);
 
   return (
     <DropzoneMT

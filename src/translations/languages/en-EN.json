@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Please note that <b>Xbox Game Pass</b> stores your files differently (within sub folders), so you'll have to try several files until you have it displayed.",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "If you play the game through Epic Games Store, you should find your statistics file at:",
-    "windows_disclaimer": "Please note that <b>Windows</b> hide some folders by default (<code>AppData</code> being one of them), if you can't see it, show hidden folders in your <b>Windows</b> settings."
+    "windows_disclaimer": "Please note that <b>Windows</b> hide some folders by default (<code>AppData</code> being one of them), if you can't see it, show hidden folders in your <b>Windows</b> settings.",
+    "save_to_local": "Save to local"
   },
   "dropzone": {
     "label": "Drag & drop file here or click to open new window"

@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Let op, <b>Xbox Game Pass</b> zet het bestand op verschillende plekken in één van de onderliggende mappen. Je zal dus even moeten zoeken en meerdere bestanden proberen totdat het werkt.",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "Als je het spel via de Epic Games Store speelt, zou je het bestand hier moeten kunnen vinden:",
-    "windows_disclaimer": "Let erop dat <b>Windows</b> standaard folders verbergt, (<code>AppData</code> is daar een van), als je deze folder niet kan zien dan moet je in je <b>Windows</b> instellingen de verborgen folders zichtbaar maken."
+    "windows_disclaimer": "Let erop dat <b>Windows</b> standaard folders verbergt, (<code>AppData</code> is daar een van), als je deze folder niet kan zien dan moet je in je <b>Windows</b> instellingen de verborgen folders zichtbaar maken.",
+    "save_to_local": "opslaan in lokaal"
   },
   "dropzone": {
     "label": "Sleep je bestand hier naartoe of klik hier om een nieuw venster te openen"

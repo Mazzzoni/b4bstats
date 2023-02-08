@@ -15,7 +15,8 @@
     "xbox_game_pass_instructions_2": "Veuillez noter que <b>Xbox Game Pass</b> gère vos fichiers différement (dans des sous-dossiers), vous devrez essayer plusieurs fichiers jusqu'à ce que l'outil affiche vos données.",
     "epic_games_store": "Epic Games Store",
     "epic_games_store_instructions": "Si vous jouez via l'Epic Games Store, vous devriez trouver votre fichier de statistiques à ce chemin:",
-    "windows_disclaimer": "Veuillez noter que <b>Windows</b> cache certains dossiers par défaut (<code>AppData</code> étant l'un d'eux), si vous ne pouvez pas voir les dossiers concernés, pensez à afficher les dossiers cachés dans votre configuration <b>Windows</b>."
+    "windows_disclaimer": "Veuillez noter que <b>Windows</b> cache certains dossiers par défaut (<code>AppData</code> étant l'un d'eux), si vous ne pouvez pas voir les dossiers concernés, pensez à afficher les dossiers cachés dans votre configuration <b>Windows</b>.",
+    "save_to_local": "Sauvegarder en local"
   },
   "dropzone": {
     "label": "Glissez & déposez le fichier ici ou cliquez pour ouvrir une nouvelle fenêtre"

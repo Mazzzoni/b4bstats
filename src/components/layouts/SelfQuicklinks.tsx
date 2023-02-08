@@ -1,19 +1,58 @@
 import { Checkbox, Radio, RadioGroup } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { Cleaners, ProgressionTypes } from '@components/statistics/types';
 import { getCleanerNameById } from '@utils/generic';
-import { Award, List, PieChart } from 'react-feather';
+import { Award, List, PieChart, X } from 'react-feather';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
+import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
+import StatisticsState from '@components/self/StatisticsState';
+import SaveToLocalState from '@components/self/SaveToLocalState';
 
 export default function SelfQuicklinks() {
   const {t} = useTranslation();
+  const statistics = useRecoilValue(StatisticsState);
+  const saveToLocal = useRecoilValue(SaveToLocalState);
   const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
   const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
+  const [showRemoveCachedStatsButton, setShowRemoveCachedStatsButton] = useState(false);
+
+  useEffect(() => {
+    // Don't check right away, local storage won't be updated yet
+    setTimeout(() => {
+      const data = localStorage.getItem('statsFile');
+
+      if (data) {
+        setShowRemoveCachedStatsButton(true);
+      }
+    }, 500);
+  }, [statistics, saveToLocal]);
 
   return (
     <div className="border-left-subtle pl-3">
+      {showRemoveCachedStatsButton && (
+        <div className="border-bottom-subtle pb-3 mb-2">
+          <span
+            className="block cursor-pointer hover:bg-white/10 flex items-center px-1 border border-red-600 border-dashed"
+            onClick={() => {
+              if (localStorage.getItem('statsFile')) {
+                localStorage.removeItem('statsFile');
+              }
+
+              toast.success('Browser cached statistics file cleared ! Page will be reloaded.');
+
+              setTimeout(() => {
+                window.location.reload();
+              }, 2_000);
+            }}
+          >
+            <X size={16} className="mr-1"/> Clear cached stats
+          </span>
+        </div>
+      )}
+
       <div className="border-bottom-subtle pb-3">
         <strong>Progressions</strong>
 
