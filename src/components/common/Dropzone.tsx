@@ -6,6 +6,7 @@ import Statistics from '@components/statistics/Statistics';
 import SavetoLocalState from '@components/self/SaveToLocalState';
 import { Group, Text } from '@mantine/core';
 import { Dropzone as DropzoneMT } from '@mantine/dropzone';
+import { trackEvent } from '@utils/analytics';
 
 type Props = {
   setStatistics: SetterOrUpdater<Statistics>
@@ -33,6 +34,7 @@ export default function Dropzone({setStatistics}: Props) {
           if (saveToLocal) {
             localStorage.setItem("statsFile", data);
           }
+          trackEvent('Statistics analyzed');
         } catch (error) {
           toast.error(t('errors.cannot_parse_file'));
         }
