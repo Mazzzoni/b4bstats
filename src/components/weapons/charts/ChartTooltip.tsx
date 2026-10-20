@@ -1,18 +1,14 @@
 import { Badge } from '@mantine/core';
 import { WeaponQualityColors } from '@utils/colors';
 import { WeaponQualities } from '@components/weapons/types';
+import { getDamageStatistics } from '@components/weapons/utils';
 
 export type TooltipProps = {
   meter: number;
-  damages: {
+  damages: ({
     quality: string;
     damage: number;
-  }[];
-  baseDamage: number;
-  baseFullMagazineDamage: number;
-  baseTrueDps: number;
-  baseStumblePerShot: number;
-  baseStumblePerSecond: number;
+  } & ReturnType<typeof getDamageStatistics>)[];
   isMelee: boolean;
   isBow: boolean;
 };
@@ -30,7 +26,8 @@ export default function ChartTooltip(props: TooltipProps) {
           <tr className="text-left">
             <th className="pr-5">Quality</th>
             <th className="pr-5">Damage</th>
-            {!props.isBow && <th className="pr-5">DPS</th>}
+            {!props.isBow && <th className="pr-5">Raw DPS</th>}
+            {!props.isMelee && !props.isBow && <th className="pr-5">Sustained DPS</th>}
             {!props.isMelee && !props.isBow && <th className="pr-5">FMD</th>}
             {!props.isBow && <th className="pr-5">Stumble</th>}
             {!props.isBow && <th className="pr-5">SPS</th>}
@@ -59,7 +56,7 @@ export default function ChartTooltip(props: TooltipProps) {
                   className="pr-5 pt-1 border-top-subtle"
                   style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
                 >
-                  {((row.damage * props.baseTrueDps) / props.baseDamage).toFixed(2)}
+                  {row.rawDps.toFixed(2)}
                 </td>
               }
 
@@ -68,7 +65,16 @@ export default function ChartTooltip(props: TooltipProps) {
                   className="pr-5 pt-1 border-top-subtle"
                   style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
                 >
-                  {((row.damage * props.baseFullMagazineDamage) / props.baseDamage).toFixed(2)}
+                  {row.sustainedDps.toFixed(2)}
+                </td>
+              }
+
+              {!props.isMelee && !props.isBow &&
+                <td
+                  className="pr-5 pt-1 border-top-subtle"
+                  style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
+                >
+                  {row.fullMagazineDamage.toFixed(2)}
                 </td>
               }
 
@@ -77,7 +83,7 @@ export default function ChartTooltip(props: TooltipProps) {
                   className="pr-5 pt-1 border-top-subtle"
                   style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
                 >
-                  {((row.damage * props.baseStumblePerShot) / props.baseDamage).toFixed(2)}
+                  {row.stumblePerShot.toFixed(2)}
                 </td>
               }
 
@@ -86,7 +92,7 @@ export default function ChartTooltip(props: TooltipProps) {
                   className="pr-5 pt-1 border-top-subtle"
                   style={{color: WeaponQualityColors[row.quality as WeaponQualities]}}
                 >
-                  {((row.damage * props.baseStumblePerSecond) / props.baseDamage).toFixed(2)}
+                  {row.stumblePerSecond.toFixed(2)}
                 </td>
               }
             </tr>

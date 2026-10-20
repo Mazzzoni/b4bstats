@@ -6,6 +6,34 @@ export const rangedStepSize = 50;
 // Represent 0.1 meter
 export const meleeStepSize = 10;
 
+// Use the same per-shot damage, RPM, magazine size and reload time shown in the UI.
+// A firing cycle includes one interval per shot followed by one reload.
+export const getDamageStatistics = (
+  statistics: WeaponStatisticsDefinition,
+  damage: number = statistics.rangeDamagesComputed[0],
+) => {
+  const rawDps = damage * statistics.rpm / 60;
+  const hasMagazine = statistics.magazineSize > 0;
+  const shotsPerMagazine = hasMagazine ? statistics.magazineSize / (statistics.roundsPerShot || 1) : 0;
+  const fullMagazineDamage = damage * shotsPerMagazine;
+  const sustainedDps = hasMagazine
+    ? (statistics.rpm > 0
+      ? fullMagazineDamage / (shotsPerMagazine * 60 / statistics.rpm + statistics.reloadSpeed)
+      : 0)
+    : rawDps;
+  const damageRatio = statistics.rangeDamagesComputed[0] > 0
+    ? damage / statistics.rangeDamagesComputed[0]
+    : 0;
+
+  return {
+    rawDps,
+    sustainedDps,
+    fullMagazineDamage,
+    stumblePerShot: (statistics.stumblePerShot || 0) * damageRatio,
+    stumblePerSecond: (statistics.stumblePerSecond || 0) * damageRatio,
+  };
+};
+
 export const getDamageData = (range_damages: WeaponStatisticsDefinition['rangeDamages'], metersScale: number[]): number[] => {
   let damages: number[] = [];
 

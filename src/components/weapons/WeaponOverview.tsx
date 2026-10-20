@@ -39,12 +39,12 @@ export default function WeaponOverview({weapon}: Props) {
             label={<div>
               <b>RPM</b>
               <br/>
-              <span>Rounds fired per minute</span>
+              <span>Shots per minute while firing, excluding reloads</span>
               <br/>
               <span className="bg-stone-400 px-1">{weaponQuality.rpmFormula} = {weaponQuality.rpm.toFixed(2)}</span>
             </div>}
           >
-            <Badge size="lg">{weaponQuality.rpm.toFixed(0)} RPM</Badge>
+            <Badge size="lg">{weaponQuality.rpm.toFixed(2)} RPM</Badge>
           </Tooltip>
         </div>
       )}

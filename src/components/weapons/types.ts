@@ -74,7 +74,7 @@ export type WeaponStatisticsDefinition = {
   delayBetweenBursts: number;
   pellets: number;
   fullMagazineDamage: number;
-  trueDps: number;
+  trueDps: number; // Sustained DPS, including reloads; raw DPS for melee.
   stumblePerShot: number;
   stumblePerSecond: number;
   rangeDamages: Record<string, number>;
@@ -82,6 +82,7 @@ export type WeaponStatisticsDefinition = {
   shotgunRangeDamages?: Record<string, number>;
   metersScale: number[];
   magazineSize: number;
+  roundsPerShot?: number;
   reloadSpeed: number;
   rechamberLength: number;
   rechamberAnimationLength: number;

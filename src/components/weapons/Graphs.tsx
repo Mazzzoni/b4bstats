@@ -1,5 +1,6 @@
 import { WeaponCategories, WeaponDefinition } from '@components/weapons/types';
 import OrderedWeaponsPerStatistic from '@components/weapons/charts/OrderedWeaponsPerStatistic';
+import { getDamageStatistics } from '@components/weapons/utils';
 
 type Props = {
   sortedWeapons: Record<WeaponDefinition['category'], WeaponDefinition[]>;
@@ -26,9 +27,17 @@ export default function Graphs({sortedWeapons}: Props) {
 
       <div className="mb-12">
         <OrderedWeaponsPerStatistic
-          title="Damage Per Second"
+          title="Raw DPS (without reloads)"
           weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
-          statisticCallback={weapon => (weapon.trueDps)}
+          statisticCallback={weapon => getDamageStatistics(weapon).rawDps}
+        />
+      </div>
+
+      <div className="mb-12">
+        <OrderedWeaponsPerStatistic
+          title="Sustained DPS (including reloads)"
+          weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Bow)}
+          statisticCallback={weapon => getDamageStatistics(weapon).sustainedDps}
         />
       </div>
 
@@ -36,7 +45,7 @@ export default function Graphs({sortedWeapons}: Props) {
         <OrderedWeaponsPerStatistic
           title="Full Magazine Damage"
           weapons={overallWeapons.filter(weapon => weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow)}
-          statisticCallback={weapon => (weapon.fullMagazineDamage)}
+          statisticCallback={weapon => getDamageStatistics(weapon).fullMagazineDamage}
         />
       </div>
 

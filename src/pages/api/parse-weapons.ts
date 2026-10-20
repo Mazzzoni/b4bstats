@@ -7,15 +7,13 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
 import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
-import { getDamageData, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
+import { getDamageData, getDamageStatistics, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
 import _ from 'lodash';
 
 const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-12-06.xlsm`;
 
 enum RangedWeaponsColumns
 {
-  TrueDps = 3,
-  FullClipDamage = 4,
   TimeToReload = 7,
   StumblePerShot = 8,
   StumblePerSecond = 9,
@@ -219,8 +217,6 @@ class Parser
           delayBetweenShots: delayBetweenShots,
           delayBetweenBursts: delayBetweenBursts,
           pellets: pellets,
-          fullMagazineDamage: data[RangedWeaponsColumns.FullClipDamage],
-          trueDps: data[RangedWeaponsColumns.TrueDps],
           stumblePerShot: data[RangedWeaponsColumns.StumblePerShot],
           stumblePerSecond: data[RangedWeaponsColumns.StumblePerSecond],
           rangeDamages: rangeDamages,
@@ -228,6 +224,7 @@ class Parser
           metersScale: metersScale,
           bulletPenetrationMultiplier: data[RangedWeaponsColumns.BulletPenetrationPower],
           magazineSize: data[RangedWeaponsColumns.MaxClipAmount],
+          roundsPerShot: weapon.rpmFormula === WeaponRpmFormulas.TheBelgian ? 2 : 1,
           reloadSpeed: data[RangedWeaponsColumns.TimeToReload],
           rechamberLength: data[RangedWeaponsColumns.RechamberLength],
           rechamberAnimationLength: data[RangedWeaponsColumns.RechamberAnimationLength],
@@ -253,6 +250,10 @@ class Parser
 
         weaponStatistics.rpm = rpm;
         weaponStatistics.rpmFormula = rpmFormula;
+
+        const damageStatistics = getDamageStatistics(weaponStatistics);
+        weaponStatistics.fullMagazineDamage = damageStatistics.fullMagazineDamage;
+        weaponStatistics.trueDps = damageStatistics.sustainedDps;
 
         if (weapon.category === WeaponCategories.Shotgun) {
           weaponStatistics.shotgunRangeDamages = shotgunRangeDamages;
@@ -327,7 +328,7 @@ class Parser
         weaponStatistics.rpmFormula = rpmFormula;
 
         // Compute weapon DPS & SPS
-        weaponStatistics.trueDps = (weaponStatistics.rangeDamagesComputed[0] * weaponStatistics.rpm) / 60;
+        weaponStatistics.trueDps = getDamageStatistics(weaponStatistics).sustainedDps;
         weaponStatistics.stumblePerSecond = (weaponStatistics.stumblePerShot * weaponStatistics.rpm) / 60;
 
         computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
@@ -476,6 +477,8 @@ class Parser
   {
     switch (rpmFormula) {
       case WeaponRpmFormulas.Default:
+      // Keep reloads out of the firing rate; sustained DPS adds them once.
+      case WeaponRpmFormulas.TheBelgian:
         return [
           (1 / weaponStatistics.delayBetweenShots * 60),
           '(1 / delayBetweenShots * 60)',
@@ -511,11 +514,6 @@ class Parser
           '(60 / (rechamberLength + reloadSpeed / 3))',
         ];
 
-      case WeaponRpmFormulas.TheBelgian:
-        return [
-          (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed)),
-          '(60 / (rechamberLength + reloadSpeed))',
-        ];
     }
 
     throw Error(`Unknown RPM formula passed (${rpmFormula})`);

@@ -17,7 +17,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 330,
-        "trueDps": 96.1277041985474,
+        "trueDps": 63.03724928366763,
         "stumblePerShot": 8.25,
         "stumblePerSecond": 96.3785046728972,
         "rangeDamages": {
@@ -220,7 +220,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 379.5,
-        "trueDps": 110.546859828329,
+        "trueDps": 72.49283667621778,
         "stumblePerShot": 9.4875,
         "stumblePerSecond": 110.835280373832,
         "rangeDamages": {
@@ -422,8 +422,8 @@
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 436.425,
-        "trueDps": 127.128888802579,
+        "fullMagazineDamage": 436.42499999999995,
+        "trueDps": 83.36676217765043,
         "stumblePerShot": 10.910625,
         "stumblePerSecond": 127.460572429907,
         "rangeDamages": {
@@ -625,8 +625,8 @@
         "delayBetweenShots": 0.0856,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 501.88875,
-        "trueDps": 146.198222122966,
+        "fullMagazineDamage": 501.88874999999996,
+        "trueDps": 95.871776504298,
         "stumblePerShot": 12.54721875,
         "stumblePerSecond": 146.579658294392,
         "rangeDamages": {
@@ -862,7 +862,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 240,
-        "trueDps": 57.2155117609663,
+        "trueDps": 37.40065451145395,
         "stumblePerShot": 4,
         "stumblePerSecond": 32,
         "rangeDamages": {
@@ -1065,7 +1065,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 270,
-        "trueDps": 64.3674507310871,
+        "trueDps": 42.0757363253857,
         "stumblePerShot": 4.5,
         "stumblePerSecond": 36,
         "rangeDamages": {
@@ -1298,7 +1298,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 280,
-        "trueDps": 84.557232159934,
+        "trueDps": 55.258977116862866,
         "stumblePerShot": 11.025,
         "stumblePerSecond": 110.25,
         "rangeDamages": {
@@ -1501,7 +1501,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 331.8,
-        "trueDps": 100.200320109522,
+        "trueDps": 65.4818878834825,
         "stumblePerShot": 13.71785625,
         "stumblePerSecond": 137.1785625,
         "rangeDamages": {
@@ -1704,7 +1704,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 393.183,
-        "trueDps": 118.737379329783,
+        "trueDps": 77.59603714192676,
         "stumblePerShot": 17.0684426390625,
         "stumblePerSecond": 170.684426390625,
         "rangeDamages": {
@@ -1907,7 +1907,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 465.921855,
-        "trueDps": 140.703794505793,
+        "trueDps": 91.9513040131832,
         "stumblePerShot": 21.2374097536535,
         "stumblePerSecond": 212.374097536535,
         "rangeDamages": {
@@ -2140,7 +2140,7 @@
         "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 320,
-        "trueDps": 104.24282787627,
+        "trueDps": 64.08159723381105,
         "stumblePerShot": 10.2,
         "stumblePerSecond": 78.6632390745501,
         "rangeDamages": {
@@ -2343,7 +2343,7 @@
         "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 356.8,
-        "trueDps": 122.622827122129,
+        "trueDps": 75.05885009336777,
         "stumblePerShot": 11.373,
         "stumblePerSecond": 87.7095115681234,
         "rangeDamages": {
@@ -2546,7 +2546,7 @@
         "delayBetweenBursts": 0.2,
         "pellets": 1,
         "fullMagazineDamage": 397.832,
-        "trueDps": 143.844044812481,
+        "trueDps": 87.67499889258062,
         "stumblePerShot": 12.680895,
         "stumblePerSecond": 97.7961053984576,
         "rangeDamages": {
@@ -2748,8 +2748,8 @@
         "delayBetweenShots": 0.063,
         "delayBetweenBursts": 0.2,
         "pellets": 1,
-        "fullMagazineDamage": 443.58268,
-        "trueDps": 168.272240012758,
+        "fullMagazineDamage": 443.58268000000004,
+        "trueDps": 102.13381355189493,
         "stumblePerShot": 14.139197925,
         "stumblePerSecond": 109.04265751928,
         "rangeDamages": {
@@ -2982,7 +2982,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 300,
-        "trueDps": 86.5871043420306,
+        "trueDps": 56.634989615738675,
         "stumblePerShot": 11.8125,
         "stumblePerSecond": 118.125,
         "rangeDamages": {
@@ -3185,7 +3185,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 355.5,
-        "trueDps": 102.605718645306,
+        "trueDps": 67.11246269465033,
         "stumblePerShot": 14.697703125,
         "stumblePerSecond": 146.97703125,
         "rangeDamages": {
@@ -3387,8 +3387,8 @@
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 421.2675,
-        "trueDps": 121.587776594688,
+        "fullMagazineDamage": 421.26750000000004,
+        "trueDps": 79.52826829316065,
         "stumblePerShot": 18.2876171132813,
         "stumblePerSecond": 182.876171132813,
         "rangeDamages": {
@@ -3591,7 +3591,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 499.2019875,
-        "trueDps": 144.081515264705,
+        "trueDps": 94.24099792739536,
         "stumblePerShot": 22.7543675932002,
         "stumblePerSecond": 227.543675932002,
         "rangeDamages": {
@@ -3827,7 +3827,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 330,
-        "trueDps": 103.125,
+        "trueDps": 66.66666666666666,
         "stumblePerShot": 14.85,
         "stumblePerSecond": 99,
         "rangeDamages": {
@@ -4029,8 +4029,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 367.95,
-        "trueDps": 121.837748344371,
+        "fullMagazineDamage": 367.95000000000005,
+        "trueDps": 78.62179487179489,
         "stumblePerShot": 16.55775,
         "stumblePerSecond": 110.385,
         "rangeDamages": {
@@ -4233,7 +4233,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 410.26425,
-        "trueDps": 143.549422673198,
+        "trueDps": 92.46433400946587,
         "stumblePerShot": 18.46189125,
         "stumblePerSecond": 123.079275,
         "rangeDamages": {
@@ -4435,8 +4435,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 457.44463875,
-        "trueDps": 168.661838636531,
+        "fullMagazineDamage": 457.44463874999997,
+        "trueDps": 108.44288901927315,
         "stumblePerShot": 20.58500874375,
         "stumblePerSecond": 137.233391625,
         "rangeDamages": {
@@ -4669,7 +4669,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 136,
-        "trueDps": 58.705035971223,
+        "trueDps": 37.26027397260274,
         "stumblePerShot": 12.75,
         "stumblePerSecond": 72.8571428571429,
         "rangeDamages": {
@@ -4872,7 +4872,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 156.4,
-        "trueDps": 67.5107913669065,
+        "trueDps": 42.849315068493155,
         "stumblePerShot": 14.6625,
         "stumblePerSecond": 83.7857142857143,
         "rangeDamages": {
@@ -5075,7 +5075,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 179.86,
-        "trueDps": 77.6374100719424,
+        "trueDps": 49.276712328767125,
         "stumblePerShot": 16.861875,
         "stumblePerSecond": 96.3535714285714,
         "rangeDamages": {
@@ -5278,7 +5278,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 206.839,
-        "trueDps": 89.2830215827338,
+        "trueDps": 56.66821917808219,
         "stumblePerShot": 19.39115625,
         "stumblePerSecond": 110.806607142857,
         "rangeDamages": {
@@ -5514,7 +5514,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 120,
-        "trueDps": 53.8116591928251,
+        "trueDps": 34.63203463203463,
         "stumblePerShot": 6.375,
         "stumblePerSecond": 53.125,
         "rangeDamages": {
@@ -5717,7 +5717,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 133.8,
-        "trueDps": 63.8663484486874,
+        "trueDps": 41.01149425287356,
         "stumblePerShot": 7.108125,
         "stumblePerSecond": 59.234375,
         "rangeDamages": {
@@ -5920,7 +5920,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 149.187,
-        "trueDps": 75.5951355459843,
+        "trueDps": 48.43340637935233,
         "stumblePerShot": 7.925559375,
         "stumblePerSecond": 66.046328125,
         "rangeDamages": {
@@ -6123,7 +6123,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 166.343505,
-        "trueDps": 89.2328970308183,
+        "trueDps": 57.040696448319316,
         "stumblePerShot": 8.836998703125,
         "stumblePerSecond": 73.641655859375,
         "rangeDamages": {
@@ -6359,7 +6359,7 @@
         "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 144,
-        "trueDps": 50,
+        "trueDps": 39.50617283950617,
         "stumblePerShot": 7.65,
         "stumblePerSecond": 56.6666666666667,
         "rangeDamages": {
@@ -6562,7 +6562,7 @@
         "delayBetweenBursts": 0.225,
         "pellets": 1,
         "fullMagazineDamage": 160.56,
-        "trueDps": 58.4918032786885,
+        "trueDps": 46.640522875817,
         "stumblePerShot": 8.52975,
         "stumblePerSecond": 63.1833333333333,
         "rangeDamages": {
@@ -6764,8 +6764,8 @@
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
-        "fullMagazineDamage": 179.0244,
-        "trueDps": 68.2387650085763,
+        "fullMagazineDamage": 179.02439999999999,
+        "trueDps": 54.911249137336085,
         "stumblePerShot": 9.51067125,
         "stumblePerSecond": 70.4494166666666,
         "rangeDamages": {
@@ -6967,8 +6967,8 @@
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0.225,
         "pellets": 1,
-        "fullMagazineDamage": 199.612206,
-        "trueDps": 79.3955038482191,
+        "fullMagazineDamage": 199.61220600000001,
+        "trueDps": 64.4695414577429,
         "stumblePerShot": 10.60439844375,
         "stumblePerSecond": 78.5510995833333,
         "rangeDamages": {
@@ -7201,7 +7201,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 176,
-        "trueDps": 66.2068965517241,
+        "trueDps": 42.02985074626866,
         "stumblePerShot": 17.325,
         "stumblePerSecond": 86.625,
         "rangeDamages": {
@@ -7404,7 +7404,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 208.56,
-        "trueDps": 78.4551724137931,
+        "trueDps": 49.805373134328356,
         "stumblePerShot": 21.55663125,
         "stumblePerSecond": 107.78315625,
         "rangeDamages": {
@@ -7607,7 +7607,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 247.1436,
-        "trueDps": 92.9693793103449,
+        "trueDps": 59.0193671641791,
         "stumblePerShot": 26.8218384328125,
         "stumblePerSecond": 134.109192164063,
         "rangeDamages": {
@@ -7810,7 +7810,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 292.865166,
-        "trueDps": 110.168714482759,
+        "trueDps": 69.93795008955223,
         "stumblePerShot": 33.373072470027,
         "stumblePerSecond": 166.865362350135,
         "rangeDamages": {
@@ -8043,7 +8043,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 180,
-        "trueDps": 63.0841121495327,
+        "trueDps": 40.67796610169491,
         "stumblePerShot": 9,
         "stumblePerSecond": 62.0689655172414,
         "rangeDamages": {
@@ -8246,7 +8246,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 207,
-        "trueDps": 72.5467289719626,
+        "trueDps": 46.779661016949156,
         "stumblePerShot": 10.35,
         "stumblePerSecond": 71.3793103448276,
         "rangeDamages": {
@@ -8448,8 +8448,8 @@
         "delayBetweenShots": 0.145,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 238.05,
-        "trueDps": 83.428738317757,
+        "fullMagazineDamage": 238.04999999999998,
+        "trueDps": 53.79661016949152,
         "stumblePerShot": 11.9025,
         "stumblePerSecond": 82.0862068965517,
         "rangeDamages": {
@@ -8652,7 +8652,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 273.7575,
-        "trueDps": 95.9430490654206,
+        "trueDps": 61.86610169491526,
         "stumblePerShot": 13.687875,
         "stumblePerSecond": 94.3991379310345,
         "rangeDamages": {
@@ -8885,7 +8885,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 150,
-        "trueDps": 72.8155339805825,
+        "trueDps": 47.61904761904762,
         "stumblePerShot": 7.5,
         "stumblePerSecond": 125,
         "rangeDamages": {
@@ -9088,7 +9088,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 172.5,
-        "trueDps": 83.7378640776699,
+        "trueDps": 54.761904761904766,
         "stumblePerShot": 8.625,
         "stumblePerSecond": 143.75,
         "rangeDamages": {
@@ -9291,7 +9291,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 198.375,
-        "trueDps": 96.2985436893204,
+        "trueDps": 62.976190476190474,
         "stumblePerShot": 9.91875,
         "stumblePerSecond": 165.3125,
         "rangeDamages": {
@@ -9494,7 +9494,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 228.13125,
-        "trueDps": 110.743325242718,
+        "trueDps": 72.42261904761905,
         "stumblePerShot": 11.4065625,
         "stumblePerSecond": 190.109375,
         "rangeDamages": {
@@ -9727,7 +9727,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 196,
-        "trueDps": 69.3805309734513,
+        "trueDps": 43.43490304709141,
         "stumblePerShot": 22.05,
         "stumblePerSecond": 80.1818181818182,
         "rangeDamages": {
@@ -9930,7 +9930,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 232.26,
-        "trueDps": 82.2159292035398,
+        "trueDps": 51.47036011080332,
         "stumblePerShot": 27.4357125,
         "stumblePerSecond": 99.7662272727273,
         "rangeDamages": {
@@ -10133,7 +10133,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 275.2281,
-        "trueDps": 97.4258761061947,
+        "trueDps": 60.99237673130193,
         "stumblePerShot": 34.136885278125,
         "stumblePerSecond": 124.134128284091,
         "rangeDamages": {
@@ -10335,8 +10335,8 @@
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 326.1452985,
-        "trueDps": 115.449663185841,
+        "fullMagazineDamage": 326.14529849999997,
+        "trueDps": 72.27596642659279,
         "stumblePerShot": 42.474819507307,
         "stumblePerSecond": 154.45388911748,
         "rangeDamages": {
@@ -10571,8 +10571,8 @@
         "delayBetweenShots": 0.275,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 300.68669925,
-        "trueDps": 115.648730480769,
+        "fullMagazineDamage": 300.68669924999995,
+        "trueDps": 72.02076628742515,
         "stumblePerShot": 38.2269108455104,
         "stumblePerSecond": 139.006948529129,
         "rangeDamages": {
@@ -10775,7 +10775,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 386.4821787225,
-        "trueDps": 148.646991816346,
+        "trueDps": 92.57058172994013,
         "stumblePerShot": 52.8492941719668,
         "stumblePerSecond": 192.179251534425,
         "rangeDamages": {
@@ -11008,7 +11008,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1120,
-        "trueDps": 123.438648052902,
+        "trueDps": 81.75182481751825,
         "stumblePerShot": 10.5,
         "stumblePerSecond": 116.666666666667,
         "rangeDamages": {
@@ -11211,7 +11211,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1288,
-        "trueDps": 141.954445260838,
+        "trueDps": 94.014598540146,
         "stumblePerShot": 12.075,
         "stumblePerSecond": 134.166666666667,
         "rangeDamages": {
@@ -11414,7 +11414,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1481.2,
-        "trueDps": 163.247612049963,
+        "trueDps": 108.11678832116789,
         "stumblePerShot": 13.88625,
         "stumblePerSecond": 154.291666666667,
         "rangeDamages": {
@@ -11616,8 +11616,8 @@
         "delayBetweenShots": 0.09,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 1703.38,
-        "trueDps": 187.734753857458,
+        "fullMagazineDamage": 1703.3799999999999,
+        "trueDps": 124.33430656934307,
         "stumblePerShot": 15.9691875,
         "stumblePerSecond": 177.435416666667,
         "rangeDamages": {
@@ -11850,7 +11850,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 720,
-        "trueDps": 104.171690378587,
+        "trueDps": 68.52248394004282,
         "stumblePerShot": 14.175,
         "stumblePerSecond": 101.25,
         "rangeDamages": {
@@ -12052,8 +12052,8 @@
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 853.2,
-        "trueDps": 123.443453098626,
+        "fullMagazineDamage": 853.1999999999999,
+        "trueDps": 81.19914346895074,
         "stumblePerShot": 17.63724375,
         "stumblePerSecond": 125.9803125,
         "rangeDamages": {
@@ -12256,7 +12256,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1011.042,
-        "trueDps": 146.280491921871,
+        "trueDps": 96.22098501070664,
         "stumblePerShot": 21.9451405359375,
         "stumblePerSecond": 156.751003828125,
         "rangeDamages": {
@@ -12459,7 +12459,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1198.08477,
-        "trueDps": 173.342382927417,
+        "trueDps": 114.02186723768736,
         "stumblePerShot": 27.3052411118402,
         "stumblePerSecond": 195.037436513145,
         "rangeDamages": {
@@ -12695,7 +12695,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1449.7394428125,
-        "trueDps": 201.606575337346,
+        "trueDps": 132.68225973902656,
         "stumblePerShot": 32.2539560258994,
         "stumblePerSecond": 230.385400184995,
         "rangeDamages": {
@@ -12897,8 +12897,8 @@
         "delayBetweenShots": 0.14,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 1863.39621884063,
-        "trueDps": 259.13134393875,
+        "fullMagazineDamage": 1863.3962188406251,
+        "trueDps": 170.54072877074105,
         "stumblePerShot": 44.591591957597,
         "stumblePerSecond": 318.511371125693,
         "rangeDamages": {
@@ -13130,8 +13130,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 640,
-        "trueDps": 138.871610303116,
+        "fullMagazineDamage": 707.2,
+        "trueDps": 87.17024575796944,
         "stumblePerShot": 68,
         "stumblePerSecond": 170,
         "rangeDamages": {
@@ -13340,8 +13340,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 736,
-        "trueDps": 159.702351848584,
+        "fullMagazineDamage": 813.28,
+        "trueDps": 100.24578262166484,
         "stumblePerShot": 78.2,
         "stumblePerSecond": 195.5,
         "rangeDamages": {
@@ -13550,8 +13550,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 846.4,
-        "trueDps": 183.657704625871,
+        "fullMagazineDamage": 935.2719999999999,
+        "trueDps": 115.28265001491457,
         "stumblePerShot": 89.93,
         "stumblePerSecond": 224.825,
         "rangeDamages": {
@@ -13760,8 +13760,8 @@
         "delayBetweenShots": 0.15,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 973.36,
-        "trueDps": 211.206360319752,
+        "fullMagazineDamage": 1075.5628,
+        "trueDps": 132.57504751715175,
         "stumblePerShot": 103.4195,
         "stumblePerSecond": 258.54875,
         "rangeDamages": {
@@ -14000,8 +14000,8 @@
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 480,
-        "trueDps": 132.292145153881,
+        "fullMagazineDamage": 904.8000000000001,
+        "trueDps": 161.06809078771698,
         "stumblePerShot": 30.6,
         "stumblePerSecond": 174.857142857143,
         "rangeDamages": {
@@ -14210,8 +14210,8 @@
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 535.2,
-        "trueDps": 157.697785198645,
+        "fullMagazineDamage": 1008.852,
+        "trueDps": 191.58752314485116,
         "stumblePerShot": 34.119,
         "stumblePerSecond": 194.965714285714,
         "rangeDamages": {
@@ -14420,8 +14420,8 @@
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 596.748,
-        "trueDps": 187.492498703965,
+        "fullMagazineDamage": 1124.86998,
+        "trueDps": 227.28434132961556,
         "stumblePerShot": 38.042685,
         "stumblePerSecond": 217.386771428571,
         "rangeDamages": {
@@ -14630,8 +14630,8 @@
         "delayBetweenShots": 0.175,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 665.37402,
-        "trueDps": 222.322072191225,
+        "fullMagazineDamage": 1254.2300277000002,
+        "trueDps": 268.90239822737067,
         "stumblePerShot": 42.417593775,
         "stumblePerSecond": 242.386250142857,
         "rangeDamages": {
@@ -14873,8 +14873,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 1577.652525,
-        "trueDps": 193.695828729282,
+        "fullMagazineDamage": 2973.875009625,
+        "trueDps": 237.57739242061115,
         "stumblePerShot": 40.2301393875,
         "stumblePerSecond": 134.100464625,
         "rangeDamages": {
@@ -15083,8 +15083,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 1854.73008075,
-        "trueDps": 227.713944843462,
+        "fullMagazineDamage": 3496.16620221375,
+        "trueDps": 279.3022729949071,
         "stumblePerShot": 47.295617059125,
         "stumblePerSecond": 157.65205686375,
         "rangeDamages": {
@@ -15323,8 +15323,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
-        "fullMagazineDamage": 192,
-        "trueDps": 150.943396226415,
+        "fullMagazineDamage": 146.8,
+        "trueDps": 76.93920335429769,
         "stumblePerShot": 84.864,
         "stumblePerSecond": 282.88,
         "rangeDamages": {
@@ -15520,21 +15520,22 @@
           "in": 0.7475,
           "out": 0.470925
         },
-        "rpm": 37.31343283582089,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
+        "rpm": 200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "500": 146.8,
           "750": 102.76,
           "1000": 71.932,
           "1250": 50.3524
-        }
+        },
+        "roundsPerShot": 2
       },
       "uncommon": {
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
-        "fullMagazineDamage": 227.52,
-        "trueDps": 178.867924528302,
+        "fullMagazineDamage": 173.95800000000003,
+        "trueDps": 91.17295597484278,
         "stumblePerShot": 104.5863936,
         "stumblePerSecond": 348.621312,
         "rangeDamages": {
@@ -15730,21 +15731,22 @@
           "in": 0.7475,
           "out": 0.470925
         },
-        "rpm": 37.31343283582089,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
+        "rpm": 200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "500": 173.95800000000003,
           "750": 121.7706,
           "1000": 85.23942000000001,
           "1250": 59.667594
-        }
+        },
+        "roundsPerShot": 2
       },
       "rare": {
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
-        "fullMagazineDamage": 269.6112,
-        "trueDps": 211.958490566038,
+        "fullMagazineDamage": 206.14023,
+        "trueDps": 108.03995283018867,
         "stumblePerShot": 128.89227147264,
         "stumblePerSecond": 429.6409049088,
         "rangeDamages": {
@@ -15940,21 +15942,22 @@
           "in": 0.7475,
           "out": 0.470925
         },
-        "rpm": 37.31343283582089,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
+        "rpm": 200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "500": 206.14023,
           "750": 144.298161,
           "1000": 101.0087127,
           "1250": 70.70609888999999
-        }
+        },
+        "roundsPerShot": 2
       },
       "epic": {
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 16,
-        "fullMagazineDamage": 319.489272,
-        "trueDps": 251.170811320755,
+        "fullMagazineDamage": 244.27617254999998,
+        "trueDps": 128.02734410377357,
         "stumblePerShot": 158.846835362882,
         "stumblePerSecond": 529.489451209605,
         "rangeDamages": {
@@ -16150,14 +16153,15 @@
           "in": 0.7475,
           "out": 0.470925
         },
-        "rpm": 37.31343283582089,
-        "rpmFormula": "(60 / (rechamberLength + reloadSpeed))",
+        "rpm": 200,
+        "rpmFormula": "(1 / delayBetweenShots * 60)",
         "shotgunRangeDamages": {
           "500": 244.27617254999998,
           "750": 170.99332078499998,
           "1000": 119.6953245495,
           "1250": 83.78672718465
-        }
+        },
+        "roundsPerShot": 2
       }
     },
     "upgrades": {
@@ -16193,8 +16197,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
-        "fullMagazineDamage": 324,
-        "trueDps": 142.941176470588,
+        "fullMagazineDamage": 423,
+        "trueDps": 94,
         "stumblePerShot": 95.472,
         "stumblePerSecond": 119.34,
         "rangeDamages": {
@@ -16403,8 +16407,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
-        "fullMagazineDamage": 383.94,
-        "trueDps": 169.385294117647,
+        "fullMagazineDamage": 501.255,
+        "trueDps": 111.39,
         "stumblePerShot": 117.6596928,
         "stumblePerSecond": 147.074616,
         "rangeDamages": {
@@ -16613,8 +16617,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
-        "fullMagazineDamage": 454.9689,
-        "trueDps": 200.721573529412,
+        "fullMagazineDamage": 593.987175,
+        "trueDps": 131.99715,
         "stumblePerShot": 145.00380540672,
         "stumblePerSecond": 181.2547567584,
         "rangeDamages": {
@@ -16823,8 +16827,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 12,
-        "fullMagazineDamage": 539.1381465,
-        "trueDps": 237.855064632353,
+        "fullMagazineDamage": 703.874802375,
+        "trueDps": 156.41662275,
         "stumblePerShot": 178.702689783242,
         "stumblePerSecond": 223.378362229052,
         "rangeDamages": {
@@ -17063,8 +17067,8 @@
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 432,
-        "trueDps": 162,
+        "fullMagazineDamage": 476.40000000000003,
+        "trueDps": 113.42857142857143,
         "stumblePerShot": 55.08,
         "stumblePerSecond": 275.4,
         "rangeDamages": {
@@ -17273,8 +17277,8 @@
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 481.68,
-        "trueDps": 203.52676056338,
+        "fullMagazineDamage": 531.1859999999999,
+        "trueDps": 141.6496,
         "stumblePerShot": 61.4142,
         "stumblePerSecond": 307.071,
         "rangeDamages": {
@@ -17483,8 +17487,8 @@
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 537.0732,
-        "trueDps": 254.336164167324,
+        "fullMagazineDamage": 592.27239,
+        "trueDps": 175.87895768374165,
         "stumblePerShot": 68.476833,
         "stumblePerSecond": 342.384165,
         "rangeDamages": {
@@ -17693,8 +17697,8 @@
         "delayBetweenShots": 0.2,
         "delayBetweenBursts": 0,
         "pellets": 8,
-        "fullMagazineDamage": 598.836618,
-        "trueDps": 316.02266660803,
+        "fullMagazineDamage": 660.38371485,
+        "trueDps": 217.06190553432765,
         "stumblePerShot": 76.351668795,
         "stumblePerSecond": 381.758343975,
         "rangeDamages": {
@@ -17934,7 +17938,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 275,
-        "trueDps": 104.961832061069,
+        "trueDps": 68.75,
         "stumblePerShot": 7.425,
         "stumblePerSecond": 106.071428571429,
         "rangeDamages": {
@@ -18137,7 +18141,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 306.625,
-        "trueDps": 124.13967611336,
+        "trueDps": 81.22516556291392,
         "stumblePerShot": 8.278875,
         "stumblePerSecond": 118.269642857143,
         "rangeDamages": {
@@ -18339,8 +18343,8 @@
         "delayBetweenShots": 0.07,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 341.886875,
-        "trueDps": 146.418361884368,
+        "fullMagazineDamage": 341.88687500000003,
+        "trueDps": 95.69961511546538,
         "stumblePerShot": 9.230945625,
         "stumblePerSecond": 131.870651785714,
         "rangeDamages": {
@@ -18543,7 +18547,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 381.203865625,
-        "trueDps": 172.217693980122,
+        "trueDps": 112.44122575768749,
         "stumblePerShot": 10.292504371875,
         "stumblePerSecond": 147.035776741071,
         "rangeDamages": {
@@ -18776,7 +18780,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 320,
-        "trueDps": 114.204139900071,
+        "trueDps": 75.01172058134084,
         "stumblePerShot": 6.75,
         "stumblePerSecond": 107.142857142857,
         "rangeDamages": {
@@ -18979,7 +18983,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 356.8,
-        "trueDps": 134.539969834088,
+        "trueDps": 88.29497649096757,
         "stumblePerShot": 7.52625,
         "stumblePerSecond": 119.464285714286,
         "rangeDamages": {
@@ -19182,7 +19186,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 397.832,
-        "trueDps": 158.058005562177,
+        "trueDps": 103.64256871173636,
         "stumblePerShot": 8.39176875,
         "stumblePerSecond": 133.202678571429,
         "rangeDamages": {
@@ -19385,7 +19389,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 443.58268,
-        "trueDps": 185.173316635358,
+        "trueDps": 121.32175863247863,
         "stumblePerShot": 9.35682215625,
         "stumblePerSecond": 148.520986607143,
         "rangeDamages": {
@@ -19618,7 +19622,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 180,
-        "trueDps": 74.6887966804979,
+        "trueDps": 48.9795918367347,
         "stumblePerShot": 6.075,
         "stumblePerSecond": 101.25,
         "rangeDamages": {
@@ -19821,7 +19825,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 200.7,
-        "trueDps": 89.3986636971047,
+        "trueDps": 58.555798687089705,
         "stumblePerShot": 6.773625,
         "stumblePerSecond": 112.89375,
         "rangeDamages": {
@@ -20023,8 +20027,8 @@
         "delayBetweenShots": 0.06,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 223.7805,
-        "trueDps": 106.740042928691,
+        "fullMagazineDamage": 223.78050000000002,
+        "trueDps": 69.82775567516968,
         "stumblePerShot": 7.552591875,
         "stumblePerSecond": 125.87653125,
         "rangeDamages": {
@@ -20227,7 +20231,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 249.5152575,
-        "trueDps": 127.1188616043,
+        "trueDps": 83.05340140300072,
         "stumblePerShot": 8.421139940625,
         "stumblePerSecond": 140.35233234375,
         "rangeDamages": {
@@ -20460,7 +20464,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 286,
-        "trueDps": 89.8429319371728,
+        "trueDps": 58.666666666666664,
         "stumblePerShot": 11.26125,
         "stumblePerSecond": 112.6125,
         "rangeDamages": {
@@ -20662,8 +20666,8 @@
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 338.91,
-        "trueDps": 106.46387434555,
+        "fullMagazineDamage": 338.90999999999997,
+        "trueDps": 69.52,
         "stumblePerShot": 14.0118103125,
         "stumblePerSecond": 140.118103125,
         "rangeDamages": {
@@ -20866,7 +20870,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 401.60835,
-        "trueDps": 126.159691099476,
+        "trueDps": 82.38119999999999,
         "stumblePerShot": 17.4341949813281,
         "stumblePerSecond": 174.341949813281,
         "rangeDamages": {
@@ -21069,7 +21073,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 475.90589475,
-        "trueDps": 149.49923395288,
+        "trueDps": 97.621722,
         "stumblePerShot": 21.6924971055175,
         "stumblePerSecond": 216.924971055175,
         "rangeDamages": {
@@ -21304,8 +21308,8 @@
         "delayBetweenShots": 0.1,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 658.1356835625,
-        "trueDps": 170.944333392857,
+        "fullMagazineDamage": 658.1356835624999,
+        "trueDps": 112.02309507446807,
         "stumblePerShot": 19.5230294675285,
         "stumblePerSecond": 195.230294675285,
         "rangeDamages": {
@@ -21508,7 +21512,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 845.922727918125,
-        "trueDps": 219.720189069643,
+        "trueDps": 143.98684730521276,
         "stumblePerShot": 26.9908895235402,
         "stumblePerSecond": 269.908895235402,
         "rangeDamages": {
@@ -21741,7 +21745,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 209,
-        "trueDps": 92.2058823529412,
+        "trueDps": 60.57971014492753,
         "stumblePerShot": 8.25,
         "stumblePerSecond": 165,
         "rangeDamages": {
@@ -21944,7 +21948,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 240.35,
-        "trueDps": 106.036764705882,
+        "trueDps": 69.66666666666666,
         "stumblePerShot": 9.4875,
         "stumblePerSecond": 189.75,
         "rangeDamages": {
@@ -22147,7 +22151,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 276.4025,
-        "trueDps": 121.942279411765,
+        "trueDps": 80.11666666666666,
         "stumblePerShot": 10.910625,
         "stumblePerSecond": 218.2125,
         "rangeDamages": {
@@ -22350,7 +22354,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 317.862875,
-        "trueDps": 140.233621323529,
+        "trueDps": 92.13416666666666,
         "stumblePerShot": 12.54721875,
         "stumblePerSecond": 250.944375,
         "rangeDamages": {
@@ -22583,7 +22587,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 450,
-        "trueDps": 95.7446808510639,
+        "trueDps": 53.25443786982249,
         "stumblePerShot": 70.875,
         "stumblePerSecond": 78.75,
         "rangeDamages": {
@@ -22786,7 +22790,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 533.25,
-        "trueDps": 113.457446808511,
+        "trueDps": 63.10650887573965,
         "stumblePerShot": 88.18621875,
         "stumblePerSecond": 97.9846875,
         "rangeDamages": {
@@ -22989,7 +22993,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 631.90125,
-        "trueDps": 134.447074468085,
+        "trueDps": 74.78121301775148,
         "stumblePerShot": 109.725702679688,
         "stumblePerSecond": 121.917447421875,
         "rangeDamages": {
@@ -23191,8 +23195,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 748.80298125,
-        "trueDps": 159.319783244681,
+        "fullMagazineDamage": 748.8029812499999,
+        "trueDps": 88.6157374260355,
         "stumblePerShot": 136.526205559201,
         "stumblePerSecond": 151.695783954668,
         "rangeDamages": {
@@ -23425,7 +23429,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 660,
-        "trueDps": 98.5074626865672,
+        "trueDps": 54.09836065573771,
         "stumblePerShot": 103.95,
         "stumblePerSecond": 63,
         "rangeDamages": {
@@ -23627,8 +23631,8 @@
         "delayBetweenShots": 0.45,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 782.1,
-        "trueDps": 116.731343283582,
+        "fullMagazineDamage": 782.0999999999999,
+        "trueDps": 64.10655737704917,
         "stumblePerShot": 129.3397875,
         "stumblePerSecond": 78.38775,
         "rangeDamages": {
@@ -23831,7 +23835,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 926.7885,
-        "trueDps": 138.326641791045,
+        "trueDps": 75.96627049180329,
         "stumblePerShot": 160.931030596875,
         "stumblePerSecond": 97.5339579375,
         "rangeDamages": {
@@ -24034,7 +24038,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1098.2443725,
-        "trueDps": 163.917070522388,
+        "trueDps": 90.02003053278689,
         "stumblePerShot": 200.238434820162,
         "stumblePerSecond": 121.356627163734,
         "rangeDamages": {
@@ -24267,7 +24271,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 450,
-        "trueDps": 128.571428571429,
+        "trueDps": 69.23076923076923,
         "stumblePerShot": 33.75,
         "stumblePerSecond": 135,
         "rangeDamages": {
@@ -24470,7 +24474,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 517.5,
-        "trueDps": 147.857142857143,
+        "trueDps": 79.61538461538461,
         "stumblePerShot": 38.8125,
         "stumblePerSecond": 155.25,
         "rangeDamages": {
@@ -24673,7 +24677,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 595.125,
-        "trueDps": 170.035714285714,
+        "trueDps": 91.5576923076923,
         "stumblePerShot": 44.634375,
         "stumblePerSecond": 178.5375,
         "rangeDamages": {
@@ -24876,7 +24880,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 684.39375,
-        "trueDps": 195.541071428571,
+        "trueDps": 105.29134615384615,
         "stumblePerShot": 51.32953125,
         "stumblePerSecond": 205.318125,
         "rangeDamages": {
@@ -25113,7 +25117,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1279.51875,
-        "trueDps": 282.246783088235,
+        "trueDps": 142.16875,
         "stumblePerShot": 47.981953125,
         "stumblePerSecond": 239.909765625,
         "rangeDamages": {
@@ -25316,7 +25320,7 @@
         "delayBetweenBursts": 0,
         "pellets": 1,
         "fullMagazineDamage": 1368.7875,
-        "trueDps": 301.938419117647,
+        "trueDps": 152.08749999999998,
         "stumblePerShot": 51.32953125,
         "stumblePerSecond": 256.64765625,
         "rangeDamages": {
@@ -25552,8 +25556,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 631.90125,
-        "trueDps": 134.447074468085,
+        "fullMagazineDamage": 800,
+        "trueDps": 80.40201005025126,
         "stumblePerShot": 109.725702679688,
         "stumblePerSecond": 121.917447421875,
         "rangeDamages": {
@@ -25755,8 +25759,8 @@
         "delayBetweenShots": 0.3,
         "delayBetweenBursts": 0,
         "pellets": 1,
-        "fullMagazineDamage": 748.80298125,
-        "trueDps": 159.319783244681,
+        "fullMagazineDamage": 920,
+        "trueDps": 92.46231155778895,
         "stumblePerShot": 136.526205559201,
         "stumblePerSecond": 151.695783954668,
         "rangeDamages": {

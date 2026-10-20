@@ -9,19 +9,10 @@ import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
 import { useRecoilValue } from 'recoil';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import ChartTooltip, { TooltipProps } from '@components/weapons/charts/ChartTooltip';
-import { getWeaponQuality } from '@components/weapons/utils';
+import { getDamageStatistics, getWeaponQuality } from '@components/weapons/utils';
 
 // Show only few ticks on the overall meters axis
 const shownTicks = [250, 500, 1000, 1500, 2000, 3000, 4000];
-
-const getDpsFormula = (weapon: WeaponDefinition): string => {
-  switch (weapon.category) {
-    case WeaponCategories.Melee:
-      return '(Base damage * RPM) / 60';
-  }
-
-  return 'Full Magazine Damage * 1.5 / (Empty Magazine Time + Reload Speed)';
-};
 
 const getSpsFormula = (weapon: WeaponDefinition): string => {
   switch (weapon.category) {
@@ -52,17 +43,13 @@ export default function WeaponDamage({weapon}: Props) {
   }).reverse();
 
   const weaponQuality = getWeaponQuality(weapon, selectedQuality);
+  const damageStatistics = getDamageStatistics(weaponQuality);
 
   const qualityColor = Object.keys(weapon.qualities).includes(selectedQuality)
     ? WeaponQualityColors[selectedQuality]
     : datasets[0].borderColor;
 
-  let baseDamage = datasets.find(d => d.label === selectedQuality)?.data[0];
-
-  // In case of selected quality not existing for the current weapon, fallback to the first available one
-  if (!baseDamage) {
-    baseDamage = datasets[0].data[0];
-  }
+  const baseDamage = weaponQuality.rangeDamagesComputed[0];
 
   const data: ChartData = {
     labels: weaponQuality.metersScale,
@@ -137,9 +124,12 @@ export default function WeaponDamage({weapon}: Props) {
           let damages: TooltipProps['damages'] = [];
 
           for (const dataset of datasets) {
+            const quality = dataset.label as WeaponQualities;
+            const damage = dataset.data[dataIndex] as number;
             damages.push({
-              quality: dataset.label as string,
-              damage: dataset.data[dataIndex] as number,
+              quality,
+              damage,
+              ...getDamageStatistics(weapon.qualities[quality], damage),
             });
           }
 
@@ -147,11 +137,6 @@ export default function WeaponDamage({weapon}: Props) {
             <ChartTooltip
               meter={meter}
               damages={damages}
-              baseDamage={baseDamage as number}
-              baseFullMagazineDamage={weaponQuality.fullMagazineDamage}
-              baseTrueDps={weaponQuality.trueDps}
-              baseStumblePerShot={weaponQuality.stumblePerShot}
-              baseStumblePerSecond={weaponQuality.stumblePerSecond}
               isMelee={weapon.category === WeaponCategories.Melee}
               isBow={weapon.category === WeaponCategories.Bow}
             />,
@@ -177,9 +162,7 @@ export default function WeaponDamage({weapon}: Props) {
 
   return (
     <div className="p-4 cursor-crosshair relative">
-      <Chart data={data} options={options} type="line"/>
-
-      <div className="absolute z-10 top-12 left-16 space-x-2">
+      <div className="mb-3 flex flex-wrap gap-2">
         <Tooltip
           label={<div>
             <b>Base damage</b>
@@ -187,20 +170,36 @@ export default function WeaponDamage({weapon}: Props) {
             <span>Base damage done per shot</span>
           </div>}
         >
-          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{(baseDamage as number).toFixed(2)} DMG</Badge>
+          <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{baseDamage.toFixed(2)} DMG</Badge>
         </Tooltip>
 
         {weapon.category !== WeaponCategories.Bow && (
           <Tooltip
             label={<div>
-              <b>True DPS</b>
+              <b>Raw DPS</b>
               <br/>
-              <span>Base damage done per second</span>
+              <span>Damage per second while firing, without reloads</span>
               <br/>
-              <span className="bg-stone-400 px-1">{getDpsFormula(weapon)}</span>
+              <span className="bg-stone-400 px-1">Base Damage * RPM / 60</span>
             </div>}
           >
-            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.trueDps.toFixed(2)} DPS</Badge>
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{damageStatistics.rawDps.toFixed(2)} Raw DPS</Badge>
+          </Tooltip>
+        )}
+
+        {weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow && (
+          <Tooltip
+            label={<div>
+              <b>Sustained DPS</b>
+              <br/>
+              <span>Average damage per second over full magazines, including reloads</span>
+              <br/>
+              <span className="bg-stone-400 px-1">Shots per Magazine * Base Damage / (Shots per Magazine * 60 / RPM + Reload Time)</span>
+              <br/>
+              <span>Shots per Magazine = Magazine Size / {weaponQuality.roundsPerShot || 1} round(s) per shot</span>
+            </div>}
+          >
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{damageStatistics.sustainedDps.toFixed(2)} Sustained DPS</Badge>
           </Tooltip>
         )}
 
@@ -211,67 +210,71 @@ export default function WeaponDamage({weapon}: Props) {
               <br/>
               <span>Overall damage done for a full magazine fired</span>
               <br/>
-              <span className="bg-stone-400 px-1">Magazine Size * Base Damage</span>
+              <span className="bg-stone-400 px-1">Magazine Size / {weaponQuality.roundsPerShot || 1} round(s) per shot * Base Damage</span>
             </div>}
           >
-            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.fullMagazineDamage.toFixed(2)} FMD</Badge>
+            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{damageStatistics.fullMagazineDamage.toFixed(2)} FMD</Badge>
           </Tooltip>
         )}
       </div>
 
-      {weapon.category !== WeaponCategories.Bow && (
-        <div className="absolute z-10 bottom-16 left-16 space-x-2">
-          <Tooltip
-            label={<div>
-              <b>Stumble Per Shot</b>
-              <br/>
-              <span>Stumble applied per shot</span>
-              <br/>
-              <span className="bg-stone-400 px-1">Base Damage * Stumble Ratio</span>
-            </div>}
-          >
-            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerShot.toFixed(2)} Stumble</Badge>
-          </Tooltip>
+      <div className="relative">
+        <Chart data={data} options={options} type="line"/>
 
-          <Tooltip
-            label={<div>
-              <b>Stumble Per Second</b>
-              <br/>
-              <span>Stumble applied per second</span>
-              <br/>
-              <span className="bg-stone-400 px-1">{getSpsFormula(weapon)}</span>
-            </div>}
-          >
-            <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerSecond.toFixed(2)} SPS</Badge>
-          </Tooltip>
-        </div>
-      )}
+        {weapon.category !== WeaponCategories.Bow && (
+          <div className="absolute z-10 bottom-16 left-16 space-x-2">
+            <Tooltip
+              label={<div>
+                <b>Stumble Per Shot</b>
+                <br/>
+                <span>Stumble applied per shot</span>
+                <br/>
+                <span className="bg-stone-400 px-1">Base Damage * Stumble Ratio</span>
+              </div>}
+            >
+              <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerShot.toFixed(2)} Stumble</Badge>
+            </Tooltip>
 
-      {weaponQuality.pellets > 1 && (
-        <div className="absolute z-10 top-12 right-16">
-          <Tooltip label="Pellets per shot">
-            <Badge color="dark" size="sm">{weaponQuality.pellets} pellets</Badge>
-          </Tooltip>
-        </div>
-      )}
+            <Tooltip
+              label={<div>
+                <b>Stumble Per Second</b>
+                <br/>
+                <span>Stumble applied per second</span>
+                <br/>
+                <span className="bg-stone-400 px-1">{getSpsFormula(weapon)}</span>
+              </div>}
+            >
+              <Badge color="dark" size="lg" style={{borderColor: qualityColor as string}}>{weaponQuality.stumblePerSecond.toFixed(2)} SPS</Badge>
+            </Tooltip>
+          </div>
+        )}
 
-      {weapon.category === WeaponCategories.Shotgun && (
-        <div className="absolute z-10 top-20 right-16">
-          <Tooltip label="First pellet bonus damage">
-            <Badge color="dark" size="sm">
-              {weaponQuality.rangeDamages[Object.keys(weaponQuality.rangeDamages)[0]].toFixed(2)} DMG
-            </Badge>
-          </Tooltip>
-        </div>
-      )}
+        {weaponQuality.pellets > 1 && (
+          <div className="absolute z-10 top-12 right-16">
+            <Tooltip label="Pellets per shot">
+              <Badge color="dark" size="sm">{weaponQuality.pellets} pellets</Badge>
+            </Tooltip>
+          </div>
+        )}
 
-      {weaponQuality.stamina && (
-        <div className="absolute z-10 top-12 right-16">
-          <Tooltip label="Stamina consumed per hit">
-            <Badge color="dark" size="sm">{weaponQuality.stamina} stamina</Badge>
-          </Tooltip>
-        </div>
-      )}
+        {weapon.category === WeaponCategories.Shotgun && (
+          <div className="absolute z-10 top-20 right-16">
+            <Tooltip label="First pellet bonus damage">
+              <Badge color="dark" size="sm">
+                {weaponQuality.rangeDamages[Object.keys(weaponQuality.rangeDamages)[0]].toFixed(2)} DMG
+              </Badge>
+            </Tooltip>
+          </div>
+        )}
+
+        {weaponQuality.stamina && (
+          <div className="absolute z-10 top-12 right-16">
+            <Tooltip label="Stamina consumed per hit">
+              <Badge color="dark" size="sm">{weaponQuality.stamina} stamina</Badge>
+            </Tooltip>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

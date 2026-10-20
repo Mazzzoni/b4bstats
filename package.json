@@ -5,7 +5,8 @@
     "start:dev": "next dev",
     "start:prod": "next build && next start",
     "export": "next build && next export && next-sitemap",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:weapons": "node tests/weapons.test.js"
   },
   "dependencies": {
     "@mantine/core": "^3.6.7",
