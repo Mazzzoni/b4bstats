@@ -30,19 +30,19 @@ export default function Introduction() {
 
       <div className="my-6">
         <div className="flex">
-          <img src="/images/xbox.svg" alt="Xbox Game Pass" className="h-8 w-8"/>
-          <h3 className="text-3xl ml-2">{t('introduction.xbox_game_pass')}</h3>
+          <img src="/images/xbox.svg" alt="Xbox" className="h-8 w-8"/>
+          <h3 className="text-3xl ml-2">{t('introduction.xbox')}</h3>
         </div>
 
         <Trans
-          i18nKey="introduction.xbox_game_pass_instructions"
+          i18nKey="introduction.xbox_instructions"
           components={{b: <b className="text-decoration-underline"/>}}
         />
         <br/>
         <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
         <br/>
         <Trans
-          i18nKey="introduction.xbox_game_pass_instructions_2"
+          i18nKey="introduction.xbox_instructions_2"
           components={{b: <b/>}}
         />
       </div>

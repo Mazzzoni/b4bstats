@@ -98,10 +98,10 @@ const Page: NextPage = () => {
           <Divider variant="dashed" my={20}/>
 
           <div>
-            <strong className="text-xl">I can not find statistics file with Xbox Game Pass, help !</strong>
+            <strong className="text-xl">I can not find statistics file with Xbox, help !</strong>
 
             <p>
-              <b>Xbox Game Pass</b> stores your files differently than <b>Steam</b> or <b>Epic Games Store</b>, please go to the mentioned folder:
+              <b>Xbox</b> stores your files differently than <b>Steam</b> or <b>Epic Games Store</b>, please go to the mentioned folder:
               <br/>
               <Kbd className="color-primary color-bg-secondary"><b>{'<disk>:\\Users\\<username>\\AppData\\Local\\Packages\\WarnerBros.Interactive.<some key>\\SystemAppData\\wgs\\'}</b></Kbd>
               <br/>
