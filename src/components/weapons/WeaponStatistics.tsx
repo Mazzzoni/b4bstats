@@ -22,7 +22,10 @@ export default function WeaponStatistics({weapon}: Props) {
               tooltipLabel={<div>
                 <b>Magazine size</b>
                 <br/>
-                <span>How many bullets available in magazine</span>
+                <span>How many rounds are available in the magazine</span>
+                {(weaponQuality.roundsPerShot || 1) > 1 && (
+                  <div>{weaponQuality.roundsPerShot} rounds fired per shot</div>
+                )}
               </div>}
               icon="magazine_size.svg"
               value={weaponQuality.magazineSize}
