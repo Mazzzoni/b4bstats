@@ -1,15 +1,37 @@
-import Progressions from '@components/self/Progressions';
-import Miscellaneous from '@components/self/Miscellaneous';
-import Graphs from '@components/self/Graphs';
-import Achievements from '@components/self/Achievements';
-
-export default function Display() {
+import Progressions from './Progressions';
+import Miscellaneous from './Miscellaneous';
+import Graphs from './Graphs';
+import Achievements from './Achievements';
+import type { DifficultyFilters } from './DifficultyFiltersState';
+export default function Display({
+  view = 'all',
+  difficultyFilters,
+}: {
+  view?: 'all' | 'statistics' | 'progression';
+  difficultyFilters?: Partial<DifficultyFilters>;
+}) {
   return (
-    <div>
-      <Progressions/>
-      <Miscellaneous/>
-      <Graphs/>
-      <Achievements/>
+    <div className="analyzer-sections">
+      {view !== 'statistics' && (
+        <section>
+          <Progressions difficultyFilters={difficultyFilters} />
+        </section>
+      )}
+      {view !== 'progression' && (
+        <>
+          <section>
+            <Miscellaneous />
+          </section>
+          <section>
+            <Graphs />
+          </section>
+        </>
+      )}
+      {view !== 'statistics' && (
+        <section>
+          <Achievements />
+        </section>
+      )}
     </div>
   );
 }

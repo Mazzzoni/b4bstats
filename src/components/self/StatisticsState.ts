@@ -1,9 +1,6 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 import Statistics from '@components/statistics/Statistics';
 
-export const state = atom<Statistics>({
-  key: 'Statistics',
-  default: new Statistics(),
-});
+export const state = atom<Statistics>(new Statistics());
 
 export default state;

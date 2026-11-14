@@ -11,14 +11,10 @@ import RiddenKilledPerWeaponOverall from '@components/self/charts/RiddenKilledPe
 import RiddenKilledPerWeaponType from '@components/self/charts/RiddenKilledPerWeaponType';
 import RiddenKilledPerWeaponTypeSet from '@components/self/charts/RiddenKilledPerWeaponTypeSet';
 import { WeaponTypes } from '@components/statistics/types';
-import { createRef } from 'react';
-import { getFormattedDate } from '@utils/generic';
-import ScreenshotTaker from '@components/common/ScreenshotTaker';
 
 export default function Graphs() {
-  const elementToScreenshotRef = createRef<HTMLDivElement>();
   const theme = useMantineTheme();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   // Configure defaults options of charts
   Chart.defaults.color = '#fff';
@@ -29,57 +25,56 @@ export default function Graphs() {
   Chart.register(ChartDataLabels);
 
   return (
-    <div ref={elementToScreenshotRef} id="graphs" className="mt-7" style={{backgroundColor: theme.colors.dark[8]}}>
+    <div id="graphs" className="mt-7" style={{ backgroundColor: theme.colors.dark[7] }}>
       <div className="flex justify-between">
-        <h2 className="text-3xl font-bold mb-5">Graphs</h2>
-        <ScreenshotTaker elementToScreenshotRef={elementToScreenshotRef} filename={`b4bstats_mazz__graphs__${getFormattedDate()}`}/>
+        <h2 className="text-3xl font-bold mb-5">{t('graphs.title')}</h2>
       </div>
 
-      <Divider label="Missions" labelPosition="center" variant="dashed" my={30}/>
+      <Divider label="Missions" labelPosition="center" variant="dashed" my={30} />
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-8">
-          <MissionsCompletedPerCleaner/>
+          <MissionsCompletedPerCleaner />
         </div>
 
         <div className="col-span-4">
-          <MissionsCompletedPerDifficulty/>
+          <MissionsCompletedPerDifficulty />
         </div>
       </div>
 
-      <Divider label="PvP" labelPosition="center" variant="dashed" my={30}/>
+      <Divider label="PvP" labelPosition="center" variant="dashed" my={30} />
 
-      <div className="grid grid-cols-12">
-        <div className="col-span-6">
-          <SwarmGamesPlayed/>
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="min-w-0 lg:col-span-6">
+          <SwarmGamesPlayed />
         </div>
 
-        <div className="col-span-6">
-          <SwarmKills/>
+        <div className="min-w-0 lg:col-span-6">
+          <SwarmKills />
         </div>
       </div>
 
-      <Divider label="Special riddens kills" labelPosition="center" variant="dashed" my={30}/>
+      <Divider label="Special riddens kills" labelPosition="center" variant="dashed" my={30} />
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-12">
-          <RiddenKilled/>
+          <RiddenKilled />
         </div>
       </div>
 
-      <Divider label="Weapons kills" labelPosition="center" variant="dashed" my={30}/>
+      <Divider label="Weapons kills" labelPosition="center" variant="dashed" my={30} />
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-12">
-          <RiddenKilledPerWeaponOverall/>
+          <RiddenKilledPerWeaponOverall />
         </div>
       </div>
 
-      <Space my={50}/>
+      <Space my={50} />
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-4">
-          <RiddenKilledPerWeaponType/>
+          <RiddenKilledPerWeaponType />
         </div>
 
         <div className="col-span-8">
@@ -90,17 +85,17 @@ export default function Graphs() {
         </div>
       </div>
 
-      <Space my={50}/>
+      <Space my={50} />
 
-      <div className="grid grid-cols-12">
-        <div className="col-span-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="min-w-0 lg:col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_ar')}
             type={WeaponTypes.AssaultRifle}
           />
         </div>
 
-        <div className="col-span-6">
+        <div className="min-w-0 lg:col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_shotgun')}
             type={WeaponTypes.Shotgun}
@@ -108,17 +103,17 @@ export default function Graphs() {
         </div>
       </div>
 
-      <Space my={50}/>
+      <Space my={50} />
 
-      <div className="grid grid-cols-12">
-        <div className="col-span-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
+        <div className="min-w-0 lg:col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_smg')}
             type={WeaponTypes.SMG}
           />
         </div>
 
-        <div className="col-span-6">
+        <div className="min-w-0 lg:col-span-6">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_melee')}
             type={WeaponTypes.Melee}
@@ -126,9 +121,9 @@ export default function Graphs() {
         </div>
       </div>
 
-      <Space my={50}/>
+      <Space my={50} />
 
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-1 lg:grid-cols-12">
         <div className="col-span-4">
           <RiddenKilledPerWeaponTypeSet
             title={t('graphs.ridden_killed_lmg')}

@@ -1,4 +1,15 @@
-import { CategoryScale, Chart, Legend, LinearScale, LineElement, PointElement, Tooltip, LineController, BarElement, BarController } from 'chart.js';
+import {
+  CategoryScale,
+  Chart,
+  Legend,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Tooltip,
+  LineController,
+  BarElement,
+  BarController,
+} from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { WeaponCategories, WeaponDefinition, WeaponsProps } from '@components/weapons/types';
 import ReactMarkdown from 'react-markdown';
@@ -51,24 +62,34 @@ export default function Display(props: Props) {
   return (
     <div>
       <div>
-        <h2 className="text-3xl font-bold">Weapons</h2>
+        <header className="players-page-heading">
+          <div className="players-eyebrow">FIELD REFERENCE</div>
+          <h1>Know your loadout.</h1>
+          <p className="text-muted">
+            Weapon damage, handling, and performance across every quality.
+          </p>
+        </header>
 
         <div className="mt-3 weapons-note">
           <ReactMarkdown>{props.note}</ReactMarkdown>
 
           <div className="mt-10 text-sm">
-            <ChevronsUp size={18} className="color-primary inline"/> = Statistic is influenced by weapon quality.
+            <ChevronsUp size={18} className="color-primary inline" /> = Statistic is influenced by
+            weapon quality.
           </div>
         </div>
 
         <div className="mt-5 weapons">
           {Object.keys(sortedWeapons).map((category) => (
             <div key={category}>
-              <WeaponsCategory categoryName={category} weapons={sortedWeapons[category as WeaponDefinition['category']]}/>
+              <WeaponsCategory
+                categoryName={category}
+                weapons={sortedWeapons[category as WeaponDefinition['category']]}
+              />
             </div>
           ))}
 
-          <Graphs sortedWeapons={sortedWeapons}/>
+          <Graphs sortedWeapons={sortedWeapons} />
         </div>
       </div>
     </div>

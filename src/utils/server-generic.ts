@@ -6,8 +6,7 @@ import * as fs from 'fs';
  * DO NOT mix them up with other shared functions to front (this would break app compilation)
  */
 
-export function getDataFileSync(filepath: string): string
-{
+export function getDataFileSync(filepath: string): string {
   const dataDirectory = path.join(process.cwd(), 'data');
 
   return fs.readFileSync(`${dataDirectory}/${filepath}`, 'utf8');

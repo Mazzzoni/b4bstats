@@ -1,12 +1,10 @@
-export enum ProgressionTypes
-{
+export enum ProgressionTypes {
   Online = 'online',
   Offline = 'offline',
   Merged = 'merged',
 }
 
-export enum Missions
-{
+export enum Missions {
   // Act 1
   Resurgence = 'evans_a',
   TunnelOfBlood = 'evans_b',
@@ -105,8 +103,7 @@ export const SwarmMissions: Missions[] = [
   Missions.TheRoadToHell,
 ];
 
-export enum MiscellaneousStatistics
-{
+export enum MiscellaneousStatistics {
   AmmoDropped,
   CaravanItemsPurchased,
   CardsPlayed,
@@ -127,8 +124,7 @@ export enum MiscellaneousStatistics
   SnitchersSilenced,
 }
 
-export enum BurnCards
-{
+export enum BurnCards {
   AmmoDrop = 'Burn_AmmoRestoreMaxTeam_25',
   DustyCustomAssaultRifle = 'Burn_RollGunAR',
   DustyCustomHandgun = 'Burn_RollGunHG',
@@ -153,8 +149,7 @@ export enum BurnCards
   SquadArmor = 'SquadArmor',
 }
 
-export enum Cleaners
-{
+export enum Cleaners {
   Evangelo = 'hero_1',
   Walker = 'hero_2',
   Holly = 'hero_3',
@@ -183,8 +178,7 @@ export type CleanerNames =
   | 'Dan'
   | 'Tala';
 
-export enum Difficulties
-{
+export enum Difficulties {
   Recruit = 'easy',
   Veteran = 'normal',
   Nightmare = 'hard',
@@ -193,8 +187,7 @@ export enum Difficulties
   Swarm = 'pvp',
 }
 
-export enum Riddens
-{
+export enum Riddens {
   Ogre,
   Breaker,
   Hag,
@@ -220,8 +213,7 @@ export enum Riddens
   Wailer,
 }
 
-export enum WeaponTypes
-{
+export enum WeaponTypes {
   Melee = 'Melee',
   AssaultRifle = 'AssaultRifle',
   Handgun = 'Handgun',
@@ -233,8 +225,7 @@ export enum WeaponTypes
   Flamethrower = 'Flamethrower',
 }
 
-export enum Weapons
-{
+export enum Weapons {
   Axe,
   Bat,
   BobArm,
@@ -346,11 +337,7 @@ export const WeaponsSMG: Weapons[] = [
   Weapons.Prototype378,
 ];
 
-export const WeaponsLMG: Weapons[] = [
-  Weapons.M249,
-  Weapons.RPK,
-  Weapons.Nemesis,
-];
+export const WeaponsLMG: Weapons[] = [Weapons.M249, Weapons.RPK, Weapons.Nemesis];
 
 export const WeaponsSniper: Weapons[] = [
   Weapons.M1A,
@@ -360,12 +347,8 @@ export const WeaponsSniper: Weapons[] = [
   Weapons.Lockjaw,
 ];
 
-export const WeaponsBow: Weapons[] = [
-  Weapons.Bow,
-];
-export const WeaponsFlamethrower: Weapons[] = [
-  Weapons.Flamethrower,
-];
+export const WeaponsBow: Weapons[] = [Weapons.Bow];
+export const WeaponsFlamethrower: Weapons[] = [Weapons.Flamethrower];
 
 export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
   [WeaponTypes.Melee]: WeaponsMelee,
@@ -380,54 +363,54 @@ export const WeaponsSorted: Record<WeaponTypes, Weapons[]> = {
 };
 
 export type MissionsCompletedPerCleaner = {
-  total: number
-  [Difficulties.Recruit]: number
-  [Difficulties.Veteran]: number
-  [Difficulties.Nightmare]: number
-  [Difficulties.NoHope]: number
-  [Difficulties.Legendary]: number
-  [Difficulties.Swarm]: number
-}
+  total: number;
+  [Difficulties.Recruit]: number;
+  [Difficulties.Veteran]: number;
+  [Difficulties.Nightmare]: number;
+  [Difficulties.NoHope]: number;
+  [Difficulties.Legendary]: number;
+  [Difficulties.Swarm]: number;
+};
 
 export type MissionsCompletedPerDifficulty = {
-  [Difficulties.Recruit]: number
-  [Difficulties.Veteran]: number
-  [Difficulties.Nightmare]: number
-  [Difficulties.NoHope]: number
-  [Difficulties.Legendary]: number
-  [Difficulties.Swarm]: number
-}
+  [Difficulties.Recruit]: number;
+  [Difficulties.Veteran]: number;
+  [Difficulties.Nightmare]: number;
+  [Difficulties.NoHope]: number;
+  [Difficulties.Legendary]: number;
+  [Difficulties.Swarm]: number;
+};
 
 export type MissionsStatistics = {
-  missionsCompleted: number
-  missionsCompletedPerDifficulty: MissionsCompletedPerDifficulty
-  missionsCompletedPerCleaner: Record<Cleaners, MissionsCompletedPerCleaner>
+  missionsCompleted: number;
+  missionsCompletedPerDifficulty: MissionsCompletedPerDifficulty;
+  missionsCompletedPerCleaner: Record<Cleaners, MissionsCompletedPerCleaner>;
   // Contain missions completed in raw form (to link how many times a mission have been completed)
-  missionsCompletedRaw: { [index: string]: number }
-}
+  missionsCompletedRaw: { [index: string]: number };
+};
 
 export type Progressions = {
   [cleanerId: string]: {
     [difficultyId: string]: {
-      [missionId: string]: boolean
-    }
-  }
-}
+      [missionId: string]: boolean;
+    };
+  };
+};
 
 export type RiddenKilled = {
-  riddenCommonKilled: number
-  riddenMutationsKilled: number
-  riddenSleeperKilled: number
-  riddenKilledTotal: number
-  specials: Record<Riddens, number>
-}
+  riddenCommonKilled: number;
+  riddenMutationsKilled: number;
+  riddenSleeperKilled: number;
+  riddenKilledTotal: number;
+  specials: Record<Riddens, number>;
+};
 
-export type WeaponsKills = Record<Weapons, number>
+export type WeaponsKills = Record<Weapons, number>;
 
 export type PvpStatistics = {
-  gamesPlayed: number
-  gamesWon: number
-  gamesLost: number
-  killsAsCleaner: number
-  killsAsRidden: number
-}
+  gamesPlayed: number;
+  gamesWon: number;
+  gamesLost: number;
+  killsAsCleaner: number;
+  killsAsRidden: number;
+};

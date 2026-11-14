@@ -10,11 +10,11 @@ const Page: NextPage<RiddensProps> = (props) => {
   return (
     <MainLayout title="Riddens">
       <Head>
-        <meta name="description" content="Riddens statistics and information"/>
+        <meta name="description" content="Riddens statistics and information" />
       </Head>
 
       <div>
-        <Display {...props}/>
+        <Display {...props} />
       </div>
     </MainLayout>
   );

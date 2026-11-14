@@ -1,6 +1,6 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import { localeFormat, getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
@@ -13,13 +13,13 @@ import { weaponToString } from '@translations/helpers';
 import { Badge } from '@mantine/core';
 
 type Props = {
-  title: string
-  type: WeaponTypes
-}
+  title: string;
+  type: WeaponTypes;
+};
 
-export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
-  const statistics = useRecoilValue(StatisticsState);
-  const {t} = useTranslation();
+export default function RiddenKilledPerWeaponTypeSet({ title, type }: Props) {
+  const statistics = useAtomValue(StatisticsState);
+  const { t } = useTranslation();
   const weapons = Statistics.getWeaponsFromWeaponType(type);
 
   let counts: number[] = [];
@@ -41,11 +41,13 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
 
   const data: ChartData = {
     labels: labels.map((weapon: string) => t(`weapons.${weapon}`)),
-    datasets: [{
-      label: 'Kills',
-      data: counts,
-      backgroundColor: WeaponColors[type],
-    }],
+    datasets: [
+      {
+        label: 'Kills',
+        data: counts,
+        backgroundColor: WeaponColors[type],
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -62,7 +64,7 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
       },
       tooltip: {
         callbacks: {
-          label: (c) => tooltipCallbackLabelKills(c, overallKillSet, t)
+          label: (c) => tooltipCallbackLabelKills(c, overallKillSet, t),
         },
       },
     },
@@ -77,35 +79,35 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
   return (
     <div>
       <strong>{title}</strong>
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
 
       {type === WeaponTypes.Melee && (
         <div className="mt-3">
           <Badge>
             <Trans
               i18nKey="graphs.labels.ridden_killed_fist"
-              values={{count: localeFormat(statistics.weaponsKills[Weapons.Fist])}}
-              components={{b: <b/>}}
+              values={{ count: localeFormat(statistics.weaponsKills[Weapons.Fist]) }}
+              components={{ b: <b /> }}
             />
           </Badge>
 
-          <br/>
+          <br />
 
           <Badge>
             <Trans
               i18nKey="graphs.labels.ridden_killed_bob_arm"
-              values={{count: localeFormat(statistics.weaponsKills[Weapons.BobArm])}}
-              components={{b: <b/>}}
+              values={{ count: localeFormat(statistics.weaponsKills[Weapons.BobArm]) }}
+              components={{ b: <b /> }}
             />
           </Badge>
 
-          <br/>
+          <br />
 
           <Badge>
             <Trans
               i18nKey="graphs.labels.ridden_killed_skull_totem"
-              values={{count: localeFormat(statistics.weaponsKills[Weapons.SkullTotem])}}
-              components={{b: <b/>}}
+              values={{ count: localeFormat(statistics.weaponsKills[Weapons.SkullTotem]) }}
+              components={{ b: <b /> }}
             />
           </Badge>
         </div>
@@ -115,8 +117,8 @@ export default function RiddenKilledPerWeaponTypeSet({title, type}: Props) {
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_ridden_killed"
-            values={{count: localeFormat(total)}}
-            components={{b: <b/>}}
+            values={{ count: localeFormat(total) }}
+            components={{ b: <b /> }}
           />
         </Badge>
       </div>

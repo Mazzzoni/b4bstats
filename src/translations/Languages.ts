@@ -1,5 +1,4 @@
-export enum Languages
-{
+export enum Languages {
   enEN = 'en-EN',
   frFR = 'fr-FR',
   deDE = 'de-DE',

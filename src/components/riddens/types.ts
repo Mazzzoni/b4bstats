@@ -1,7 +1,6 @@
 import { Difficulties } from '@components/statistics/types';
 
-export enum RiddenCategories
-{
+export enum RiddenCategories {
   Commons = 'commons',
   Stingers = 'stingers',
   Reekers = 'reekers',

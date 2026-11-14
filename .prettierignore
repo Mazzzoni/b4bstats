@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.next/
+coverage/
+.local/
+b4b-capture/
+fixtures/
+data/
+samples/
+public/
+pnpm-lock.yaml
+yarn.lock
+next-env.d.ts

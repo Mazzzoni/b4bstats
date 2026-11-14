@@ -1,18 +1,14 @@
-// Run script with:
-// http://localhost:3000/api/parse-riddens
-
+import { pipeline } from 'node:stream/promises';
+import { Writable } from 'node:stream';
 import * as csv from '@fast-csv/parse';
 import * as fs from 'fs';
-import { NextApiRequest, NextApiResponse } from 'next';
 import { Difficulties } from '@components/statistics/types';
 import { RiddenCategories, RiddenDefinition } from '@components/riddens/types';
 
 const file = `${process.cwd()}/data/riddens/sheets/kaemanden-riddens-2022-09-17.csv`;
 
-class Saver
-{
-  save(allRiddens: Parser['riddens'])
-  {
+class Saver {
+  save(allRiddens: Parser['riddens']) {
     for (const difficulty in allRiddens) {
       const rawRiddens = allRiddens[difficulty as Difficulties];
       const otherRiddens = this.getOtherRiddens(difficulty as Difficulties);
@@ -22,8 +18,7 @@ class Saver
     }
   }
 
-  private getOtherRiddens(difficulty: Difficulties): RiddenDefinition[]
-  {
+  private getOtherRiddens(difficulty: Difficulties): RiddenDefinition[] {
     let otherRiddensFile: string;
 
     switch (difficulty) {
@@ -57,8 +52,7 @@ class Saver
     return JSON.parse(file);
   }
 
-  private writeFile(difficulty: Difficulties, riddens: RiddenDefinition[]): void
-  {
+  private writeFile(difficulty: Difficulties, riddens: RiddenDefinition[]): void {
     let riddenFile: string;
 
     switch (difficulty) {
@@ -91,8 +85,7 @@ class Saver
   }
 }
 
-class Parser
-{
+class Parser {
   public riddens: Record<Difficulties, Map<RiddenDefinition['name'], RiddenDefinition>> = {
     [Difficulties.Recruit]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
     [Difficulties.Veteran]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
@@ -102,8 +95,7 @@ class Parser
     [Difficulties.Swarm]: new Map<RiddenDefinition['name'], RiddenDefinition>(),
   };
 
-  parse(row: any): void
-  {
+  parse(row: any): void {
     let ridden: RiddenDefinition;
     const riddenName = this.getRiddenName(row.Monster);
     const difficulty = this.getDifficulty(row.Difficulty);
@@ -150,8 +142,7 @@ class Parser
   /**
    * Convert raw name to final one
    */
-  private getRiddenName(rawName: string): string
-  {
+  private getRiddenName(rawName: string): string {
     switch (rawName) {
       case 'CultistMelee':
         return 'Slasher';
@@ -166,8 +157,7 @@ class Parser
     return rawName;
   }
 
-  private getDifficulty(rawDifficulty: string): Difficulties
-  {
+  private getDifficulty(rawDifficulty: string): Difficulties {
     switch (rawDifficulty) {
       case 'Recruit':
         return Difficulties.Recruit;
@@ -182,8 +172,7 @@ class Parser
     }
   }
 
-  private getCategory(rawName: string): RiddenCategories
-  {
+  private getCategory(rawName: string): RiddenCategories {
     switch (rawName) {
       case 'Common':
       case 'Armored Common':
@@ -227,8 +216,7 @@ class Parser
     }
   }
 
-  private getImage(rawName: string): string
-  {
+  private getImage(rawName: string): string {
     switch (rawName) {
       case 'Common':
         return 'common.webp';
@@ -289,20 +277,23 @@ class Parser
   }
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export async function generateRiddens() {
   const saver = new Saver();
   const parser = new Parser();
-
-  fs.createReadStream(file)
-    .pipe(csv.parse({headers: true}))
-    .on('error', (err: any) => console.log(err))
-    .on('data', (row: any) => parser.parse(row))
-    .on('end', (rowCount: number) => {
-      console.log(`Parsed ${rowCount} rows`);
-      console.log('Saving riddens...');
-      saver.save(parser.riddens);
-      console.log('Riddens saved !');
-    });
-
-  res.status(200).json({message: 'Parsing done'});
+  await pipeline(
+    fs.createReadStream(file),
+    csv.parse({ headers: true }),
+    new Writable({
+      objectMode: true,
+      write(row, _encoding, done) {
+        try {
+          parser.parse(row);
+          done();
+        } catch (error) {
+          done(error as Error);
+        }
+      },
+    }),
+  );
+  saver.save(parser.riddens);
 }

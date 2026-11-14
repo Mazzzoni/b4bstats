@@ -1,26 +1,37 @@
-import 'chart.js/auto';
-import { Chart } from 'react-chartjs-2';
-import { useRecoilValue } from 'recoil';
+import StatisticsChart from '@components/common/StatisticsChart';
+import { useAtomValue } from 'jotai';
 import { nFormatter } from '@utils/generic';
 import { useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions, ChartType, TooltipItem } from 'chart.js';
 import { Context } from 'chartjs-plugin-datalabels';
 import StatisticsState from '@components/self/StatisticsState';
 import { tooltipCallbackLabelMissions } from '@utils/charts';
+import { Difficulties } from '@components/statistics/types';
 import { DifficultyColors } from '@utils/colors';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 
 export default function MissionsCompletedPerDifficulty() {
-  const statistics = useRecoilValue(StatisticsState);
-  const progressionType = useRecoilValue(SelectedProgressionTypeState);
-  const {t} = useTranslation();
+  const statistics = useAtomValue(StatisticsState);
+  const progressionType = useAtomValue(SelectedProgressionTypeState);
+  const { t } = useTranslation();
 
+  const entries = Object.entries(
+    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty,
+  ).filter(
+    ([difficulty]) =>
+      difficulty !== Difficulties.Legendary ||
+      statistics.hasProgressionDifficulty(Difficulties.Legendary, progressionType),
+  );
   const data: ChartData = {
-    labels: Object.keys(statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty).map((difficulty) => t(`difficulties.${difficulty}`)),
-    datasets: [{
-      data: Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty),
-      backgroundColor: Object.values(DifficultyColors),
-    }],
+    labels: entries.map(([difficulty]) => t(`difficulties.${difficulty}`)),
+    datasets: [
+      {
+        data: entries.map(([, count]) => count),
+        backgroundColor: entries.map(
+          ([difficulty]) => DifficultyColors[difficulty as Difficulties],
+        ),
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -28,7 +39,9 @@ export default function MissionsCompletedPerDifficulty() {
       datalabels: {
         anchor: 'center',
         align: 'center',
-        display: (context: Context) => context.dataset.data[context.dataIndex]! > (statistics.missionsStatistics[progressionType].missionsCompleted * 0.05),
+        display: (context: Context) =>
+          Number(context.dataset.data[context.dataIndex] ?? 0) >
+          statistics.missionsStatistics[progressionType].missionsCompleted * 0.05,
         formatter: (value: number) => nFormatter(value, 1),
       },
       legend: {
@@ -36,21 +49,29 @@ export default function MissionsCompletedPerDifficulty() {
         align: 'start',
         labels: {
           boxWidth: 16,
-        }
+        },
       },
       tooltip: {
         callbacks: {
           title: (context: TooltipItem<ChartType>[]) => context[0].label,
-          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics[progressionType].missionsCompleted, t)
-        }
+          label: (c) =>
+            tooltipCallbackLabelMissions(
+              c,
+              statistics.missionsStatistics[progressionType].missionsCompleted,
+              t,
+            ),
+        },
       },
     },
   };
 
   return (
-    <div>
-      <strong>{t('graphs.missions_completed_per_difficulty')}</strong>
-      <Chart data={data} options={options} type="doughnut"/>
-    </div>
+    <StatisticsChart
+      title={t('graphs.missions_completed_per_difficulty')}
+      data={data}
+      options={options}
+      type="doughnut"
+      height={360}
+    />
   );
 }

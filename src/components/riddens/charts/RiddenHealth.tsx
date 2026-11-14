@@ -3,7 +3,7 @@ import { Chart } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 import { RiddenDefinition } from '@components/riddens/types';
 import { getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import SelectedDifficultyState from '@components/riddens/SelectedDifficultyState';
 import { Difficulties } from '@components/statistics/types';
 
@@ -25,30 +25,38 @@ const convertToEffectiveHealth = (health: number, difficulty: Difficulties): num
   }
 };
 
-export default function RiddenHealth({health}: Props) {
-  const selectedDifficulty = useRecoilValue(SelectedDifficultyState);
+export default function RiddenHealth({ health }: Props) {
+  const selectedDifficulty = useAtomValue(SelectedDifficultyState);
 
   if (typeof health === 'number') {
-    return (
-      <div>
-        {convertToEffectiveHealth(health, selectedDifficulty).toFixed(2)}
-      </div>
-    );
+    return <div>{convertToEffectiveHealth(health, selectedDifficulty).toFixed(2)}</div>;
   }
 
-  const healthData = Object.values(health).map((h) => convertToEffectiveHealth(h, selectedDifficulty));
+  const healthData = Object.values(health).map((h) =>
+    convertToEffectiveHealth(h, selectedDifficulty),
+  );
 
   const data: ChartData = {
     labels: Object.keys(health),
-    datasets: [{
-      data: healthData,
-      backgroundColor: '#bb0000',
-    }],
+    datasets: [
+      {
+        data: healthData,
+        backgroundColor: '#d41002',
+        borderRadius: 3,
+        maxBarThickness: 72,
+      },
+    ],
   };
 
   const options: ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: { padding: { top: 20 } },
     scales: {
+      x: { grid: { display: false }, ticks: { color: '#a4a8ae' } },
       y: {
+        grid: { color: '#34383d' },
+        ticks: { color: '#a4a8ae' },
         suggestedMax: getSuggestedMaxFromArrayOfIntegers(Object.values(healthData)),
       },
     },
@@ -62,8 +70,8 @@ export default function RiddenHealth({health}: Props) {
   };
 
   return (
-    <div style={{maxWidth: 450}}>
-      <Chart data={data} options={options} type="bar"/>
+    <div className="h-44 w-full">
+      <Chart data={data} options={options} type="bar" />
     </div>
   );
 }

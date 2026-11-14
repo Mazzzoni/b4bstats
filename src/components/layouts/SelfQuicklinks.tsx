@@ -1,8 +1,8 @@
-import { Checkbox, Radio, RadioGroup } from '@mantine/core';
+import { Checkbox, Radio } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
 import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import { useRecoilState, useRecoilValue } from 'recoil';
-import { Cleaners, ProgressionTypes } from '@components/statistics/types';
+import { useAtom, useAtomValue } from 'jotai';
+import { Cleaners, Difficulties, ProgressionTypes } from '@components/statistics/types';
 import { Award, List, PieChart, X } from 'react-feather';
 import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById } from '@utils/generic';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
@@ -10,27 +10,25 @@ import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import StatisticsState from '@components/self/StatisticsState';
 import SaveToLocalState from '@components/self/SaveToLocalState';
-
 export default function SelfQuicklinks() {
-  const {t} = useTranslation();
-  const statistics = useRecoilValue(StatisticsState);
-  const saveToLocal = useRecoilValue(SaveToLocalState);
-  const [difficultyFilters, setDifficultyFilters] = useRecoilState(DifficultyFiltersState);
-  const [selectedProgressionType, setSelectedProgressionType] = useRecoilState(SelectedProgressionTypeState);
+  const { t } = useTranslation();
+  const statistics = useAtomValue(StatisticsState);
+  const saveToLocal = useAtomValue(SaveToLocalState);
+  const [difficultyFilters, setDifficultyFilters] = useAtom(DifficultyFiltersState);
+  const [selectedProgressionType, setSelectedProgressionType] = useAtom(
+    SelectedProgressionTypeState,
+  );
   const [showRemoveCachedStatsButton, setShowRemoveCachedStatsButton] = useState(false);
   const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
-
   useEffect(() => {
     // Don't check right away, local storage won't be updated yet
     setTimeout(() => {
       const data = localStorage.getItem('statsFile');
-
       if (data) {
         setShowRemoveCachedStatsButton(true);
       }
     }, 500);
   }, [statistics, saveToLocal]);
-
   return (
     <div className="border-left-subtle pl-3">
       {showRemoveCachedStatsButton && (
@@ -41,15 +39,13 @@ export default function SelfQuicklinks() {
               if (localStorage.getItem('statsFile')) {
                 localStorage.removeItem('statsFile');
               }
-
               toast.success('Browser cached statistics file cleared ! Page will be reloaded.');
-
               setTimeout(() => {
                 window.location.reload();
-              }, 2_000);
+              }, 2000);
             }}
           >
-            <X size={16} className="mr-1"/> Clear cached stats
+            <X size={16} className="mr-1" /> Clear cached stats
           </span>
         </div>
       )}
@@ -57,16 +53,15 @@ export default function SelfQuicklinks() {
       <div className="border-bottom-subtle pb-3">
         <strong>Progressions</strong>
 
-        <RadioGroup
-          variant="vertical"
-          defaultValue={selectedProgressionType}
-          defaultChecked={true}
+        <Radio.Group
+          value={selectedProgressionType}
           className="select-none"
-          onChange={(e) => setSelectedProgressionType(e as ProgressionTypes)}>
-          <Radio value={ProgressionTypes.Merged}>Both</Radio>
-          <Radio value={ProgressionTypes.Online}>Online</Radio>
-          <Radio value={ProgressionTypes.Offline}>Offline</Radio>
-        </RadioGroup>
+          onChange={(e) => setSelectedProgressionType(e as ProgressionTypes)}
+        >
+          <Radio value={ProgressionTypes.Merged} label={'Both'} />
+          <Radio value={ProgressionTypes.Online} label={'Online'} />
+          <Radio value={ProgressionTypes.Offline} label={'Offline'} />
+        </Radio.Group>
       </div>
 
       <div className="space-y-2 border-bottom-subtle pt-2 pb-3 difficulty-filters">
@@ -77,7 +72,7 @@ export default function SelfQuicklinks() {
           label={t('difficulties.easy')}
           defaultChecked={difficultyFilters.showRecruit}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showRecruit: e.target.checked}});
+            setDifficultyFilters({ ...difficultyFilters, ...{ showRecruit: e.target.checked } });
           }}
         />
 
@@ -86,7 +81,7 @@ export default function SelfQuicklinks() {
           label={t('difficulties.normal')}
           defaultChecked={difficultyFilters.showVeteran}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showVeteran: e.target.checked}});
+            setDifficultyFilters({ ...difficultyFilters, ...{ showVeteran: e.target.checked } });
           }}
         />
 
@@ -95,7 +90,7 @@ export default function SelfQuicklinks() {
           label={t('difficulties.hard')}
           defaultChecked={difficultyFilters.showNightmare}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showNightmare: e.target.checked}});
+            setDifficultyFilters({ ...difficultyFilters, ...{ showNightmare: e.target.checked } });
           }}
         />
 
@@ -104,25 +99,30 @@ export default function SelfQuicklinks() {
           label={t('difficulties.veryhard')}
           defaultChecked={difficultyFilters.showNoHope}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showNoHope: e.target.checked}});
+            setDifficultyFilters({ ...difficultyFilters, ...{ showNoHope: e.target.checked } });
           }}
         />
 
-        <Checkbox
-          className="select-none cursor-pointer hover:bg-white/10"
-          label={t('difficulties.legendary')}
-          defaultChecked={difficultyFilters.showLegendary}
-          onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showLegendary: e.target.checked}});
-          }}
-        />
+        {statistics.hasProgressionDifficulty(Difficulties.Legendary, selectedProgressionType) && (
+          <Checkbox
+            className="select-none cursor-pointer hover:bg-white/10"
+            label={t('difficulties.legendary')}
+            defaultChecked={difficultyFilters.showLegendary}
+            onChange={(e) => {
+              setDifficultyFilters({
+                ...difficultyFilters,
+                ...{ showLegendary: e.target.checked },
+              });
+            }}
+          />
+        )}
 
         <Checkbox
           className="select-none cursor-pointer hover:bg-white/10"
           label={t('difficulties.pvp')}
           defaultChecked={difficultyFilters.showSwarm}
           onChange={(e) => {
-            setDifficultyFilters({...difficultyFilters, ...{showSwarm: e.target.checked}});
+            setDifficultyFilters({ ...difficultyFilters, ...{ showSwarm: e.target.checked } });
           }}
         />
       </div>
@@ -148,15 +148,15 @@ export default function SelfQuicklinks() {
 
       <div className="space-y-2 pt-2">
         <a href="#miscellaneous" className="block hover:bg-white/10 flex items-center px-3">
-          <List size={16} className="mr-4 relative top-[-2px]"/> {t('miscellaneous.title')}
+          <List size={16} className="mr-4 relative top-[-2px]" /> {t('miscellaneous.title')}
         </a>
 
         <a href="#graphs" className="block hover:bg-white/10 flex items-center px-3">
-          <PieChart size={16} className="mr-4 relative top-[-2px]"/> {t('graphs.title')}
+          <PieChart size={16} className="mr-4 relative top-[-2px]" /> {t('graphs.title')}
         </a>
 
         <a href="#achievements" className="block hover:bg-white/10 flex items-center px-3">
-          <Award size={16} className="mr-4 relative top-[-2px]"/> {t('achievements.title')}
+          <Award size={16} className="mr-4 relative top-[-2px]" /> {t('achievements.title')}
         </a>
       </div>
     </div>

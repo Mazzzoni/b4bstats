@@ -1,30 +1,17 @@
 # B4BSTATS
 
-B4BSTATS is an online tool centered around Back 4 Blood game to track your progress through campaigns and display your statistics.
+A Back 4 Blood statistics website with player profiles, leaderboards, save analysis, and weapon references.
 
-## Install
+## Stack
 
-To install project locally, make sure to have NodeJs (version 16.14.0 at least) and Yarn (version 1.22.17 at least) installed.
-
-* Clone the project `git clone git@github.com:Mazzzoni/b4bstats.git`
-* Enter project `cd b4bstats/`
-* Install dependencies `yarn`
-* Start dev environment `yarn start:dev`
-
-## Commands
-
-```shell
-# Install dependencies
-yarn
-
-# Serve dev
-yarn start:dev
-
-# Build and export to static files
-yarn export
-```
+- Next.js 16, React 19, and TypeScript
+- Mantine 9 and Tailwind CSS 4
+- Jotai for state management
+- Chart.js 4 for graphs
+- i18next for translations
+- Node.js 24 and pnpm
 
 ## Credits
 
-Created by [Mazzoni](https://github.com/Mazzzoni). (email: [hello@mazz.lol](mailto:hello@mazz.lol) / discord: [@mazz#0385](https://discordapp.com/users/370123066594033668))  
+Created by [Mazzoni](https://github.com/Mazzzoni). (email: [hello@mazz.lol](mailto:hello@mazz.lol) / discord: [@mazz#0385](https://discordapp.com/users/370123066594033668))
 Thanks to [r/Back4Blood/](https://www.reddit.com/r/Back4Blood/) and [Turtle Rock Studios](https://turtlerockstudios.com/) for their support and contributions.

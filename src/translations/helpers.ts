@@ -1,24 +1,21 @@
 import { localeFormat } from '@utils/generic';
 import { BurnCards, Weapons, WeaponTypes } from '@components/statistics/types';
 
-export function translateKillsTooltip(t: Function, count: number, percent: number)
-{
+export function translateKillsTooltip(t: Function, count: number, percent: number) {
   return t('graphs.labels.x_kills', {
     count: localeFormat(count),
     percent: percent,
   });
 }
 
-export function translateMissionsTooltip(t: Function, count: number, percent: number)
-{
+export function translateMissionsTooltip(t: Function, count: number, percent: number) {
   return t('graphs.labels.x_missions', {
     count: localeFormat(count),
     percent: percent,
   });
 }
 
-export function weaponTypeToString(weaponType: WeaponTypes): string
-{
+export function weaponTypeToString(weaponType: WeaponTypes): string {
   switch (weaponType) {
     case WeaponTypes.Melee:
       return 'MELEE';
@@ -43,8 +40,7 @@ export function weaponTypeToString(weaponType: WeaponTypes): string
   return 'unknown';
 }
 
-export function weaponToString(weapon: Weapons): string
-{
+export function weaponToString(weapon: Weapons): string {
   switch (weapon) {
     case Weapons.Axe:
       return 'Axe';
@@ -151,8 +147,7 @@ export function weaponToString(weapon: Weapons): string
   return 'unknown';
 }
 
-export function burnCardKeyToString(burnCardKey: BurnCards): string
-{
+export function burnCardKeyToString(burnCardKey: BurnCards): string {
   switch (burnCardKey) {
     case BurnCards.AmmoDrop:
       return 'Ammo Drop';

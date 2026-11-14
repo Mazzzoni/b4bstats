@@ -1,5 +1,4 @@
-export enum WeaponQualities
-{
+export enum WeaponQualities {
   Common = 'common',
   Uncommon = 'uncommon',
   Rare = 'rare',
@@ -8,8 +7,7 @@ export enum WeaponQualities
   Legendary = 'legendary',
 }
 
-export enum WeaponCategories
-{
+export enum WeaponCategories {
   AssaultRifle = 'assault rifle',
   Handgun = 'handgun',
   Shotgun = 'shotgun',
@@ -21,16 +19,14 @@ export enum WeaponCategories
   Flamethrower = 'flamethrower',
 }
 
-export enum AttachmentCategories
-{
+export enum AttachmentCategories {
   Barrel = 'barrel',
   Magazine = 'magazine',
   Scope = 'scope',
   Stock = 'stock',
 }
 
-export enum AttachmentEffect
-{
+export enum AttachmentEffect {
   WeakspotDamage = 'weakspot_damage',
   AdsSpeed = 'ads_speed',
   BulletDamage = 'bullet_damage',
@@ -42,8 +38,7 @@ export enum AttachmentEffect
   MoveSpeedWhileFiring = 'move_speed_while_firing',
 }
 
-export enum WeaponRpmFormulas
-{
+export enum WeaponRpmFormulas {
   // Apply to most weapons
   Default,
 

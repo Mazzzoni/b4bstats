@@ -1,13 +1,11 @@
 import Graphs from '@components/compare/Graphs';
+import Summary from '@components/compare/Summary';
 
 export default function Display() {
   return (
-    <div>
-      <p className="color-primary font-bold text-center">
-        This section is still under development. Come back later for more graphs ! :)
-      </p>
-
-      <Graphs/>
+    <div className="comparison-statistics mt-6 space-y-8">
+      <Summary />
+      <Graphs />
     </div>
   );
 }

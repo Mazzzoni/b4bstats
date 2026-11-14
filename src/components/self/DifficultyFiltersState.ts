@@ -1,28 +1,21 @@
-import { atom } from 'recoil';
-import { recoilPersist } from 'recoil-persist';
-
-const {persistAtom} = recoilPersist();
+import { atomWithStorage } from 'jotai/utils';
 
 export type DifficultyFilters = {
-  showRecruit: boolean,
-  showVeteran: boolean,
-  showNightmare: boolean,
-  showNoHope: boolean,
-  showLegendary: boolean,
-  showSwarm: boolean
-}
+  showRecruit: boolean;
+  showVeteran: boolean;
+  showNightmare: boolean;
+  showNoHope: boolean;
+  showLegendary: boolean;
+  showSwarm: boolean;
+};
 
-const state = atom<DifficultyFilters>({
-  key: 'DifficultyFilters',
-  default: {
-    showRecruit: false,
-    showVeteran: false,
-    showNightmare: true,
-    showNoHope: true,
-    showLegendary: false,
-    showSwarm: false,
-  },
-  effects_UNSTABLE: [persistAtom],
+const state = atomWithStorage<DifficultyFilters>('b4bstats:DifficultyFilters', {
+  showRecruit: false,
+  showVeteran: false,
+  showNightmare: true,
+  showNoHope: true,
+  showLegendary: false,
+  showSwarm: false,
 });
 
 export default state;

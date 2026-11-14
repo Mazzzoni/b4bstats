@@ -8,7 +8,7 @@ import { MiscellaneousStatistics } from '@components/statistics/types';
 import { Divider } from '@mantine/core';
 
 export default function Graphs() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   // Configure defaults options of charts
   Chart.defaults.color = '#fff';
@@ -21,20 +21,40 @@ export default function Graphs() {
   const miscellaneousGraphs: Record<MiscellaneousStatistics, string> = {
     [MiscellaneousStatistics.AmmoDropped]: t('miscellaneous.statistics.ammo_dropped'),
     [MiscellaneousStatistics.CardsPlayed]: t('miscellaneous.statistics.cards_played'),
-    [MiscellaneousStatistics.CaravanItemsPurchased]: t('miscellaneous.statistics.items_purchased_caravan'),
+    [MiscellaneousStatistics.CaravanItemsPurchased]: t(
+      'miscellaneous.statistics.items_purchased_caravan',
+    ),
     [MiscellaneousStatistics.CleanersRescued]: t('miscellaneous.statistics.cleaners_rescued'),
     [MiscellaneousStatistics.CleanersRevived]: t('miscellaneous.statistics.cleaners_revived'),
-    [MiscellaneousStatistics.CommonRiddenDamageInflicted]: t('miscellaneous.statistics.damage_commons'),
-    [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: t('miscellaneous.statistics.damage_mutations'),
-    [MiscellaneousStatistics.WeakSpotDamageInflicted]: t('miscellaneous.statistics.damage_weakspot'),
-    [MiscellaneousStatistics.EnemyDamageInflicted]: t('miscellaneous.statistics.damage_ridden_overall'),
-    [MiscellaneousStatistics.FriendlyCleanersKilled]: t('miscellaneous.statistics.friendly_cleaners_killed'),
-    [MiscellaneousStatistics.FriendlyDamageInflicted]: t('miscellaneous.statistics.friendly_damage_inflicted'),
+    [MiscellaneousStatistics.CommonRiddenDamageInflicted]: t(
+      'miscellaneous.statistics.damage_commons',
+    ),
+    [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: t(
+      'miscellaneous.statistics.damage_mutations',
+    ),
+    [MiscellaneousStatistics.WeakSpotDamageInflicted]: t(
+      'miscellaneous.statistics.damage_weakspot',
+    ),
+    [MiscellaneousStatistics.EnemyDamageInflicted]: t(
+      'miscellaneous.statistics.damage_ridden_overall',
+    ),
+    [MiscellaneousStatistics.FriendlyCleanersKilled]: t(
+      'miscellaneous.statistics.friendly_cleaners_killed',
+    ),
+    [MiscellaneousStatistics.FriendlyDamageInflicted]: t(
+      'miscellaneous.statistics.friendly_damage_inflicted',
+    ),
     [MiscellaneousStatistics.HealingAppliedOther]: t('miscellaneous.statistics.healing_other'),
     [MiscellaneousStatistics.HealingAppliedSelf]: t('miscellaneous.statistics.healing_self'),
-    [MiscellaneousStatistics.TimesDiedAsCleaner]: t('miscellaneous.statistics.times_died_as_cleaner'),
-    [MiscellaneousStatistics.TimesIncappedAsCleaner]: t('miscellaneous.statistics.times_incapped_as_cleaner'),
-    [MiscellaneousStatistics.TreasureDoorsOpened]: t('miscellaneous.statistics.treasures_doors_opened'),
+    [MiscellaneousStatistics.TimesDiedAsCleaner]: t(
+      'miscellaneous.statistics.times_died_as_cleaner',
+    ),
+    [MiscellaneousStatistics.TimesIncappedAsCleaner]: t(
+      'miscellaneous.statistics.times_incapped_as_cleaner',
+    ),
+    [MiscellaneousStatistics.TreasureDoorsOpened]: t(
+      'miscellaneous.statistics.treasures_doors_opened',
+    ),
     [MiscellaneousStatistics.HordesTriggered]: t('miscellaneous.statistics.hordes_triggered'),
     [MiscellaneousStatistics.SnitchersSilenced]: t('miscellaneous.statistics.snitchers_silenced'),
   };
@@ -44,9 +64,9 @@ export default function Graphs() {
       <div>
         <strong className="text-2xl">{t('miscellaneous.title')}</strong>
 
-        <div className="grid grid-cols-12 gap-4 mt-5">
+        <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
           {Object.keys(miscellaneousGraphs).map((stat) => (
-            <div className="col-span-4" key={stat}>
+            <div className="min-w-0" key={stat}>
               <Miscellaneous
                 miscellaneousStatistic={stat as unknown as MiscellaneousStatistics}
                 title={miscellaneousGraphs[stat as unknown as MiscellaneousStatistics]}
@@ -56,16 +76,16 @@ export default function Graphs() {
         </div>
       </div>
 
-      <Divider variant="dashed" my={30}/>
+      <Divider variant="dashed" my={30} />
 
       <div>
-        <RiddenKilled/>
+        <RiddenKilled />
       </div>
 
-      <Divider variant="dashed" my={30}/>
+      <Divider variant="dashed" my={30} />
 
       <div>
-        <RiddenKilledPerWeaponOverall/>
+        <RiddenKilledPerWeaponOverall />
       </div>
     </div>
   );

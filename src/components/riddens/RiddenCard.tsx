@@ -1,143 +1,84 @@
-import { RiddenDefinition } from '@components/riddens/types';
-import { Badge, Table } from '@mantine/core';
-import { GlassMagnifier } from 'react-image-magnifiers';
-import RiddenHealth from '@components/riddens/charts/RiddenHealth';
-
-type Props = {
-  ridden: RiddenDefinition;
-};
-
-export default function RiddenCard({ridden}: Props) {
+import { RiddenDefinition } from './types';
+import RiddenHealth from './charts/RiddenHealth';
+export default function RiddenCard({ ridden }: { ridden: RiddenDefinition }) {
+  const weakspots = (
+    [
+      ['Back', ridden.weakspot_back],
+      ['Chest', ridden.weakspot_chest],
+      ['Legs', ridden.weakspot_legs],
+      ['Head', ridden.weakspot_head],
+      ['Body', ridden.weakspot_body],
+    ] as const
+  ).filter(([, zone]) => zone);
   return (
-    <div className="grid grid-cols-12 gap-5 mb-10">
-      <div className="col-span-3">
-        <div className="sticky top-[80px]">
-          <Badge fullWidth size="lg">{ridden.name}</Badge>
-
-          <GlassMagnifier
-            square
-            allowOverflow
-            className="magnifier"
-            imageSrc={`/images/riddens/${ridden.image}`}
-            largeImageSrc={`/images/riddens/${ridden.image}`}
-            magnifierSize={'125%'}
-            magnifierBorderSize={1}
-            magnifierBorderColor={'rgb(255, 255, 255)'}
-          />
+    <article className="mb-6 grid grid-cols-1 gap-6 rounded border border-line bg-panel p-5 sm:p-6 md:grid-cols-12">
+      <div className="mx-auto w-full max-w-56 md:col-span-3">
+        <div className="sticky top-20">
+          <h3 className="mb-3 text-center !text-sm uppercase tracking-wide">{ridden.name}</h3>
+          <a href={'/images/riddens/' + ridden.image} target="_blank" rel="noreferrer">
+            <img
+              src={'/images/riddens/' + ridden.image}
+              alt={ridden.name}
+              loading="lazy"
+              className="w-full rounded border border-line object-cover"
+            />
+          </a>
         </div>
       </div>
-
-      <div className="col-span-9">
-        <Table
-          highlightOnHover
-          verticalSpacing="sm"
-          className="w-100"
-        >
-          <tbody>
-          <tr>
-            <td style={{width: 140}} className="color-bg-secondary font-bold">Health</td>
-            <td><RiddenHealth health={ridden.health}/></td>
-          </tr>
-
-          {ridden.weakspot_multiplier && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Multiplier</td>
-              <td>x{ridden.weakspot_multiplier}</td>
-            </tr>
+      <div className="min-w-0 space-y-4 md:col-span-9">
+        <section className="ridden-detail">
+          <h4 className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted">
+            Effective health
+          </h4>
+          <RiddenHealth health={ridden.health} />
+        </section>
+        <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {ridden.weakspot_multiplier != null && (
+            <div className="ridden-detail">
+              <dt>Weakspot multiplier</dt>
+              <dd className="text-xl">×{ridden.weakspot_multiplier}</dd>
+            </div>
           )}
-
           {ridden.stumble && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Stumble</td>
-              <td>
-                <div>Health: {ridden.stumble.health}</div>
-
-                <div>Recovery: +{ridden.stumble.recovery}/s</div>
-
-                {ridden.stumble.weakspot_multiplier && (
-                  <div>
-                    {typeof ridden.stumble.weakspot_multiplier === 'object' ? (
-                      <div>
-                        Weakspot Multiplier: {Object.keys(ridden.stumble.weakspot_multiplier).map((type) => (
-                        <span key={type}>
-                          {/*// @ts-ignore We use the string key to find back the multiplier, it exists, all good */}
-                          <span className="mr-2">{type}: x{ridden.stumble.weakspot_multiplier[type]}</span>
-                        </span>
-                      ))}
-                      </div>
-                    ) : (
-                      <div>Weakspot Multiplier: x{ridden.stumble.weakspot_multiplier}</div>
-                    )}
+            <div className="ridden-detail">
+              <dt>Stumble</dt>
+              <dd>
+                {ridden.stumble.health} health{' '}
+                <span className="font-normal text-muted">
+                  · +{ridden.stumble.recovery}/s recovery
+                </span>
+              </dd>
+              {ridden.stumble.weakspot_multiplier != null && (
+                <div className="mt-2 text-xs text-muted">
+                  Weakspot:{' '}
+                  {typeof ridden.stumble.weakspot_multiplier === 'object'
+                    ? Object.entries(ridden.stumble.weakspot_multiplier)
+                        .map(([type, value]) => `${type} ×${value}`)
+                        .join(' · ')
+                    : '×' + ridden.stumble.weakspot_multiplier}
+                </div>
+              )}
+            </div>
+          )}
+          {weakspots.map(
+            ([name, zone]) =>
+              zone && (
+                <div key={name} className="ridden-detail">
+                  <dt>{name} weakspot</dt>
+                  <dd>{zone.health} health</dd>
+                  <div className="mt-2 text-xs text-muted">
+                    ×{zone.weakspot_multiplier} multiplier · {zone.body_damage} body damage
                   </div>
-                )}
-              </td>
-            </tr>
+                </div>
+              ),
           )}
-
-          {ridden.weakspot_back && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Back</td>
-              <td>
-                <div>Health: {ridden.weakspot_back.health}</div>
-                <div>Weakspot Multiplier: {ridden.weakspot_back.weakspot_multiplier}</div>
-                <div>Body Damage: {ridden.weakspot_back.body_damage}</div>
-              </td>
-            </tr>
-          )}
-
-          {ridden.weakspot_chest && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Chest</td>
-              <td>
-                <div>Health: {ridden.weakspot_chest.health}</div>
-                <div>Weakspot Multiplier: {ridden.weakspot_chest.weakspot_multiplier}</div>
-                <div>Body Damage: {ridden.weakspot_chest.body_damage}</div>
-              </td>
-            </tr>
-          )}
-
-          {ridden.weakspot_legs && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Legs</td>
-              <td>
-                <div>Health: {ridden.weakspot_legs.health}</div>
-                <div>Weakspot Multiplier: {ridden.weakspot_legs.weakspot_multiplier}</div>
-                <div>Body Damage: {ridden.weakspot_legs.body_damage}</div>
-              </td>
-            </tr>
-          )}
-
-          {ridden.weakspot_head && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Head</td>
-              <td>
-                <div>Health: {ridden.weakspot_head.health}</div>
-                <div>Weakspot Multiplier: {ridden.weakspot_head.weakspot_multiplier}</div>
-                <div>Body Damage: {ridden.weakspot_head.body_damage}</div>
-              </td>
-            </tr>
-          )}
-
-          {ridden.weakspot_body && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Weakspot Body</td>
-              <td>
-                <div>Health: {ridden.weakspot_body.health}</div>
-                <div>Weakspot Multiplier: {ridden.weakspot_body.weakspot_multiplier}</div>
-                <div>Body Damage: {ridden.weakspot_body.body_damage}</div>
-              </td>
-            </tr>
-          )}
-
-          {ridden.note && (
-            <tr>
-              <td className="color-bg-secondary font-bold">Note</td>
-              <td>{ridden.note}</td>
-            </tr>
-          )}
-          </tbody>
-        </Table>
+        </dl>
+        {ridden.note && (
+          <p className="rounded border-l-2 border-brand bg-background p-4 text-sm text-muted">
+            {ridden.note}
+          </p>
+        )}
       </div>
-    </div>
+    </article>
   );
 }

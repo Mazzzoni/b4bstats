@@ -1,34 +1,40 @@
 import { WeaponCategories, WeaponDefinition } from '@components/weapons/types';
 import { Badge, Tooltip } from '@mantine/core';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import { getWeaponQuality } from './utils';
-
 type Props = {
   weapon: WeaponDefinition;
 };
-
-export default function WeaponOverview({weapon}: Props) {
-  const selectedQuality = useRecoilValue(SelectedQualityState);
+export default function WeaponOverview({ weapon }: Props) {
+  const selectedQuality = useAtomValue(SelectedQualityState);
   const weaponQuality = getWeaponQuality(weapon, selectedQuality);
-
   return (
     <div className="relative">
       {weapon.category !== WeaponCategories.Melee && (
         <div className="absolute top-0 right-0">
           <Tooltip
-            label={<div>
-              <b>Ammo type</b>
-              <br/>
-              <span className="capitalize">{weapon.ammo}</span>
-            </div>}
+            label={
+              <div>
+                <b>Ammo type</b>
+                <br />
+                <span className="capitalize">{weapon.ammo}</span>
+              </div>
+            }
           >
-            <Badge variant="outline" color="dark" size="lg" style={{borderTop: 0, borderRight: 0}}>
-            <span
-              style={{backgroundImage: `url(/images/icons/ammo_${weapon.ammo}.webp)`}}
-              className="block h-4 w-4 bg-no-repeat bg-center bg-cover"
-            />
-            </Badge>
+            <span className="inline-flex">
+              <Badge
+                variant="outline"
+                color="dark"
+                size="lg"
+                style={{ borderTop: 0, borderRight: 0 }}
+              >
+                <span
+                  style={{ backgroundImage: `url(/images/icons/ammo_${weapon.ammo}.webp)` }}
+                  className="block h-4 w-4 bg-no-repeat bg-center bg-cover"
+                />
+              </Badge>
+            </span>
           </Tooltip>
         </div>
       )}
@@ -36,44 +42,62 @@ export default function WeaponOverview({weapon}: Props) {
       {weapon.category !== WeaponCategories.Bow && (
         <div className="absolute bottom-0 right-0">
           <Tooltip
-            label={<div>
-              <b>RPM</b>
-              <br/>
-              <span>Shots per minute while firing, excluding reloads</span>
-              <br/>
-              <span className="bg-stone-400 px-1">{weaponQuality.rpmFormula} = {weaponQuality.rpm.toFixed(2)}</span>
-            </div>}
+            label={
+              <div>
+                <b>RPM</b>
+                <br />
+                <span>Shots per minute while firing, excluding reloads</span>
+                <br />
+                <span className="bg-stone-400 px-1">
+                  {weaponQuality.rpmFormula} = {weaponQuality.rpm.toFixed(2)}
+                </span>
+              </div>
+            }
           >
-            <Badge size="lg">{weaponQuality.rpm.toFixed(2)} RPM</Badge>
+            <span className="inline-flex">
+              <Badge size="lg">{weaponQuality.rpm.toFixed(2)} RPM</Badge>
+            </span>
           </Tooltip>
         </div>
       )}
 
       <div className="space-x-2">
         <Tooltip
-          label={<div>
-            <b>Weapon category</b>
-            <br/>
-            <span className="capitalize">{weapon.category}</span>
-          </div>}
+          label={
+            <div>
+              <b>Weapon category</b>
+              <br />
+              <span className="capitalize">{weapon.category}</span>
+            </div>
+          }
         >
-          <Badge color="gray" size="sm">{weapon.category}</Badge>
+          <span className="inline-flex">
+            <Badge color="gray" size="sm">
+              {weapon.category}
+            </Badge>
+          </span>
         </Tooltip>
 
         <Tooltip
-          label={<div>
-            <b>Weapon slot</b>
-            <br/>
-            <span className="capitalize">{weapon.slot}</span>
-          </div>}
+          label={
+            <div>
+              <b>Weapon slot</b>
+              <br />
+              <span className="capitalize">{weapon.slot}</span>
+            </div>
+          }
         >
-          <Badge color="gray" size="sm">{weapon.slot}</Badge>
+          <span className="inline-flex">
+            <Badge color="gray" size="sm">
+              {weapon.slot}
+            </Badge>
+          </span>
         </Tooltip>
       </div>
 
       <div className="px-3 py-2">
         <div
-          style={{backgroundImage: `url(/images/weapons/${weapon.image})`}}
+          style={{ backgroundImage: `url(/images/weapons/${weapon.image})` }}
           className="my-3 h-24 bg-center bg-contain bg-no-repeat"
         />
       </div>

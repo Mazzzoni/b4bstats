@@ -1,11 +1,11 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import {
   getSuggestedMaxFromArrayOfIntegers,
   getSumFromArrayOfIntegers,
-  nFormatter
+  nFormatter,
 } from '@utils/generic';
 import PlayersStatisticsState from '@components/compare/PlayersStatisticsState';
 import { MiscellaneousStatistics } from '@components/statistics/types';
@@ -13,22 +13,26 @@ import { PlayerColors } from '@utils/colors';
 import { tooltipCallbackLabelPlain } from '@utils/charts';
 
 type Props = {
-  miscellaneousStatistic: MiscellaneousStatistics
-  title: string
-}
+  miscellaneousStatistic: MiscellaneousStatistics;
+  title: string;
+};
 
-export default function Miscellaneous({miscellaneousStatistic, title}: Props) {
-  const playersStatistics = useRecoilValue(PlayersStatisticsState);
-  const playersData = playersStatistics.map((playerStats) => playerStats.stats.miscellaneousStatistics[miscellaneousStatistic]);
+export default function Miscellaneous({ miscellaneousStatistic, title }: Props) {
+  const playersStatistics = useAtomValue(PlayersStatisticsState);
+  const playersData = playersStatistics.map(
+    (playerStats) => playerStats.stats.miscellaneousStatistics[miscellaneousStatistic],
+  );
   const playersDataSum = getSumFromArrayOfIntegers(playersData);
   const playersNames = playersStatistics.map((playerStats) => playerStats.player);
 
   const data: ChartData = {
     labels: playersNames,
-    datasets: [{
-      data: playersData,
-      backgroundColor: PlayerColors,
-    }],
+    datasets: [
+      {
+        data: playersData,
+        backgroundColor: PlayerColors,
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -45,8 +49,8 @@ export default function Miscellaneous({miscellaneousStatistic, title}: Props) {
       },
       tooltip: {
         callbacks: {
-          label: (c) => tooltipCallbackLabelPlain(c, playersDataSum)
-        }
+          label: (c) => tooltipCallbackLabelPlain(c, playersDataSum),
+        },
       },
     },
   };
@@ -54,7 +58,7 @@ export default function Miscellaneous({miscellaneousStatistic, title}: Props) {
   return (
     <div className="mb-5">
       <strong>{title}</strong>
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
     </div>
   );
 }

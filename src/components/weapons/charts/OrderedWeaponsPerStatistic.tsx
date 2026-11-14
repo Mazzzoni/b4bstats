@@ -1,7 +1,11 @@
-import { WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
+import {
+  WeaponDefinition,
+  WeaponQualities,
+  WeaponStatisticsDefinition,
+} from '@components/weapons/types';
 import { useTranslation } from 'react-i18next';
 import { WeaponColors, WeaponQualityColors } from '@utils/colors';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import SelectedQualityState from '@components/weapons/SelectedQualityState';
 import { ChartData, ChartOptions } from 'chart.js';
 import { getSuggestedMaxFromArrayOfIntegers } from '@utils/generic';
@@ -13,9 +17,9 @@ type Props = {
   statisticCallback: (weapon: WeaponStatisticsDefinition) => number;
 };
 
-export default function OrderedWeaponsPerStatistic({title, weapons, statisticCallback}: Props) {
-  const {t} = useTranslation();
-  const selectedQuality = useRecoilValue(SelectedQualityState);
+export default function OrderedWeaponsPerStatistic({ title, weapons, statisticCallback }: Props) {
+  const { t } = useTranslation();
+  const selectedQuality = useAtomValue(SelectedQualityState);
 
   let values: number[] = [];
   let labels: string[] = [];
@@ -25,8 +29,8 @@ export default function OrderedWeaponsPerStatistic({title, weapons, statisticCal
   for (const weapon of weapons) {
     const quality = Object.keys(weapon.qualities).includes(selectedQuality)
       ? selectedQuality
-      // Take the latest weapon quality in set (best one normally)
-      : Object.keys(weapon.qualities)[Object.keys(weapon.qualities).length - 1];
+      : // Take the latest weapon quality in set (best one normally)
+        Object.keys(weapon.qualities)[Object.keys(weapon.qualities).length - 1];
 
     const weaponQuality = weapon.qualities[quality as WeaponQualities];
 
@@ -38,10 +42,12 @@ export default function OrderedWeaponsPerStatistic({title, weapons, statisticCal
 
   const data: ChartData = {
     labels: labels.map((weapon: string) => t(`weapons.${weapon}`)),
-    datasets: [{
-      data: values,
-      backgroundColor: backgroundColors,
-    }],
+    datasets: [
+      {
+        data: values,
+        backgroundColor: backgroundColors,
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -54,8 +60,8 @@ export default function OrderedWeaponsPerStatistic({title, weapons, statisticCal
       datalabels: {
         anchor: 'end',
         align: 'end',
-        formatter: (value: number) => value ? value.toFixed(0) : 0,
-        color: context => WeaponQualityColors[qualities[context.dataIndex] as WeaponQualities],
+        formatter: (value: number) => (value ? value.toFixed(0) : 0),
+        color: (context) => WeaponQualityColors[qualities[context.dataIndex] as WeaponQualities],
       },
       tooltip: {
         callbacks: {
@@ -71,9 +77,14 @@ export default function OrderedWeaponsPerStatistic({title, weapons, statisticCal
 
   return (
     <div>
-      <h3 className="text-1xl font-bold">{title} - <span className="capitalize" style={{color: WeaponQualityColors[selectedQuality]}}>{selectedQuality}</span></h3>
+      <h3 className="text-1xl font-bold">
+        {title} -{' '}
+        <span className="capitalize" style={{ color: WeaponQualityColors[selectedQuality] }}>
+          {selectedQuality}
+        </span>
+      </h3>
 
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
     </div>
   );
 }

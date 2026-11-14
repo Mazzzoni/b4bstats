@@ -1,6 +1,6 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
 import { getSuggestedMaxFromArrayOfIntegers, nFormatter } from '@utils/generic';
@@ -12,8 +12,8 @@ import { WeaponColors } from '@utils/colors';
 import { weaponToString } from '@translations/helpers';
 
 export default function RiddenKilledPerWeaponOverall() {
-  const statistics = useRecoilValue(StatisticsState);
-  const {t} = useTranslation();
+  const statistics = useAtomValue(StatisticsState);
+  const { t } = useTranslation();
 
   let counts: number[] = [];
   let labels: string[] = [];
@@ -38,10 +38,12 @@ export default function RiddenKilledPerWeaponOverall() {
 
   const data: ChartData = {
     labels: labels.map((weapon: string) => t(`weapons.${weapon}`)),
-    datasets: [{
-      data: counts,
-      backgroundColor: backgroundColors,
-    }],
+    datasets: [
+      {
+        data: counts,
+        backgroundColor: backgroundColors,
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -58,8 +60,8 @@ export default function RiddenKilledPerWeaponOverall() {
       },
       tooltip: {
         callbacks: {
-          label: (c) => tooltipCallbackLabelKills(c, overallKills, t)
-        }
+          label: (c) => tooltipCallbackLabelKills(c, overallKills, t),
+        },
       },
     },
   };
@@ -67,7 +69,7 @@ export default function RiddenKilledPerWeaponOverall() {
   return (
     <div>
       <strong>{t('graphs.ridden_killed_per_weapon_overall')}</strong>
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
     </div>
   );
 }

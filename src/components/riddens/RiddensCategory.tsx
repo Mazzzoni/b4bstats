@@ -6,7 +6,7 @@ type Props = {
   riddens: RiddenDefinition[];
 };
 
-export default function RiddensCategory({categoryName, riddens}: Props) {
+export default function RiddensCategory({ categoryName, riddens }: Props) {
   if (riddens.length === 0) {
     return null;
   }
@@ -16,7 +16,7 @@ export default function RiddensCategory({categoryName, riddens}: Props) {
       <h2 className="text-2xl font-bold mb-3 capitalize">{categoryName}</h2>
 
       {riddens.map((ridden) => (
-        <RiddenCard key={ridden.name} ridden={ridden}/>
+        <RiddenCard key={ridden.name} ridden={ridden} />
       ))}
     </div>
   );

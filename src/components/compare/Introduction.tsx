@@ -1,104 +1,68 @@
-import React, { ChangeEvent, useState } from 'react';
-import { useSetRecoilState } from 'recoil';
-import PlayersStatisticsState, { PlayersStatistics } from '@components/compare/PlayersStatisticsState';
+import { useState } from 'react';
+import { useSetAtom } from 'jotai';
+import { Button, TextInput, Badge } from '@mantine/core';
+import { Check, Upload } from 'react-feather';
+import PlayersStatisticsState from './PlayersStatisticsState';
 import Dropzone from '@components/common/Dropzone';
 import Statistics from '@components/statistics/Statistics';
-import { Input } from '@mantine/core';
-
 export default function Introduction() {
-  const setPlayersStatistics = useSetRecoilState(PlayersStatisticsState);
-
-  const [player0Name, setPlayer0Name] = useState('');
-  const [player1Name, setPlayer1Name] = useState('');
-  const [player2Name, setPlayer2Name] = useState('');
-  const [player3Name, setPlayer3Name] = useState('');
-
-  const [player0Stats, setPlayer0Stats] = useState<Statistics>(new Statistics());
-  const [player1Stats, setPlayer1Stats] = useState<Statistics>(new Statistics());
-  const [player2Stats, setPlayer2Stats] = useState<Statistics>(new Statistics());
-  const [player3Stats, setPlayer3Stats] = useState<Statistics>(new Statistics());
-
-  const compare = () => {
-    let playersStats: PlayersStatistics[] = [];
-
-    if (player0Name !== '' && player0Stats !== null) {
-      playersStats.push({
-        player: player0Name,
-        stats: player0Stats,
-      });
-    }
-
-    if (player1Name !== '' && player1Stats !== null) {
-      playersStats.push({
-        player: player1Name,
-        stats: player1Stats,
-      });
-    }
-
-    if (player2Name !== '' && player2Stats !== null) {
-      playersStats.push({
-        player: player2Name,
-        stats: player2Stats,
-      });
-    }
-
-    if (player3Name !== '' && player3Stats !== null) {
-      playersStats.push({
-        player: player3Name,
-        stats: player3Stats,
-      });
-    }
-
-    if (playersStats.length <= 1) {
-      alert('Please submit two or more files to compare.');
-    }
-
-    setPlayersStatistics(playersStats);
-  };
-
+  const setPlayers = useSetAtom(PlayersStatisticsState);
+  const [slots, setSlots] = useState<{ name: string; stats: Statistics | null }[]>(() =>
+    Array.from({ length: 4 }, () => ({ name: '', stats: null })),
+  );
+  const ready = slots.filter((slot) => slot.stats?.hydrated);
+  function update(index: number, values: Partial<(typeof slots)[number]>) {
+    setSlots((current) => current.map((slot, i) => (i === index ? { ...slot, ...values } : slot)));
+  }
   return (
-    <div>
-      <p>
-        Select multiple statistics files, then click the button below to compare them.
-      </p>
-
-      <div className="grid grid-cols-12 gap-6 mt-4">
-        <div className="col-span-3">
-          <Input
-            placeholder="Player name"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setPlayer0Name(e.target.value)}
-          />
-          {!player0Stats.hydrated ? <Dropzone setStatistics={setPlayer0Stats}/> : <p>Statistics parsed.</p>}
-        </div>
-
-        <div className="col-span-3">
-          <Input
-            placeholder="Player name"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setPlayer1Name(e.target.value)}
-          />
-          {!player1Stats.hydrated ? <Dropzone setStatistics={setPlayer1Stats}/> : <p>Statistics parsed.</p>}
-        </div>
-
-        <div className="col-span-3">
-          <Input
-            placeholder="Player name"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setPlayer2Name(e.target.value)}
-          />
-          {!player2Stats.hydrated ? <Dropzone setStatistics={setPlayer2Stats}/> : <p>Statistics parsed.</p>}
-        </div>
-
-        <div className="col-span-3">
-          <Input
-            placeholder="Player name"
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setPlayer3Name(e.target.value)}
-          />
-          {!player3Stats.hydrated ? <Dropzone setStatistics={setPlayer3Stats}/> : <p>Statistics parsed.</p>}
-        </div>
+    <section className="players-panel p-5 sm:p-7">
+      <div className="mb-5 flex items-center gap-3">
+        <Upload size={20} className="text-brand" />
+        <p className="text-muted">Choose two to four save files to compare.</p>
       </div>
-
-      <div className="mt-5 text-center">
-        <span className="color-primary cursor-pointer" onClick={compare}>{'>> '}Compare{' <<'}</span>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {slots.map((slot, index) => (
+          <div className="min-w-0 rounded border border-line bg-background p-5" key={index}>
+            <div className="mb-4 flex items-center justify-between">
+              <h2 className="!mb-0 !text-base">Player {index + 1}</h2>
+              {slot.stats?.hydrated && <Badge leftSection={<Check size={12} />}>Ready</Badge>}
+            </div>
+            <TextInput
+              label="Player name"
+              placeholder={'Player ' + (index + 1)}
+              value={slot.name}
+              onChange={(event) => update(index, { name: event.target.value })}
+            />
+            {slot.stats?.hydrated ? (
+              <div className="mt-5 flex items-center justify-between gap-3 text-sm">
+                <span className="text-muted">Save loaded</span>
+                <Button size="xs" variant="subtle" onClick={() => update(index, { stats: null })}>
+                  Replace file
+                </Button>
+              </div>
+            ) : (
+              <Dropzone persist={false} setStatistics={(stats) => update(index, { stats })} />
+            )}
+          </div>
+        ))}
       </div>
-    </div>
+      <div className="mt-6 flex flex-wrap items-center gap-4">
+        <Button
+          disabled={ready.length < 2}
+          onClick={() =>
+            setPlayers(
+              slots.flatMap((slot, index) =>
+                slot.stats?.hydrated
+                  ? [{ player: slot.name.trim() || 'Player ' + (index + 1), stats: slot.stats }]
+                  : [],
+              ),
+            )
+          }
+        >
+          Compare {ready.length} saves →
+        </Button>
+        <span className="text-xs text-muted">{ready.length}/4 loaded</span>
+      </div>
+    </section>
   );
 }

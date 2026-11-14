@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 import {
   Cleaners,
   Difficulties,
@@ -17,13 +17,15 @@ import {
   RiddenKilled,
   WeaponsKills,
   WeaponsSorted,
-} from "@components/statistics/types";
-import { isSkippableWeaponInOverall } from "@utils/charts";
+} from '@components/statistics/types';
+import { isSkippableWeaponInOverall } from '@utils/charts';
 
-type RawData = { [key: string]: any; };
+const optionalCounter = (value: unknown): number | null =>
+  typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : null;
 
-export default class Statistics
-{
+type RawData = { [key: string]: any };
+
+export default class Statistics {
   public hydrated: boolean = false;
 
   public miscellaneousStatistics: Record<MiscellaneousStatistics, number> = {
@@ -49,17 +51,19 @@ export default class Statistics
 
   public currencies = {
     supplyPoints: {
-      balanceFromInventory: 0,
-      acquired: 0,
-      spent: 0,
+      balanceFromInventory: null as number | null,
+      acquired: null as number | null,
+      spent: null as number | null,
     },
     skullTotemPoints: {
-      acquired: 0,
-      spent: 0,
+      acquired: null as number | null,
+      spent: null as number | null,
     },
   };
 
-  public burnCardsStatistics: Partial<Record<BurnCards, { acquired: number, spent: number }>> = {};
+  public burnCardsStatistics: Partial<
+    Record<BurnCards, { acquired: number | null; spent: number | null }>
+  > = {};
 
   public missionsStatistics: Record<ProgressionTypes, MissionsStatistics> = {
     [ProgressionTypes.Merged]: {} as MissionsStatistics,
@@ -177,161 +181,239 @@ export default class Statistics
    * @param rawData
    * @throws Throws error if the object format isn't expected
    */
-  public static build(rawData: RawData): Statistics
-  {
+  public static build(rawData: RawData): Statistics {
     // Access main data, if it fails it'll throw error
     const rawStatistics = rawData.offlineData.stats;
 
     const miscellaneousStatistics: Record<MiscellaneousStatistics, number> = {
-      [MiscellaneousStatistics.AmmoDropped]: _.get(rawStatistics, "ammoDropped.base", 0),
-      [MiscellaneousStatistics.CaravanItemsPurchased]: _.get(rawStatistics, "caravanItemsPurchased.base", 0),
-      [MiscellaneousStatistics.CardsPlayed]: _.get(rawStatistics, "cardsPlayed.base", 0),
-      [MiscellaneousStatistics.CleanersRescued]: _.get(rawStatistics, "cleanersRescued.base", 0),
-      [MiscellaneousStatistics.CleanersRevived]: _.get(rawStatistics, "cleanersRevived.base", 0),
-      [MiscellaneousStatistics.CommonRiddenDamageInflicted]: _.get(rawStatistics, "commonRiddenDamageInflicted.base", 0),
-      [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: _.get(rawStatistics, "specialRiddenDamageInflicted.base", 0),
-      [MiscellaneousStatistics.WeakSpotDamageInflicted]: _.get(rawStatistics, "weakSpotDamageInflicted.base", 0),
-      [MiscellaneousStatistics.EnemyDamageInflicted]: _.get(rawStatistics, "enemyDamageInflicted.base", 0),
-      [MiscellaneousStatistics.FriendlyCleanersKilled]: _.get(rawStatistics, "friendlyCleanersKilled.base", 0),
-      [MiscellaneousStatistics.FriendlyDamageInflicted]: _.get(rawStatistics, "friendlyDamageInflicted.base", 0),
-      [MiscellaneousStatistics.HealingAppliedOther]: _.get(rawStatistics, "healingApplied.keys.Other", 0),
-      [MiscellaneousStatistics.HealingAppliedSelf]: _.get(rawStatistics, "healingApplied.keys.Self", 0),
-      [MiscellaneousStatistics.TimesDiedAsCleaner]: _.get(rawStatistics, "timesDiedAsCleaner.base", 0),
-      [MiscellaneousStatistics.TimesIncappedAsCleaner]: _.get(rawStatistics, "timesIncappedAsCleaner.base", 0),
-      [MiscellaneousStatistics.TreasureDoorsOpened]: _.get(rawStatistics, "treasureDoorsOpened.base", 0),
-      [MiscellaneousStatistics.HordesTriggered]: _.get(rawStatistics, "hordesTriggered.base", 0),
-      [MiscellaneousStatistics.SnitchersSilenced]: _.get(rawStatistics, "snitchersSilenced.base", 0),
+      [MiscellaneousStatistics.AmmoDropped]: _.get(rawStatistics, 'ammoDropped.base', 0),
+      [MiscellaneousStatistics.CaravanItemsPurchased]: _.get(
+        rawStatistics,
+        'caravanItemsPurchased.base',
+        0,
+      ),
+      [MiscellaneousStatistics.CardsPlayed]: _.get(rawStatistics, 'cardsPlayed.base', 0),
+      [MiscellaneousStatistics.CleanersRescued]: _.get(rawStatistics, 'cleanersRescued.base', 0),
+      [MiscellaneousStatistics.CleanersRevived]: _.get(rawStatistics, 'cleanersRevived.base', 0),
+      [MiscellaneousStatistics.CommonRiddenDamageInflicted]: _.get(
+        rawStatistics,
+        'commonRiddenDamageInflicted.base',
+        0,
+      ),
+      [MiscellaneousStatistics.SpecialRiddenDamageInflicted]: _.get(
+        rawStatistics,
+        'specialRiddenDamageInflicted.base',
+        0,
+      ),
+      [MiscellaneousStatistics.WeakSpotDamageInflicted]: _.get(
+        rawStatistics,
+        'weakSpotDamageInflicted.base',
+        0,
+      ),
+      [MiscellaneousStatistics.EnemyDamageInflicted]: _.get(
+        rawStatistics,
+        'enemyDamageInflicted.base',
+        0,
+      ),
+      [MiscellaneousStatistics.FriendlyCleanersKilled]: _.get(
+        rawStatistics,
+        'friendlyCleanersKilled.base',
+        0,
+      ),
+      [MiscellaneousStatistics.FriendlyDamageInflicted]: _.get(
+        rawStatistics,
+        'friendlyDamageInflicted.base',
+        0,
+      ),
+      [MiscellaneousStatistics.HealingAppliedOther]: _.get(
+        rawStatistics,
+        'healingApplied.keys.Other',
+        0,
+      ),
+      [MiscellaneousStatistics.HealingAppliedSelf]: _.get(
+        rawStatistics,
+        'healingApplied.keys.Self',
+        0,
+      ),
+      [MiscellaneousStatistics.TimesDiedAsCleaner]: _.get(
+        rawStatistics,
+        'timesDiedAsCleaner.base',
+        0,
+      ),
+      [MiscellaneousStatistics.TimesIncappedAsCleaner]: _.get(
+        rawStatistics,
+        'timesIncappedAsCleaner.base',
+        0,
+      ),
+      [MiscellaneousStatistics.TreasureDoorsOpened]: _.get(
+        rawStatistics,
+        'treasureDoorsOpened.base',
+        0,
+      ),
+      [MiscellaneousStatistics.HordesTriggered]: _.get(rawStatistics, 'hordesTriggered.base', 0),
+      [MiscellaneousStatistics.SnitchersSilenced]: _.get(
+        rawStatistics,
+        'snitchersSilenced.base',
+        0,
+      ),
     };
 
-    const currencies: Statistics["currencies"] = {
+    const currencies: Statistics['currencies'] = {
       supplyPoints: {
-        balanceFromInventory: _.get(rawData.offlineData, "supplyPoints.balanceFromInventory", 0),
-        acquired: _.get(rawData.offlineData, "supplyPoints.acquired", 0),
-        spent: _.get(rawData.offlineData, "supplyPoints.spent", 0),
+        balanceFromInventory: optionalCounter(
+          _.get(rawData.offlineData, 'supplyPoints.balanceFromInventory'),
+        ),
+        acquired: optionalCounter(_.get(rawData.offlineData, 'supplyPoints.acquired')),
+        spent: optionalCounter(_.get(rawData.offlineData, 'supplyPoints.spent')),
       },
       skullTotemPoints: {
-        acquired: _.get(rawData.offlineData, "skullTotemPoints.acquired", 0),
-        spent: _.get(rawData.offlineData, "skullTotemPoints.spent", 0),
+        acquired: optionalCounter(_.get(rawData.offlineData, 'skullTotemPoints.acquired')),
+        spent: optionalCounter(_.get(rawData.offlineData, 'skullTotemPoints.spent')),
       },
     };
 
-    const burnCardsStatistics = Statistics.getBurnCardsStatistics(_.get(rawData.offlineData, "consumables", {}));
+    const burnCardsStatistics = Statistics.getBurnCardsStatistics(
+      _.get(rawData.offlineData, 'consumables', {}),
+    );
 
     const missionsStatistics = {
-      [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Merged),
-      [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Online),
-      [ProgressionTypes.Offline]: Statistics.getMissionsStatisticsPerProgressionType(rawStatistics, ProgressionTypes.Offline),
+      [ProgressionTypes.Merged]: Statistics.getMissionsStatisticsPerProgressionType(
+        rawStatistics,
+        ProgressionTypes.Merged,
+      ),
+      [ProgressionTypes.Online]: Statistics.getMissionsStatisticsPerProgressionType(
+        rawStatistics,
+        ProgressionTypes.Online,
+      ),
+      [ProgressionTypes.Offline]: Statistics.getMissionsStatisticsPerProgressionType(
+        rawStatistics,
+        ProgressionTypes.Offline,
+      ),
     };
 
     const progressions = {
-      [ProgressionTypes.Merged]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Merged),
-      [ProgressionTypes.Online]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Online),
-      [ProgressionTypes.Offline]: Statistics.getOverallProgressionPerType(rawStatistics, ProgressionTypes.Offline),
+      [ProgressionTypes.Merged]: Statistics.getOverallProgressionPerType(
+        rawStatistics,
+        ProgressionTypes.Merged,
+      ),
+      [ProgressionTypes.Online]: Statistics.getOverallProgressionPerType(
+        rawStatistics,
+        ProgressionTypes.Online,
+      ),
+      [ProgressionTypes.Offline]: Statistics.getOverallProgressionPerType(
+        rawStatistics,
+        ProgressionTypes.Offline,
+      ),
     };
 
-    const rawRiddenKilled = _.get(rawStatistics, "riddenKilledByType.keys", {});
+    const rawRiddenKilled = _.get(rawStatistics, 'riddenKilledByType.keys', {});
 
     const riddenKilled: RiddenKilled = {
       specials: {
-        [Riddens.Ogre]: _.get(rawStatistics, "riddenBossesKilled.base", 0),
-        [Riddens.Breaker]: _.get(rawRiddenKilled, "Breaker", 0),
-        [Riddens.Hag]: _.get(rawRiddenKilled, "Brute", 0),
-        [Riddens.Snitcher]: _.get(rawRiddenKilled, "Snitcher", 0),
+        [Riddens.Ogre]: _.get(rawStatistics, 'riddenBossesKilled.base', 0),
+        [Riddens.Breaker]: _.get(rawRiddenKilled, 'Breaker', 0),
+        [Riddens.Hag]: _.get(rawRiddenKilled, 'Brute', 0),
+        [Riddens.Snitcher]: _.get(rawRiddenKilled, 'Snitcher', 0),
 
-        [Riddens.Bruiser]: _.get(rawRiddenKilled, "Smasher", 0),
-        [Riddens.Crusher]: _.get(rawRiddenKilled, "Squeezer", 0),
-        [Riddens.Tallboy]: _.get(rawRiddenKilled, "Tallboy", 0),
-        [Riddens.Ripper]: _.get(rawRiddenKilled, "Heckboy", 0),
+        [Riddens.Bruiser]: _.get(rawRiddenKilled, 'Smasher', 0),
+        [Riddens.Crusher]: _.get(rawRiddenKilled, 'Squeezer', 0),
+        [Riddens.Tallboy]: _.get(rawRiddenKilled, 'Tallboy', 0),
+        [Riddens.Ripper]: _.get(rawRiddenKilled, 'Heckboy', 0),
 
-        [Riddens.Hocker]: _.get(rawRiddenKilled, "Chucker", 0),
-        [Riddens.Stalker]: _.get(rawRiddenKilled, "Chaser", 0),
-        [Riddens.Stinger]: _.get(rawRiddenKilled, "BunnyKick", 0),
-        [Riddens.Urchin]: _.get(rawRiddenKilled, "Burner", 0),
+        [Riddens.Hocker]: _.get(rawRiddenKilled, 'Chucker', 0),
+        [Riddens.Stalker]: _.get(rawRiddenKilled, 'Chaser', 0),
+        [Riddens.Stinger]: _.get(rawRiddenKilled, 'BunnyKick', 0),
+        [Riddens.Urchin]: _.get(rawRiddenKilled, 'Burner', 0),
 
-        [Riddens.Retch]: _.get(rawRiddenKilled, "Vomiter", 0),
-        [Riddens.Exploder]: _.get(rawRiddenKilled, "Exploder", 0),
-        [Riddens.Reeker]: _.get(rawRiddenKilled, "Bloater", 0),
-        [Riddens.Shredder]: _.get(rawRiddenKilled, "Imploder", 0),
+        [Riddens.Retch]: _.get(rawRiddenKilled, 'Vomiter', 0),
+        [Riddens.Exploder]: _.get(rawRiddenKilled, 'Exploder', 0),
+        [Riddens.Reeker]: _.get(rawRiddenKilled, 'Bloater', 0),
+        [Riddens.Shredder]: _.get(rawRiddenKilled, 'Imploder', 0),
 
-        [Riddens.Lobber]: _.get(rawRiddenKilled, "Bombardier", 0),
-        [Riddens.Swarmer]: _.get(rawRiddenKilled, "Swarmer", 0),
-        [Riddens.Wailer]: _.get(rawRiddenKilled, "screamer", 0),
+        [Riddens.Lobber]: _.get(rawRiddenKilled, 'Bombardier', 0),
+        [Riddens.Swarmer]: _.get(rawRiddenKilled, 'Swarmer', 0),
+        [Riddens.Wailer]: _.get(rawRiddenKilled, 'screamer', 0),
       },
-      riddenCommonKilled: _.get(rawStatistics, "riddenKilledByType.keys.Common", 0),
-      riddenSleeperKilled: _.get(rawStatistics, "riddenKilledByType.keys.Sleeper", 0),
-      riddenKilledTotal: _.get(rawStatistics, "riddenKilled.base", 0),
-      riddenMutationsKilled: _.get(rawStatistics, "riddenMutationsKilled.base", 0),
+      riddenCommonKilled: _.get(rawStatistics, 'riddenKilledByType.keys.Common', 0),
+      riddenSleeperKilled: _.get(rawStatistics, 'riddenKilledByType.keys.Sleeper', 0),
+      riddenKilledTotal: _.get(rawStatistics, 'riddenKilled.base', 0),
+      riddenMutationsKilled: _.get(rawStatistics, 'riddenMutationsKilled.base', 0),
     };
 
-    const rawWeaponsKills = _.get(rawStatistics, "riddenKilledByWeapon.keys", {});
+    const rawWeaponsKills = _.get(rawStatistics, 'riddenKilledByWeapon.keys', {});
 
     const weaponsKills: WeaponsKills = {
-      [Weapons.Axe]: _.get(rawWeaponsKills, "Axe", 0),
-      [Weapons.Bat]: _.get(rawWeaponsKills, "Bat", 0),
-      [Weapons.BobArm]: _.get(rawWeaponsKills, "bobarm", 0),
-      [Weapons.Fist]: _.get(rawWeaponsKills, "Fist", 0),
-      [Weapons.SkullTotem]: _.get(rawWeaponsKills, "SkullTotem1", 0) + _.get(rawWeaponsKills, "SkullTotem2", 0) + _.get(rawWeaponsKills, "SkullTotem3", 0),
-      [Weapons.Hatchet]: _.get(rawWeaponsKills, "Hatchet", 0),
-      [Weapons.Machete]: _.get(rawWeaponsKills, "Machete", 0),
-      [Weapons.Knife]: _.get(rawWeaponsKills, "Knife", 0),
-      [Weapons.Tenderizer]: _.get(rawWeaponsKills, "FireAxeCorrupted", 0),
-      [Weapons.Claws]: _.get(rawWeaponsKills, "Claws01", 0),
+      [Weapons.Axe]: _.get(rawWeaponsKills, 'Axe', 0),
+      [Weapons.Bat]: _.get(rawWeaponsKills, 'Bat', 0),
+      [Weapons.BobArm]: _.get(rawWeaponsKills, 'bobarm', 0),
+      [Weapons.Fist]: _.get(rawWeaponsKills, 'Fist', 0),
+      [Weapons.SkullTotem]:
+        _.get(rawWeaponsKills, 'SkullTotem1', 0) +
+        _.get(rawWeaponsKills, 'SkullTotem2', 0) +
+        _.get(rawWeaponsKills, 'SkullTotem3', 0),
+      [Weapons.Hatchet]: _.get(rawWeaponsKills, 'Hatchet', 0),
+      [Weapons.Machete]: _.get(rawWeaponsKills, 'Machete', 0),
+      [Weapons.Knife]: _.get(rawWeaponsKills, 'Knife', 0),
+      [Weapons.Tenderizer]: _.get(rawWeaponsKills, 'FireAxeCorrupted', 0),
+      [Weapons.Claws]: _.get(rawWeaponsKills, 'Claws01', 0),
 
-      [Weapons.M4Carbine]: _.get(rawWeaponsKills, "AR01", 0),
-      [Weapons.AK47]: _.get(rawWeaponsKills, "AR02", 0),
-      [Weapons.M16]: _.get(rawWeaponsKills, "AR04", 0),
-      [Weapons.Scar]: _.get(rawWeaponsKills, "AR05", 0),
-      [Weapons.RanchRifle]: _.get(rawWeaponsKills, "AR06", 0),
-      [Weapons.Pestilence]: _.get(rawWeaponsKills, "AR01Corrupted", 0),
+      [Weapons.M4Carbine]: _.get(rawWeaponsKills, 'AR01', 0),
+      [Weapons.AK47]: _.get(rawWeaponsKills, 'AR02', 0),
+      [Weapons.M16]: _.get(rawWeaponsKills, 'AR04', 0),
+      [Weapons.Scar]: _.get(rawWeaponsKills, 'AR05', 0),
+      [Weapons.RanchRifle]: _.get(rawWeaponsKills, 'AR06', 0),
+      [Weapons.Pestilence]: _.get(rawWeaponsKills, 'AR01Corrupted', 0),
 
-      [Weapons.M1911]: _.get(rawWeaponsKills, "HG01", 0),
-      [Weapons.BerettaM9]: _.get(rawWeaponsKills, "HG02", 0),
-      [Weapons.BerettaM9Burst]: _.get(rawWeaponsKills, "hg02b", 0),
-      [Weapons.Magnum357]: _.get(rawWeaponsKills, "HG03", 0),
-      [Weapons.Glock23]: _.get(rawWeaponsKills, "HG04", 0),
-      [Weapons.Glock23Burst]: _.get(rawWeaponsKills, "hg04b", 0),
-      [Weapons.DesertEagle]: _.get(rawWeaponsKills, "HG05", 0),
-      [Weapons.Embezzler]: _.get(rawWeaponsKills, "HG05Corrupted", 0),
+      [Weapons.M1911]: _.get(rawWeaponsKills, 'HG01', 0),
+      [Weapons.BerettaM9]: _.get(rawWeaponsKills, 'HG02', 0),
+      [Weapons.BerettaM9Burst]: _.get(rawWeaponsKills, 'hg02b', 0),
+      [Weapons.Magnum357]: _.get(rawWeaponsKills, 'HG03', 0),
+      [Weapons.Glock23]: _.get(rawWeaponsKills, 'HG04', 0),
+      [Weapons.Glock23Burst]: _.get(rawWeaponsKills, 'hg04b', 0),
+      [Weapons.DesertEagle]: _.get(rawWeaponsKills, 'HG05', 0),
+      [Weapons.Embezzler]: _.get(rawWeaponsKills, 'HG05Corrupted', 0),
 
-      [Weapons.Express870]: _.get(rawWeaponsKills, "SG01", 0),
-      [Weapons.AA12]: _.get(rawWeaponsKills, "SG02", 0),
-      [Weapons.TheBelgian]: _.get(rawWeaponsKills, "SG03", 0),
-      [Weapons.TAC14]: _.get(rawWeaponsKills, "SG04", 0),
-      [Weapons.Super90]: _.get(rawWeaponsKills, "SG05", 0),
-      [Weapons.Damnation]: _.get(rawWeaponsKills, "SG02Corrupted", 0),
+      [Weapons.Express870]: _.get(rawWeaponsKills, 'SG01', 0),
+      [Weapons.AA12]: _.get(rawWeaponsKills, 'SG02', 0),
+      [Weapons.TheBelgian]: _.get(rawWeaponsKills, 'SG03', 0),
+      [Weapons.TAC14]: _.get(rawWeaponsKills, 'SG04', 0),
+      [Weapons.Super90]: _.get(rawWeaponsKills, 'SG05', 0),
+      [Weapons.Damnation]: _.get(rawWeaponsKills, 'SG02Corrupted', 0),
 
-      [Weapons.MP5]: _.get(rawWeaponsKills, "SMG01", 0),
-      [Weapons.UZI]: _.get(rawWeaponsKills, "SMG02", 0),
-      [Weapons.TEC9]: _.get(rawWeaponsKills, "SMG03", 0),
-      [Weapons.UMP45]: _.get(rawWeaponsKills, "SMG04", 0),
-      [Weapons.Vector]: _.get(rawWeaponsKills, "SMG05", 0),
-      [Weapons.Prototype378]: _.get(rawWeaponsKills, "SMG04Corrupted", 0),
+      [Weapons.MP5]: _.get(rawWeaponsKills, 'SMG01', 0),
+      [Weapons.UZI]: _.get(rawWeaponsKills, 'SMG02', 0),
+      [Weapons.TEC9]: _.get(rawWeaponsKills, 'SMG03', 0),
+      [Weapons.UMP45]: _.get(rawWeaponsKills, 'SMG04', 0),
+      [Weapons.Vector]: _.get(rawWeaponsKills, 'SMG05', 0),
+      [Weapons.Prototype378]: _.get(rawWeaponsKills, 'SMG04Corrupted', 0),
 
-      [Weapons.M249]: _.get(rawWeaponsKills, "LMG01", 0),
-      [Weapons.RPK]: _.get(rawWeaponsKills, "LMG02", 0),
-      [Weapons.Nemesis]: _.get(rawWeaponsKills, "LMG02Corrupted", 0),
+      [Weapons.M249]: _.get(rawWeaponsKills, 'LMG01', 0),
+      [Weapons.RPK]: _.get(rawWeaponsKills, 'LMG02', 0),
+      [Weapons.Nemesis]: _.get(rawWeaponsKills, 'LMG02Corrupted', 0),
 
-      [Weapons.M1A]: _.get(rawWeaponsKills, "AR03", 0),
-      [Weapons.Phoenix350L]: _.get(rawWeaponsKills, "Sni01", 0),
-      [Weapons.BarrettM95]: _.get(rawWeaponsKills, "Sni02", 0),
-      [Weapons.Witness]: _.get(rawWeaponsKills, "AR03Corrupted", 0),
-      [Weapons.Lockjaw]: _.get(rawWeaponsKills, "Sni03", 0),
+      [Weapons.M1A]: _.get(rawWeaponsKills, 'AR03', 0),
+      [Weapons.Phoenix350L]: _.get(rawWeaponsKills, 'Sni01', 0),
+      [Weapons.BarrettM95]: _.get(rawWeaponsKills, 'Sni02', 0),
+      [Weapons.Witness]: _.get(rawWeaponsKills, 'AR03Corrupted', 0),
+      [Weapons.Lockjaw]: _.get(rawWeaponsKills, 'Sni03', 0),
 
       // Bow kills do not seem to be tracked in save file
       [Weapons.Bow]: 0,
 
-      [Weapons.Flamethrower]: _.get(rawWeaponsKills, "FlameThrower01", 0),
+      [Weapons.Flamethrower]: _.get(rawWeaponsKills, 'FlameThrower01', 0),
 
-      [Weapons.None]: _.get(rawWeaponsKills, "None", 0),
-      [Weapons.Unarmed]: _.get(rawWeaponsKills, "Unarmed", 0),
+      [Weapons.None]: _.get(rawWeaponsKills, 'None', 0),
+      [Weapons.Unarmed]: _.get(rawWeaponsKills, 'Unarmed', 0),
     };
 
     const pvpStatistics: PvpStatistics = {
-      gamesPlayed: _.get(rawStatistics, "pVPGamesPlayed.base", 0),
-      gamesWon: _.get(rawStatistics, "pVPGamesWon.base", 0),
-      gamesLost: _.get(rawStatistics, "pVPGamesPlayed.base", 0) - _.get(rawStatistics, "pVPGamesWon.base", 0),
-      killsAsCleaner: _.get(rawStatistics, "pVPKillsAsCleaners.base", 0),
-      killsAsRidden: _.get(rawStatistics, "pVPKillsAsRidden.base", 0),
+      gamesPlayed: _.get(rawStatistics, 'pVPGamesPlayed.base', 0),
+      gamesWon: _.get(rawStatistics, 'pVPGamesWon.base', 0),
+      gamesLost:
+        _.get(rawStatistics, 'pVPGamesPlayed.base', 0) -
+        _.get(rawStatistics, 'pVPGamesWon.base', 0),
+      killsAsCleaner: _.get(rawStatistics, 'pVPKillsAsCleaners.base', 0),
+      killsAsRidden: _.get(rawStatistics, 'pVPKillsAsRidden.base', 0),
     };
 
     const statistics = new Statistics();
@@ -349,13 +431,11 @@ export default class Statistics
     return statistics;
   }
 
-  public static getWeaponsFromWeaponType(type: WeaponTypes | string): Weapons[]
-  {
+  public static getWeaponsFromWeaponType(type: WeaponTypes | string): Weapons[] {
     return WeaponsSorted[type as WeaponTypes];
   }
 
-  public static getKillCountByWeaponType(stats: Statistics, type: WeaponTypes): number
-  {
+  public static getKillCountByWeaponType(stats: Statistics, type: WeaponTypes): number {
     const weapons = Statistics.getWeaponsFromWeaponType(type);
     let total = 0;
 
@@ -370,8 +450,11 @@ export default class Statistics
     return total;
   }
 
-  public getAverageValuePerMissionCompleted(value: number, fixed: boolean = true, fixedDecimal: number = 2): string | number
-  {
+  public getAverageValuePerMissionCompleted(
+    value: number,
+    fixed: boolean = true,
+    fixedDecimal: number = 2,
+  ): string | number {
     // We'll set the average for the overall missions done
     const average = value / this.missionsStatistics[ProgressionTypes.Merged].missionsCompleted;
 
@@ -382,8 +465,11 @@ export default class Statistics
     return Math.round(average);
   }
 
-  public getAverageValuePerPvpMissionCompleted(value: number, fixed: boolean = true, fixedDecimal: number = 2): string | number
-  {
+  public getAverageValuePerPvpMissionCompleted(
+    value: number,
+    fixed: boolean = true,
+    fixedDecimal: number = 2,
+  ): string | number {
     const average = value / this.pvpStatistics.gamesPlayed;
 
     if (fixed) {
@@ -393,10 +479,12 @@ export default class Statistics
     return Math.round(average);
   }
 
-  private static getMissionsPerProgressionType(data: RawData, progressionType: ProgressionTypes): RawData
-  {
-    const onlineMissions = _.get(data, "missionsCompleted_Secured", {});
-    const offlineMissions = _.get(data, "missionsCompleted_Unsecured", {});
+  private static getMissionsPerProgressionType(
+    data: RawData,
+    progressionType: ProgressionTypes,
+  ): RawData {
+    const onlineMissions = _.get(data, 'missionsCompleted_Secured', {});
+    const offlineMissions = _.get(data, 'missionsCompleted_Unsecured', {});
     const mergedMissions = Statistics.mergeMissionData(onlineMissions, offlineMissions);
 
     switch (progressionType) {
@@ -409,53 +497,67 @@ export default class Statistics
     }
   }
 
-  private static getMissionsStatisticsPerProgressionType(data: RawData, progressionType: ProgressionTypes): MissionsStatistics
-  {
+  private static getMissionsStatisticsPerProgressionType(
+    data: RawData,
+    progressionType: ProgressionTypes,
+  ): MissionsStatistics {
     const missions = Statistics.getMissionsPerProgressionType(data, progressionType);
 
     return {
-      missionsCompleted: _.get(missions, "base", 0),
-      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(_.get(missions, "keys", {})),
+      missionsCompleted: _.get(missions, 'base', 0),
+      missionsCompletedPerDifficulty: Statistics.getMissionsCompletedPerDifficulty(
+        _.get(missions, 'keys', {}),
+      ),
       missionsCompletedPerCleaner: {
-        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_1"),
-        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_2"),
-        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_3"),
-        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_4"),
-        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_5"),
-        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_6"),
-        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_7"),
-        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_8"),
-        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_9"),
-        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_10"),
-        [Cleaners.Dan]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_11"),
-        [Cleaners.Tala]: Statistics.getMissionsCompletedPerCleaner(missions.keys, "Hero_12"),
+        [Cleaners.Evangelo]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_1'),
+        [Cleaners.Walker]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_2'),
+        [Cleaners.Holly]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_3'),
+        [Cleaners.Hoffman]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_4'),
+        [Cleaners.Doc]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_5'),
+        [Cleaners.Jim]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_6'),
+        [Cleaners.Karlee]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_7'),
+        [Cleaners.Mom]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_8'),
+        [Cleaners.Heng]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_9'),
+        [Cleaners.Sharice]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_10'),
+        [Cleaners.Dan]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_11'),
+        [Cleaners.Tala]: Statistics.getMissionsCompletedPerCleaner(missions.keys, 'Hero_12'),
       },
-      missionsCompletedRaw: _.get(missions, "keys", {}),
+      missionsCompletedRaw: _.get(missions, 'keys', {}),
     };
   }
 
-  private static getOverallProgressionPerType(data: RawData, progressionType: ProgressionTypes): Progressions
-  {
+  public hasProgressionDifficulty(
+    difficulty: Difficulties,
+    type: ProgressionTypes = ProgressionTypes.Online,
+  ): boolean {
+    return Object.entries(this.missionsStatistics[type].missionsCompletedRaw ?? {}).some(
+      ([key, count]) => key.split('::')[1] === difficulty && Number(count) > 0,
+    );
+  }
+
+  private static getOverallProgressionPerType(
+    data: RawData,
+    progressionType: ProgressionTypes,
+  ): Progressions {
     const missions = Statistics.getMissionsPerProgressionType(data, progressionType);
 
-    return Statistics.getProgressionsByCleaners(_.get(missions, "keys", {}));
+    return Statistics.getProgressionsByCleaners(_.get(missions, 'keys', {}));
   }
 
   /**
    * Merge online and offline mission data
    */
-  private static mergeMissionData(onlineMissions: any, offlineMissions: any): RawData
-  {
+  private static mergeMissionData(onlineMissions: any, offlineMissions: any): RawData {
     const mergedMissions = {
-      "base": 0,
-      "keys": {},
+      base: 0,
+      keys: {},
     };
 
-    mergedMissions["base"] = _.get(onlineMissions, "base", 0) + _.get(offlineMissions, "base", 0);
-    mergedMissions["keys"] = _.mergeWith(
+    mergedMissions['base'] = _.get(onlineMissions, 'base', 0) + _.get(offlineMissions, 'base', 0);
+    mergedMissions['keys'] = _.mergeWith(
       {},
-      _.get(onlineMissions, "keys", {}),
-      _.get(offlineMissions, "keys", {}),
+      _.get(onlineMissions, 'keys', {}),
+      _.get(offlineMissions, 'keys', {}),
       (obj: number, src: number): number => {
         return _.defaultTo(obj, 0) + _.defaultTo(src, 0);
       },
@@ -467,8 +569,9 @@ export default class Statistics
   /**
    * Get raw values of how many missions were completed in each difficulty
    */
-  private static getMissionsCompletedPerDifficulty(rawMissions: { [index: string]: number }): MissionsCompletedPerDifficulty
-  {
+  private static getMissionsCompletedPerDifficulty(rawMissions: {
+    [index: string]: number;
+  }): MissionsCompletedPerDifficulty {
     let missionsCompleteByDifficulties: MissionsCompletedPerDifficulty = {
       [Difficulties.Recruit]: 0,
       [Difficulties.Veteran]: 0,
@@ -482,21 +585,21 @@ export default class Statistics
       const value: number = rawMissions[mission];
 
       // We don't want to count individual hero missions
-      if (mission.includes("hero")) {
+      if (mission.includes('hero')) {
         return;
       }
 
-      if (mission.includes("easy")) {
+      if (mission.includes('easy')) {
         missionsCompleteByDifficulties[Difficulties.Recruit] += value;
-      } else if (mission.includes("normal")) {
+      } else if (mission.includes('normal')) {
         missionsCompleteByDifficulties[Difficulties.Veteran] += value;
-      } else if (mission.includes("veryhard")) {
+      } else if (mission.includes('veryhard')) {
         missionsCompleteByDifficulties[Difficulties.NoHope] += value;
-      } else if (mission.includes("hard")) {
+      } else if (mission.includes('hard')) {
         missionsCompleteByDifficulties[Difficulties.Nightmare] += value;
-      } else if (mission.includes("legendary")) {
+      } else if (mission.includes('legendary')) {
         missionsCompleteByDifficulties[Difficulties.Legendary] += value;
-      } else if (mission.includes("pvp")) {
+      } else if (mission.includes('pvp')) {
         missionsCompleteByDifficulties[Difficulties.Swarm] += value;
       }
     });
@@ -504,8 +607,10 @@ export default class Statistics
     return missionsCompleteByDifficulties;
   }
 
-  private static getMissionsCompletedPerCleaner(rawMissions: RawData, cleaner: string): MissionsCompletedPerCleaner
-  {
+  private static getMissionsCompletedPerCleaner(
+    rawMissions: RawData,
+    cleaner: string,
+  ): MissionsCompletedPerCleaner {
     let missionsCompleteByCleaner: MissionsCompletedPerCleaner = {
       total: _.get(rawMissions, cleaner, 0),
       [Difficulties.Recruit]: 0,
@@ -527,17 +632,17 @@ export default class Statistics
       // We skip values that don't concern cleaner passed
 
       // Handle special case for Evangelo (Hero_1) and Sharice (Hero_10) overlapping includes condition
-      if (cleaner === "Hero_1" && mission.includes("hero_10")) {
+      if (cleaner === 'Hero_1' && mission.includes('hero_10')) {
         return;
       }
 
       // Handle special case for Evangelo (Hero_1) and Dan (Hero_11) overlapping includes condition
-      if (cleaner === "Hero_1" && mission.includes("hero_11")) {
+      if (cleaner === 'Hero_1' && mission.includes('hero_11')) {
         return;
       }
 
       // Handle special case for Evangelo (Hero_1) and Tala (Hero_11) overlapping includes condition
-      if (cleaner === "Hero_1" && mission.includes("hero_12")) {
+      if (cleaner === 'Hero_1' && mission.includes('hero_12')) {
         return;
       }
 
@@ -545,17 +650,17 @@ export default class Statistics
         return;
       }
 
-      if (mission.includes("easy")) {
+      if (mission.includes('easy')) {
         missionsCompleteByCleaner[Difficulties.Recruit] += value;
-      } else if (mission.includes("normal")) {
+      } else if (mission.includes('normal')) {
         missionsCompleteByCleaner[Difficulties.Veteran] += value;
-      } else if (mission.includes("veryhard")) {
+      } else if (mission.includes('veryhard')) {
         missionsCompleteByCleaner[Difficulties.NoHope] += value;
-      } else if (mission.includes("hard")) {
+      } else if (mission.includes('hard')) {
         missionsCompleteByCleaner[Difficulties.Nightmare] += value;
-      } else if (mission.includes("legendary")) {
+      } else if (mission.includes('legendary')) {
         missionsCompleteByCleaner[Difficulties.Legendary] += value;
-      } else if (mission.includes("pvp")) {
+      } else if (mission.includes('pvp')) {
         missionsCompleteByCleaner[Difficulties.Swarm] += value;
       }
     });
@@ -566,8 +671,7 @@ export default class Statistics
   /**
    * Convert raw progression to formatted one
    */
-  private static getProgressionsByCleaners(rawProgression: object): Progressions
-  {
+  private static getProgressionsByCleaners(rawProgression: object): Progressions {
     const progressions: Progressions = {};
 
     Object.values(Cleaners).forEach((cleaner: string) => {
@@ -579,7 +683,7 @@ export default class Statistics
         Object.values(Missions).forEach((mission: string) => {
           const key = `${mission}::${difficulty}::${cleaner}`;
 
-          progressions[cleaner][difficulty][mission] = (key in rawProgression);
+          progressions[cleaner][difficulty][mission] = Number((rawProgression as RawData)[key]) > 0;
         });
       });
     });
@@ -587,15 +691,17 @@ export default class Statistics
     return progressions;
   }
 
-  private static getBurnCardsStatistics(rawConsumables: RawData)
-  {
-    const burnCardsStatistics: Statistics["burnCardsStatistics"] = {};
+  private static getBurnCardsStatistics(rawConsumables: RawData) {
+    const burnCardsStatistics: Statistics['burnCardsStatistics'] = {};
     const burnCardsKeys = Object.values(BurnCards);
 
     for (const key of Object.keys(rawConsumables)) {
       for (const burnCardKey of burnCardsKeys) {
         if (key.includes(burnCardKey)) {
-          burnCardsStatistics[burnCardKey] = rawConsumables[key];
+          const acquired = optionalCounter(rawConsumables[key]?.acquired),
+            spent = optionalCounter(rawConsumables[key]?.spent);
+          if (acquired !== null || spent !== null)
+            burnCardsStatistics[burnCardKey] = { acquired, spent };
 
           break;
         }

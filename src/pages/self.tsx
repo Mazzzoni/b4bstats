@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import type { NextPage } from 'next';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useAtomValue, useSetAtom } from 'jotai';
 import MainLayout from '@components/layouts/MainLayout';
 import Statistics from '@components/statistics/Statistics';
 import StatisticsState from '@components/self/StatisticsState';
@@ -11,31 +11,37 @@ import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
 
 const Page: NextPage = () => {
-  const stats = useRecoilValue(StatisticsState);
-  const setStatistics = useSetRecoilState(StatisticsState);
-  const {t} = useTranslation();
+  const stats = useAtomValue(StatisticsState);
+  const setStatistics = useSetAtom(StatisticsState);
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const data = localStorage.getItem("statsFile");
+    const data = localStorage.getItem('statsFile');
     if (data) {
       try {
         const rawStats = JSON.parse(data);
         const stats = Statistics.build(rawStats);
         setStatistics(stats);
-
       } catch (error) {
-        toast.error(t("errors.cannot_parse_file"));
+        toast.error(t('errors.cannot_parse_file'));
       }
     }
-  }, []);
+  }, [setStatistics, t]);
 
   return (
     <MainLayout title="Self">
       <Head>
-        <meta name="description" content="Analyze your statistics, check your campaigns and achievements progresses"/>
+        <meta
+          name="description"
+          content="Analyze your statistics, check your campaigns and achievements progresses"
+        />
       </Head>
 
-      {!stats.hydrated ? <Introduction/> : <Display/>}
+      <header className="players-page-heading">
+        <div className="players-eyebrow">PRIVATE SAVE ANALYZER</div>
+        <p className="text-muted">Analyze your exported save in your browser.</p>
+      </header>
+      {!stats.hydrated ? <Introduction /> : <Display />}
     </MainLayout>
   );
 };

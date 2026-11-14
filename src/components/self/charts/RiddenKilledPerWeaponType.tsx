@@ -1,6 +1,6 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions, ChartType, TooltipItem } from 'chart.js';
 import { Context } from 'chartjs-plugin-datalabels';
@@ -14,8 +14,8 @@ import { weaponToString, weaponTypeToString } from '@translations/helpers';
 import { Badge } from '@mantine/core';
 
 export default function RiddenKilledPerWeaponType() {
-  const statistics = useRecoilValue(StatisticsState);
-  const {t} = useTranslation();
+  const statistics = useAtomValue(StatisticsState);
+  const { t } = useTranslation();
 
   let counts: number[] = [];
   let backgroundColors: string[] = [];
@@ -56,11 +56,15 @@ export default function RiddenKilledPerWeaponType() {
   }
 
   const data: ChartData = {
-    labels: Object.keys(WeaponTypes).map((type) => t(`weapons_types.${weaponTypeToString(type as WeaponTypes)}`)),
-    datasets: [{
-      data: counts,
-      backgroundColor: backgroundColors,
-    }],
+    labels: Object.keys(WeaponTypes).map((type) =>
+      t(`weapons_types.${weaponTypeToString(type as WeaponTypes)}`),
+    ),
+    datasets: [
+      {
+        data: counts,
+        backgroundColor: backgroundColors,
+      },
+    ],
   };
 
   const options: ChartOptions = {
@@ -69,7 +73,8 @@ export default function RiddenKilledPerWeaponType() {
         anchor: 'center',
         align: 'center',
         // Only show value if superior to 8% of overall total
-        display: (context: Context) => context.dataset.data[context.dataIndex]! > (overallTotal * 0.08),
+        display: (context: Context) =>
+          Number(context.dataset.data[context.dataIndex] ?? 0) > overallTotal * 0.08,
         formatter: (value: number) => nFormatter(value, 1),
       },
       legend: {
@@ -91,23 +96,23 @@ export default function RiddenKilledPerWeaponType() {
   return (
     <div>
       <strong>{t('graphs.ridden_killed_per_weapon_type')}</strong>
-      <Chart data={data} options={options} type="pie"/>
+      <Chart data={data} options={options} type="pie" />
       <div className="mt-4">
         <Badge>
           <Trans
             i18nKey="graphs.labels.most_used_weapon_type"
-            values={{type: t(`weapons_types.${weaponTypeToString(mostUsedWeaponType)}`)}}
-            components={{b: <b style={{color: mostUsedWeaponTypeBgColor}}/>}}
+            values={{ type: t(`weapons_types.${weaponTypeToString(mostUsedWeaponType)}`) }}
+            components={{ b: <b style={{ color: mostUsedWeaponTypeBgColor }} /> }}
           />
         </Badge>
 
-        <br/>
+        <br />
 
         <Badge>
           <Trans
             i18nKey="graphs.labels.most_used_weapon"
-            values={{weapon: t(`weapons.${weaponToString(mostUsedWeapon)}`)}}
-            components={{b: <b style={{color: mostUsedWeaponBgColor}}/>}}
+            values={{ weapon: t(`weapons.${weaponToString(mostUsedWeapon)}`) }}
+            components={{ b: <b style={{ color: mostUsedWeaponBgColor }} /> }}
           />
         </Badge>
       </div>

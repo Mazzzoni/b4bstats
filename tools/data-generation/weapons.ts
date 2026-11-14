@@ -1,19 +1,26 @@
-// Run script with:
-// http://localhost:3000/api/parse-weapons
-
 import * as fs from 'fs';
-import { WeaponCategories, WeaponDefinition, WeaponQualities, WeaponRpmFormulas, WeaponStatisticsDefinition } from '@components/weapons/types';
-import { NextApiRequest, NextApiResponse } from 'next';
+import {
+  WeaponCategories,
+  WeaponDefinition,
+  WeaponQualities,
+  WeaponRpmFormulas,
+  WeaponStatisticsDefinition,
+} from '@components/weapons/types';
 import xlsx from 'node-xlsx';
 import { weaponToString } from '@translations/helpers';
 import { burstCount, WeaponsMap } from '@components/weapons/WeaponsMap';
-import { getDamageData, getDamageStatistics, getMetersScale, meleeStepSize, rangedStepSize } from '@components/weapons/utils';
+import {
+  getDamageData,
+  getDamageStatistics,
+  getMetersScale,
+  meleeStepSize,
+  rangedStepSize,
+} from '@components/weapons/utils';
 import _ from 'lodash';
 
 const file = `${process.cwd()}/data/weapons/sheets/weapons-2022-12-06.xlsm`;
 
-enum RangedWeaponsColumns
-{
+enum RangedWeaponsColumns {
   TimeToReload = 7,
   StumblePerShot = 8,
   StumblePerSecond = 9,
@@ -52,8 +59,7 @@ enum RangedWeaponsColumns
   AdsSpeedOut = 229,
 }
 
-enum MeleeWeaponsColumns
-{
+enum MeleeWeaponsColumns {
   LightAttackDamage = 1,
   LightStumbleDamageScale = 3,
   StaminaCost = 9,
@@ -69,8 +75,7 @@ enum MeleeWeaponsColumns
   SwapSpeedLower = 114,
 }
 
-enum BowWeaponsColumns
-{
+enum BowWeaponsColumns {
   StaminaCost = 1,
   StaminaCostPerSecond = 3,
   MoveSpeedBase = 32,
@@ -83,26 +88,25 @@ enum BowWeaponsColumns
   AdsSpeedOut = 64,
 }
 
-class Saver
-{
-  save(weapons: WeaponDefinition[]): void
-  {
+class Saver {
+  save(weapons: WeaponDefinition[]): void {
     const file = `${process.cwd()}/data/weapons/weapons.json`;
 
     fs.writeFileSync(file, JSON.stringify(weapons, null, 2));
   }
 }
 
-class Parser
-{
-  public weapons: Map<WeaponDefinition['name'], WeaponDefinition> = new Map<WeaponDefinition['name'], WeaponDefinition>();
+class Parser {
+  public weapons: Map<WeaponDefinition['name'], WeaponDefinition> = new Map<
+    WeaponDefinition['name'],
+    WeaponDefinition
+  >();
 
   /**
    * Parse weapons and extract data from document
    * Also compute damage right away, so it saves a bit of performance on client side
    */
-  public parse(): void
-  {
+  public parse(): void {
     if (!fs.existsSync(file)) {
       throw new Error('Make sure to have actual document file available');
     }
@@ -122,8 +126,7 @@ class Parser
     this.computeUpgrades();
   }
 
-  private parseRangedWeapons(guns: { name: string; data: unknown[] })
-  {
+  private parseRangedWeapons(guns: { name: string; data: unknown[] }) {
     for (const weapon of WeaponsMap.Ranged) {
       const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
 
@@ -135,11 +138,11 @@ class Parser
       computedWeapon.attachments = weapon.attachments
         ? weapon.attachments
         : {
-          barrel: false,
-          magazine: false,
-          scope: false,
-          stock: false,
-        };
+            barrel: false,
+            magazine: false,
+            scope: false,
+            stock: false,
+          };
 
       if (weapon.notes) {
         computedWeapon.notes = weapon.notes;
@@ -152,7 +155,9 @@ class Parser
         const row = weapon.qualities[quality as WeaponQualities]! - 1;
         const data = guns.data[row] as any[];
 
-        const pellets = data[RangedWeaponsColumns.PelletCount] ? data[RangedWeaponsColumns.PelletCount] : 1;
+        const pellets = data[RangedWeaponsColumns.PelletCount]
+          ? data[RangedWeaponsColumns.PelletCount]
+          : 1;
 
         let rangeDamages: { [key: string]: number } = {};
 
@@ -175,27 +180,44 @@ class Parser
         let shotgunRangeDamages: { [key: string]: number } = {};
 
         if (weapon.category === WeaponCategories.Shotgun) {
-          if (data[RangedWeaponsColumns.ShotgunRange1] && data[RangedWeaponsColumns.ShotgunRangeDamage1]) {
-            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange1]] = data[RangedWeaponsColumns.ShotgunRangeDamage1];
+          if (
+            data[RangedWeaponsColumns.ShotgunRange1] &&
+            data[RangedWeaponsColumns.ShotgunRangeDamage1]
+          ) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange1]] =
+              data[RangedWeaponsColumns.ShotgunRangeDamage1];
           }
 
-          if (data[RangedWeaponsColumns.ShotgunRange2] && data[RangedWeaponsColumns.ShotgunRangeDamage2]) {
-            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange2]] = data[RangedWeaponsColumns.ShotgunRangeDamage2];
+          if (
+            data[RangedWeaponsColumns.ShotgunRange2] &&
+            data[RangedWeaponsColumns.ShotgunRangeDamage2]
+          ) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange2]] =
+              data[RangedWeaponsColumns.ShotgunRangeDamage2];
           }
 
-          if (data[RangedWeaponsColumns.ShotgunRange3] && data[RangedWeaponsColumns.ShotgunRangeDamage3]) {
-            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange3]] = data[RangedWeaponsColumns.ShotgunRangeDamage3];
+          if (
+            data[RangedWeaponsColumns.ShotgunRange3] &&
+            data[RangedWeaponsColumns.ShotgunRangeDamage3]
+          ) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange3]] =
+              data[RangedWeaponsColumns.ShotgunRangeDamage3];
           }
 
-          if (data[RangedWeaponsColumns.ShotgunRange4] && data[RangedWeaponsColumns.ShotgunRangeDamage4]) {
-            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange4]] = data[RangedWeaponsColumns.ShotgunRangeDamage4];
+          if (
+            data[RangedWeaponsColumns.ShotgunRange4] &&
+            data[RangedWeaponsColumns.ShotgunRangeDamage4]
+          ) {
+            shotgunRangeDamages[data[RangedWeaponsColumns.ShotgunRange4]] =
+              data[RangedWeaponsColumns.ShotgunRangeDamage4];
           }
 
           // Compute real shotgun damage
           let i = 0;
 
           for (const range of Object.keys(shotgunRangeDamages)) {
-            shotgunRangeDamages[range] = pellets * shotgunRangeDamages[range] + Object.values(rangeDamages)[i];
+            shotgunRangeDamages[range] =
+              pellets * shotgunRangeDamages[range] + Object.values(rangeDamages)[i];
 
             i++;
           }
@@ -204,9 +226,7 @@ class Parser
         const metersScale = getMetersScale(4000, rangedStepSize);
 
         const rangeDamagesComputed = getDamageData(
-          weapon.category === WeaponCategories.Shotgun
-            ? shotgunRangeDamages
-            : rangeDamages,
+          weapon.category === WeaponCategories.Shotgun ? shotgunRangeDamages : rangeDamages,
           metersScale,
         );
 
@@ -266,8 +286,7 @@ class Parser
     }
   }
 
-  private parseMeleeWeapons(melees: { name: string; data: unknown[] })
-  {
+  private parseMeleeWeapons(melees: { name: string; data: unknown[] }) {
     for (const weapon of WeaponsMap.Melee) {
       const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
 
@@ -296,7 +315,9 @@ class Parser
 
         const pellets = 1;
         const metersScale = getMetersScale(300, meleeStepSize);
-        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
+        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map(
+          (dmg) => dmg * pellets,
+        );
 
         // Weapon statistics definition is a bit different for melee category
         const weaponStatistics = {
@@ -308,7 +329,9 @@ class Parser
           meleeStateInterruptLength: data[MeleeWeaponsColumns.MeleeStateInterruptLength],
           meleeImpactStateLength: data[MeleeWeaponsColumns.MeleeImpactStateLength],
           stumblePowerMultiplier: data[MeleeWeaponsColumns.LightStumbleDamageScale],
-          stumblePerShot: data[MeleeWeaponsColumns.LightAttackDamage] * data[MeleeWeaponsColumns.LightStumbleDamageScale],
+          stumblePerShot:
+            data[MeleeWeaponsColumns.LightAttackDamage] *
+            data[MeleeWeaponsColumns.LightStumbleDamageScale],
           pellets: pellets,
           swap: {
             in: data[MeleeWeaponsColumns.SwapSpeedRaise],
@@ -329,7 +352,8 @@ class Parser
 
         // Compute weapon DPS & SPS
         weaponStatistics.trueDps = getDamageStatistics(weaponStatistics).sustainedDps;
-        weaponStatistics.stumblePerSecond = (weaponStatistics.stumblePerShot * weaponStatistics.rpm) / 60;
+        weaponStatistics.stumblePerSecond =
+          (weaponStatistics.stumblePerShot * weaponStatistics.rpm) / 60;
 
         computedWeapon.qualities[quality as WeaponQualities] = weaponStatistics;
       }
@@ -338,8 +362,7 @@ class Parser
     }
   }
 
-  private parseBowWeapons(bows: { name: string; data: unknown[] })
-  {
+  private parseBowWeapons(bows: { name: string; data: unknown[] }) {
     for (const weapon of WeaponsMap.Bow) {
       const computedWeapon: WeaponDefinition = {} as WeaponDefinition;
 
@@ -371,7 +394,9 @@ class Parser
 
         const pellets = 1;
         const metersScale = getMetersScale(4000, meleeStepSize);
-        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map((dmg) => dmg * pellets);
+        const rangeDamagesComputed = getDamageData(rangeDamages, metersScale).map(
+          (dmg) => dmg * pellets,
+        );
 
         // Weapon statistics definition is a bit different for melee category
         const weaponStatistics = {
@@ -413,8 +438,7 @@ class Parser
   /**
    * Check whether statistics are upgrading when you switch quality
    */
-  private computeUpgrades(): void
-  {
+  private computeUpgrades(): void {
     this.weapons.forEach((weapon) => {
       // by default, no upgrades at all
       const upgrades: WeaponDefinition['upgrades'] = {
@@ -473,59 +497,54 @@ class Parser
   /**
    * Determine the RPM and the RPM formula for a given weapon and based on its statistics
    */
-  private getRpmByWeapon(rpmFormula: WeaponRpmFormulas, weaponStatistics: WeaponStatisticsDefinition): [number, string]
-  {
+  private getRpmByWeapon(
+    rpmFormula: WeaponRpmFormulas,
+    weaponStatistics: WeaponStatisticsDefinition,
+  ): [number, string] {
     switch (rpmFormula) {
       case WeaponRpmFormulas.Default:
       // Keep reloads out of the firing rate; sustained DPS adds them once.
       case WeaponRpmFormulas.TheBelgian:
-        return [
-          (1 / weaponStatistics.delayBetweenShots * 60),
-          '(1 / delayBetweenShots * 60)',
-        ];
+        return [(1 / weaponStatistics.delayBetweenShots) * 60, '(1 / delayBetweenShots * 60)'];
 
       case WeaponRpmFormulas.Burst:
         return [
-          (60 * burstCount / (weaponStatistics.delayBetweenShots * burstCount + weaponStatistics.delayBetweenBursts)),
+          (60 * burstCount) /
+            (weaponStatistics.delayBetweenShots * burstCount + weaponStatistics.delayBetweenBursts),
           '(60 * burstCount / (delayBetweenShots * burstCount + delayBetweenBursts))',
         ];
 
       case WeaponRpmFormulas.Rechamber:
         return [
-          (60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength)),
+          60 / (weaponStatistics.delayBetweenShots + 0.1 + weaponStatistics.rechamberLength),
           '(60 / (delayBetweenShots + 0.1 + rechamberLength))',
         ];
 
       case WeaponRpmFormulas.Melee:
         return [
-          (60 / (weaponStatistics.meleeStateLength! * weaponStatistics.meleeStateInterruptLength! + 0.05)),
+          60 /
+            (weaponStatistics.meleeStateLength! * weaponStatistics.meleeStateInterruptLength! +
+              0.05),
           '(60 / (meleeStateLength * meleeStateInterruptLength + 0.05))',
         ];
 
       case WeaponRpmFormulas.Bow:
-        return [
-          0,
-          'Unknown',
-        ];
+        return [0, 'Unknown'];
 
       case WeaponRpmFormulas.TAC14:
         return [
-          (60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed / 3)),
+          60 / (weaponStatistics.rechamberLength + weaponStatistics.reloadSpeed / 3),
           '(60 / (rechamberLength + reloadSpeed / 3))',
         ];
-
     }
 
     throw Error(`Unknown RPM formula passed (${rpmFormula})`);
   }
 }
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export function generateWeapons() {
   const saver = new Saver();
   const parser = new Parser();
-
   parser.parse();
   saver.save(Array.from(parser.weapons.values()));
-
-  res.status(200).json({message: 'Parsing done'});
 }

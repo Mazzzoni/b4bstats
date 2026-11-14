@@ -30,5 +30,5 @@ export const trackEvent = (name: string, props?: EventOptions['props']) => {
     window.plausible = queuedPlausible;
   }
 
-  window.plausible(name, props ? {props} : undefined);
+  window.plausible(name, props ? { props } : undefined);
 };

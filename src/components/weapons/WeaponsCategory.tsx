@@ -6,7 +6,7 @@ type Props = {
   weapons: WeaponDefinition[];
 };
 
-export default function WeaponsCategory({categoryName, weapons}: Props) {
+export default function WeaponsCategory({ categoryName, weapons }: Props) {
   if (weapons.length === 0) {
     return null;
   }
@@ -16,7 +16,7 @@ export default function WeaponsCategory({categoryName, weapons}: Props) {
       <h2 className="text-2xl font-bold mb-3 capitalize">{categoryName}</h2>
 
       {weapons.map((weapon) => (
-        <WeaponCard key={weapon.name} weapon={weapon}/>
+        <WeaponCard key={weapon.name} weapon={weapon} />
       ))}
     </div>
   );

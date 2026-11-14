@@ -1,21 +1,26 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import { Trans, useTranslation } from 'react-i18next';
 import { ChartData, ChartOptions } from 'chart.js';
-import { currentCleanerOrder, getCleanerIdsByNames, localeFormat, nFormatter } from '@utils/generic';
+import {
+  currentCleanerOrder,
+  getCleanerIdsByNames,
+  localeFormat,
+  nFormatter,
+} from '@utils/generic';
 import StatisticsState from '@components/self/StatisticsState';
 import { DifficultyColors } from '@utils/colors';
-import {  Difficulties } from '@components/statistics/types';
+import { Difficulties } from '@components/statistics/types';
 import { tooltipCallbackLabelMissions } from '@utils/charts';
 import { Badge } from '@mantine/core';
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 import _ from 'lodash';
 
 export default function MissionsCompletedPerCleaner() {
-  const statistics = useRecoilValue(StatisticsState);
-  const progressionType = useRecoilValue(SelectedProgressionTypeState);
-  const {t} = useTranslation();
+  const statistics = useAtomValue(StatisticsState);
+  const progressionType = useAtomValue(SelectedProgressionTypeState);
+  const { t } = useTranslation();
 
   let missionsRecruitCompleted: number[] = [];
   let missionsVeteranCompleted: number[] = [];
@@ -27,18 +32,22 @@ export default function MissionsCompletedPerCleaner() {
 
   const cleanerIds = getCleanerIdsByNames(currentCleanerOrder);
 
-  cleanerIds.map((cleanerId) => _.replace(cleanerId, "hero_", "")).map((cleanerId) => {
-    const cleanerIndex = +cleanerId - 1;
-    const cleaner = Object.values(statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner)[cleanerIndex];
+  cleanerIds
+    .map((cleanerId) => _.replace(cleanerId, 'hero_', ''))
+    .map((cleanerId) => {
+      const cleanerIndex = +cleanerId - 1;
+      const cleaner = Object.values(
+        statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner,
+      )[cleanerIndex];
 
-    missionsRecruitCompleted.push(cleaner.easy);
-    missionsVeteranCompleted.push(cleaner.normal);
-    missionsNightmareCompleted.push(cleaner.hard);
-    missionsNoHopeCompleted.push(cleaner.veryhard);
-    missionsLegendaryCompleted.push(cleaner.legendary);
-    missionsSwarmCompleted.push(cleaner.pvp);
-    missionsTotalCompleted.push(cleaner.total);
-  });
+      missionsRecruitCompleted.push(cleaner.easy);
+      missionsVeteranCompleted.push(cleaner.normal);
+      missionsNightmareCompleted.push(cleaner.hard);
+      missionsNoHopeCompleted.push(cleaner.veryhard);
+      missionsLegendaryCompleted.push(cleaner.legendary);
+      missionsSwarmCompleted.push(cleaner.pvp);
+      missionsTotalCompleted.push(cleaner.total);
+    });
 
   const datasets = [
     {
@@ -74,8 +83,11 @@ export default function MissionsCompletedPerCleaner() {
   ];
 
   const data: ChartData = {
-    labels: cleanerIds.map(cleaner => t(`cleaners.${cleaner}`)),
-    datasets: datasets,
+    labels: cleanerIds.map((cleaner) => t(`cleaners.${cleaner}`)),
+    datasets: datasets.filter(
+      (_, index) =>
+        index !== 4 || statistics.hasProgressionDifficulty(Difficulties.Legendary, progressionType),
+    ),
   };
 
   const options: ChartOptions = {
@@ -84,7 +96,7 @@ export default function MissionsCompletedPerCleaner() {
         stacked: true,
         ticks: {
           font: {
-            weight: '700',
+            weight: 700,
           },
           callback: function (value, index, values) {
             const cleanerId = cleanerIds[index];
@@ -105,36 +117,49 @@ export default function MissionsCompletedPerCleaner() {
       datalabels: {
         // To determine if we display or not, we recompute on how many total missions completed are being displayed (based on filters hidden / show)
         display: (context) => {
-          let overallMissionsCompleted = statistics.missionsStatistics[progressionType].missionsCompleted;
+          let overallMissionsCompleted =
+            statistics.missionsStatistics[progressionType].missionsCompleted;
 
           // @ts-ignore We know this key exists, ignore the error
           for (const legendItem of context.chart.legend.legendItems) {
             if (legendItem.hidden) {
               switch (legendItem.datasetIndex) {
                 case 0: // easy
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.easy;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .easy;
                   break;
                 case 1: // normal
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.normal;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .normal;
                   break;
                 case 2: // hard
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.hard;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .hard;
                   break;
                 case 3: // veryhard
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.veryhard;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .veryhard;
                   break;
                 case 4: // legendary
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.legendary;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .legendary;
                   break;
                 case 5: // pvp
-                  overallMissionsCompleted -= statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty.pvp;
+                  overallMissionsCompleted -=
+                    statistics.missionsStatistics[progressionType].missionsCompletedPerDifficulty
+                      .pvp;
                   break;
               }
             }
           }
 
           const value = context.dataset.data[context.dataIndex] as number;
-          const percent = value / overallMissionsCompleted * 100;
+          const percent = (value / overallMissionsCompleted) * 100;
 
           return percent > 2.5;
         },
@@ -147,7 +172,12 @@ export default function MissionsCompletedPerCleaner() {
 
             return `${tooltip.label} - ${tooltip.dataset.label}`;
           },
-          label: (c) => tooltipCallbackLabelMissions(c, statistics.missionsStatistics[progressionType].missionsCompleted, t),
+          label: (c) =>
+            tooltipCallbackLabelMissions(
+              c,
+              statistics.missionsStatistics[progressionType].missionsCompleted,
+              t,
+            ),
         },
       },
     },
@@ -156,13 +186,15 @@ export default function MissionsCompletedPerCleaner() {
   return (
     <div>
       <strong>{t('graphs.missions_completed_per_cleaner')}</strong>
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
       <div className="mt-3">
         <Badge>
           <Trans
             i18nKey="graphs.labels.total_missions_completed"
-            values={{count: localeFormat(statistics.missionsStatistics[progressionType].missionsCompleted)}}
-            components={{b: <b/>}}
+            values={{
+              count: localeFormat(statistics.missionsStatistics[progressionType].missionsCompleted),
+            }}
+            components={{ b: <b /> }}
           />
         </Badge>
       </div>

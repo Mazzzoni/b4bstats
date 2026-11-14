@@ -9,11 +9,11 @@ const Page: NextPage<WeaponsProps> = (props) => {
   return (
     <MainLayout title="Weapons">
       <Head>
-        <meta name="description" content="Weapons statistics and information"/>
+        <meta name="description" content="Weapons statistics and information" />
       </Head>
 
       <div>
-        <Display {...props}/>
+        <Display {...props} />
       </div>
 
       <div className="text-center italic">

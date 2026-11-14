@@ -1,15 +1,11 @@
-import { atom } from 'recoil';
-import { recoilPersist } from 'recoil-persist';
+import { atomWithStorage } from 'jotai/utils';
 import { Difficulties } from '@components/statistics/types';
-
-const {persistAtom} = recoilPersist();
 
 export type SelectedDifficulty = Difficulties;
 
-const state = atom<SelectedDifficulty>({
-  key: 'SelectedDifficulty',
-  default: Difficulties.Recruit,
-  effects_UNSTABLE: [persistAtom],
-});
+const state = atomWithStorage<SelectedDifficulty>(
+  'b4bstats:SelectedDifficulty',
+  Difficulties.Recruit,
+);
 
 export default state;

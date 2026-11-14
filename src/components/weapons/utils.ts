@@ -1,4 +1,8 @@
-import { WeaponDefinition, WeaponQualities, WeaponStatisticsDefinition } from '@components/weapons/types';
+import {
+  WeaponDefinition,
+  WeaponQualities,
+  WeaponStatisticsDefinition,
+} from '@components/weapons/types';
 
 // Represent 0.5 meter
 export const rangedStepSize = 50;
@@ -12,18 +16,19 @@ export const getDamageStatistics = (
   statistics: WeaponStatisticsDefinition,
   damage: number = statistics.rangeDamagesComputed[0],
 ) => {
-  const rawDps = damage * statistics.rpm / 60;
+  const rawDps = (damage * statistics.rpm) / 60;
   const hasMagazine = statistics.magazineSize > 0;
-  const shotsPerMagazine = hasMagazine ? statistics.magazineSize / (statistics.roundsPerShot || 1) : 0;
+  const shotsPerMagazine = hasMagazine
+    ? statistics.magazineSize / (statistics.roundsPerShot || 1)
+    : 0;
   const fullMagazineDamage = damage * shotsPerMagazine;
   const sustainedDps = hasMagazine
-    ? (statistics.rpm > 0
-      ? fullMagazineDamage / (shotsPerMagazine * 60 / statistics.rpm + statistics.reloadSpeed)
-      : 0)
+    ? statistics.rpm > 0
+      ? fullMagazineDamage / ((shotsPerMagazine * 60) / statistics.rpm + statistics.reloadSpeed)
+      : 0
     : rawDps;
-  const damageRatio = statistics.rangeDamagesComputed[0] > 0
-    ? damage / statistics.rangeDamagesComputed[0]
-    : 0;
+  const damageRatio =
+    statistics.rangeDamagesComputed[0] > 0 ? damage / statistics.rangeDamagesComputed[0] : 0;
 
   return {
     rawDps,
@@ -34,11 +39,14 @@ export const getDamageStatistics = (
   };
 };
 
-export const getDamageData = (range_damages: WeaponStatisticsDefinition['rangeDamages'], metersScale: number[]): number[] => {
+export const getDamageData = (
+  range_damages: WeaponStatisticsDefinition['rangeDamages'],
+  metersScale: number[],
+): number[] => {
   let damages: number[] = [];
 
   // Format ranges threshold
-  const ranges: { range: number, damage: number }[] = [];
+  const ranges: { range: number; damage: number }[] = [];
 
   for (const range in range_damages) {
     ranges.push({
@@ -97,7 +105,7 @@ export const getDamageData = (range_damages: WeaponStatisticsDefinition['rangeDa
       const p = distance / stepsCount;
 
       for (let j = 0; j < stepsCount; j++) {
-        damages.push(range1.damage - (p * j));
+        damages.push(range1.damage - p * j);
       }
     }
   }
@@ -130,14 +138,14 @@ export const getWeaponQuality = (
   if (bestFallback) {
     const quality = weaponHasSelectedQuality
       ? selectedQuality
-      // Take the latest weapon quality in set (best one normally)
-      : Object.keys(weapon.qualities)[Object.keys(weapon.qualities).length - 1];
+      : // Take the latest weapon quality in set (best one normally)
+        Object.keys(weapon.qualities)[Object.keys(weapon.qualities).length - 1];
 
     return weapon.qualities[quality as WeaponQualities];
   }
 
   return weaponHasSelectedQuality
     ? weapon.qualities[selectedQuality]
-    // Return first quality (the lowest one normally)
-    : weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
+    : // Return first quality (the lowest one normally)
+      weapon.qualities[Object.keys(weapon.qualities)[0] as WeaponQualities];
 };

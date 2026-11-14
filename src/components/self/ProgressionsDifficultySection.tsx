@@ -1,27 +1,49 @@
-import { Cleaners, Difficulties, Missions, Progressions, SwarmMissions } from '@components/statistics/types';
+import {
+  Cleaners,
+  Difficulties,
+  Missions,
+  Progressions,
+  SwarmMissions,
+} from '@components/statistics/types';
 import { Divider } from '@mantine/core';
 import { useTranslation } from 'react-i18next';
-import { useRecoilValue } from 'recoil';
-import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
+import { useAtomValue } from 'jotai';
+import StatisticsState from './StatisticsState';
+import SelectedProgressionTypeState from './SelectedProgressionTypeState';
+import { useUI } from '@translations/useUI';
+import type { DifficultyFilters } from '@components/self/DifficultyFiltersState';
 import ProgressionsDisplayMission from '@components/self/ProgressionsDisplayMission';
 
 type Props = {
-  progressions: Progressions
-  cleaner: Cleaners
-  difficulty: Difficulties
-}
+  progressions: Progressions;
+  filters: DifficultyFilters;
+  cleaner: Cleaners;
+  difficulty: Difficulties;
+};
 
-export default function ProgressionsDifficultySection({progressions, cleaner, difficulty}: Props) {
-  const {t} = useTranslation();
-  const difficultiesFilter = useRecoilValue(DifficultyFiltersState);
+export default function ProgressionsDifficultySection({
+  progressions,
+  cleaner,
+  difficulty,
+  filters: difficultiesFilter,
+}: Props) {
+  const { t } = useTranslation();
+  const tr = useUI();
+  const statistics = useAtomValue(StatisticsState);
+  const progressionType = useAtomValue(SelectedProgressionTypeState);
+  const totalMissions =
+    statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner[cleaner][difficulty];
 
   const maxMissionsCount = Object.keys(Missions).length;
-  const maxSwarmMissionsCount = Object.keys(SwarmMissions).length
-  const maxMissionsCompletedCount = difficulty === Difficulties.Swarm ? maxSwarmMissionsCount : maxMissionsCount;
+  const maxSwarmMissionsCount = Object.keys(SwarmMissions).length;
+  const maxMissionsCompletedCount =
+    difficulty === Difficulties.Swarm ? maxSwarmMissionsCount : maxMissionsCount;
   let missionsCompletedCount = 0;
 
   // Increment missions completed based on cleaner progression
-  Object.values(progressions[cleaner][difficulty]).forEach((value: boolean) => value ? missionsCompletedCount++ : null);
+  Object.values(progressions[cleaner][difficulty]).forEach((value: boolean) =>
+    value ? missionsCompletedCount++ : null,
+  );
 
   const isPvpDifficulty = difficulty === Difficulties.Swarm;
 
@@ -52,7 +74,13 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
   return (
     <div>
       <div className="text-2xl mb-3">
-        <strong>{t(`difficulties.${difficulty}`)}</strong> <span style={{fontSize: '75%'}}>- {missionsCompletedCount}/{maxMissionsCompletedCount}</span>
+        <strong>{t(`difficulties.${difficulty}`)}</strong>{' '}
+        <span style={{ fontSize: '75%' }}>
+          - {missionsCompletedCount}/{maxMissionsCompletedCount}
+        </span>
+        <span className="cleaner-tier-missions ml-3 text-sm font-normal text-muted">
+          {tr('Missions done')}: {totalMissions.toLocaleString()}
+        </span>
       </div>
 
       <div className="grid grid-cols-12 gap-y-6">
@@ -61,35 +89,100 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
 
           <div className="mt-3">
             <strong>{t('segments.1_1')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.Resurgence}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TunnelOfBlood}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.PainTrain}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheCrossing}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.Resurgence}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TunnelOfBlood}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.PainTrain}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheCrossing}
+            />
           </div>
 
           {!isPvpDifficulty && (
             <div className="mt-3">
               <strong>{t('segments.1_2')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.ACleanSweep}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BookWorms}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BarRoomBlitz}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.ACleanSweep}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.BookWorms}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.BarRoomBlitz}
+              />
             </div>
           )}
 
           {!isPvpDifficulty && (
             <div className="mt-3">
               <strong>{t('segments.1_3')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.SpecialDelivery}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheDiner}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.SpecialDelivery}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheDiner}
+              />
             </div>
           )}
 
           <div className="mt-3">
             <strong>{t('segments.1_4')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BadSeeds}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.HellsBells}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.Abandoned}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheSoundOfThunder}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.BadSeeds}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.HellsBells}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.Abandoned}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheSoundOfThunder}
+            />
           </div>
         </div>
 
@@ -99,25 +192,75 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
           {!isPvpDifficulty && (
             <div className="mt-3">
               <strong>{t('segments.2_1')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.ACallToArms}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheHandyMan}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.ACallToArms}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheHandyMan}
+              />
             </div>
           )}
 
           <div className="mt-3">
             <strong>{t('segments.2_2')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.PipeCleaners}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.Hinterland}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TrailerTrashed}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheClog}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheBrokenBird}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.PipeCleaners}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.Hinterland}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TrailerTrashed}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheClog}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheBrokenBird}
+            />
           </div>
 
           <div className="mt-3">
             <strong>{t('segments.2_3')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.HeraldsOfTheWormPart1}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.HeraldsOfTheWormPart2}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.GraveDanger}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.HeraldsOfTheWormPart1}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.HeraldsOfTheWormPart2}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.GraveDanger}
+            />
           </div>
         </div>
 
@@ -126,19 +269,64 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
 
           <div className="mt-3">
             <strong>{t('segments.3_1')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.FartherAfield}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BlazingTrails}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.CabinsByTheLake}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.GardenParty}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.T5}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.FartherAfield}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.BlazingTrails}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.CabinsByTheLake}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.GardenParty}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.T5}
+            />
           </div>
 
           <div className="mt-3">
             <strong>{t('segments.3_2')}</strong>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.AFriendInNeed}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.MakingTheGrade}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheRoadToHell}/>
-            <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheBodyDump}/>
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.AFriendInNeed}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.MakingTheGrade}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheRoadToHell}
+            />
+            <ProgressionsDisplayMission
+              progressions={progressions}
+              cleaner={cleaner}
+              difficulty={difficulty}
+              mission={Missions.TheBodyDump}
+            />
           </div>
         </div>
 
@@ -148,7 +336,12 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
 
             <div className="mt-3">
               <strong>{t('segments.4')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheAbomination}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheAbomination}
+              />
             </div>
           </div>
         )}
@@ -159,12 +352,42 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
 
             <div className="mt-3">
               <strong>{t('segments.12_7')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.LightGuideUs}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.ToTheDenOfEvil}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.WhereMeFlockChained}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.InTheDepths}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.SurroundedByDevils}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.AwaitingOurJustice}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.LightGuideUs}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.ToTheDenOfEvil}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.WhereMeFlockChained}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.InTheDepths}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.SurroundedByDevils}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.AwaitingOurJustice}
+              />
             </div>
           </div>
         )}
@@ -175,11 +398,36 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
 
             <div className="mt-3">
               <strong>{t('segments.river_of_blood')}</strong>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.NoSanctuary}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.EmergencyBroadcast}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.GrimRecovery}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheWaterfront}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BeholdTheHarbinger}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.NoSanctuary}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.EmergencyBroadcast}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.GrimRecovery}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheWaterfront}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.BeholdTheHarbinger}
+              />
             </div>
           </div>
         )}
@@ -189,19 +437,54 @@ export default function ProgressionsDifficultySection({progressions, cleaner, di
             <strong>{t('segments.hives')}</strong>
 
             <div className="mt-3">
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheCut}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BloodStream}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.CausticCesspool}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.SunkenPassage}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.BroodLair}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.Below300}/>
-              <ProgressionsDisplayMission progressions={progressions} cleaner={cleaner} difficulty={difficulty} mission={Missions.TheNursery}/>
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheCut}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.BloodStream}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.CausticCesspool}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.SunkenPassage}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.BroodLair}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.Below300}
+              />
+              <ProgressionsDisplayMission
+                progressions={progressions}
+                cleaner={cleaner}
+                difficulty={difficulty}
+                mission={Missions.TheNursery}
+              />
             </div>
           </div>
         )}
       </div>
 
-      <Divider variant="dashed" my={30}/>
+      <Divider variant="dashed" my={30} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import 'chart.js/auto';
 import { Chart } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import { useTranslation } from 'react-i18next';
 import { nFormatter } from '@utils/generic';
 import { Context } from 'chartjs-plugin-datalabels';
@@ -13,8 +13,8 @@ import { PlayerColors } from '@utils/colors';
 import { weaponToString } from '@translations/helpers';
 
 export default function RiddenKilledPerWeaponOverall() {
-  const playersStatistics = useRecoilValue(PlayersStatisticsState);
-  const {t} = useTranslation();
+  const playersStatistics = useAtomValue(PlayersStatisticsState);
+  const { t } = useTranslation();
 
   let overallKills = 0;
   let datasets = [];
@@ -53,7 +53,7 @@ export default function RiddenKilledPerWeaponOverall() {
 
   const data: ChartData = {
     labels: labels.map((weapon: string) => t(`weapons.${weapon}`)),
-    datasets: datasets
+    datasets: datasets,
   };
 
   const options: ChartOptions = {
@@ -62,7 +62,8 @@ export default function RiddenKilledPerWeaponOverall() {
         anchor: 'end',
         align: 'end',
         // Only show what above 0.8%
-        display: (context: Context) => context.dataset.data[context.dataIndex]! > (overallKills * 0.008),
+        display: (context: Context) =>
+          Number(context.dataset.data[context.dataIndex] ?? 0) > overallKills * 0.008,
         formatter: (value: number) => nFormatter(value, 1),
       },
       legend: {
@@ -70,7 +71,7 @@ export default function RiddenKilledPerWeaponOverall() {
       },
       tooltip: {
         callbacks: {
-          label: (c) => tooltipCallbackLabelKills(c, overallKills, t)
+          label: (c) => tooltipCallbackLabelKills(c, overallKills, t),
         },
       },
     },
@@ -79,7 +80,7 @@ export default function RiddenKilledPerWeaponOverall() {
   return (
     <div>
       <strong>{t('graphs.ridden_killed_per_weapon_overall')}</strong>
-      <Chart data={data} options={options} type="bar"/>
+      <Chart data={data} options={options} type="bar" />
     </div>
   );
 }

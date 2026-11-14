@@ -1,61 +1,99 @@
-import { useRecoilValue } from 'recoil';
+import { useAtomValue } from 'jotai';
 import StatisticsState from '@components/self/StatisticsState';
 import { useTranslation } from 'react-i18next';
-import DifficultyFiltersState from '@components/self/DifficultyFiltersState';
-import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById, getFormattedDate } from '@utils/generic';
+import { useUI } from '@translations/useUI';
+import DifficultyFiltersState, {
+  type DifficultyFilters,
+} from '@components/self/DifficultyFiltersState';
+import { currentCleanerOrder, getCleanerIdsByNames, getCleanerNameById } from '@utils/generic';
 import { Cleaners, Difficulties } from '@components/statistics/types';
 import { useMantineTheme } from '@mantine/core';
-import ScrollSpy from 'react-ui-scrollspy';
-import { createRef } from 'react';
-import ScreenshotTaker from '@components/common/ScreenshotTaker';
+
 import SelectedProgressionTypeState from '@components/self/SelectedProgressionTypeState';
 import ProgressionsDifficultySection from '@components/self/ProgressionsDifficultySection';
 
-export default function Progressions() {
-  const elementToScreenshotRef = createRef<HTMLDivElement>();
-  const filters = useRecoilValue(DifficultyFiltersState);
-  const statistics = useRecoilValue(StatisticsState);
-  const progressionType = useRecoilValue(SelectedProgressionTypeState);
+export default function Progressions({
+  difficultyFilters,
+}: {
+  difficultyFilters?: Partial<DifficultyFilters>;
+}) {
+  const savedFilters = useAtomValue(DifficultyFiltersState);
+  const filters = { ...savedFilters, ...difficultyFilters };
+  const statistics = useAtomValue(StatisticsState);
+  const progressionType = useAtomValue(SelectedProgressionTypeState);
   const progressions = statistics.progressions[progressionType];
   const theme = useMantineTheme();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
+  const tr = useUI();
+  const missionsPerCleaner =
+    statistics.missionsStatistics[progressionType].missionsCompletedPerCleaner;
 
   const progressionsOrderByCurrentCleanerNames = getCleanerIdsByNames(currentCleanerOrder);
 
-  if (!filters.showRecruit && !filters.showVeteran && !filters.showNightmare && !filters.showNoHope && !filters.showLegendary && !filters.showSwarm) {
+  if (
+    !filters.showRecruit &&
+    !filters.showVeteran &&
+    !filters.showNightmare &&
+    !filters.showNoHope &&
+    !filters.showLegendary &&
+    !filters.showSwarm
+  ) {
     return null;
   }
 
   return (
-    <div ref={elementToScreenshotRef} style={{backgroundColor: theme.colors.dark[8]}}>
+    <div style={{ backgroundColor: theme.colors.dark[7] }}>
       <div className="flex justify-between">
-        <h2 className="text-3xl font-bold">Progressions</h2>
-        <ScreenshotTaker elementToScreenshotRef={elementToScreenshotRef} filename={`b4bstats_mazz__progressions__${getFormattedDate()}`}/>
+        <h2 className="text-3xl font-bold">
+          {t('progressions.title', { defaultValue: 'Progressions' })}
+        </h2>
       </div>
 
-      <ScrollSpy activeClass="bg-white/5" scrollThrottle={100}>
+      <div>
         {progressionsOrderByCurrentCleanerNames.map((cleanerId, i) => (
-          <div key={cleanerId} id={getCleanerNameById(cleanerId).toLowerCase()} className="grid gap-4 grid-cols-12">
-            <div className="text-center col-span-2">
+          <div
+            key={cleanerId}
+            id={getCleanerNameById(cleanerId).toLowerCase()}
+            className="grid gap-5 grid-cols-1 sm:grid-cols-12"
+          >
+            <div className="text-center sm:col-span-2">
               <div className="sticky top-[80px] flex flex-col items-center">
                 <img
-                  className="w-48 inline"
+                  className="inline w-24 sm:w-48"
                   src={`/images/cleaners/${getCleanerNameById(cleanerId).toLowerCase()}.webp`}
                   alt={getCleanerNameById(cleanerId)}
                 />
 
                 <strong className="mt-3">{t(`cleaners.${cleanerId}`)}</strong>
+                <dl className="cleaner-missions-total mt-3 text-center">
+                  <dt className="text-xs text-muted">{tr('Missions done')}</dt>
+                  <dd className="mt-1 text-xl font-semibold tabular-nums">
+                    {missionsPerCleaner[cleanerId].total.toLocaleString()}
+                  </dd>
+                </dl>
               </div>
             </div>
 
-            <div className="col-span-10">
-              {Object.keys(progressions[cleanerId]).map((difficulty, i) =>
-                <ProgressionsDifficultySection key={i} progressions={progressions} cleaner={cleanerId as Cleaners} difficulty={difficulty as Difficulties}/>,
-              )}
+            <div className="min-w-0 sm:col-span-10">
+              {Object.values(Difficulties)
+                .filter(
+                  (difficulty) =>
+                    difficulty !== Difficulties.Legendary ||
+                    statistics.hasProgressionDifficulty(Difficulties.Legendary, progressionType),
+                )
+                .map((difficulty, i) => (
+                  <ProgressionsDifficultySection
+                    key={difficulty}
+                    filters={filters}
+                    progressions={progressions}
+                    cleaner={cleanerId as Cleaners}
+                    difficulty={difficulty as Difficulties}
+                  />
+                ))}
             </div>
           </div>
         ))}
-      </ScrollSpy>
+      </div>
     </div>
   );
 }

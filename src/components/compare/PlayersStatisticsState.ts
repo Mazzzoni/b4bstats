@@ -1,14 +1,11 @@
-import { atom } from 'recoil';
+import { atom } from 'jotai';
 import Statistics from '@components/statistics/Statistics';
 
 export type PlayersStatistics = {
-  player: string
-  stats: Statistics
-}
+  player: string;
+  stats: Statistics;
+};
 
-const state = atom<PlayersStatistics[]>({
-  key: 'PlayersStatistics',
-  default: [],
-});
+const state = atom<PlayersStatistics[]>([]);
 
 export default state;

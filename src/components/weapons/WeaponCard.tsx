@@ -10,32 +10,35 @@ type Props = {
   weapon: WeaponDefinition;
 };
 
-export default function WeaponCard({weapon}: Props) {
-  const {t} = useTranslation();
+export default function WeaponCard({ weapon }: Props) {
+  const { t } = useTranslation();
 
   return (
-    <div className="color-bg-secondary mb-2">
-      <div className="flex">
-        <div className="w-1/3 border-right-subtle">
-          <Badge fullWidth size="xl">{t(`weapons.${weapon.name}`)}</Badge>
+    <div className="mb-6 overflow-hidden rounded border border-line bg-panel">
+      <div className="flex flex-col lg:flex-row">
+        <div className="w-full border-b border-line lg:w-1/3 lg:border-r lg:border-b-0">
+          <Badge fullWidth size="xl">
+            {t(`weapons.${weapon.name}`)}
+          </Badge>
 
           <div>
-            <WeaponOverview weapon={weapon}/>
+            <WeaponOverview weapon={weapon} />
           </div>
 
-          {weapon.category !== WeaponCategories.Melee && weapon.category !== WeaponCategories.Bow && (
-            <div>
-              <WeaponAttachments weapon={weapon}/>
-            </div>
-          )}
+          {weapon.category !== WeaponCategories.Melee &&
+            weapon.category !== WeaponCategories.Bow && (
+              <div>
+                <WeaponAttachments weapon={weapon} />
+              </div>
+            )}
 
           <div>
-            <WeaponStatistics weapon={weapon}/>
+            <WeaponStatistics weapon={weapon} />
           </div>
         </div>
 
-        <div className="w-2/3">
-          <WeaponDamage weapon={weapon}/>
+        <div className="min-w-0 w-full lg:w-2/3">
+          <WeaponDamage weapon={weapon} />
         </div>
       </div>
 
