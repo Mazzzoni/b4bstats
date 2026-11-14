@@ -7,13 +7,12 @@
     "lint": "eslint src",
     "test:weapons": "node tests/weapons.test.js",
     "dev": "next dev --webpack",
-    "build": "next build --webpack",
+    "build": "node scripts/generate-sitemap.mjs && next build --webpack",
     "start": "node scripts/serve.mjs",
     "check": "tsc --noEmit",
     "test:player-data": "node tests/player-data.test.js",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"tests/**/*.js\" \"scripts/**/*.mjs\" \"*.{js,mjs,json}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,css}\" \"tests/**/*.js\" \"scripts/**/*.mjs\" \"*.{js,mjs,json}\"",
-    "generate:weapons": "node scripts/generate-data.cjs weapons",
     "generate:riddens": "node scripts/generate-data.cjs riddens",
     "test:proxy": "node tests/api-proxy.test.js"
   },
@@ -30,7 +29,6 @@
     "jotai": "^3.0.1",
     "lodash": "^4.17.21",
     "next": "^16.4.2",
-    "node-xlsx": "^0.24.0",
     "react": "^19.3.1",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.3.1",
@@ -55,5 +53,10 @@
   "engines": {
     "node": ">=24 <25"
   },
-  "packageManager": "pnpm@10.34.6"
+  "packageManager": "pnpm@10.34.6",
+  "pnpm": {
+    "overrides": {
+      "minimatch@>=7.0.0 <11.0.1": "11.0.3"
+    }
+  }
 }

@@ -4,7 +4,7 @@ const Module = require('node:module');
 const ts = require('typescript');
 const root = path.resolve(__dirname, '..');
 const kind = process.argv[2];
-if (!['weapons', 'riddens'].includes(kind)) throw new Error('Choose weapons or riddens.');
+if (kind !== 'riddens') throw new Error('Only riddens data has a generator.');
 process.chdir(root);
 // CLI-only TypeScript loading uses the existing compiler; no HTTP route is installed.
 require.extensions['.ts'] = (module, file) => {
@@ -35,7 +35,7 @@ Module._resolveFilename = function (name, parent, ...rest) {
 const tool = require(path.join(root, 'tools/data-generation', kind + '.ts'));
 if (!process.argv.includes('--check')) {
   Promise.resolve()
-    .then(() => (kind === 'weapons' ? tool.generateWeapons() : tool.generateRiddens()))
+    .then(() => tool.generateRiddens())
     .then(() => console.log('Generated ' + kind + ' data.'))
     .catch((error) => {
       console.error(error.message);

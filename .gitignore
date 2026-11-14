@@ -40,5 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# sensible files
-data/weapons/sheets/**/*
+
+# generated at build time by scripts/generate-sitemap.mjs
+/public/robots.txt
+/public/sitemap.xml
