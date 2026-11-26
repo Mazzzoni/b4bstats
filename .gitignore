@@ -33,6 +33,10 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+!.env.prod.dist
+!.env.local.prod.dist
+# compose.override.yaml is for local tweaks only, never on the server
+/compose.override.yaml
 
 # vercel
 .vercel

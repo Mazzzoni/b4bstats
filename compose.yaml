@@ -1,3 +1,5 @@
+# Base file, safe anywhere (port on 127.0.0.1). The server adds compose.prod.yaml through its .env
+# (COMPOSE_FILE, see .env.prod.dist). The site's settings are in .env.local (template .env.local.prod.dist).
 services:
   web:
     build:
@@ -13,7 +15,6 @@ services:
       NODE_ENV: production
       PORT: 3000
       HOSTNAME: 0.0.0.0
-    restart: unless-stopped
     init: true
     security_opt:
       - no-new-privileges:true
